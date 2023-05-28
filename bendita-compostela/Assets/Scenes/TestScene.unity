@@ -214,6 +214,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4188301813789642578, guid: ad67bb918d8a6984b91f8c7acbd4f52c, type: 3}
+      propertyPath: cardData
+      value: 
+      objectReference: {fileID: 11400000, guid: 70f9bc1f0ea27e041885959439a3bb93, type: 2}
+    - target: {fileID: 4188301813789642578, guid: ad67bb918d8a6984b91f8c7acbd4f52c, type: 3}
+      propertyPath: ClassName
+      value: Heal
+      objectReference: {fileID: 0}
     - target: {fileID: 8475183939394185113, guid: ad67bb918d8a6984b91f8c7acbd4f52c, type: 3}
       propertyPath: m_Name
       value: DefaultCard
@@ -345,7 +353,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -526,6 +534,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4188301813789642578, guid: ad67bb918d8a6984b91f8c7acbd4f52c, type: 3}
+      propertyPath: cardData
+      value: 
+      objectReference: {fileID: 11400000, guid: 70f9bc1f0ea27e041885959439a3bb93, type: 2}
     - target: {fileID: 8475183939394185113, guid: ad67bb918d8a6984b91f8c7acbd4f52c, type: 3}
       propertyPath: m_Name
       value: DefaultCard (1)

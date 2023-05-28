@@ -5,15 +5,16 @@ using UnityEngine.EventSystems;
 
 public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    private Vector3 initialPosition;
-    private Transform parent;
-    private int index;
+    [Header("Drag System Variables")]
+    [SerializeField] Vector3 initialPosition_;
+    [SerializeField] Transform parent_;
+    [SerializeField] int index_;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        initialPosition = transform.position;
-        parent = transform.parent;
-        index = transform.GetSiblingIndex();
+        initialPosition_ = transform.position;
+        parent_ = transform.parent;
+        index_ = transform.GetSiblingIndex();
         transform.SetParent(transform.root);
     }
 
@@ -24,18 +25,19 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.SetParent(parent);
-        if (Vector3.Distance(transform.position, initialPosition) > 100f)
+        transform.SetParent(parent_);
+        if (Vector3.Distance(transform.position, initialPosition_) > 100f)
         {
             // card was used
-            Debug.Log("Card used!");
+            gameObject.GetComponent<Card>().useCard();
+            //Destroy(gameObject);
         }
         else
         {
             // card returned to hand
-            transform.position = initialPosition;
-            transform.parent = parent;
-            transform.SetSiblingIndex(index);
+            transform.position = initialPosition_;
+            transform.parent = parent_;
+            transform.SetSiblingIndex(index_);
         }
     }
 }
