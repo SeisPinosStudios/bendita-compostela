@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Damage : BasicCardEffect
 {
-    new public static void effect(int damage)
+    public static void effect(int damage, GameObject target)
     {
         Debug.Log("Damage card"+damage);
+        target.GetComponent<Entity>().sufferDamage(damage);
     }
 }

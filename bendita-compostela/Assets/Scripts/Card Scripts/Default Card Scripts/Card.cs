@@ -12,16 +12,16 @@ public class Card : MonoBehaviour
     {
 
     }
-    public void useCard()
+    public void useCard(GameObject target)
     {
-        StartCoroutine(useCardCorroutine());
+        StartCoroutine(useCardCorroutine(target));
     }
 
-    IEnumerator useCardCorroutine()
+    IEnumerator useCardCorroutine(GameObject target)
     {
         for (int i = 0; i < cardData.cardEffects.Count; i++)
         {
-            Type.GetType(cardData.cardEffects[i].ToString() + ", CardEffects").GetMethod("effect").Invoke(null, new object[] { cardData.cardEffectsValues[i] });
+            Type.GetType(cardData.cardEffects[i].ToString() + ", CardEffects").GetMethod("effect").Invoke(null, new object[] { cardData.cardEffectsValues[i], target });
             yield return new WaitForSeconds(1.0f);
         }
 

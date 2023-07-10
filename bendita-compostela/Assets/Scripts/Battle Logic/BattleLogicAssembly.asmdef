@@ -1,0 +1,16 @@
+{
+    "name": "BattleLogicAssembly",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7a13d0d47ffcb274baf23aecd2ecc98e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

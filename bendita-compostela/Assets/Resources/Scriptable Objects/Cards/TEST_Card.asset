@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568ec354eb73cda41929fe3b53650f4f, type: 3}
   m_Name: TEST_Card
   m_EditorClassIdentifier: 
-  cardName: 
-  desc: 
-  art: {fileID: 0}
-  cardEffects: 0000000001000000
-  cardEffectsValues: 0a00000005000000
+  cardName: Carta test
+  description: Carta test
+  cost: 0
+  art: {fileID: 21300000, guid: aa697ee30642d7043ada5f9ba67b471f, type: 3}
+  cardEffects: 00000000
+  cardEffectsValues: 0a000000

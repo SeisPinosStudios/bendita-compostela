@@ -12,8 +12,8 @@ public class CardData : ScriptableObject
     }
 
     [Header("Card Info")]
-    public string cardName;
-    public string desc;
+    public string cardName, description;
+    public int cost;
     public Sprite art;
 
     [Header("Card Effects")]

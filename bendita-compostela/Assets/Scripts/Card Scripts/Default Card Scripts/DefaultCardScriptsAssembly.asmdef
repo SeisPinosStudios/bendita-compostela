@@ -2,7 +2,9 @@
     "name": "DefaultCardScriptsAssembly",
     "rootNamespace": "",
     "references": [
-        "GUID:fc80d44566bfa8c4a9fb81f53cd3f326"
+        "GUID:fc80d44566bfa8c4a9fb81f53cd3f326",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:e65adb8492bee8142b56bd079c3dc5a7"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

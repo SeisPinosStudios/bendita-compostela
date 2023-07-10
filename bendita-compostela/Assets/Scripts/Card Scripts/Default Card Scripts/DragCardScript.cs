@@ -2,42 +2,60 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System;
 
 public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("Drag System Variables")]
-    [SerializeField] Vector3 initialPosition_;
-    [SerializeField] Transform parent_;
-    [SerializeField] int index_;
-
+    [SerializeField] Transform parent;
+    [SerializeField] int index;
+    public static event Action onUsing, onReturning;
     public void OnBeginDrag(PointerEventData eventData)
     {
-        initialPosition_ = transform.position;
-        parent_ = transform.parent;
-        index_ = transform.GetSiblingIndex();
+        parent = transform.parent;
+        index = transform.GetSiblingIndex();
         transform.SetParent(transform.root);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = eventData.position;
+        Debug.Log(eventData.position + (eventData.position.y < 400).ToString());
+
+        if (eventData.position.y < 400)
+        {
+            Vector2 pos;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.root.gameObject.transform as RectTransform, 
+                                                                    eventData.position, transform.root.GetComponent<Canvas>().worldCamera, out pos);
+            transform.position = transform.root.gameObject.transform.TransformPoint(pos);
+            onReturning();
+        }
+
+        if (eventData.position.y > 400)
+        {
+            transform.position = new Vector3(1920 / 2, 20.0f, 0.0f);
+            onUsing();
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.SetParent(parent_);
-        if (Vector3.Distance(transform.position, initialPosition_) > 100f)
-        {
-            // card was used
-            gameObject.GetComponent<Card>().useCard();
-            //Destroy(gameObject);
-        }
-        else
-        {
-            // card returned to hand
-            transform.position = initialPosition_;
-            transform.parent = parent_;
-            transform.SetSiblingIndex(index_);
-        }
+        RaycastResult hit = RaycastUtils.Raycast("Enemy");
+        if (eventData.position.y < 400 || !hit.isValid) { ReturnCardToHand(); return; }
+        onReturning();
+        UseCardOnTarget(hit.gameObject);
+    }
+
+    private void ReturnCardToHand()
+    {
+        transform.SetParent(parent);
+        transform.SetSiblingIndex(index);
+        onReturning();
+    }
+
+    private void UseCardOnTarget(GameObject target)
+    {
+        print($"Card used on {target.name}");
+        gameObject.GetComponent<Card>().useCard(target);
+        Destroy(this);
     }
 }
