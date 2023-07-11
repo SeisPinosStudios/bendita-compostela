@@ -4,15 +4,15 @@ using TMPro;
 
 public class CardDisplay : MonoBehaviour
 {
-    public CardData cardData;
+    [SerializeField] CardDataContainer cardDataContainer;
     [SerializeField] TextMeshProUGUI nameField, descriptionField, costField;
     [SerializeField] Image art;
 
     private void Awake()
     {
-        nameField.text = cardData.cardName;
-        descriptionField.text = cardData.description;
-        costField.text = cardData.cost.ToString();
-        art.sprite = cardData.art;
+        nameField.text = cardDataContainer.cardData.cardName;
+        descriptionField.text = cardDataContainer.cardData.description;
+        costField.text = cardDataContainer.cardData.cost.ToString();
+        art.sprite = cardDataContainer.cardData.art;
     }
 }

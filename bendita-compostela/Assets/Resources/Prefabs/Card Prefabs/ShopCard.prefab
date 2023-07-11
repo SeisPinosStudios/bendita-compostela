@@ -529,6 +529,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4025189985520999145}
+  - component: {fileID: 4875575910085317031}
   - component: {fileID: 8365105477727224735}
   m_Layer: 0
   m_Name: ShopCard
@@ -559,6 +560,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 102, y: 155}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4875575910085317031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8475183939394185113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cbd5040dc2d9a0489e91b3530aa0b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardData: {fileID: 0}
 --- !u!114 &8365105477727224735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,7 +585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cedd3ebb8c3f064495d989f6556970b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardData: {fileID: 0}
+  <card>k__BackingField: {fileID: 0}
   nameField: {fileID: 2614415358009651180}
   descriptionField: {fileID: 8694934144077335300}
   costField: {fileID: 21201623679382550}

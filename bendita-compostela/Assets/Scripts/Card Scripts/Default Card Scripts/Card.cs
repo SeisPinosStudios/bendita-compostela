@@ -6,12 +6,14 @@ using UnityEngine;
 public class Card : MonoBehaviour
 {
     [Header ("Card Info")]
-    public CardData cardData;
+    [SerializeField] CardDataContainer cardDataContainer;
+    [SerializeField] CardData cardData;
 
     private void Awake()
     {
-
+        cardData = cardDataContainer.cardData;
     }
+
     public void useCard(GameObject target)
     {
         StartCoroutine(useCardCorroutine(target));
