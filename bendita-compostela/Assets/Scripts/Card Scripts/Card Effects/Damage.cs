@@ -7,6 +7,6 @@ public class Damage : BasicCardEffect
     public static void effect(int damage, GameObject target)
     {
         Debug.Log("Damage card"+damage);
-        target.GetComponent<Entity>().sufferDamage(damage);
+        target.GetComponent<Entity>().sufferDamage(damage, false);
     }
 }

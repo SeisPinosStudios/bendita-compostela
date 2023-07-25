@@ -16,5 +16,6 @@ MonoBehaviour:
   description: Carta test
   cost: 0
   art: {fileID: 21300000, guid: aa697ee30642d7043ada5f9ba67b471f, type: 3}
+  miniArt: {fileID: 21300000, guid: ee945a9e7a4d22a47ba5a5bc419f27ba, type: 3}
   cardEffects: 00000000
   cardEffectsValues: 0a000000

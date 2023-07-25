@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class BattleManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [field:SerializeField] public static BattleManager Instance { get; private set; }
+    [field: SerializeField] public Player player { get; private set; }
+    [field: SerializeField] public List<Enemy> enemies { get; private set; }
+    [SerializeField] Transform enemiesContainer;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        if (Instance == null) Instance = this;
+        foreach (Transform child in enemiesContainer) enemies.Add(child.GetComponent<Enemy>());
+    }
+    private void Start()
+    {
+        player.Turn();
     }
 }

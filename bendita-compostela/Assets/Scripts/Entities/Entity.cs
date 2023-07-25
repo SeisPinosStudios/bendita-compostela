@@ -5,26 +5,36 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     [Header("Entity Data")]
-    [SerializeField] EntityData _entityData;
+    [SerializeField] public EntityDataContainer entityDataContainer;
+    [SerializeField] private EntityData entityData;
 
-    [Header("Entity Stats")]
-    public string entityName;
-    public int currentHP;
+    [field:SerializeField] public string entityName { get; protected set; }
+    [field:SerializeField] public int currentHP { get; protected set; }
+    [field:SerializeField] public int damageMitigation { get; protected set; }
+    [field:SerializeField] public int damageBoost { get; protected set; }
+    [field:SerializeField] public int healingBoost { get; protected set; }
 
     private void Awake()
     {
-        setupEntity();
+        entityData = entityDataContainer.entityData;
     }
 
-    public bool sufferDamage(int damage)
+    #region Basic entity methods
+    public void Turn()
     {
-        currentHP = Mathf.Clamp(currentHP - damage, 0, _entityData.HP);
+
+    }
+    public bool sufferDamage(int damage, bool effect)
+    {
+        int finalDamage = effect ? damage : Mathf.Clamp(damage - damageMitigation, 0, damage);
+        currentHP = Mathf.Clamp(currentHP - damage, 0, entityData.HP);
         return currentHP <= 0;
     }
-
-    private void setupEntity()
+    public void restoreHealth(int health, int boost, float multiplier)
     {
-        entityName = _entityData.entityName;
-        currentHP = _entityData.HP;
+        var finalHeal = Mathf.RoundToInt(health * multiplier) + boost;
+        currentHP = Mathf.Clamp(currentHP + finalHeal, 0, entityData.HP);
+        return;
     }
+    #endregion
 }
