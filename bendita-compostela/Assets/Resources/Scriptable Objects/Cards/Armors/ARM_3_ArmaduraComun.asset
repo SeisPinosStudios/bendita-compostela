@@ -20,5 +20,7 @@ MonoBehaviour:
   art: {fileID: 21300000, guid: e57014460582d504090138f017a10568, type: 3}
   miniArt: {fileID: 21300000, guid: 758b78d2465077e448368fdb591c9310, type: 3}
   cardEffects: 
-  cardEffectsValues: 
-  <damageMitigation>k__BackingField: 4
+  cardEffectsValues: []
+  printArrow: 0
+  <defenseBonus>k__BackingField: 0
+  <weaponSynergy>k__BackingField: 1

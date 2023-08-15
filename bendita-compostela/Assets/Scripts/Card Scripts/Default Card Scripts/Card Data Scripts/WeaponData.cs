@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponData : MonoBehaviour
+[CreateAssetMenu(fileName = "NewWeapon", menuName = "Bendita Compostela/Weapon")]
+public class WeaponData : CardData
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [field:SerializeField, Header("Weapon section")] public List<CardData> attacks { get; private set; }
+    [field:SerializeField] public int weaponId { get; private set; }
+    [field:SerializeField] public BaseWeapon.Weapons weaponClassName { get; private set; }
+    [field:SerializeField] public int weaponLevel { get; private set; }
+    [field:SerializeField] public int styleLevel { get; private set; }
+    [field:SerializeField] public int ultimateLevel { get; private set; }
 }

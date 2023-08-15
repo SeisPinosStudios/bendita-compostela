@@ -15,11 +15,11 @@ MonoBehaviour:
   entityName: "Mat\xEDas"
   HP: 30
   deck:
-  - {fileID: 11400000, guid: 63ce95dce8e5d404d8f81b68ffdbfc13, type: 2}
-  - {fileID: 11400000, guid: 529e6c963bb2aca4d81d3bcadd35e7e7, type: 2}
-  - {fileID: 11400000, guid: b91effed16e1a084baf5accc1ee09f74, type: 2}
-  - {fileID: 11400000, guid: bc5e90ed326c3ed4e9c2e2555f384e22, type: 2}
-  - {fileID: 11400000, guid: 686ef334525eeb643ba0af13c4ce6b4c, type: 2}
+  - {fileID: 11400000, guid: 18733997a215bfb40b35eb20e9e52056, type: 2}
+  - {fileID: 11400000, guid: 27a4b845142f84447a082a19cc0440c6, type: 2}
+  - {fileID: 11400000, guid: c1815956652eaf94fa2e89b6867f5afa, type: 2}
+  - {fileID: 11400000, guid: a1ea002b527113d4691d457290abfce8, type: 2}
+  - {fileID: 11400000, guid: cb21cea2ecc375043a77d1c2a08c6342, type: 2}
   chestArmor: {fileID: 11400000, guid: f2e1ffb84c6f49248a853fd8219105c3, type: 2}
   legArmor: {fileID: 11400000, guid: f2e1ffb84c6f49248a853fd8219105c3, type: 2}
   currentHP: 0

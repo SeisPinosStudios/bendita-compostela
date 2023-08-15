@@ -698,3 +698,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
   index: 0
+  cardDataContainer: {fileID: 752961581588794506}
+  cardData: {fileID: 0}
+  card: {fileID: 4188301813789642578}

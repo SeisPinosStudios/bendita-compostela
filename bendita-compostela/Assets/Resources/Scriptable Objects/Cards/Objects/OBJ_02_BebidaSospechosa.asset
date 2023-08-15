@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 568ec354eb73cda41929fe3b53650f4f, type: 3}
+  m_Name: OBJ_02_BebidaSospechosa
+  m_EditorClassIdentifier: 
+  cardName: Bebida sospechosa
+  description: Limpia todos los efectos de estado.
+  cost: 4
+  price: 5
+  art: {fileID: 0}
+  miniArt: {fileID: 0}
+  cardEffects: 05000000
+  cardEffectsValues:
+  - 
+  printArrow: 0

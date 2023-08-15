@@ -7,8 +7,7 @@ public class CardData : ScriptableObject
 {
     public enum Effect
     {
-        Damage,
-        Heal
+        Damage, Heal, DrawCards, EquipWeapon, RestoreEnergy, Cleanse, ApplyEffect, SelfApplyEffect
     }
 
     [Header("Card Info")]
@@ -20,5 +19,12 @@ public class CardData : ScriptableObject
 
     [Header("Card Effects")]
     public List<Effect> cardEffects;
-    public List<int> cardEffectsValues;
+    public List<string> cardEffectsValues;
+    public bool printArrow;
+
+    public string GetDamage()
+    {
+        if (!cardEffects.Contains(Effect.Damage)) return null;
+        return cardEffectsValues[cardEffects.IndexOf(Effect.Damage)];
+    }
 }
