@@ -3,15 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - MainCanvas
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Clickable
   - Water
   - UI
-  - 
+  - Background
   - 
   - 
   - 
@@ -40,4 +42,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1400681483
     locked: 0
