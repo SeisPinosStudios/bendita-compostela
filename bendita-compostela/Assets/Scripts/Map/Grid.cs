@@ -55,7 +55,7 @@ public class Grid{
 
     private void AsignNodesValues()
     {
-        //Asign first layer nodes alweys a combat event
+        //Asign first layer nodes always a combat event
         foreach (Vector2 key in nodeDictionary.Keys)
         {
             if(key.y == 0)
