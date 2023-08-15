@@ -31,7 +31,7 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         }
 
         if (eventData.position.y > 400)
-        {
+        {            
             transform.position = new Vector3(1920 / 2, 20.0f, 0.0f);
             onUsing();
         }
