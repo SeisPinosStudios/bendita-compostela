@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class BasicCardEffect
 {
-    public static void effect()
+    public static void Effect(string data, CardData card, GameObject user)
     {
         Debug.Log("Basic Card Use");
     }

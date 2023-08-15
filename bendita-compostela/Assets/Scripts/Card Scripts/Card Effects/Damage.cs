@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Damage : BasicCardEffect
 {
-    public static void effect(int damage, GameObject target)
+    public static event Action<GameObject, CardData> onAttack;
+    public static void Effect(string damage, CardData card, GameObject user, GameObject target)
     {
-        Debug.Log("Damage card"+damage);
-        target.GetComponent<Entity>().sufferDamage(damage);
+        onAttack(target, card);
+        Debug.Log("Damage card " + damage);
+        target.GetComponent<Entity>().SufferDamage( int.Parse(damage), false);
     }
 }

@@ -21,8 +21,17 @@ public static class RaycastUtils
     {
         var pointerEventData = new PointerEventData(EventSystem.current);
         pointerEventData.position = Input.mousePosition;
+        Debug.Log(pointerEventData.position);
         var results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerEventData, results);
-        return results.Count > 0 && results[0].gameObject.tag == tag ? results[0] : new RaycastResult();
+        Debug.Log(results.Count);
+        return results.Count > 0 && results[0].gameObject.transform.root.tag == tag ? results[0] : new RaycastResult();
+    }
+
+    public static GameObject Raycast2D(string tag)
+    {
+        var result = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+        return result && result.transform.parent.tag == "Enemy" ? result.transform.parent.gameObject : null;
     }
 }

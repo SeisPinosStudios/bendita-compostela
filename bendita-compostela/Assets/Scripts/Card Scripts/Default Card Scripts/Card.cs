@@ -6,22 +6,31 @@ using UnityEngine;
 public class Card : MonoBehaviour
 {
     [Header ("Card Info")]
-    public CardData cardData;
+    [SerializeField] CardDataContainer cardDataContainer;
+    [SerializeField] CardData cardData;
 
     private void Awake()
     {
-
-    }
-    public void useCard(GameObject target)
-    {
-        StartCoroutine(useCardCorroutine(target));
+        cardData = cardDataContainer.cardData;
     }
 
-    IEnumerator useCardCorroutine(GameObject target)
+    public void UseCard(GameObject target)
     {
+        StartCoroutine(UseCardCorroutine(target));
+    }
+
+    public void UseCard()
+    {
+        StartCoroutine(UseCardCorroutine(null));
+    }
+
+    IEnumerator UseCardCorroutine(GameObject target)
+    {
+        print($"Used card {cardData.cardName}");
         for (int i = 0; i < cardData.cardEffects.Count; i++)
         {
-            Type.GetType(cardData.cardEffects[i].ToString() + ", CardEffects").GetMethod("effect").Invoke(null, new object[] { cardData.cardEffectsValues[i], target });
+            Type.GetType(cardData.cardEffects[i].ToString())
+                .GetMethod("Effect").Invoke(null, new object[] { cardData.cardEffectsValues[i], cardData, TurnManager.Instance.entityTurn.gameObject, target });
             yield return new WaitForSeconds(1.0f);
         }
 

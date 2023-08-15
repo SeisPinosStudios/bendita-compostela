@@ -3,17 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CardSelector : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class CardSelector : MonoBehaviour
 {
-    public CardData cardData;
+    [SerializeField] CardDataContainer cardDataContainer;
+    [SerializeField] CardData cardData;
+    
 
-    public void OnPointerEnter(PointerEventData eventData)
+    private void Awake()
     {
-        ShopSelectionManager.Instance.ShowCard(cardData, transform.GetSiblingIndex());
+        cardData = cardDataContainer.cardData;
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    private void OnMouseEnter()
     {
-        ShopSelectionManager.Instance.OnMouseExitClearCard();
+        
+    }
+
+    private void OnMouseExit()
+    {
+        
+    }
+    private void OnMouseUp()
+    {
+        
     }
 }
