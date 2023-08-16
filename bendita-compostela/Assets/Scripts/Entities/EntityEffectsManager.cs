@@ -8,7 +8,8 @@ public class EntityEffectsManager : MonoBehaviour
     [SerializeField, Header("Entity Display variables")] Entity entity;
     [SerializeField] EntityDisplay entityDisplay;
     [field:SerializeField] public Dictionary<TAlteredEffects.AlteredEffects, int> alteredEffects { get; private set; } = new Dictionary<TAlteredEffects.AlteredEffects, int>();
-    [field:SerializeField] public Dictionary<TAlteredEffects.AlteredEffects, int> alteredEffectsLimit { get; private set; } = new Dictionary<TAlteredEffects.AlteredEffects, int>(); 
+    [field:SerializeField] public Dictionary<TAlteredEffects.AlteredEffects, int> alteredEffectsLimit { get; private set; } = new Dictionary<TAlteredEffects.AlteredEffects, int>();
+    [field:SerializeField] public List<TAlteredEffects.AlteredEffects> resistances { get; private set; }
     public int accumPoison = 1;
 
     private void Awake()
@@ -16,6 +17,7 @@ public class EntityEffectsManager : MonoBehaviour
         SetupEffects();
     }
 
+    #region Basic methods
     private void SetupEffects()
     {
         for (int i = 0; i < Enum.GetNames(typeof(TAlteredEffects.AlteredEffects)).Length; i++)
@@ -26,6 +28,7 @@ public class EntityEffectsManager : MonoBehaviour
     }
     public void ApplyEffect(TAlteredEffects.AlteredEffects effect, int value)
     {
+        if (resistances.Contains(effect)) return;
         alteredEffects[effect] = Mathf.Clamp(alteredEffects[effect] + value, 0, alteredEffectsLimit[effect]);
         UpdateEffects();
     }
@@ -36,16 +39,18 @@ public class EntityEffectsManager : MonoBehaviour
     }
     public void Cleanse()
     {
-        foreach(KeyValuePair<TAlteredEffects.AlteredEffects, int> effect in alteredEffects)
-        {
-            alteredEffects[effect.Key] = 0;
-        }
+        foreach(KeyValuePair<TAlteredEffects.AlteredEffects, int> effect in alteredEffects) alteredEffects[effect.Key] = 0;
     }
     private void UpdateEffects()
     {
         if (alteredEffects[TAlteredEffects.AlteredEffects.Poison] == 0) accumPoison = 1;
         entityDisplay.UpdateAlteredEffectsDisplay(this);
     }
+    public void AddResistance(TAlteredEffects.AlteredEffects effect)
+    {
+        resistances.Add(effect);
+    }
+    #endregion
 
     #region Effect Methods
     public void Effect(TAlteredEffects.AlteredEffects effect)

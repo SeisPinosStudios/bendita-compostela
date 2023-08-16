@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Snake : MonoBehaviour
+public class Snake : BasicPassive
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        var entityEffectsManager = gameObject.GetComponent<EntityEffectsManager>();
+        entityEffectsManager.AddResistance(TAlteredEffects.AlteredEffects.Poison);
     }
 }
