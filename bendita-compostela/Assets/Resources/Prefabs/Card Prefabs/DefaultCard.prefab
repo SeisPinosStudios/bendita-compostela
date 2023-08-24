@@ -240,7 +240,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: aplica <sprite=1>x1 aplica <sprite=2>x2
+  m_text: aplica <sprite=3>x1 aplica <sprite=4>x2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 22edad06b9126d54e9302a547d0e41f4, type: 2}
   m_sharedMaterial: {fileID: 7886673494076159163, guid: 22edad06b9126d54e9302a547d0e41f4, type: 2}
@@ -259,7 +259,7 @@ MonoBehaviour:
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 11400000, guid: 537a5aec0ee33da4e8d2c5b7e11502a9, type: 2}
+  m_spriteAsset: {fileID: 11400000, guid: cd56028443425e747b90855ab6c0c5d5, type: 2}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901

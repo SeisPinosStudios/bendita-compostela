@@ -22,12 +22,12 @@ public class Sword : BaseWeapon
     private void Style(GameObject target, CardData card)
     {
         if (styleAttacks > 0) { styleAttacks--; return; }
-        player.DamageBoost(-50.0f);
+        player.DamageMultiplier(-50.0f);
     }
 
     private void Turn()
     {
         styleAttacks = 2 + (chestSynergy ? 1 * chestLevel : 0);
-        player.DamageBoost(50.0f);
+        player.DamageMultiplier(50.0f);
     }
 }

@@ -37,6 +37,6 @@ public class TurnManager : MonoBehaviour
         yield return new WaitUntil(() => entityTurn == null || entityTurn.isTurn == false);
         entityTurn = turnQueue.Dequeue();
         entityTurn.OnTurnBegin();
-        onTurn();
+        if(onTurn != null) onTurn();
     }
 }
