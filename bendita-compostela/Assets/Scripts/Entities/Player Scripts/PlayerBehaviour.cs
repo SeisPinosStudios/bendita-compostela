@@ -13,6 +13,7 @@ public class PlayerBehaviour : EntityBehaviour
     private IEnumerator OnTurnBeginCorroutine()
     {
         yield return StartCoroutine(DeckManager.Instance.DrawCardCoroutine(5));
+        player.RestoreEnergy(player.maxEnergy);
         isTurn = !isTurn;
     }
     public override void OnTurn()

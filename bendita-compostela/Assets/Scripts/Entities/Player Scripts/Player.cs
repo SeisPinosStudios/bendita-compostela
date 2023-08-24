@@ -6,6 +6,7 @@ public class Player : Entity
 {
     [field:SerializeField, Header("Player Specifics")] public PlayerData playerData { get; private set; }
     [field:SerializeField] public int energy { get; private set; }
+    [field: SerializeField] public int maxEnergy { get; private set; } = 10;
     [field:SerializeField] public WeaponData weapon { get; private set; }
     
     private void Awake()
@@ -27,6 +28,12 @@ public class Player : Entity
     {
         this.energy = Mathf.Clamp(this.energy + amount, 0, 10);
         return;
+    }
+    public bool ConsumeEnergy(int amount)
+    {
+        if (energy < amount) return false;
+        energy -= amount;
+        return true;
     }
     public void SetWeapon(WeaponData weapon)
     {

@@ -27,4 +27,10 @@ public class CardData : ScriptableObject
         if (!cardEffects.Contains(Effect.Damage)) return null;
         return cardEffectsValues[cardEffects.IndexOf(Effect.Damage)];
     }
+
+    public string GetHeal()
+    {
+        if (!cardEffects.Contains(Effect.Heal)) return null;
+        return cardEffectsValues[cardEffects.IndexOf(Effect.Heal)];
+    }
 }
