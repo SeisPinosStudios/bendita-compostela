@@ -6,13 +6,12 @@ using UnityEngine;
 [Serializable]
 public class Node{
 
-    private GameObject nodeEvent;
+    private NodeEncounter nodeEncounter;
     private int idx;    
     private int depth;
     private int width;
-
     private bool pathless;
-
+    private CombatData combatData;
     public HashSet<Node> futureNodes;     
 
     private Vector2 nodePos;
@@ -22,6 +21,7 @@ public class Node{
         nodePos = new Vector2(width,depth);
         futureNodes = new HashSet<Node>();
         pathless = true;
+        nodeEncounter = NodeEncounter.None;
     }
 
     public int Idx
@@ -32,12 +32,12 @@ public class Node{
             idx = value;
         }
     }
-    public GameObject NodeEvent
+    public NodeEncounter NodeEncounter
     {
-        get{ return nodeEvent; }
+        get{ return nodeEncounter; }
         set
         {
-            nodeEvent = value;   
+            nodeEncounter = value;   
         }
     }
     public Vector2 NodePos
@@ -52,11 +52,19 @@ public class Node{
             pathless = value;
         }
     }
+    public CombatData CombatData
+    {
+        get{ return combatData;}
+        set
+        {
+            combatData = value;
+        }
+    }
 
     public override bool Equals(object obj)
     {
         return obj is Node node &&
-               nodeEvent == node.nodeEvent &&
+               nodeEncounter == node.nodeEncounter &&
                idx == node.idx &&
                depth == node.depth &&
                width == node.width &&
@@ -64,13 +72,13 @@ public class Node{
                nodePos.Equals(node.nodePos) &&
                NodePos.Equals(node.NodePos) &&
                Idx == node.Idx &&
-               NodeEvent == node.NodeEvent;
+               NodeEncounter == node.nodeEncounter;
     }
 
     public override int GetHashCode()
     {
         HashCode hash = new HashCode();
-        hash.Add(nodeEvent);
+        hash.Add(nodeEncounter);
         hash.Add(idx);
         hash.Add(depth);
         hash.Add(width);
@@ -78,7 +86,7 @@ public class Node{
         hash.Add(nodePos);
         hash.Add(NodePos);
         hash.Add(Idx);
-        hash.Add(NodeEvent);
+        hash.Add(NodeEncounter);
         return hash.ToHashCode();
     }
 }

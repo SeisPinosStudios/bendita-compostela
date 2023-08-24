@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f70ea07be0983c458c823cf916393d9, type: 3}
+  m_Name: Combat_013_JuanCaballo-Podenco
+  m_EditorClassIdentifier: 
+  enemiesData:
+  - {fileID: 11400000, guid: fc5c4ed3037966b49908eda4248ae979, type: 2}
+  - {fileID: 11400000, guid: 2f77cea08c1501045baf809a6d5ffa5d, type: 2}

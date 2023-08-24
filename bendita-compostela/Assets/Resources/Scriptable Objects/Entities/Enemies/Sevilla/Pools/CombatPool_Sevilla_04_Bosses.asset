@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6ebea26d6aba85479ea8b23d3a8d8f9, type: 3}
+  m_Name: CombatPool_Sevilla_04_Bosses
+  m_EditorClassIdentifier: 
+  depthRange: {x: 8, y: 8}
+  combatsData:
+  - {fileID: 11400000, guid: 216e7146cdb206345a434982c906056a, type: 2}
+  - {fileID: 11400000, guid: 021e4991ccded2744b5e0c623a721895, type: 2}

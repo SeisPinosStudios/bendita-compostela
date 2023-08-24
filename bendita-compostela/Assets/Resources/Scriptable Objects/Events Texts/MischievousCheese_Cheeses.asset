@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: MischievousCheese_Cheeses
   m_EditorClassIdentifier: 
   text:
+  - de Cabrales
   - de Burgos
-  - Torta del Casar
+  - de Tetilla
   - Manchego
-  - de tetilla
-  - Cabrales
-  - mahon
+  - de Torta del Casar

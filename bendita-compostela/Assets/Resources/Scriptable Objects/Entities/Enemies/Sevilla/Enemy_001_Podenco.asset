@@ -19,4 +19,4 @@ MonoBehaviour:
   <attackSequence>k__BackingField: {fileID: 11400000, guid: f3e7434beecda034c8699708f1dd0de8, type: 2}
   <healSequence>k__BackingField: {fileID: 0}
   <dyingSequence>k__BackingField: {fileID: 0}
-  <entitySprite>k__BackingField: {fileID: 0}
+  <entitySprite>k__BackingField: {fileID: 21300000, guid: 1ba42c062a68e234b8f2c226ecca744c, type: 3}

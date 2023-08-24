@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New enemy data", menuName = "Bendita Compostela/New enemy")]
+[CreateAssetMenu(fileName = "New enemy data", menuName = "Bendita Compostela/Enemy/New enemy")]
 public class EnemyData : EntityData
 {
     [field: SerializeField] public int damageMitigation { get; private set; }

@@ -19,13 +19,24 @@ public class MapManager : MonoBehaviour
     [Header("Map Configuration")]
     [SerializeField] private int numNodes;
     [SerializeField] private int mapDepth;
-    [SerializeField] private int numPathsGenerated;    
-    [SerializeField] private GameObject bossPrefab;
+    [SerializeField] private int numPathsGenerated;     
+    [SerializeField] private List<CombatPool> combatPools = new List<CombatPool>();    
+    [SerializeField] private CombatPool bossPool;
     [SerializeField] private EventOdds[] eventsProbabilities;
+
+    [Header("Map Node Display")]
+    [SerializeField] private GameObject bossPrefab;    
+    [SerializeField] private GameObject combatPrefab;    
+    [SerializeField] private GameObject eventPrefab;    
+    [SerializeField] private GameObject shopPrefab;   
+
     
+    private Dictionary<NodeEncounter, GameObject> encounterPrefabsDictionary = new Dictionary<NodeEncounter, GameObject>();
+
     private Vector2 MAP_DISPLAY_OFFSET = new Vector2(1,4);
     private Color[] colors = {Color.yellow, Color.blue, Color.green, Color.white, Color.black};
 
+    [Header("Player Selections")]
     public List<Node> nodesVisited = new List<Node>();
 
     private Dictionary<Vector2,GameObject> nodeGameObjects = new Dictionary<Vector2, GameObject>();
@@ -44,14 +55,17 @@ public class MapManager : MonoBehaviour
 
     private void Start() 
     {        
+        encounterPrefabsDictionary.Add(NodeEncounter.CombatEncounter, combatPrefab);
+        encounterPrefabsDictionary.Add(NodeEncounter.EventEncounter, eventPrefab);
+        encounterPrefabsDictionary.Add(NodeEncounter.ShopEncounter, shopPrefab);
         ConfigureMap();      
-
     }
 
     public void ConfigureMap()
     {
         mapGrid = new Grid(numNodes,mapDepth,numPathsGenerated,eventsProbabilities);
-        mapGrid.Boss.NodeEvent = bossPrefab;
+        mapGrid.Boss.NodeEncounter = NodeEncounter.CombatEncounter;
+        mapGrid.Boss.CombatData = bossPool.combatsData[Random.Range(0,bossPool.combatsData.Count)];
         //line.positionCount = mapGrid.Nodes.Count;        
         foreach (Transform son in mapSpace.transform)
         {
@@ -63,8 +77,9 @@ public class MapManager : MonoBehaviour
     }
 
     private void DisplayMap()
-    {
-        //int lineCount = 0;
+    {        
+        //TODO make more efficient
+
         // Instantiate Nodes
         foreach (Node node in mapGrid.Nodes.Values)
         {
@@ -76,20 +91,18 @@ public class MapManager : MonoBehaviour
                         //Normal version
                         var nodePosition = new Vector2(node.NodePos.x - MAP_DISPLAY_OFFSET.x, node.NodePos.y - MAP_DISPLAY_OFFSET.y);
 
-                        var spawnedNode = Instantiate(node.NodeEvent, nodePosition, Quaternion.identity, mapSpace.transform);                        
+                        var spawnedNode = Instantiate(encounterPrefabsDictionary[node.NodeEncounter], nodePosition, Quaternion.identity, mapSpace.transform);                        
                         
                         spawnedNode.GetComponent<NodeEvent>().nodeInfo = node;
 
                         nodeGameObjects.Add(node.NodePos, spawnedNode);
                         
-                        
-                        /*line.SetPosition(lineCount, nodePosition);
-                        lineCount++;*/
                     }
         }
-        var bossNode = Instantiate(mapGrid.Boss.NodeEvent, new Vector2(mapGrid.Boss.NodePos.x - MAP_DISPLAY_OFFSET.x, mapGrid.Boss.NodePos.y - MAP_DISPLAY_OFFSET.y), Quaternion.identity, mapSpace.transform);
+        var bossNode = Instantiate(bossPrefab, new Vector2(mapGrid.Boss.NodePos.x - MAP_DISPLAY_OFFSET.x, mapGrid.Boss.NodePos.y - MAP_DISPLAY_OFFSET.y), Quaternion.identity, mapSpace.transform);
         bossNode.GetComponent<NodeEvent>().nodeInfo = mapGrid.Boss;
         nodeGameObjects.Add(mapGrid.Boss.NodePos, bossNode);
+
         // Instantiate Paths
         int colorIdx = 0;
         foreach (List<Node> path in mapGrid.Paths)
@@ -102,8 +115,7 @@ public class MapManager : MonoBehaviour
             {                
                 color = colors[colorIdx]
             };
-            lineRenderer.widthMultiplier = 0.1f;
-            Debug.Log("Path.Count: " + path.Count);
+            lineRenderer.widthMultiplier = 0.1f;            
             for (int i = 0; i < path.Count; i++)
             {
                     lineRenderer.SetPosition(i,new Vector2(path[i].NodePos.x - MAP_DISPLAY_OFFSET.x, path[i].NodePos.y - MAP_DISPLAY_OFFSET.y));                
@@ -139,6 +151,10 @@ public class MapManager : MonoBehaviour
         {
             if(key.y == nodeSelected.NodePos.y)nodeGameObjects[key].GetComponent<Collider2D>().enabled = false;
         }
+    }
+    public List<CombatPool> GetCombatPools()
+    {
+        return combatPools;
     }
 
     #region Debug
