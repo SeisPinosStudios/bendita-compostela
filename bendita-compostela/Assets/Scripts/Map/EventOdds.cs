@@ -6,7 +6,15 @@ using UnityEngine;
 [Serializable]
 public class EventOdds 
 {
-    public GameObject eventPrefab;
+    public NodeEncounter nodeEncounter;
     public int minProbabilityRange = 0;
     public int maxProbabilityRange = 0;
+}
+
+public enum NodeEncounter
+{
+    None,
+    CombatEncounter,
+    EventEncounter,
+    ShopEncounter
 }

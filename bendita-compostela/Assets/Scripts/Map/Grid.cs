@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class Grid{    
+
+    #region Grid Variables
+
     private int width;    
     private int numNodes;
     private int height;    
@@ -11,7 +14,10 @@ public class Grid{
     private Node bossNode;    
 
     private List<List<Node>> pathList = new List<List<Node>>();    
- 
+    
+    #endregion
+
+    #region Grid Initialization
     public Grid(int numNodes, int height, int numPathsGenerated, EventOdds[] eventOdds)
     {
         this.numNodes = numNodes;
@@ -29,9 +35,12 @@ public class Grid{
         GenerateBossNode();
         DeletePathlessNodes();        
         AsignNodesValues();
+        AsignRandomEncounter();
         ShowAllNodes();
     }
+    #endregion
 
+    #region Grid Private Methods 
     private void GenerateBossNode()
     {
         bossNode = new Node(width/2,height);        
@@ -43,10 +52,7 @@ public class Grid{
                 if(nodeDictionary.TryGetValue(key, out Node lastNodeInPath))
                 {                                        
                     //Debug.Log($"{lastNodeInPath.NodePos}||{lastNodeInPath.IsPathless}");
-                    if(!lastNodeInPath.IsPathless)
-                    {
-                        lastNodeInPath.futureNodes.Add(bossNode);
-                    }
+                    if(!lastNodeInPath.IsPathless) lastNodeInPath.futureNodes.Add(bossNode);                    
                 }
             }
         }
@@ -60,13 +66,13 @@ public class Grid{
         {
             if(key.y == 0)
             {
-                nodeDictionary[key].NodeEvent = eventOdds[0].eventPrefab;
+                nodeDictionary[key].NodeEncounter = NodeEncounter.CombatEncounter;                
             }            
         }
         //Asign all nodes value based on the probability fields above
         foreach (Node node in nodeDictionary.Values)
         {
-            if(node.NodeEvent == null)
+            if(node.NodeEncounter == NodeEncounter.None)
             {
                 //TODO remake more efficiently
                 int i = Random.Range(0,100);
@@ -74,11 +80,47 @@ public class Grid{
                 {
                     if(i >= eventOdds[j].minProbabilityRange && i<= eventOdds[j].maxProbabilityRange)
                     {
-                        node.NodeEvent = eventOdds[j].eventPrefab;
+                        node.NodeEncounter = eventOdds[j].nodeEncounter;                        
                     }
                 }
             }
         }
+    }
+
+    private void AsignRandomEncounter()
+    {        
+        //TODO remake more efficiently
+        var combatPoolsAux = MapManager.Instance.GetCombatPools();
+        List<Node> combatNodeList = new List<Node>();
+        List<Node> eventNodeList = new List<Node>();
+        foreach (Node node in nodeDictionary.Values)
+        {
+            switch (node.NodeEncounter)
+            {                
+                case NodeEncounter.CombatEncounter:
+                    combatNodeList.Add(node);
+                    break;
+                case NodeEncounter.EventEncounter:
+                    eventNodeList.Add(node);
+                    break;
+            }
+        }
+        foreach (CombatPool combatPool in combatPoolsAux)
+        {
+            foreach (Node node in combatNodeList)
+            {                
+                if(node.CombatData == null)
+                {
+                    // If the node is in the range of the combat pool, it get a random combat from that pool
+                    if(node.NodePos.y >= combatPool.depthRange.x && node.NodePos.y <= combatPool.depthRange.y)
+                    {
+                        node.CombatData = combatPool.combatsData[Random.Range(0,combatPool.combatsData.Count)];                        
+                    }
+                }                                
+            }
+        }
+        combatNodeList.Clear();
+        eventNodeList.Clear();
     }
 
     private void DeletePathlessNodes()
@@ -156,7 +198,7 @@ public class Grid{
             }
         }        
     }
-
+    #endregion
 
     #region Debug Methods
     public void ShowAllNodes()
@@ -191,6 +233,4 @@ public class Grid{
     }
     #endregion
 
-    
-    
 }
