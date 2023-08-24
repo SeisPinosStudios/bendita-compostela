@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6ebea26d6aba85479ea8b23d3a8d8f9, type: 3}
+  m_Name: CombatPool_Sevilla_03
+  m_EditorClassIdentifier: 
+  depthRange: {x: 5, y: 6}
+  combatsData:
+  - {fileID: 11400000, guid: a3e5a06898593ba4887a6dc0e422398a, type: 2}
+  - {fileID: 11400000, guid: 50d7f7253938af543b70aaf165e383ba, type: 2}
+  - {fileID: 11400000, guid: ecadf74c4152db846b4cfa64e6e6de85, type: 2}
+  - {fileID: 11400000, guid: e47fc44a23c1e74448c581c853774803, type: 2}
+  - {fileID: 11400000, guid: f2f678b3167a2fb43bc3af584bc3e4e9, type: 2}
+  - {fileID: 11400000, guid: ab57fd5f9d4589747b96d4a717b0e9be, type: 2}
+  - {fileID: 11400000, guid: 301c7eb1fd15ce344acf637bba0fc9db, type: 2}

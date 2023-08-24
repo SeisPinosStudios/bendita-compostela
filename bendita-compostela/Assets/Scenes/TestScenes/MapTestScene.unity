@@ -536,7 +536,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -788, y: -216}
+  m_AnchoredPosition: {x: -788, y: -230}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &735760795
@@ -737,17 +737,25 @@ MonoBehaviour:
   numNodes: 27
   mapDepth: 8
   numPathsGenerated: 3
-  bossPrefab: {fileID: 7206804280604247690, guid: ace04120a6b3abd458a0f42ccfb53908, type: 3}
+  combatPools:
+  - {fileID: 11400000, guid: 1f8af0e652eb2d74c81c95ad43b06b32, type: 2}
+  - {fileID: 11400000, guid: b647575fcd8c2cf45a65fbdeb64b2d27, type: 2}
+  - {fileID: 11400000, guid: c4b119fff882c2542ba97fa0278bc43e, type: 2}
+  bossPool: {fileID: 11400000, guid: 153d6760cf5b3be47a843d8c7e35c903, type: 2}
   eventsProbabilities:
-  - eventPrefab: {fileID: 8209055101703948159, guid: bb05d542e66f0b04b8fca5fbaf88cfa7, type: 3}
+  - nodeEncounter: 1
     minProbabilityRange: 0
     maxProbabilityRange: 70
-  - eventPrefab: {fileID: 634570367463602674, guid: 5efa264df9d116343a0b702d6d4b8c17, type: 3}
+  - nodeEncounter: 2
     minProbabilityRange: 71
     maxProbabilityRange: 90
-  - eventPrefab: {fileID: 2272757743687770519, guid: 1eb4e3fba82c6ac4db3424cc10acc8eb, type: 3}
+  - nodeEncounter: 3
     minProbabilityRange: 91
     maxProbabilityRange: 100
+  bossPrefab: {fileID: 7206804280604247690, guid: ace04120a6b3abd458a0f42ccfb53908, type: 3}
+  combatPrefab: {fileID: 8209055101703948159, guid: bb05d542e66f0b04b8fca5fbaf88cfa7, type: 3}
+  eventPrefab: {fileID: 634570367463602674, guid: 5efa264df9d116343a0b702d6d4b8c17, type: 3}
+  shopPrefab: {fileID: 2272757743687770519, guid: 1eb4e3fba82c6ac4db3424cc10acc8eb, type: 3}
   nodesVisited: []
 --- !u!1 &907735346
 GameObject:
