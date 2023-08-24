@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d7f0f08580a431489377759903b6d4a, type: 3}
+  m_Name: MischievousCheese
+  m_EditorClassIdentifier: 
+  text:
+  - "\xA1Hola joven peregrino!, \xBFte apetecen unos buenos quesos?, pero buenos
+    de verdad, artesanales."
+  - "\xBFC\xF3mo? \xBFQu\xE9 no tienes dinero? Pues vaya birria, mira chiquillo haremos
+    un trato, mis quesos son gloriosos, espectaculares e inalcanzables. Si consigues
+    diferenciar de estos quesos cu\xE1l es verdaderamente aut\xE9ntico te dar\xE9
+    una recompensa, \xBFC\xF3mo que significa aut\xE9ntico?"
+  - "\xBFC\xF3mo? \xBFQu\xE9 no tienes dinero? Pues vaya birria, mira chiquillo haremos
+    un trato, mis quesos son gloriosos, espectaculares e inalcanzables. Si consigues
+    diferenciar de estos quesos cu\xE1l es verdaderamente aut\xE9ntico te dar\xE9
+    una recompensa, \xBFC\xF3mo que significa aut\xE9ntico?"
+  - 'Pues que sea un verdadero Queso de:'
+  - "\xBFC\xF3mo que c\xF3mo lo vas a saber?, chico si te gustan los quesos deber\xEDas
+    saberlo, cuando est\xE9s listo simplemente empezamos, pero ten cuidado\u2026
+    no te voy a esperar todo el d\xEDa. "
