@@ -15,8 +15,9 @@ MonoBehaviour:
   entityName: Podenco Andaluz
   HP: 30
   <damageMitigation>k__BackingField: 0
+  <entitySprite>k__BackingField: {fileID: 0}
+  <passives>k__BackingField: 000000000300000005000000
   <defaultSequence>k__BackingField: {fileID: 11400000, guid: d8b13ba2bdfe2d94d9a6fcdfea27ffe9, type: 2}
   <attackSequence>k__BackingField: {fileID: 11400000, guid: f3e7434beecda034c8699708f1dd0de8, type: 2}
   <healSequence>k__BackingField: {fileID: 0}
   <dyingSequence>k__BackingField: {fileID: 0}
-  <entitySprite>k__BackingField: {fileID: 0}

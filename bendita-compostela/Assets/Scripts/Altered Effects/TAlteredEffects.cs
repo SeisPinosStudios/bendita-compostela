@@ -24,4 +24,10 @@ public class TAlteredEffects : MonoBehaviour
             {AlteredEffects.Stun, 1},
             {AlteredEffects.Frenzy, 1}
         };
+
+    [field: SerializeField] public static List<AlteredEffects> negativeEffects = new List<AlteredEffects>()
+    {
+        {AlteredEffects.Bleed}, {AlteredEffects.Poison}, {AlteredEffects.Vulnerable}, {AlteredEffects.Burn}, {AlteredEffects.Exhaust}, {AlteredEffects.Disarmed},
+        {AlteredEffects.Marked}, {AlteredEffects.Stun}
+    };
 }

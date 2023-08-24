@@ -59,13 +59,11 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         print($"Card used on {target.name}");
         onReturning();
         card.UseCard(target);
-        Destroy(gameObject);
     }
     private void UseCard()
     {
         print($"Card used");
         onReturning();
         card.UseCard();
-        Destroy(gameObject);
     }
 }

@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class BattleManager : MonoBehaviour
 {
-    [SerializeField] Transform enemiesContainer;
+    [field:SerializeField, Header("Battle Setup")] public List<EnemyData> enemyDataList { get; private set; }
+    [SerializeField] EntityDataContainer entityDataContainer;
+
+    [SerializeField, Header("Enviroment Variables")] Transform enemiesContainer;
     [field:SerializeField] public static BattleManager Instance { get; private set; }
     [field:SerializeField] public Player player { get; private set; }
     [field:SerializeField] public List<Enemy> enemies { get; private set; }
 
     private void Awake()
     {
-        if (!Instance) Instance = this;
+        Instance = this;
+
+        foreach (EnemyData enemy in enemyDataList) 
+        {
+            entityDataContainer.entityData = enemy;
+            Instantiate(entityDataContainer, enemiesContainer);
+        }
+
         foreach (Transform child in enemiesContainer) enemies.Add(child.GetComponent<Enemy>());
     }
 

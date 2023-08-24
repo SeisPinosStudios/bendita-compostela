@@ -6,6 +6,6 @@ public class AlteredEffectInterface : MonoBehaviour
 {
     public interface IAlteredEffect 
     {
-        public void Effect(EntityEffectsManager entityEffectsManager, Entity entity, GameObject entityGameObject);
+        public void Effect(EntityEffectsManager entityEffectsManager, Entity entity, GameObject entityGameObject, Object data);
     }
 }

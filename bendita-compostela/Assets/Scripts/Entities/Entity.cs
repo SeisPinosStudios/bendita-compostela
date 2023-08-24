@@ -5,18 +5,20 @@ using System;
 
 public class Entity : MonoBehaviour
 {
-    [Header("Entity Data")]
+    [Header("Entity Classes")]
     [SerializeField] public EntityDataContainer entityDataContainer;
     [field: SerializeField] public EntityData entityData { get; protected set; }
     [field: SerializeField] public EntityDisplay entityDisplay { get; protected set; }
-    [field: SerializeField] public string entityName { get; protected set; }
+    [field: SerializeField] public EntityEffectsManager entityEffectsManager { get; protected set; }
+    [field: SerializeField, Header("Entity Data")] public string entityName { get; protected set; }
     [field: SerializeField] public int currentHP { get; protected set; }
-    [field: SerializeField] public int defenseBonus { get; protected set; }
+    [field: SerializeField, Header("Stat Bonus")] public int defenseBonus { get; protected set; }
     [field: SerializeField] public int damageBonus { get; protected set; }
     [field: SerializeField] public int healingBonus { get; protected set; }
-    [field: SerializeField] public float defenseMultiplier { get; protected set; }
-    [field: SerializeField] public float damageMultiplier { get; protected set; }
-    [field: SerializeField] public float healingMultiplier { get; protected set; }
+    [field: SerializeField, Header("Stat Multiplier")] public float defenseMultiplier { get; protected set; } = 1.0f;
+    [field: SerializeField] public float damageMultiplier { get; protected set; } = 1.0f;
+    [field: SerializeField] public float healingMultiplier { get; protected set; } = 1.0f;
+    /*===========EVENTS===========*/
     public event Action OnDamage = delegate { };
 
     private void Awake()
@@ -25,29 +27,55 @@ public class Entity : MonoBehaviour
     }
 
     #region Basic entity methods
-    public void SufferDamage(int damage, bool effect)
+    public void SufferDamage(int damage, int damageBonus, float damageMultiplier, bool effect)
     {
+        if (entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Invulnerable))
+        {
+            entityEffectsManager.RemoveEffect(TAlteredEffects.AlteredEffects.Invulnerable, 1);
+            return;
+        }
+
+
         OnDamage();
-        int finalDamage = effect ? damage : Mathf.Clamp(damage - defenseBonus, 0, damage);
-        currentHP = Mathf.Clamp(currentHP - damage, 0, entityData.HP);
+
+        var finalDamage = damage;
+
+        if (!effect)
+        {
+            finalDamage = Mathf.RoundToInt((damage + damageBonus - defenseBonus) * (damageMultiplier - CheckDefenseMultiplier()));
+        }
+
+        currentHP = Mathf.Clamp(currentHP - finalDamage, 0, entityData.HP);
 
         entityDisplay.UpdateHealth(entityData.HP, currentHP);
-
         return;
+    }
+    private float CheckDefenseMultiplier()
+    {
+        var finalDefenseMultiplier = defenseMultiplier;
+        if (entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Guarded))
+        {
+            finalDefenseMultiplier += entityEffectsManager.guardedMultiplier;
+            entityEffectsManager.RemoveEffect(TAlteredEffects.AlteredEffects.Guarded, 1);
+        }
+
+        if (entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Vulnerable))
+        {
+            finalDefenseMultiplier -= entityEffectsManager.vulnerableMultiplier;
+            entityEffectsManager.RemoveEffect(TAlteredEffects.AlteredEffects.Vulnerable, 1);
+        }
+
+        return finalDefenseMultiplier;
     }
     public void RestoreHealth(int health, int bonus, float multiplier)
     {
-        var finalHeal = Mathf.RoundToInt(health * bonus) + bonus;
+        var finalHeal = Mathf.RoundToInt((health + bonus) * multiplier);
         currentHP = Mathf.Clamp(currentHP + finalHeal, 0, entityData.HP);
 
         entityDisplay.UpdateHealth(entityData.HP, currentHP);
 
         return;
     }
-    public void DamageMultiplier(float amount) { damageMultiplier += amount; }
-    public void DefenseMultiplier(float amount) { defenseMultiplier += amount; }
-    public void DefenseBonus(int amount) { defenseBonus += amount; }
-    public void AttackBonus(int amount) { damageBonus += amount; }
     protected IEnumerator Death()
     {
         yield return null;
@@ -63,5 +91,12 @@ public class Entity : MonoBehaviour
     {
         if (currentHP <= 0) StartCoroutine(Death());
     }
+    #endregion
+
+    #region Entity stats methods
+    public void DamageMultiplier(float amount) { damageMultiplier += amount; }
+    public void DefenseMultiplier(float amount) { defenseMultiplier += amount; }
+    public void DefenseBonus(int amount) { defenseBonus += amount; }
+    public void AttackBonus(int amount) { damageBonus += amount; }
     #endregion
 }

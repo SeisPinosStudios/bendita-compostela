@@ -26,6 +26,10 @@ public class Card : MonoBehaviour
 
     IEnumerator UseCardCorroutine(GameObject target)
     {
+        var player = BattleManager.Instance.player;
+
+        if (!player.ConsumeEnergy(GetEnergyCost(player))) yield break;
+
         print($"Used card {cardData.cardName}");
         for (int i = 0; i < cardData.cardEffects.Count; i++)
         {
@@ -34,6 +38,21 @@ public class Card : MonoBehaviour
             yield return new WaitForSeconds(1.0f);
         }
 
+        Destroy(this.gameObject);
         yield return null;
+    }
+
+    private int GetEnergyCost(Player player)
+    {
+        var energyCost = cardData.cost;
+        var playerEffectsManager = player.GetComponent<EntityEffectsManager>();
+
+        if (playerEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Exhaust))
+        {
+            energyCost += 1;
+            playerEffectsManager.RemoveEffect(TAlteredEffects.AlteredEffects.Exhaust, 1);
+        }
+
+        return energyCost;
     }
 }

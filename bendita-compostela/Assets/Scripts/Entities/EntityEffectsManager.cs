@@ -9,8 +9,11 @@ public class EntityEffectsManager : MonoBehaviour
     [SerializeField] EntityDisplay entityDisplay;
     [field:SerializeField] public Dictionary<TAlteredEffects.AlteredEffects, int> alteredEffects { get; private set; } = new Dictionary<TAlteredEffects.AlteredEffects, int>();
     [field:SerializeField] public Dictionary<TAlteredEffects.AlteredEffects, int> alteredEffectsLimit { get; private set; } = new Dictionary<TAlteredEffects.AlteredEffects, int>();
+    [field:SerializeField] public Dictionary<CardData, int> frenzyAttacks { get; private set; } = new Dictionary<CardData, int>();
     [field:SerializeField] public List<TAlteredEffects.AlteredEffects> resistances { get; private set; }
     public int accumPoison = 1;
+    [field: SerializeField] public float vulnerableMultiplier { get; private set; } = 0.5f;
+    [field: SerializeField] public float guardedMultiplier { get; private set; } = 0.5f;
 
     private void Awake()
     {
@@ -50,12 +53,19 @@ public class EntityEffectsManager : MonoBehaviour
     {
         resistances.Add(effect);
     }
+    public void VulnerableMultiplier(float amount) { vulnerableMultiplier += amount; }
+    public void GuardedMultiplier(float amount) { guardedMultiplier += amount; }
     #endregion
 
     #region Effect Methods
     public void Effect(TAlteredEffects.AlteredEffects effect)
     {
-        Type.GetType(effect.ToString()).GetMethod("Effect").Invoke(null, new object[] { this, entity, this.gameObject });
+        Type.GetType(effect.ToString()).GetMethod("Effect").Invoke(null, new object[] { this, entity, this.gameObject, null });
+        UpdateEffects();
+    }
+    public void Effect(TAlteredEffects.AlteredEffects effect, System.Object data)
+    {
+        Type.GetType(effect.ToString()).GetMethod("Effect").Invoke(null, new object[] { this, entity, this.gameObject, data });
         UpdateEffects();
     }
     #endregion
