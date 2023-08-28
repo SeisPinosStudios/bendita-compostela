@@ -518,7 +518,7 @@ RectTransform:
   - {fileID: 7067735318858187113}
   - {fileID: 8386467741700266492}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -609,11 +609,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e5295471ef35bb34e9117e86db06dfdb, type: 3}
   - {fileID: 21300000, guid: 716141edadc249448b4484584dd66c40, type: 3}
   shepardReactionImageList:
-  - {fileID: -854036901, guid: 6885f75b525fb7c4ab7bebf6b4d85546, type: 3}
-  - {fileID: 2070514896, guid: 6885f75b525fb7c4ab7bebf6b4d85546, type: 3}
-  - {fileID: 253484434, guid: 6885f75b525fb7c4ab7bebf6b4d85546, type: 3}
-  - {fileID: -487479459, guid: 6885f75b525fb7c4ab7bebf6b4d85546, type: 3}
-  - {fileID: 1726399452, guid: 6885f75b525fb7c4ab7bebf6b4d85546, type: 3}
+  - {fileID: 21300000, guid: 2a9222ff9d5b44d439169dee6d4a6028, type: 3}
+  - {fileID: 21300000, guid: 6a104ca988bb346439828b3d5eac137d, type: 3}
+  - {fileID: 21300000, guid: e3a34b8c5a691e04bb216c46305de4a6, type: 3}
+  - {fileID: 21300000, guid: 1025e13b69e505a41981514741deefca, type: 3}
+  - {fileID: 21300000, guid: e32e62ec539d5b14280f589700c71ba6, type: 3}
   pivots:
   - {fileID: 8808308877766527144}
   - {fileID: 4827643357112735774}
