@@ -5,10 +5,10 @@ using System;
 
 public class Damage : BasicCardEffect
 {
-    public static event Action<GameObject, CardData> onAttack;
+    public static event Action<GameObject, CardData> OnAttack = delegate { };
     public static void Effect(string damage, CardData card, GameObject user, GameObject target)
     {
-        onAttack(target, card);
+        OnAttack(target, card);
         var entity = user.GetComponent<Entity>();
         var entityEffectsManager = user.GetComponent<EntityEffectsManager>();
         var frenzyStacks = entityEffectsManager.frenzyAttacks.ContainsKey(card) ? entityEffectsManager.frenzyAttacks[card] : 0;

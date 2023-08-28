@@ -35,7 +35,7 @@ public class Card : MonoBehaviour
         {
             Type.GetType(cardData.cardEffects[i].ToString())
                 .GetMethod("Effect").Invoke(null, new object[] { cardData.cardEffectsValues[i], cardData, TurnManager.Instance.entityTurn.gameObject, target });
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(0.0f);
         }
 
         Destroy(this.gameObject);

@@ -20,6 +20,6 @@ MonoBehaviour:
   miniArt: {fileID: 0}
   cardEffects: 0500000001000000
   cardEffectsValues:
-  - 
+  - 0
   - 4
   printArrow: 0

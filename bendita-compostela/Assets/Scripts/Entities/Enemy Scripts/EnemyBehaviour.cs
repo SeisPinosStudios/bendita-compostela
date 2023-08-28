@@ -10,6 +10,7 @@ public class EnemyBehaviour : EntityBehaviour
     [SerializeField] float waitTime;
     [field: SerializeField] public Queue<EnemyAttack> attackQueue { get; private set; } = new Queue<EnemyAttack>();
     [field: SerializeField] public EnemyAttackSequence currentSequence { get; private set; }
+    [field: SerializeField] public EnemyAttackSequence.SequenceType sequenceType { get; private set; }
 
     private void Awake()
     {
@@ -57,12 +58,25 @@ public class EnemyBehaviour : EntityBehaviour
     }
     private EnemyAttackSequence ChooseSequence()
     {
-        if (enemyData.dyingSequence != null && entity.IsDamaged(0.3f)) return enemyData.dyingSequence;
+        if (enemyData.dyingSequence != null && entity.IsDamaged(0.3f)) 
+        { 
+            sequenceType = EnemyAttackSequence.SequenceType.dyingSequence; 
+            return enemyData.dyingSequence; 
+        }
 
-        if (enemyData.healSequence != null && BattleManager.Instance.GetDamagedEnemies(0.3f).Count > 0) return enemyData.healSequence;
-        
-        if (enemyData.attackSequence != null && entity.IsDamaged(0.5f)) return enemyData.attackSequence;
+        if (enemyData.healSequence != null && BattleManager.Instance.GetDamagedEnemies(0.3f).Count > 0)
+        {
+            sequenceType = EnemyAttackSequence.SequenceType.healSequence;
+            return enemyData.healSequence;
+        }
 
+        if (enemyData.attackSequence != null && entity.IsDamaged(0.5f))
+        {
+            sequenceType = EnemyAttackSequence.SequenceType.attackSequence;
+            return enemyData.attackSequence;
+        }
+
+        sequenceType = EnemyAttackSequence.SequenceType.defaultSequence;
         return enemyData.defaultSequence;
     }
     private GameObject GetTarget(EnemyAttack attack)
