@@ -13,25 +13,20 @@ public class EventMischievousCheese : MonoBehaviour
     [SerializeField] private EventText cheesesList;
     [SerializeField] private Dictionary<string,Sprite> cheesesImageDictionary = new Dictionary<string, Sprite>();
     [SerializeField] private List<Sprite> cheesesImageList = new List<Sprite>();
+    [SerializeField] private List<Sprite> shepardReactionImageList = new List<Sprite>();
     [SerializeField] private Transform[] pivots;
     [SerializeField] private GameObject cheesePrefab;
     [SerializeField] private TMP_Text textBox;
-
     [SerializeField] private string selectedCheese;    
-
     [SerializeField] private Image selectedCheeseDisplay;
-    [SerializeField] private GameObject itsOverButton;
-    [SerializeField] private GameObject exitButton;
+    [SerializeField] private Image shepardImage;
 
     public GameObject eventPanel;
-
-    public TimerUtils timer;
+    
     private int textIdx = 0;
     private string cheesePicked;
 
-    private void Start() {        
-        //Set timer
-        timer.SetTimer(15);
+    private void Start() {                        
         //Create and instantiate cheeses
         for (int i = 0; i < cheesesImageList.Count; i++)
         {
@@ -48,6 +43,7 @@ public class EventMischievousCheese : MonoBehaviour
             cheese.GetComponent<Image>().sprite = cheesesImageDictionary[cheeseName];
             k++;
         }
+        StartEvent();
     }
     public void StartEvent()
     {        
@@ -55,48 +51,48 @@ public class EventMischievousCheese : MonoBehaviour
         selectedCheese = cheesesList.text[Random.Range(0,cheesesList.text.Count)];
 
         //Display TextBox
-        TextBoxClicked(); 
-
-        timer.StartTimer();
-                
+        TextBoxClicked();                 
     }
 
-    private void Update() {
-        if (timer.IsTimerFinished())
-        {
-            ConfirmCheese();            
-        }
-    }
 
     public void CheeseClicked(string cheese)
     {        
         selectedCheeseDisplay.sprite = cheesesImageDictionary[cheese];
+        selectedCheeseDisplay.color = new Color(1,1,1,1);
         cheesePicked = cheese;
     }
     public void ConfirmCheese()
     {
-        timer.StopTimer();
-        timer.ResetTimer();
-        if(cheesePicked == selectedCheese)
-        {
-            Debug.Log("PREMIO");
+        textIdx = eventText.text.Count;
+        if(cheesePicked == selectedCheese) 
+        {   
             textBox.text = "¡Enhorabuena joven peregrino!, sabía que podías estar a la altura de mis quesos ";
-        }
+            shepardImage.sprite = shepardReactionImageList[0];
+        }                
         else
         {
-            Debug.Log("L");
-            textBox.text = "No mereces mis quesos joven peregrino, ¡largo de aquí! Has echado a perder mi tiempo";
-        }
-        itsOverButton.SetActive(true);
-        exitButton.SetActive(true);
+          textBox.text = "No mereces mis quesos joven peregrino, ¡largo de aquí! Has echado a perder mi tiempo";          
+          shepardImage.sprite = shepardReactionImageList[1];
+        } 
 
     }
     public void TextBoxClicked()
-    {               
+    {                    
+        ChangeShepardSprite();
         if(textIdx >= eventText.text.Count) return;
-        if(textIdx == 2)textBox.text = eventText.text[textIdx] + selectedCheese;   
+        if(textIdx == 4)textBox.text = eventText.text[textIdx] + selectedCheese;   
         else textBox.text = eventText.text[textIdx];        
         textIdx++;
+    }
+
+    public void ChangeShepardSprite()
+    {
+        switch(textIdx)
+        {
+            case 0: shepardImage.sprite = shepardReactionImageList[2]; break;
+            case 1: shepardImage.sprite = shepardReactionImageList[4]; break;
+            case 5: shepardImage.sprite = shepardReactionImageList[3]; break;                           
+        }
     }
 
     public void EndEvent()

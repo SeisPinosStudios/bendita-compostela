@@ -8,7 +8,7 @@ public class EventOptionDisplay : MonoBehaviour, IPointerEnterHandler, IPointerE
 {
     [SerializeField] Image highlight;
     public void OnPointerEnter(PointerEventData eventData)
-    {
+    {        
         highlight.enabled = true;
     }
 

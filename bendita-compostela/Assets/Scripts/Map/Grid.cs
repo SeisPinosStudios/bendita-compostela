@@ -10,6 +10,7 @@ public class Grid{
     private int height;    
     private int numPathsGenerated;  
     private EventOdds[] eventOdds;
+    private Stack<GameObject> eventPrefabsStack;    
     private Dictionary<Vector2,Node> nodeDictionary = new Dictionary<Vector2,Node>();
     private Node bossNode;    
 
@@ -18,13 +19,14 @@ public class Grid{
     #endregion
 
     #region Grid Initialization
-    public Grid(int numNodes, int height, int numPathsGenerated, EventOdds[] eventOdds)
+    public Grid(int numNodes, int height, int numPathsGenerated, EventOdds[] eventOdds, Stack<GameObject> eventPrefabsStack)
     {
         this.numNodes = numNodes;
         this.height = height;
         width = numNodes / height;
         this.numPathsGenerated = numPathsGenerated;     
         this.eventOdds = eventOdds;           
+        this.eventPrefabsStack = eventPrefabsStack;
         GenerateNodes();
         
         for (int i = 0; i < numPathsGenerated; i++)
@@ -36,7 +38,7 @@ public class Grid{
         DeletePathlessNodes();        
         AsignNodesValues();
         AsignRandomEncounter();
-        ShowAllNodes();
+        //ShowAllNodes();
     }
     #endregion
 
@@ -61,6 +63,7 @@ public class Grid{
 
     private void AsignNodesValues()
     {
+        int numEvents = 0;
         //Asign first layer nodes always a combat event
         foreach (Vector2 key in nodeDictionary.Keys)
         {
@@ -75,12 +78,15 @@ public class Grid{
             if(node.NodeEncounter == NodeEncounter.None)
             {
                 //TODO remake more efficiently
+                //TODO dont let two consecutive shop be asigned
                 int i = Random.Range(0,100);
                 for (int j = 0; j < eventOdds.Length; j++)
                 {
                     if(i >= eventOdds[j].minProbabilityRange && i<= eventOdds[j].maxProbabilityRange)
                     {
-                        node.NodeEncounter = eventOdds[j].nodeEncounter;                        
+                        if(eventOdds[j].nodeEncounter == NodeEncounter.EventEncounter) numEvents++;
+                        if(numEvents >= eventPrefabsStack.Count) node.NodeEncounter = NodeEncounter.CombatEncounter;
+                        else node.NodeEncounter = eventOdds[j].nodeEncounter;                        
                     }
                 }
             }
@@ -91,8 +97,7 @@ public class Grid{
     {        
         //TODO remake more efficiently
         var combatPoolsAux = MapManager.Instance.GetCombatPools();
-        List<Node> combatNodeList = new List<Node>();
-        List<Node> eventNodeList = new List<Node>();
+        List<Node> combatNodeList = new List<Node>();        
         foreach (Node node in nodeDictionary.Values)
         {
             switch (node.NodeEncounter)
@@ -100,11 +105,12 @@ public class Grid{
                 case NodeEncounter.CombatEncounter:
                     combatNodeList.Add(node);
                     break;
-                case NodeEncounter.EventEncounter:
-                    eventNodeList.Add(node);
+                case NodeEncounter.EventEncounter:                    
+                    node.EventPrefab = eventPrefabsStack.Pop();
                     break;
             }
         }
+        
         foreach (CombatPool combatPool in combatPoolsAux)
         {
             foreach (Node node in combatNodeList)
@@ -119,8 +125,7 @@ public class Grid{
                 }                                
             }
         }
-        combatNodeList.Clear();
-        eventNodeList.Clear();
+        combatNodeList.Clear();        
     }
 
     private void DeletePathlessNodes()

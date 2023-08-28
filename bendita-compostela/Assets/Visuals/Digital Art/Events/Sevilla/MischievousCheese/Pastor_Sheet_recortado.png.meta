@@ -113,12 +113,12 @@ TextureImporter:
       name: Pastor_Sheet_recortado_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 27
         y: 0
-        width: 384
+        width: 326
         height: 506
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: Pastor_Sheet_recortado_1
       rect:
         serializedVersion: 2
-        x: 384
+        x: 433
         y: 0
-        width: 384
+        width: 326
         height: 506
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: Pastor_Sheet_recortado_2
       rect:
         serializedVersion: 2
-        x: 768
+        x: 839
         y: 0
-        width: 384
+        width: 326
         height: 506
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,12 +176,12 @@ TextureImporter:
       name: Pastor_Sheet_recortado_3
       rect:
         serializedVersion: 2
-        x: 1152
+        x: 1228
         y: 0
-        width: 384
+        width: 326
         height: 506
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: Pastor_Sheet_recortado_4
       rect:
         serializedVersion: 2
-        x: 1536
+        x: 1585
         y: 0
-        width: 384
+        width: 326
         height: 506
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

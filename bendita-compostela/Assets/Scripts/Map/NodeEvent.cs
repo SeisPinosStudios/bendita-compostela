@@ -12,12 +12,6 @@ public class NodeEvent : MonoBehaviour
         sprRenderer = GetComponent<SpriteRenderer>();
         nodeCollider = GetComponent<BoxCollider2D>();
     }
-    private void OnMouseDown()
-    {
-        Debug.Log("NODE POS:" + nodeInfo.NodePos);
-        if(nodeInfo.CombatData != null) Debug.Log("NODE COMBAT: " + nodeInfo.CombatData.name);
-        if(nodeInfo.futureNodes.Count != 0)MapManager.Instance.NodeSelected(nodeInfo);
-    }
     private void Update() 
     {
         if(nodeCollider.enabled == false) 

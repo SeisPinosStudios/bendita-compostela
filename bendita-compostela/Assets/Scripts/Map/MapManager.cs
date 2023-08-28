@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 using Random = UnityEngine.Random;
 
 public class MapManager : MonoBehaviour
@@ -22,7 +23,8 @@ public class MapManager : MonoBehaviour
     [SerializeField] private int numPathsGenerated;     
     [SerializeField] private List<CombatPool> combatPools = new List<CombatPool>();    
     [SerializeField] private CombatPool bossPool;
-    [SerializeField] private EventOdds[] eventsProbabilities;
+    [SerializeField] private EventOdds[] encounterProbabilities;
+    [SerializeField] private List<GameObject> encounterPrefabs;
 
     [Header("Map Node Display")]
     [SerializeField] private GameObject bossPrefab;    
@@ -30,10 +32,10 @@ public class MapManager : MonoBehaviour
     [SerializeField] private GameObject eventPrefab;    
     [SerializeField] private GameObject shopPrefab;   
 
-    
+    private Stack<GameObject> eventPrefabsStack;    
     private Dictionary<NodeEncounter, GameObject> encounterPrefabsDictionary = new Dictionary<NodeEncounter, GameObject>();
 
-    private Vector2 MAP_DISPLAY_OFFSET = new Vector2(1,4);
+    public Vector2 MAP_DISPLAY_OFFSET = new Vector2(1,4);
     private Color[] colors = {Color.yellow, Color.blue, Color.green, Color.white, Color.black};
 
     [Header("Player Selections")]
@@ -63,7 +65,8 @@ public class MapManager : MonoBehaviour
 
     public void ConfigureMap()
     {
-        mapGrid = new Grid(numNodes,mapDepth,numPathsGenerated,eventsProbabilities);
+        RandomizeEvents();
+        mapGrid = new Grid(numNodes,mapDepth,numPathsGenerated,encounterProbabilities,eventPrefabsStack);
         mapGrid.Boss.NodeEncounter = NodeEncounter.CombatEncounter;
         mapGrid.Boss.CombatData = bossPool.combatsData[Random.Range(0,bossPool.combatsData.Count)];
         //line.positionCount = mapGrid.Nodes.Count;        
@@ -104,24 +107,24 @@ public class MapManager : MonoBehaviour
         nodeGameObjects.Add(mapGrid.Boss.NodePos, bossNode);
 
         // Instantiate Paths
-        int colorIdx = 0;
+        //int colorIdx = 0;
         foreach (List<Node> path in mapGrid.Paths)
         {            
             var line = Instantiate(lineRendererPrefab, new Vector2(0,0), Quaternion.identity,mapSpace.transform);
             LineRenderer lineRenderer = line.GetComponent<LineRenderer>();
             lineRenderer.positionCount = mapGrid.Height+1;      
             lineRenderer.sortingOrder = 1;
-            lineRenderer.material = new Material(Shader.Find("Sprites/Default"))
+            /*lineRenderer.material = new Material(Shader.Find("Sprites/Default"))
             {                
                 color = colors[colorIdx]
-            };
+            };*/
             lineRenderer.widthMultiplier = 0.1f;            
             for (int i = 0; i < path.Count; i++)
             {
                     lineRenderer.SetPosition(i,new Vector2(path[i].NodePos.x - MAP_DISPLAY_OFFSET.x, path[i].NodePos.y - MAP_DISPLAY_OFFSET.y));                
             }
             lineRenderer.SetPosition(path.Count, bossNode.transform.position);
-            colorIdx++;
+            //colorIdx++;
         } 
     }
     private void EneableFirstNodes()
@@ -156,6 +159,12 @@ public class MapManager : MonoBehaviour
     {
         return combatPools;
     }
+    public void RandomizeEvents()
+    {   
+        encounterPrefabs = encounterPrefabs.OrderBy( x => Random.Range(0,10)).ToList();
+        eventPrefabsStack = new Stack<GameObject>(encounterPrefabs);
+    }
+
 
     #region Debug
 
