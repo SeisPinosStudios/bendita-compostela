@@ -19,14 +19,14 @@ public class Grid{
     #endregion
 
     #region Grid Initialization
-    public Grid(int numNodes, int height, int numPathsGenerated, EventOdds[] eventOdds, Stack<GameObject> eventPrefabsStack)
+    public Grid(int numNodes, int height, int numPathsGenerated)
     {
         this.numNodes = numNodes;
         this.height = height;
         width = numNodes / height;
         this.numPathsGenerated = numPathsGenerated;     
-        this.eventOdds = eventOdds;           
-        this.eventPrefabsStack = eventPrefabsStack;
+        eventOdds = MapManager.Instance.encounterProbabilities;
+        eventPrefabsStack = MapManager.Instance.eventPrefabsStack;
         GenerateNodes();
         
         for (int i = 0; i < numPathsGenerated; i++)
@@ -38,7 +38,7 @@ public class Grid{
         DeletePathlessNodes();        
         AsignNodesValues();
         AsignRandomEncounter();
-        //ShowAllNodes();
+        ShowAllNodes();
     }
     #endregion
 
@@ -210,7 +210,7 @@ public class Grid{
     {
         foreach (var node in nodeDictionary)
         {
-            Debug.Log($"{node.Key} --- {node.Value.IsPathless}");
+            Debug.Log($"{node.Key} --- {node.Value.IsPathless} ---- {node.Value.NodeEncounter}");
         }
     }
     #endregion

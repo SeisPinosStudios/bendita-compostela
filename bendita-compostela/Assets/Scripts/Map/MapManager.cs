@@ -18,13 +18,13 @@ public class MapManager : MonoBehaviour
     [SerializeField] private GameObject lineRendererPrefab;
     
     [Header("Map Configuration")]
-    [SerializeField] private int numNodes;
-    [SerializeField] private int mapDepth;
-    [SerializeField] private int numPathsGenerated;     
+    [SerializeField] private int NUM_NODES;
+    [SerializeField] private int MAP_DEPTH;
+    [SerializeField] private int NUM_PATHS_GENERATED;     
     [SerializeField] private List<CombatPool> combatPools = new List<CombatPool>();    
     [SerializeField] private CombatPool bossPool;
-    [SerializeField] private EventOdds[] encounterProbabilities;
-    [SerializeField] private List<GameObject> encounterPrefabs;
+    public EventOdds[] encounterProbabilities;
+    public List<GameObject> encounterPrefabs;
 
     [Header("Map Node Display")]
     [SerializeField] private GameObject bossPrefab;    
@@ -32,7 +32,7 @@ public class MapManager : MonoBehaviour
     [SerializeField] private GameObject eventPrefab;    
     [SerializeField] private GameObject shopPrefab;   
 
-    private Stack<GameObject> eventPrefabsStack;    
+    public Stack<GameObject> eventPrefabsStack;    
     private Dictionary<NodeEncounter, GameObject> encounterPrefabsDictionary = new Dictionary<NodeEncounter, GameObject>();
 
     public Vector2 MAP_DISPLAY_OFFSET = new Vector2(1,4);
@@ -56,19 +56,19 @@ public class MapManager : MonoBehaviour
     }
 
     private void Start() 
-    {        
+    { 
         encounterPrefabsDictionary.Add(NodeEncounter.CombatEncounter, combatPrefab);
         encounterPrefabsDictionary.Add(NodeEncounter.EventEncounter, eventPrefab);
-        encounterPrefabsDictionary.Add(NodeEncounter.ShopEncounter, shopPrefab);
-        ConfigureMap();      
+        encounterPrefabsDictionary.Add(NodeEncounter.ShopEncounter, shopPrefab);        
+        ConfigureMap();
     }
 
     public void ConfigureMap()
     {
         RandomizeEvents();
-        mapGrid = new Grid(numNodes,mapDepth,numPathsGenerated,encounterProbabilities,eventPrefabsStack);
+        mapGrid = new Grid(NUM_NODES, MAP_DEPTH, NUM_PATHS_GENERATED);
         mapGrid.Boss.NodeEncounter = NodeEncounter.CombatEncounter;
-        mapGrid.Boss.CombatData = bossPool.combatsData[Random.Range(0,bossPool.combatsData.Count)];
+        mapGrid.Boss.CombatData = bossPool.combatsData[0];
         //line.positionCount = mapGrid.Nodes.Count;        
         foreach (Transform son in mapSpace.transform)
         {
@@ -160,9 +160,11 @@ public class MapManager : MonoBehaviour
         return combatPools;
     }
     public void RandomizeEvents()
-    {   
+    {           
         encounterPrefabs = encounterPrefabs.OrderBy( x => Random.Range(0,10)).ToList();
+       
         eventPrefabsStack = new Stack<GameObject>(encounterPrefabs);
+        
     }
 
 
@@ -170,15 +172,15 @@ public class MapManager : MonoBehaviour
 
     public void TotalNodesIF(string a)
     {
-        numNodes = int.Parse(a);
+        NUM_NODES = int.Parse(a);
     }
     public void MapDepthIF(string b)
     {
-        mapDepth = int.Parse(b);
+        MAP_DEPTH = int.Parse(b);
     }
     public void NumPathsGeneratedIF(string c)
     {
-        numPathsGenerated = int.Parse(c);
+        NUM_PATHS_GENERATED = int.Parse(c);
     } 
 
     #endregion
