@@ -5,7 +5,7 @@ using System;
 
 public class EquipWeapon : BasicCardEffect
 {
-    public static event Action onEquipWeapon;
+    public static event Action onEquipWeapon = delegate { };
     public static void Effect(string data, CardData card, GameObject user, GameObject target)
     {
         var player = BattleManager.Instance.player;

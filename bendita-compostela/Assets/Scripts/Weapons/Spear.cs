@@ -7,7 +7,7 @@ public class Spear : BaseWeapon
     private void Awake()
     {
         weaponId = 4;
-        Damage.onAttack += Style;
+        Damage.OnAttack += Style;
     }
 
     private void Style(GameObject target, CardData card)

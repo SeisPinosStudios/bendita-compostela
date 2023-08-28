@@ -5,7 +5,7 @@ using System;
 
 public class Heal : BasicCardEffect
 {
-    public static event Action<CardData, GameObject> OnHeal;
+    public static event Action<CardData, GameObject> OnHeal = delegate {};
     public static void Effect(string data, CardData card, GameObject user, GameObject target)
     {
         var entity = user.GetComponent<Entity>();
