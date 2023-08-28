@@ -16,6 +16,6 @@ public class BookEventController : MonoBehaviour
     }
     public void TurnPage()
     {
-        bookImage.sprite = nextPage;
+        bookImage.sprite = nextPage;        
     }   
 }

@@ -14,7 +14,7 @@ public class TimerUtils : MonoBehaviour
         timer = StartCoroutine(TimerCounter());
     }    
     public void StopTimer() 
-    {
+    {        
         StopCoroutine(TimerCounter());
     }    
     public void SetTimer(int a) 
@@ -37,8 +37,7 @@ public class TimerUtils : MonoBehaviour
     {
         isTimerFinished = true;
         isTimerActive = false;
-    }
-    
+    }    
     public void ResetTimer() 
     {
         isTimerFinished = false;

@@ -6,12 +6,13 @@ using UnityEngine;
 [Serializable]
 public class Node{
 
-    private NodeEncounter nodeEncounter;
+    [SerializeField] private NodeEncounter nodeEncounter;
     private int idx;    
     private int depth;
     private int width;
     private bool pathless;
-    private CombatData combatData;
+    [SerializeField] private CombatData combatData;
+    [SerializeField] private GameObject eventPrefab;
     public HashSet<Node> futureNodes;     
 
     private Vector2 nodePos;
@@ -59,34 +60,13 @@ public class Node{
         {
             combatData = value;
         }
-    }
-
-    public override bool Equals(object obj)
+    }    
+    public GameObject EventPrefab
     {
-        return obj is Node node &&
-               nodeEncounter == node.nodeEncounter &&
-               idx == node.idx &&
-               depth == node.depth &&
-               width == node.width &&
-               EqualityComparer<HashSet<Node>>.Default.Equals(futureNodes, node.futureNodes) &&
-               nodePos.Equals(node.nodePos) &&
-               NodePos.Equals(node.NodePos) &&
-               Idx == node.Idx &&
-               NodeEncounter == node.nodeEncounter;
-    }
-
-    public override int GetHashCode()
-    {
-        HashCode hash = new HashCode();
-        hash.Add(nodeEncounter);
-        hash.Add(idx);
-        hash.Add(depth);
-        hash.Add(width);
-        hash.Add(futureNodes);
-        hash.Add(nodePos);
-        hash.Add(NodePos);
-        hash.Add(Idx);
-        hash.Add(NodeEncounter);
-        return hash.ToHashCode();
+        get { return eventPrefab; }
+        set
+        {
+            eventPrefab = value;
+        }
     }
 }
