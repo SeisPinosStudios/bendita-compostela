@@ -7,7 +7,7 @@ using TMPro;
 public class EntityDisplay : MonoBehaviour
 {
     [SerializeField] EntityDataContainer entityDataContainer;
-    [SerializeField] EntityData entityData;
+    [field:SerializeField] public EntityData entityData { get; private set; }
     [SerializeField] Image healthBar;
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] Transform alteredEffectsZone;

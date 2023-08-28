@@ -26,6 +26,7 @@ public class Enemy : Entity
     protected new IEnumerator Death()
     {
         OnDeath();
+        Destroy(gameObject);
         yield return null;
     }
 }

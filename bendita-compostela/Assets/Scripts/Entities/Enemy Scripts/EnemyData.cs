@@ -13,4 +13,5 @@ public class EnemyData : EntityData
     [field: SerializeField] public EnemyAttackSequence attackSequence { get; private set; }
     [field: SerializeField] public EnemyAttackSequence healSequence { get; private set; }
     [field: SerializeField] public EnemyAttackSequence dyingSequence { get; private set; }
+    [field: SerializeField] public bool isBoss { get; private set; }
 }

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f4d891fd188894fa6be30df36d7c76, type: 3}
+  m_Name: WPN_001_Espada
+  m_EditorClassIdentifier: 
+  cardName: Espada
+  description: 
+  cost: 0
+  price: 3
+  art: {fileID: 0}
+  miniArt: {fileID: 0}
+  cardEffects: 03000000
+  cardEffectsValues:
+  - 0
+  printArrow: 0
+  <weaponId>k__BackingField: 0
+  <weaponClassName>k__BackingField: 0
+  <attacks>k__BackingField:
+  - {fileID: 11400000, guid: 3486e68e5bb56294c99ba5eaed4df078, type: 2}
+  - {fileID: 11400000, guid: 2c2890725768ce845866af351d7b4844, type: 2}
+  - {fileID: 11400000, guid: 65940df5330c1e24f98f6ddb1a583af8, type: 2}
+  <ultimate>k__BackingField: {fileID: 11400000, guid: bc1ff2245e365554e9829aa64c45a11b, type: 2}
+  <weaponLevel>k__BackingField: 0
+  <styleLevel>k__BackingField: 0
+  <ultimateLevel>k__BackingField: 0

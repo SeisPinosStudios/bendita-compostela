@@ -5,6 +5,7 @@ using UnityEngine;
 public class DeckManager : MonoBehaviour
 {
     [field:SerializeField] public static DeckManager Instance { get; private set; }
+    [field: SerializeField] public int cardsToDraw { get; private set; } = 5;
     [SerializeField] Queue<CardData> deckQueue = new Queue<CardData>();
     [SerializeField] Transform hand;
     [SerializeField] CardDataContainer card;
@@ -13,7 +14,7 @@ public class DeckManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null) Instance = this;
+        Instance = this;
         StartCoroutine(SetupDeck());
     }
     private IEnumerator SetupDeck()
@@ -57,4 +58,9 @@ public class DeckManager : MonoBehaviour
         deckQueue.Enqueue(card);
     }
     #endregion
+
+    public void SetCardsToDraw(int amount)
+    {
+        cardsToDraw = amount;
+    }
 }
