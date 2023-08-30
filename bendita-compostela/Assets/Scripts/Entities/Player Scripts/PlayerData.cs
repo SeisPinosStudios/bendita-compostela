@@ -12,7 +12,9 @@ public class PlayerData : EntityData
     public int currentHP;
     [field:SerializeField, Header("Condecorations")] public List<CondecorationData> condecorations { get; private set; } = new List<CondecorationData>();
     [field: SerializeField, Header("Poems")] public List<PoemData> poems { get; private set; } = new List<PoemData>();
-    [field: SerializeField] public int coins { get; private set; }
+    [field: SerializeField] public List<PoemData> poemInventory { get; private set; } = new List<PoemData>();
+    [field: SerializeField] public int poemSlots;
+    [field: SerializeField, Header("Economy")] public int coins { get; private set; }
 
     public PlayerData Copy()
     {
@@ -51,10 +53,12 @@ public class PlayerData : EntityData
         player.currentHP = currentHP;
         player.condecorations = condecorations;
         player.poems = poems;
+        player.poemInventory = poemInventory;
+        player.poemSlots = poemSlots;
+        player.coins = coins;
 
         return player;
     }
-
     public List<CardData> GetWeapons()
     {
         var weapons = new List<CardData>();

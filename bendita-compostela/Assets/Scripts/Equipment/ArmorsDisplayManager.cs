@@ -40,8 +40,8 @@ public class ArmorsDisplayManager : MonoBehaviour
         foreach(Transform child in armorDisplay)
         {
             var armor = (ArmorData)child.GetComponent<CardDataContainer>().cardData;
-            if (armor == playerData.chestArmor || armor == playerData.legArmor) child.GetComponent<ScrollViewArmor>().Disable();
-            else child.GetComponent<ScrollViewArmor>().Enable();
+            if (armor == playerData.chestArmor || armor == playerData.legArmor) child.GetComponent<EquipmentArmorSelector>().Disable();
+            else child.GetComponent<EquipmentArmorSelector>().Enable();
         }
 
         equipedChestDisplay.sprite = playerData.chestArmor.equipmentScreenIcon;

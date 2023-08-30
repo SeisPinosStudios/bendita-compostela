@@ -28,7 +28,12 @@ MonoBehaviour:
   currentHP: 0
   <condecorations>k__BackingField: []
   <poems>k__BackingField:
-  - {fileID: 11400000, guid: 65e3d982d991e3348bc2504c1e6290c5, type: 2}
   - {fileID: 11400000, guid: 288fb52bfc52a074fb5345dea2208f3f, type: 2}
+  - {fileID: 11400000, guid: 65e3d982d991e3348bc2504c1e6290c5, type: 2}
   - {fileID: 11400000, guid: 01e0ec1392604614c8272c05ea707c64, type: 2}
+  <poemInventory>k__BackingField:
+  - {fileID: 11400000, guid: 65e3d982d991e3348bc2504c1e6290c5, type: 2}
+  - {fileID: 11400000, guid: 01e0ec1392604614c8272c05ea707c64, type: 2}
+  - {fileID: 11400000, guid: a049b54fb84329246a57f7a799fcd007, type: 2}
+  poemSlots: 3
   <coins>k__BackingField: 0

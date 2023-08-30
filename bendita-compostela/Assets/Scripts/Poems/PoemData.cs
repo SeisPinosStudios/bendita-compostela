@@ -10,6 +10,7 @@ public class PoemData : ScriptableObject
     [field:SerializeField, Header("Poem Data")] public string poemName { get; private set; }
     [field:SerializeField] public string description { get; private set; }
     [field:SerializeField] public Sprite sprite { get; private set; }
+    [field: SerializeField] public Sprite closedSprite { get; private set; }
     [field:SerializeField] public int id { get; private set; }
     [field:SerializeField] public PoemType type { get; private set; }
 }

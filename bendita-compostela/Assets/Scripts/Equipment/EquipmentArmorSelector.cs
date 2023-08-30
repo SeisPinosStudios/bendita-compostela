@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using System;
 using UnityEngine.UI;
 
-public class ScrollViewArmor : MonoBehaviour, IPointerClickHandler
+public class EquipmentArmorSelector : MonoBehaviour, IPointerClickHandler
 {
     [field: SerializeField] public CardDataContainer cardDataContainer { get; private set; }
     [field: SerializeField] public Image armorImage { get; private set; }
@@ -27,7 +27,7 @@ public class ScrollViewArmor : MonoBehaviour, IPointerClickHandler
     }
     public void Disable()
     {
-        armorImage.color = new Color(0.8f, 0.8f, 0.8f);
+        armorImage.color = new Color(0.6f, 0.6f, 0.6f);
         interactable = false;
     }
     public void Enable()
