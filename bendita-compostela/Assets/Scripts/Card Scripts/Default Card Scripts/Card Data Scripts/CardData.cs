@@ -32,7 +32,6 @@ public class CardData : ScriptableObject
         if (!cardEffects.Contains(Effect.Heal)) return null;
         return cardEffectsValues[cardEffects.IndexOf(Effect.Heal)];
     }
-
     public virtual CardData Copy()
     {
         CardData card = CreateInstance<CardData>();

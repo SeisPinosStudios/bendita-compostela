@@ -22,6 +22,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 18733997a215bfb40b35eb20e9e52056, type: 2}
   <inventory>k__BackingField:
   - {fileID: 11400000, guid: 50241a5f582a2c74bafd051256156248, type: 2}
+  - {fileID: 11400000, guid: 7cd59112645ef614b8ac748634602946, type: 2}
   chestArmor: {fileID: 11400000, guid: a5aed68d8f592ec46830596ef6a89444, type: 2}
   legArmor: {fileID: 11400000, guid: 483be5b2319dcff46807ff2a5aa999f1, type: 2}
   currentHP: 0

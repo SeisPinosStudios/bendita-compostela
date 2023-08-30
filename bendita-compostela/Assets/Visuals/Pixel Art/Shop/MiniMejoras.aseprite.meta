@@ -121,7 +121,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: MiniMejoras
     originalName: 
-    pivot: {x: 0.50000006, y: 0}
+    pivot: {x: 0.50000006, y: -0.0024783148}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -129,7 +129,7 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 286
-      height: 521
+      height: 807
     spriteID: a3d1880150496c74ba1e17b69521ca85
     spriteBone: []
     spriteOutline: []
@@ -152,13 +152,13 @@ ScriptedImporter:
       frameIndex: 0
       cellRect:
         x: 1
-        y: 0
+        y: 2
         width: 286
-        height: 521
+        height: 807
       spriteId: a3d1880150496c74ba1e17b69521ca85
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 288, y: 528}
+  canvasSize: {x: 288, y: 816}

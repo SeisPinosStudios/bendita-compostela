@@ -21,6 +21,8 @@ public class CardDisplay : MonoBehaviour
         descriptionField.text = cardData.description;
         costField.text = cardData.cost == 0 ? "" : cardData.cost.ToString();
         art.sprite = cardData.art;
+
+        if (cardData is WeaponData or ArmorData) costField.transform.parent.gameObject.SetActive(false);
     }
 
     private void CalculateFinalDamage()

@@ -10,6 +10,9 @@ public class ArmorData : CardData
     [field:SerializeField, Header("Weapon Synergy")] public int weaponSynergy { get; private set; }
     [field:SerializeField, Header("Upgrades")] public int synergyLevel { get; private set; }
     [field:SerializeField] public int armorLevel { get; private set; }
+    [field:SerializeField, Header("Equipment Screen")] public Sprite equipmentScreenIcon { get; private set; }
+    [field:SerializeField] public string equipmentScreenDescription { get; private set; }
+    [field: SerializeField] public int armorType { get; private set; }
 
     public new ArmorData Copy()
     {
@@ -30,6 +33,8 @@ public class ArmorData : CardData
         card.synergyLevel = synergyLevel;
         card.armorLevel = armorLevel;
         card.id = id;
+        card.equipmentScreenIcon = equipmentScreenIcon;
+        card.equipmentScreenDescription = equipmentScreenDescription;
 
         return card;
     }

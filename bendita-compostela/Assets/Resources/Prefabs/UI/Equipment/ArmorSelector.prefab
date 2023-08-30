@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1492959980799866960}
   - component: {fileID: 538472132566349711}
-  - component: {fileID: 5098844340864165018}
+  - component: {fileID: 6207843467220809904}
   - component: {fileID: 1278616061822525412}
+  - component: {fileID: 5098844340864165018}
   m_Layer: 5
-  m_Name: ArmorExample
+  m_Name: ArmorSelector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,6 +48,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2485658712279203742}
   m_CullTransparentMesh: 1
+--- !u!114 &6207843467220809904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2485658712279203742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde4dfd84f1fd8c4fac5545e64a320a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardData: {fileID: 0}
+--- !u!114 &1278616061822525412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2485658712279203742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5227fcd2925b5047865b482cefabace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <cardDataContainer>k__BackingField: {fileID: 6207843467220809904}
+  <armorImage>k__BackingField: {fileID: 5098844340864165018}
+  <interactable>k__BackingField: 1
 --- !u!114 &5098844340864165018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,15 +106,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1278616061822525412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2485658712279203742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5227fcd2925b5047865b482cefabace, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

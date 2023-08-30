@@ -33,13 +33,13 @@ public class PlayerData : EntityData
         {
             if(card is WeaponData)
             {
-                player.deck.Add(((WeaponData)card).Copy());
+                player.inventory.Add(((WeaponData)card).Copy());
                 continue;
             }
 
             if(card is ArmorData)
             {
-                player.deck.Add(((ArmorData)card).Copy());
+                player.inventory.Add(((ArmorData)card).Copy());
                 continue;
             }
 

@@ -22,6 +22,10 @@ MonoBehaviour:
   cardEffectsValues: []
   printArrow: 0
   <defenseBonus>k__BackingField: 1
+  <id>k__BackingField: 0
   <weaponSynergy>k__BackingField: 4
   <synergyLevel>k__BackingField: 0
   <armorLevel>k__BackingField: 0
+  <equipmentScreenIcon>k__BackingField: {fileID: 0}
+  <equipmentScreenDescription>k__BackingField: 
+  <armorType>k__BackingField: 1
