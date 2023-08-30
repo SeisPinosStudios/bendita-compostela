@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 568ec354eb73cda41929fe3b53650f4f, type: 3}
-  m_Name: SPE_19_Pastoreo
+  m_Name: SPE_01_0_Bolazo
   m_EditorClassIdentifier: 
-  cardName: Pastoreo
-  description: "Hace 8 puntos de da\xF1o. Aplica <sprite=7>x2."
-  cost: 6
-  price: 7
-  art: {fileID: 21300000, guid: c2ed2a6b5b4de3c428c759d875e52a2c, type: 3}
-  miniArt: {fileID: 21300000, guid: 3de76b76a3c9d3649b880df05d174196, type: 3}
-  cardEffects: 
-  cardEffectsValues: 
+  cardName: Bolazo de la Giralda
+  description: 
+  cost: 1
+  price: 12
+  art: {fileID: 0}
+  miniArt: {fileID: 0}
+  cardEffects: 06000000
+  cardEffectsValues:
+  - Marked|1
+  printArrow: 1

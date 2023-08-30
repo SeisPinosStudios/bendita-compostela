@@ -18,8 +18,7 @@ MonoBehaviour:
   price: 10
   art: {fileID: 0}
   miniArt: {fileID: 0}
-  cardEffects: 0700000006000000
+  cardEffects: 07000000
   cardEffectsValues:
   - Invulnerable|1
-  - Vulnerable|2
-  printArrow: 1
+  printArrow: 0

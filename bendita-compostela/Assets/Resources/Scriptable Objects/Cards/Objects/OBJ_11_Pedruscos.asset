@@ -20,5 +20,5 @@ MonoBehaviour:
   miniArt: {fileID: 0}
   cardEffects: 06000000
   cardEffectsValues:
-  - Vulnerable|2
+  - Vulnerable|1
   printArrow: 1

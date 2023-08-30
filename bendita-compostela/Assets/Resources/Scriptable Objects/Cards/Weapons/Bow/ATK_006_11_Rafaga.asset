@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f95b9b15292dc49a305a65f742c51b, type: 3}
   m_Name: ATK_006_11_Rafaga
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: "R\xE1faga Traviesa"
   description: 
-  cost: 0
+  cost: 1
   price: 0
   art: {fileID: 0}
   miniArt: {fileID: 0}
-  cardEffects: 
-  cardEffectsValues: []
-  printArrow: 0
-  <improvedAttack>k__BackingField: {fileID: 0}
+  cardEffects: 00000000
+  cardEffectsValues:
+  - 5
+  printArrow: 1
+  <improvedAttack>k__BackingField: {fileID: 11400000, guid: 1004894bdcefde546911e86a5361d11e, type: 2}

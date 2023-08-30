@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f95b9b15292dc49a305a65f742c51b, type: 3}
   m_Name: ATK_002_11_GolpeRemo
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: Golpe de Remo
   description: 
-  cost: 0
+  cost: 4
   price: 0
   art: {fileID: 0}
   miniArt: {fileID: 0}
-  cardEffects: 
-  cardEffectsValues: []
-  printArrow: 0
-  <improvedAttack>k__BackingField: {fileID: 0}
+  cardEffects: 0000000008000000
+  cardEffectsValues:
+  - 8
+  - 
+  printArrow: 1
+  <improvedAttack>k__BackingField: {fileID: 11400000, guid: 8348dfcbf73c3884e8ba33d87c312574, type: 2}

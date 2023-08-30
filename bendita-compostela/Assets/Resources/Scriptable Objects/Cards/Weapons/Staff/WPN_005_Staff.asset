@@ -12,18 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f4d891fd188894fa6be30df36d7c76, type: 3}
   m_Name: WPN_005_Staff
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: Cetro
   description: 
   cost: 0
-  price: 0
+  price: 3
   art: {fileID: 0}
   miniArt: {fileID: 0}
-  cardEffects: 
-  cardEffectsValues: []
+  cardEffects: 03000000
+  cardEffectsValues:
+  - 
   printArrow: 0
-  <attacks>k__BackingField: []
-  <weaponId>k__BackingField: 0
-  <weaponClassName>k__BackingField: 0
+  <weaponId>k__BackingField: 4
+  <weaponClassName>k__BackingField: 4
+  <attacks>k__BackingField:
+  - {fileID: 11400000, guid: e96aebe40304c7e429c5bb63481c19a9, type: 2}
+  - {fileID: 11400000, guid: b1994ad17edba9a4085215cbd4e3ed53, type: 2}
+  - {fileID: 11400000, guid: 17ce370fc540c474a8514e0595971446, type: 2}
+  <ultimate>k__BackingField: {fileID: 11400000, guid: 5f071b34073c0b84cab02234a3ab6019, type: 2}
   <weaponLevel>k__BackingField: 0
   <styleLevel>k__BackingField: 0
   <ultimateLevel>k__BackingField: 0

@@ -7,7 +7,7 @@ public class CardData : ScriptableObject
 {
     public enum Effect
     {
-        Damage, Heal, DrawCards, EquipWeapon, RestoreEnergy, Cleanse, ApplyEffect, SelfApplyEffect
+        Damage, Heal, DrawCards, EquipWeapon, RestoreEnergy, Cleanse, ApplyEffect, SelfApplyEffect, HammerCard, HealOthers, DamageAll, ApplyEffectAll, Special
     }
 
     [Header("Card Info")]

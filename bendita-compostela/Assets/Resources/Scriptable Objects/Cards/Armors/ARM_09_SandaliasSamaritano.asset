@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3346df7aaf02184392ce9fcb83d5133, type: 3}
   m_Name: ARM_09_SandaliasSamaritano
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: Sandalias de Buen Samaritano
   description: 
   cost: 0
   price: 0
@@ -21,7 +21,7 @@ MonoBehaviour:
   cardEffects: 
   cardEffectsValues: []
   printArrow: 0
-  <defenseBonus>k__BackingField: 0
-  <weaponSynergy>k__BackingField: 0
+  <defenseBonus>k__BackingField: 1
+  <weaponSynergy>k__BackingField: 4
   <synergyLevel>k__BackingField: 0
   <armorLevel>k__BackingField: 0

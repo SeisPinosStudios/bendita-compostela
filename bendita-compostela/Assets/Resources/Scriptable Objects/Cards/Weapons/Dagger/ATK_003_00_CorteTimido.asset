@@ -18,7 +18,8 @@ MonoBehaviour:
   price: 0
   art: {fileID: 0}
   miniArt: {fileID: 0}
-  cardEffects: 
-  cardEffectsValues: []
-  printArrow: 0
-  <improvedAttack>k__BackingField: {fileID: 0}
+  cardEffects: 00000000
+  cardEffectsValues:
+  - 1
+  printArrow: 1
+  <improvedAttack>k__BackingField: {fileID: 11400000, guid: 2db5ce27e4e92a647869e89ac63531d2, type: 2}

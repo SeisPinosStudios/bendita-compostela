@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84f4d891fd188894fa6be30df36d7c76, type: 3}
-  m_Name: ATK_002_Hammer
+  m_Script: {fileID: 11500000, guid: 568ec354eb73cda41929fe3b53650f4f, type: 3}
+  m_Name: SPE_04_0_ColorEspecial
   m_EditorClassIdentifier: 
   cardName: 
   description: 
@@ -21,10 +21,3 @@ MonoBehaviour:
   cardEffects: 
   cardEffectsValues: []
   printArrow: 0
-  <weaponId>k__BackingField: 0
-  <weaponClassName>k__BackingField: 0
-  <attacks>k__BackingField: []
-  <ultimate>k__BackingField: {fileID: 0}
-  <weaponLevel>k__BackingField: 0
-  <styleLevel>k__BackingField: 0
-  <ultimateLevel>k__BackingField: 0

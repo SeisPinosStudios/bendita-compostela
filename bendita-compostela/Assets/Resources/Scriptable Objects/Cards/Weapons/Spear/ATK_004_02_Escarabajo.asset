@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f95b9b15292dc49a305a65f742c51b, type: 3}
   m_Name: ATK_004_02_Escarabajo
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: Postura de Escarabajo
   description: 
-  cost: 0
+  cost: 2
   price: 0
   art: {fileID: 0}
   miniArt: {fileID: 0}
-  cardEffects: 
-  cardEffectsValues: []
+  cardEffects: 07000000
+  cardEffectsValues:
+  - Guarded|1
   printArrow: 0
   <improvedAttack>k__BackingField: {fileID: 0}

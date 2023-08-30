@@ -18,7 +18,7 @@ MonoBehaviour:
   price: 5
   art: {fileID: 0}
   miniArt: {fileID: 0}
-  cardEffects: 07000000
+  cardEffects: 06000000
   cardEffectsValues:
-  - Guarded|2
-  printArrow: 0
+  - Marked|1
+  printArrow: 1

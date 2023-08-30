@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f95b9b15292dc49a305a65f742c51b, type: 3}
   m_Name: ATK_003_01_Punalada
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: "Pu\xF1alada"
   description: 
-  cost: 0
+  cost: 1
   price: 0
   art: {fileID: 0}
   miniArt: {fileID: 0}
-  cardEffects: 
-  cardEffectsValues: []
-  printArrow: 0
-  <improvedAttack>k__BackingField: {fileID: 0}
+  cardEffects: 00000000
+  cardEffectsValues:
+  - 3
+  printArrow: 1
+  <improvedAttack>k__BackingField: {fileID: 11400000, guid: bdd8fa60d33e3ba448b32bcec739cf57, type: 2}

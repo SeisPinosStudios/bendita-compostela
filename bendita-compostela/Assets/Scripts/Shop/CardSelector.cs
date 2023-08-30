@@ -25,6 +25,18 @@ public class CardSelector : MonoBehaviour
     }
     private void OnMouseUp()
     {
+        if(cardData is WeaponData)
+        {
+            GameManager.Instance.playerData.inventory.Add(((WeaponData)cardData).Copy());
+            return;
+        }
+
+        if(cardData is ArmorData)
+        {
+            GameManager.Instance.playerData.inventory.Add(((ArmorData)cardData).Copy());
+            return;
+        }
+
         GameManager.Instance.playerData.inventory.Add(cardData.Copy());
     }
 }

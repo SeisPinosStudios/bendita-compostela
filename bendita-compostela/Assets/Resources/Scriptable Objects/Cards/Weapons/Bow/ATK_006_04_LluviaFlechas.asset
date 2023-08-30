@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1f95b9b15292dc49a305a65f742c51b, type: 3}
-  m_Name: ATK_006_03_LluviaFlechas
+  m_Name: ATK_006_04_LluviaFlechas
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: Lluvia de Flechas
   description: 
-  cost: 0
+  cost: 4
   price: 0
   art: {fileID: 0}
   miniArt: {fileID: 0}
-  cardEffects: 
-  cardEffectsValues: []
+  cardEffects: 0a000000
+  cardEffectsValues:
+  - 8
   printArrow: 0
-  <improvedAttack>k__BackingField: {fileID: 0}
+  <improvedAttack>k__BackingField: {fileID: 11400000, guid: 5775954e1d1ee7240841b9c490fa587d, type: 2}
