@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3346df7aaf02184392ce9fcb83d5133, type: 3}
-  m_Name: ARM_3_ArmaduraComun
+  m_Name: ARM_08_TunicaApostol
   m_EditorClassIdentifier: 
-  cardName: "Armadura Com\xFAn"
-  description: "Protege 3.<br>Sinergia con <color=#9B4633>Espada</color>: <color=#308a36>+1</color>
-    al l\xEDmite de <sprite index=0> (5\u2192<color=#308a36>6</color>)."
+  cardName: 
+  description: 
   cost: 0
-  price: 5
-  art: {fileID: 21300000, guid: e57014460582d504090138f017a10568, type: 3}
-  miniArt: {fileID: 21300000, guid: 758b78d2465077e448368fdb591c9310, type: 3}
+  price: 0
+  art: {fileID: 0}
+  miniArt: {fileID: 0}
   cardEffects: 
   cardEffectsValues: []
   printArrow: 0
   <defenseBonus>k__BackingField: 0
-  <weaponSynergy>k__BackingField: 1
+  <weaponSynergy>k__BackingField: 0
+  <synergyLevel>k__BackingField: 0
+  <armorLevel>k__BackingField: 0

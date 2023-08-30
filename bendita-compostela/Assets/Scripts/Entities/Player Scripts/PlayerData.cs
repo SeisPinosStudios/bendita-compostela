@@ -1,23 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 [CreateAssetMenu(fileName = "NewPlayer", menuName = "Bendita Compostela/New player data")]
 public class PlayerData : EntityData
 {
-    public List<CardData> deck;
-    [field:SerializeField] public List<CardData> inventory { get; private set; }
+    public List<CardData> deck = new List<CardData>();
+    [field: SerializeField] public List<CardData> inventory { get; private set; } = new List<CardData>();
     public ArmorData chestArmor, legArmor;
     public int currentHP;
-    [field:SerializeField, Header("Condecorations")] public List<CondecorationData> condecorations { get; private set; }
-    [field:SerializeField, Header("Poems")] public List<PoemData> poems { get; private set; }
+    [field:SerializeField, Header("Condecorations")] public List<CondecorationData> condecorations { get; private set; } = new List<CondecorationData>();
+    [field: SerializeField, Header("Poems")] public List<PoemData> poems { get; private set; } = new List<PoemData>();
+    [field: SerializeField] public int coins { get; private set; }
 
     public PlayerData Copy()
     {
         PlayerData player = CreateInstance<PlayerData>();
 
-        foreach (CardData card in deck) player.deck.Add(card.Copy());
-        foreach (CardData card in inventory) player.inventory.Add(card.Copy());
+        foreach (CardData card in deck)
+        {
+            if(card is WeaponData)
+            {
+                player.deck.Add(((WeaponData)card).Copy());
+                continue;
+            }
+
+            player.deck.Add(card.Copy());
+        }
+
+        foreach (CardData card in inventory)
+        {
+            if(card is WeaponData)
+            {
+                player.deck.Add(((WeaponData)card).Copy());
+                continue;
+            }
+
+            if(card is ArmorData)
+            {
+                player.deck.Add(((ArmorData)card).Copy());
+                continue;
+            }
+
+            player.inventory.Add(card.Copy());
+        }
+
         player.chestArmor = chestArmor.Copy();
         player.legArmor = legArmor.Copy();
         player.currentHP = currentHP;
@@ -25,5 +53,33 @@ public class PlayerData : EntityData
         player.poems = poems;
 
         return player;
+    }
+
+    public List<CardData> GetWeapons()
+    {
+        var weapons = new List<CardData>();
+
+        weapons.AddRange(deck.Where(card => card.GetType() == typeof(WeaponData)));
+        weapons.AddRange(inventory.Where(card => card.GetType() == typeof(WeaponData)));
+
+        return weapons;
+    }
+    public List<CardData> GetArmors()
+    {
+        var armors = new List<CardData>();
+
+        armors.AddRange(inventory.Where(card => card.GetType() == typeof(ArmorData)));
+
+        return armors;
+    }
+    public bool SpendCoins(int amount)
+    {
+        if (coins < amount) return false;
+        coins -= amount;
+        return true;
+    }
+    public void AddCoins(int amount)
+    {
+        coins += amount;
     }
 }

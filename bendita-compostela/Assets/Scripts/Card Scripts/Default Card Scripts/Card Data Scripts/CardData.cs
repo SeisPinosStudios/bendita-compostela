@@ -22,10 +22,10 @@ public class CardData : ScriptableObject
     public List<string> cardEffectsValues;
     public bool printArrow;
 
-    public string GetDamage()
+    public int GetDamage()
     {
-        if (!cardEffects.Contains(Effect.Damage)) return "0";
-        return cardEffectsValues[cardEffects.IndexOf(Effect.Damage)];
+        if (!cardEffects.Contains(Effect.Damage)) return 0;
+        return int.Parse(cardEffectsValues[cardEffects.IndexOf(Effect.Damage)]);
     }
     public string GetHeal()
     {
@@ -33,10 +33,11 @@ public class CardData : ScriptableObject
         return cardEffectsValues[cardEffects.IndexOf(Effect.Heal)];
     }
 
-    public CardData Copy()
+    public virtual CardData Copy()
     {
         CardData card = CreateInstance<CardData>();
 
+        card.name = name;
         card.cardName = cardName;
         card.description = description;
         card.cost = cost;

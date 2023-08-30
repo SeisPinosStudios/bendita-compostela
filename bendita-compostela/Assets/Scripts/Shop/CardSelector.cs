@@ -25,6 +25,6 @@ public class CardSelector : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        
+        GameManager.Instance.playerData.inventory.Add(cardData.Copy());
     }
 }

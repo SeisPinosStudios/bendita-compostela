@@ -12,8 +12,11 @@ public class EntityEffectsManager : MonoBehaviour
     [field:SerializeField] public Dictionary<CardData, int> frenzyAttacks { get; private set; } = new Dictionary<CardData, int>();
     [field:SerializeField] public List<TAlteredEffects.AlteredEffects> resistances { get; private set; }
     public int accumPoison = 1;
+    [field: SerializeField] public int burnThreshold { get; private set; } = 6;
     [field: SerializeField] public float vulnerableMultiplier { get; private set; } = 0.5f;
     [field: SerializeField] public float guardedMultiplier { get; private set; } = 0.5f;
+    /*====EVENTS====*/
+    public event Action<TAlteredEffects.AlteredEffects, int> OnEffectApplied = delegate { };
 
     private void Awake()
     {
@@ -33,6 +36,7 @@ public class EntityEffectsManager : MonoBehaviour
     {
         if (resistances.Contains(effect)) return;
         alteredEffects[effect] = Mathf.Clamp(alteredEffects[effect] + value, 0, alteredEffectsLimit[effect]);
+        OnEffectApplied(effect, value);
         UpdateEffects();
     }
     public void RemoveEffect(TAlteredEffects.AlteredEffects effect, int value)
@@ -55,6 +59,10 @@ public class EntityEffectsManager : MonoBehaviour
     }
     public void VulnerableMultiplier(float amount) { vulnerableMultiplier += amount; }
     public void GuardedMultiplier(float amount) { guardedMultiplier += amount; }
+    public void SetBurnThreshold(int value)
+    {
+        burnThreshold = value;
+    }
     #endregion
 
     #region Effect Methods

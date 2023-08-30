@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnvilController : MonoBehaviour
+public class AnvilDisplay : MonoBehaviour
 {
     [SerializeField] SpriteRenderer highlight;
     [SerializeField] Animator hammerAnimator;
+    [field: SerializeField] public GameObject anvilScreen { get; private set; }
     private void OnMouseEnter()
     {
         highlight.enabled = true;
@@ -17,5 +18,7 @@ public class AnvilController : MonoBehaviour
     private void OnMouseUp()
     {
         hammerAnimator.Play("HammerAnimation");
+        anvilScreen.SetActive(true);
+        ShopSelectionManager.Instance.DisableInteraction();
     }
 }

@@ -5,15 +5,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewArmor", menuName = "Bendita Compostela/Armor")]
 public class ArmorData : CardData
 {
-    [field:SerializeField, Header("Armor section")] public int defenseBonus { get; private set; }
-    [field:SerializeField] public int weaponSynergy { get; private set; }
-    [field:SerializeField] public int synergyLevel { get; private set; }
-    [field:SerializeField] public int styleLevel { get; private set; }
+    [field:SerializeField, Header("Armor Section")] public int defenseBonus { get; private set; }
+    [field:SerializeField, Header("Weapon Synergy")] public int weaponSynergy { get; private set; }
+    [field:SerializeField, Header("Upgrades")] public int synergyLevel { get; private set; }
+    [field:SerializeField] public int armorLevel { get; private set; }
 
     public new ArmorData Copy()
     {
         ArmorData card = CreateInstance<ArmorData>();
 
+        card.name = name;
         card.cardName = cardName;
         card.description = description;
         card.cost = cost;
@@ -26,8 +27,19 @@ public class ArmorData : CardData
         card.defenseBonus = defenseBonus;
         card.weaponSynergy = weaponSynergy;
         card.synergyLevel = synergyLevel;
-        card.styleLevel = styleLevel;
+        card.armorLevel = armorLevel;
 
         return card;
+    }
+
+    public void UpgradeSynergyLevel()
+    {
+        synergyLevel++;
+    }
+
+    public void UpgradeArmorLevel()
+    {
+        defenseBonus++;
+        armorLevel++;
     }
 }

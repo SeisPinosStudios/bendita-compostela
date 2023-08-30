@@ -84,9 +84,9 @@ public class Grid{
                 {
                     if(i >= eventOdds[j].minProbabilityRange && i<= eventOdds[j].maxProbabilityRange)
                     {
-                        if(eventOdds[j].nodeEncounter == NodeEncounter.EventEncounter) numEvents++;
-                        if(numEvents >= eventPrefabsStack.Count) node.NodeEncounter = NodeEncounter.CombatEncounter;
-                        else node.NodeEncounter = eventOdds[j].nodeEncounter;                        
+                        //if(eventOdds[j].nodeEncounter == NodeEncounter.EventEncounter) numEvents++;
+                        //if(numEvents >= eventPrefabsStack.Count) node.NodeEncounter = NodeEncounter.CombatEncounter;
+                        node.NodeEncounter = eventOdds[j].nodeEncounter;                        
                     }
                 }
             }
@@ -106,7 +106,7 @@ public class Grid{
                     combatNodeList.Add(node);
                     break;
                 case NodeEncounter.EventEncounter:                    
-                    node.EventPrefab = eventPrefabsStack.Pop();
+                    //node.EventPrefab = eventPrefabsStack.Pop();
                     break;
             }
         }

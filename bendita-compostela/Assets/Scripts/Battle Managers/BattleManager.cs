@@ -1,25 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BattleManager : MonoBehaviour
 {
-    [field:SerializeField, Header("Battle Setup")] public CombatData combatData { get; private set; }
+    [field: SerializeField, Header("Battle Setup")] public CombatData combatData { get; private set; }
     [SerializeField] EntityDataContainer entityDataContainer;
 
-    [field:SerializeField, Header("Enviroment Variables")] public Transform enemiesContainer { get; private set; }
-    [field:SerializeField] public static BattleManager Instance { get; private set; }
-    [field:SerializeField] public Player player { get; private set; }
-    [field:SerializeField] public List<Enemy> enemies { get; private set; }
-    [field:SerializeField] public Transform enemyAreaBegin { get; private set; }
-    [field:SerializeField] public Transform enemyAreaEnd { get; private set; }
-    [field:SerializeField] public List<GameObject> endScreens { get; private set; }
+    [field: SerializeField, Header("Enviroment Variables")] public Transform enemiesContainer { get; private set; }
+    [field: SerializeField] public static BattleManager Instance { get; private set; }
+    [field: SerializeField] public Player player { get; private set; }
+    [field: SerializeField] public List<Enemy> enemies { get; private set; }
+    [field: SerializeField] public Transform enemyAreaBegin { get; private set; }
+    [field: SerializeField] public Transform enemyAreaEnd { get; private set; }
+    [field: SerializeField] public List<GameObject> endScreens { get; private set; }
+    public event Action OnBattleEnd = delegate {};
 
     private void Awake()
     {
         Instance = this;
 
-        //combatData = GameManager.Instance.combatData;
+        combatData = GameManager.Instance.combatData;
 
         GenerateEnemies();
 
