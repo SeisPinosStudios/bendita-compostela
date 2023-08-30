@@ -41,6 +41,7 @@ public class MapManager : MonoBehaviour
     [Header("Player Selections")]
     public List<Node> nodesVisited = new List<Node>();
 
+    // Dictionary with the current nodes GO given their position
     private Dictionary<Vector2,GameObject> nodeGameObjects = new Dictionary<Vector2, GameObject>();
 
     private void Awake() 
@@ -60,7 +61,7 @@ public class MapManager : MonoBehaviour
         encounterPrefabsDictionary.Add(NodeEncounter.CombatEncounter, combatPrefab);
         encounterPrefabsDictionary.Add(NodeEncounter.EventEncounter, eventPrefab);
         encounterPrefabsDictionary.Add(NodeEncounter.ShopEncounter, shopPrefab);        
-        ConfigureMap();
+        //ConfigureMap();
     }
 
     public void ConfigureMap()
@@ -163,13 +164,19 @@ public class MapManager : MonoBehaviour
     {           
         encounterPrefabs = encounterPrefabs.OrderBy( x => Random.Range(0,10)).ToList();
        
-        eventPrefabsStack = new Stack<GameObject>(encounterPrefabs);
-        
+        eventPrefabsStack = new Stack<GameObject>(encounterPrefabs);        
     }
+    public Grid GetCurrentGrid()
+    {
+        return mapGrid;
+    }
+    public void SetMap(Grid map, List<GameObject> currentProgression)
+    {
 
+    }
+    
 
     #region Debug
-
     public void TotalNodesIF(string a)
     {
         NUM_NODES = int.Parse(a);
@@ -182,7 +189,6 @@ public class MapManager : MonoBehaviour
     {
         NUM_PATHS_GENERATED = int.Parse(c);
     } 
-
     #endregion
 }
 
