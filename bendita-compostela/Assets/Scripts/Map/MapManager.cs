@@ -108,24 +108,18 @@ public class MapManager : MonoBehaviour
         nodeGameObjects.Add(mapGrid.Boss.NodePos, bossNode);
 
         // Instantiate Paths
-        //int colorIdx = 0;
         foreach (List<Node> path in mapGrid.Paths)
         {            
             var line = Instantiate(lineRendererPrefab, new Vector2(0,0), Quaternion.identity,mapSpace.transform);
             LineRenderer lineRenderer = line.GetComponent<LineRenderer>();
             lineRenderer.positionCount = mapGrid.Height+1;      
             lineRenderer.sortingOrder = 1;
-            /*lineRenderer.material = new Material(Shader.Find("Sprites/Default"))
-            {                
-                color = colors[colorIdx]
-            };*/
             lineRenderer.widthMultiplier = 0.1f;            
             for (int i = 0; i < path.Count; i++)
             {
                     lineRenderer.SetPosition(i,new Vector2(path[i].NodePos.x - MAP_DISPLAY_OFFSET.x, path[i].NodePos.y - MAP_DISPLAY_OFFSET.y));                
             }
-            lineRenderer.SetPosition(path.Count, bossNode.transform.position);
-            //colorIdx++;
+            lineRenderer.SetPosition(path.Count, bossNode.transform.position);            
         } 
     }
     private void EneableFirstNodes()
@@ -172,6 +166,9 @@ public class MapManager : MonoBehaviour
     }
     public void SetMap(Grid map, List<GameObject> currentProgression)
     {
+        mapGrid = map;
+        DisplayMap();
+
 
     }
     
