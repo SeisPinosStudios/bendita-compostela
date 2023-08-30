@@ -16,8 +16,8 @@ MonoBehaviour:
   description: Limpia efectos de estado y cura 4 vida
   cost: 5
   price: 8
-  art: {fileID: 0}
-  miniArt: {fileID: 0}
+  art: {fileID: 1719601235, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
+  miniArt: {fileID: 6244123541488927132, guid: b0492a3b5e9bcac42a9d2131ed5fc5f2, type: 3}
   cardEffects: 0500000001000000
   cardEffectsValues:
   - 0

@@ -11,7 +11,7 @@ public class ShopSelectionManager : MonoBehaviour
     [SerializeField] CardDataContainer cardPrefab; //Prefab that will be shown when a card is selected, only contains CardDisplay script
     [SerializeField] Transform cardShowcase; //Position where the selected card will be instantiated;
     [SerializeField] GameObject cardInstance; //When a card is selected, this variable references de instantiated card prefab in the showcase slot
-    [field: SerializeField] public Transform cardDisplayTransform { get; private set; }
+    [field: SerializeField] public List<Transform> cardDisplayTransform { get; private set; }
 
     private void Awake()
     {
@@ -33,10 +33,10 @@ public class ShopSelectionManager : MonoBehaviour
 
     public void DisableInteraction()
     {
-        foreach (Transform child in cardDisplayTransform) child.GetComponent<PolygonCollider2D>().enabled = false;
+        foreach (Transform transform in cardDisplayTransform) foreach (Transform child in transform) child.GetComponent<PolygonCollider2D>().enabled = false;
     }
     public void EnableInteraction()
     {
-        foreach (Transform child in cardDisplayTransform) child.GetComponent<PolygonCollider2D>().enabled = true;
+        foreach(Transform transform in cardDisplayTransform) foreach (Transform child in transform) child.GetComponent<PolygonCollider2D>().enabled = true;
     }
 }

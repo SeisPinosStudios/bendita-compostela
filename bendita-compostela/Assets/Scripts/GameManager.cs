@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     {
         if(!Instance) { Instance = this; DontDestroyOnLoad(gameObject); }
         else Destroy(this.gameObject);
-
+        
         playerData = playerDataPreset.Copy();
     }
 

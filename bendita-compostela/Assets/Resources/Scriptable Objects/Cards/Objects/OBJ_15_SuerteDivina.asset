@@ -16,8 +16,8 @@ MonoBehaviour:
   description: 
   cost: 8
   price: 10
-  art: {fileID: 0}
-  miniArt: {fileID: 0}
+  art: {fileID: 333707426, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
+  miniArt: {fileID: 8436529967686478237, guid: b0492a3b5e9bcac42a9d2131ed5fc5f2, type: 3}
   cardEffects: 07000000
   cardEffectsValues:
   - Invulnerable|1
