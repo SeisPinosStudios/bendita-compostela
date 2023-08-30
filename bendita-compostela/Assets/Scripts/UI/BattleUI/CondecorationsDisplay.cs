@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class CondecorationsDisplay : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [field: SerializeField] public PlayerData playerData { get; private set; }
+    [field: SerializeField] public CondecorationDataContainer condDataContainer { get; private set; }
+    [field: SerializeField] public Transform condDisplayObject { get; private set; }
+
+    private void Awake()
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
+    private IEnumerator SetupCoroutine()
     {
-        
+        yield return new WaitUntil(() => GameManager.Instance.playerData);
+        playerData = GameManager.Instance.playerData;
+        foreach(CondecorationData condecoration in playerData.condecorations)
+        {
+            condDataContainer.condecorationData = condecoration;
+            Instantiate(condDataContainer, condDisplayObject);
+        }
     }
 }
+

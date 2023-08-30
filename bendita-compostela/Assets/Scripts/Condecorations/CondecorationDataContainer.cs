@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class CondecorationDataContainer : MonoBehaviour
 {
-    [field: SerializeField] public CondecorationData condecorationData { get; private set; }
+    public CondecorationData condecorationData;
 
 }

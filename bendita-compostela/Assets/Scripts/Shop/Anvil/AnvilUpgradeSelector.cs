@@ -12,6 +12,7 @@ public class AnvilUpgradeSelector : MonoBehaviour, IPointerEnterHandler, IPointe
     [field: SerializeField] public List<Sprite> icons { get; private set; }
     [field: SerializeField] public GameObject highlight { get; private set; }
     [field: SerializeField] public Image highlighImage { get; private set; }
+    [field: SerializeField] public bool interactionEnabled { get; private set; }
     [field: SerializeField] public int cost { get; private set; }
 
     private void Awake()
@@ -29,26 +30,27 @@ public class AnvilUpgradeSelector : MonoBehaviour, IPointerEnterHandler, IPointe
         
     }
 
+    public void Disable()
+    {
+        interactionEnabled = false;
+        upgradeIcon.color = new Color(0.8f, 0.8f, 0.8f);
+    }
+
+    public void Enable()
+    {
+        interactionEnabled = true;
+        upgradeIcon.color = Color.white;
+    }
+
     public void OnPointerDown(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
-    }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
     }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-    }
-
     public void OnPointerUp(PointerEventData eventData)
     {
         if (!GameManager.Instance.playerData.SpendCoins(cost)) return;
 
-        switch(upgradeType)
+        switch (upgradeType)
         {
             case UpgradeType.Damage:
                 AnvilUpgradeManager.Instance.UpgradeWeaponDamage();
@@ -67,4 +69,13 @@ public class AnvilUpgradeSelector : MonoBehaviour, IPointerEnterHandler, IPointe
                 return;
         }
     }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+
+    }
+
 }

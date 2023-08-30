@@ -69,6 +69,8 @@ public class PlayerData : EntityData
         var armors = new List<CardData>();
 
         armors.AddRange(inventory.Where(card => card.GetType() == typeof(ArmorData)));
+        armors.Add(chestArmor);
+        armors.Add(legArmor);
 
         return armors;
     }

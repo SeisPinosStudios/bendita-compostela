@@ -67,6 +67,27 @@ public class Entity : MonoBehaviour
 
         return finalDefenseMultiplier;
     }
+    public float GetDefenseMultiplier()
+    {
+        var multiplier = defenseMultiplier;
+
+        if (entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Guarded))
+            multiplier += entityEffectsManager.guardedMultiplier;
+
+        if(entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Vulnerable))
+            multiplier -= entityEffectsManager.vulnerableMultiplier;
+
+        return multiplier;
+    }
+    public float GetAttackMultiplier()
+    {
+        var multiplier = damageMultiplier;
+
+        if (entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Lead))
+            multiplier -= 0.5f;
+
+        return multiplier;
+    }
     public void RestoreHealth(int health, int bonus, float multiplier)
     {
         var finalHeal = Mathf.RoundToInt((health + bonus) * multiplier);

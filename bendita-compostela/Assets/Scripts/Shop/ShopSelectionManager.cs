@@ -33,10 +33,13 @@ public class ShopSelectionManager : MonoBehaviour
 
     public void DisableInteraction()
     {
-        foreach (Transform transform in cardDisplayTransform) foreach (Transform child in transform) child.GetComponent<PolygonCollider2D>().enabled = false;
+        print("Disable Interaction");
+        foreach (Transform transform in cardDisplayTransform) 
+            foreach (Transform child in transform) 
+                child.GetComponent<CardSelector>().Disable();
     }
     public void EnableInteraction()
     {
-        foreach(Transform transform in cardDisplayTransform) foreach (Transform child in transform) child.GetComponent<PolygonCollider2D>().enabled = true;
+        foreach (Transform transform in cardDisplayTransform) foreach (Transform child in transform) child.GetComponent<CardSelector>().Enable();
     }
 }

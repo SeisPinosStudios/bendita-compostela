@@ -6,6 +6,7 @@ public class CardSelectorDisplay : MonoBehaviour
 {
     [SerializeField] CardDataContainer cardDataContainer;
     [SerializeField] CardData cardData;
+    [field: SerializeField] public CardSelector cardSelector { get; private set; }
     [SerializeField] SpriteRenderer sprite, highlight;
     [SerializeField] GameObject display;
     [SerializeField] Animator animator;
@@ -32,9 +33,10 @@ public class CardSelectorDisplay : MonoBehaviour
 
     private void OnMouseUp()
     {
+        if (!cardSelector.interact) return;
         ShopSelectionManager.Instance.ClearCardShown();
         display.SetActive(false);
         animator.Play("BuyCardAnimation");
-        Destroy(this, animator.GetCurrentAnimatorStateInfo(0).length - 0.5f);
+        Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length - 0.5f);
     }
 }

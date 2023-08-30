@@ -7,7 +7,8 @@ public class CardSelector : MonoBehaviour
 {
     [SerializeField] CardDataContainer cardDataContainer;
     [SerializeField] CardData cardData;
-    
+    [field: SerializeField] public bool interact { get; private set; }
+    [field: SerializeField] public PolygonCollider2D cardCollider { get; private set; }
 
     private void Awake()
     {
@@ -25,6 +26,8 @@ public class CardSelector : MonoBehaviour
     }
     private void OnMouseUp()
     {
+        if (!interact) return;
+
         if(cardData is WeaponData)
         {
             GameManager.Instance.playerData.inventory.Add(((WeaponData)cardData).Copy());
@@ -38,5 +41,18 @@ public class CardSelector : MonoBehaviour
         }
 
         GameManager.Instance.playerData.inventory.Add(cardData.Copy());
+    }
+
+    public void Disable()
+    {
+        print($"{this.name} Disable");
+        cardCollider.enabled = false;
+        interact = false;
+    }
+
+    public void Enable()
+    {
+        cardCollider.enabled = true;
+        interact = true;
     }
 }

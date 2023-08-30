@@ -27,25 +27,27 @@ public class AnvilUpgradeManager : MonoBehaviour
         if (equipment is ArmorData) UpdateArmorButtons();
         OnEquipmentSelected();
     }
+
+    #region Update Buttons
     public void UpdateWeaponButtons()
     {
         var weapon = (WeaponData)selectedEquipment;
         foreach (Transform button in weaponDamageButtons)
         {
-            if (button.GetSiblingIndex() < weapon.weaponLevel) button.GetComponent<Button>().enabled = false;
-            else button.GetComponent<Button>().enabled = true;
+            if (button.GetSiblingIndex() < weapon.weaponLevel) button.GetComponent<AnvilUpgradeSelector>().Disable();
+            else button.GetComponent<AnvilUpgradeSelector>().Enable();
         }
 
         foreach (Transform button in weaponStyleButtons)
         {
-            if (button.GetSiblingIndex() < weapon.styleLevel) button.GetComponent<Button>().enabled = false;
-            else button.GetComponent<Button>().enabled = true;
+            if (button.GetSiblingIndex() < weapon.styleLevel) button.GetComponent<AnvilUpgradeSelector>().Disable();
+            else button.GetComponent<AnvilUpgradeSelector>().Enable();
         }
 
         foreach (Transform button in weaponUltiButtons)
         {
-            if (button.GetSiblingIndex() < weapon.ultimateLevel) button.GetComponent<Button>().enabled = false;
-            else button.GetComponent<Button>().enabled = true;
+            if (button.GetSiblingIndex() < weapon.ultimateLevel) button.GetComponent<AnvilUpgradeSelector>().Disable();
+            else button.GetComponent<AnvilUpgradeSelector>().Enable();
         }
     }
     public void UpdateArmorButtons()
@@ -54,16 +56,19 @@ public class AnvilUpgradeManager : MonoBehaviour
 
         foreach (Transform button in armorSynergyButtons)
         {
-            if (button.GetSiblingIndex() < armor.synergyLevel) button.GetComponent<Button>().enabled = false;
-            else button.GetComponent<Button>().enabled = true;
+            if (button.GetSiblingIndex() < armor.synergyLevel) button.GetComponent<AnvilUpgradeSelector>().Disable();
+            else button.GetComponent<AnvilUpgradeSelector>().Enable();
         }
 
         foreach (Transform button in armorDefenseButtons)
         {
-            if (button.GetSiblingIndex() < armor.armorLevel) button.GetComponent<Button>().enabled = false;
-            else button.GetComponent<Button>().enabled = true;
+            if (button.GetSiblingIndex() < armor.armorLevel) button.GetComponent<AnvilUpgradeSelector>().Disable();
+            else button.GetComponent<AnvilUpgradeSelector>().Enable();
         }
     }
+    #endregion
+
+    #region Upgrades
     public void UpgradeWeaponDamage()
     {
         ((WeaponData)selectedEquipment).UpgradeWeaponLevel();
@@ -90,4 +95,5 @@ public class AnvilUpgradeManager : MonoBehaviour
         ((ArmorData)selectedEquipment).UpgradeArmorLevel();
         UpdateArmorButtons();
     }
+    #endregion
 }
