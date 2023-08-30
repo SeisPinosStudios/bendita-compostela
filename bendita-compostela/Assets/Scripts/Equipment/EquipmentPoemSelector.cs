@@ -18,6 +18,7 @@ public class EquipmentPoemSelector : MonoBehaviour, IPointerClickHandler
         var player = GameManager.Instance.playerData;
         if (player.poems.Count >= player.poemSlots) return;
         player.poems.Add(poemDataCont.poemData);
+        player.poemInventory.Remove(poemDataCont.poemData);
         EqPoemsDisplayManager.Instance.UpdateEquipedPoems();
         Destroy(gameObject);
     }
