@@ -112,7 +112,6 @@ public class Grid{
                 }
             } 
         return aux;
-
     }
 
     private void AsignRandomEncounter()
