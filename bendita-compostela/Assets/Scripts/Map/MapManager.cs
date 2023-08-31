@@ -8,8 +8,8 @@ using Random = UnityEngine.Random;
 
 public class MapManager : MonoBehaviour
 {
+    #region Variables
     public static MapManager Instance;
-
     private Grid mapGrid;
 
     [Header("Map SetUp")]
@@ -35,15 +35,16 @@ public class MapManager : MonoBehaviour
     public Stack<GameObject> eventPrefabsStack;    
     private Dictionary<NodeEncounter, GameObject> encounterPrefabsDictionary = new Dictionary<NodeEncounter, GameObject>();
 
-    public Vector2 MAP_DISPLAY_OFFSET = new Vector2(1,4);
-    private Color[] colors = {Color.yellow, Color.blue, Color.green, Color.white, Color.black};
+    public Vector2 MAP_DISPLAY_OFFSET = new Vector2(1,4);    
 
     [Header("Player Selections")]
     public List<Node> nodesVisited = new List<Node>();
-
+    
     // Dictionary with the current nodes GO given their position
     private Dictionary<Vector2,GameObject> nodeGameObjects = new Dictionary<Vector2, GameObject>();
-
+    #endregion
+    
+    #region Initialization and setup of the Singleton
     private void Awake() 
     {
         if (Instance == null)
@@ -55,7 +56,7 @@ public class MapManager : MonoBehaviour
             Destroy(gameObject);
         }       
     }
-
+    
     private void Start() 
     { 
         encounterPrefabsDictionary.Add(NodeEncounter.CombatEncounter, combatPrefab);
@@ -63,13 +64,19 @@ public class MapManager : MonoBehaviour
         encounterPrefabsDictionary.Add(NodeEncounter.ShopEncounter, shopPrefab);        
         //ConfigureMap();
     }
+    #endregion    
+        
+    #region Public Methods
 
+    /// <summary>
+    /// Creates and displays a new map each time is called, erasing the old map information and display
+    /// </summary>
     public void ConfigureMap()
     {
         RandomizeEvents();
         mapGrid = new Grid(NUM_NODES, MAP_DEPTH, NUM_PATHS_GENERATED);
         mapGrid.Boss.NodeEncounter = NodeEncounter.CombatEncounter;
-        mapGrid.Boss.CombatData = bossPool.combatsData[0];
+        SetBoss(0);
         //line.positionCount = mapGrid.Nodes.Count;        
         foreach (Transform son in mapSpace.transform)
         {
@@ -80,6 +87,58 @@ public class MapManager : MonoBehaviour
         EneableFirstNodes();
     }
 
+    public List<CombatPool> GetCombatPools()
+    {
+        return combatPools;
+    }
+    
+    public Grid GetCurrentGrid()
+    {
+        return mapGrid;
+    }
+    /// <summary>
+    /// Sets the boss from a boss pool given an index, but only in the grid information, not in the map displayed
+    /// </summary>
+    /// <param name="bossIdx">index of the boss</param>
+    public void SetBoss(int bossIdx)
+    {
+        mapGrid.Boss.CombatData = bossPool.combatsData[bossIdx];
+    }
+    /// <summary>
+    /// Asigns the boss information to the boss node displayed in the map
+    /// </summary>
+    public void AsignBossEncounter()
+    {
+        nodeGameObjects[mapGrid.Boss.NodePos].GetComponent<NodeEvent>().nodeInfo = mapGrid.Boss;
+    }
+    /// <summary>
+    /// Loads and displays a map given the grid information and the progress of the map
+    /// </summary>
+    /// <param name="map"> Map to load</param>
+    /// <param name="currentProgression"> Player progression node list </param>
+    public void LoadMap(Grid map, List<Node> currentProgression)
+    {
+        mapGrid = map;
+        DisplayMap();
+        foreach (Node node in currentProgression)
+        {
+            nodeGameObjects[node.NodePos].GetComponent<NodeEvent>().isCompleted = true;
+        }
+        EneableNextAvailableNodes(currentProgression[currentProgression.Count-1]);
+    }
+    /// <summary>
+    /// Map display change when a given node is selected
+    /// </summary>
+    /// <param name="nodeSelected"></param>
+    public void NodeSelected(Node nodeSelected)
+    {
+        nodesVisited.Add(nodeSelected);
+        DisableNotSelectedNodes(nodeSelected);
+        EneableNextAvailableNodes(nodeSelected);
+    }
+    #endregion
+
+    #region Private Methods
     private void DisplayMap()
     {        
         //TODO make more efficient
@@ -129,13 +188,7 @@ public class MapManager : MonoBehaviour
             if(key.y == 0)nodeGameObjects[key].GetComponent<Collider2D>().enabled = true;            
         }
     }
-    public void NodeSelected(Node nodeSelected)
-    {
-        nodesVisited.Add(nodeSelected);
-        DisableNotSelectedNodes(nodeSelected);        
-        EneableNextAvailableNodes(nodeSelected);
-    }
-
+    
     private void EneableNextAvailableNodes(Node nodeSelected)
     {
         foreach (Node node in nodeSelected.futureNodes)
@@ -147,31 +200,21 @@ public class MapManager : MonoBehaviour
     {
         foreach (Vector2 key in nodeGameObjects.Keys)
         {
-            if(key.y == nodeSelected.NodePos.y)nodeGameObjects[key].GetComponent<Collider2D>().enabled = false;
+            if(key.y == nodeSelected.NodePos.y)
+            {
+                nodeGameObjects[key].GetComponent<Collider2D>().enabled = false;                
+            }            
+            nodeGameObjects[nodeSelected.NodePos].GetComponent<NodeEvent>().isCompleted = true;
         }
+        
     }
-    public List<CombatPool> GetCombatPools()
-    {
-        return combatPools;
-    }
-    public void RandomizeEvents()
+    private void RandomizeEvents()
     {           
         encounterPrefabs = encounterPrefabs.OrderBy( x => Random.Range(0,10)).ToList();
        
         eventPrefabsStack = new Stack<GameObject>(encounterPrefabs);        
     }
-    public Grid GetCurrentGrid()
-    {
-        return mapGrid;
-    }
-    public void SetMap(Grid map, List<GameObject> currentProgression)
-    {
-        mapGrid = map;
-        DisplayMap();
-
-
-    }
-    
+    #endregion
 
     #region Debug
     public void TotalNodesIF(string a)

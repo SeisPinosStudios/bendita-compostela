@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class CombatNodeEvent : MonoBehaviour
 {
-    private NodeEvent nodeEvent;
-    private void Start() 
-    {
-        nodeEvent = GetComponent<NodeEvent>();
-    }
+    [SerializeField] private NodeEvent nodeEvent;
+
     private void OnMouseDown()
     {
         Debug.Log("NODE POS:" + nodeEvent.nodeInfo.NodePos);

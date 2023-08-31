@@ -103,6 +103,10 @@ MonoBehaviour:
     nodeEncounter: 0
     combatData: {fileID: 0}
     eventPrefab: {fileID: 0}
+  isCompleted: 0
+  sprRenderer: {fileID: 2078437628067454920}
+  nodeCollider: {fileID: 7066524653476204678}
+  completedNodeSprite: {fileID: 21300000, guid: 35266cacac7d0f64384e867d103fa1ec, type: 3}
 --- !u!61 &7066524653476204678
 BoxCollider2D:
   m_ObjectHideFlags: 0

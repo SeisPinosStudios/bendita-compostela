@@ -148,6 +148,10 @@ MonoBehaviour:
     nodeEncounter: 0
     combatData: {fileID: 0}
     eventPrefab: {fileID: 0}
+  isCompleted: 0
+  sprRenderer: {fileID: 7745804999470223232}
+  nodeCollider: {fileID: 5405487767480743191}
+  completedNodeSprite: {fileID: 21300000, guid: fccf0db4b62664943a8f2878d0155dd4, type: 3}
 --- !u!114 &3341858318882652117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,3 +164,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed6e35f25e55a0d41a8b7b9164683099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeEvent: {fileID: 8775447806073846997}
