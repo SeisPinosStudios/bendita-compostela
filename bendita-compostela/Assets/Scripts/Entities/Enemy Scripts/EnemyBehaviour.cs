@@ -31,6 +31,7 @@ public class EnemyBehaviour : EntityBehaviour
     private IEnumerator OnTurnCoroutine()
     {
         yield return StartCoroutine(Attack());
+        yield return new WaitForSeconds(1.0f);
         OnTurnEnd();
     }
     public override void OnTurnEnd()
@@ -47,7 +48,7 @@ public class EnemyBehaviour : EntityBehaviour
         attackPrefab.cardData = attack;
 
         var attackInstance = Instantiate(attackPrefab, mainCanvas);
-        attackInstance.GetComponent<Card>().UseCard(target);
+        attackInstance.GetComponent<Card>().UseEnemyCard(target);
         yield return new WaitForSeconds(waitTime);
         Destroy(attackInstance.gameObject);
     }

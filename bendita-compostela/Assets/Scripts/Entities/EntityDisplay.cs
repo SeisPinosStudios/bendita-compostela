@@ -6,7 +6,7 @@ using TMPro;
 
 public class EntityDisplay : MonoBehaviour
 {
-    [SerializeField] EntityDataContainer entityDataContainer;
+    [field: SerializeField] public EntityDataContainer entityDataContainer { get; protected set; }
     [field:SerializeField] public EntityData entityData { get; private set; }
     [SerializeField] Image healthBar;
     [SerializeField] TextMeshProUGUI healthText;
@@ -34,7 +34,7 @@ public class EntityDisplay : MonoBehaviour
         {
             if (!manager.Suffering(effect.Key)) continue;
             alteredEffectDisplay.effect = effect.Key;
-            alteredEffectDisplay.value = effect.Value;
+            alteredEffectDisplay.value = $"x{effect.Value}";
             Instantiate(alteredEffectDisplay, alteredEffectsZone);
         }
     }

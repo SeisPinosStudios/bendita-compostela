@@ -10,7 +10,7 @@ public class AlteredEffectDisplay : MonoBehaviour
     [SerializeField] Image image;
     [SerializeField] TextMeshProUGUI valueText;
     public TAlteredEffects.AlteredEffects effect;
-    public int value;
+    public string value;
 
     private void Awake()
     {

@@ -6,7 +6,7 @@ using System;
 public class EntityEffectsManager : MonoBehaviour
 {
     [SerializeField, Header("Entity Display variables")] Entity entity;
-    [SerializeField] EntityDisplay entityDisplay;
+    [field: SerializeField] public EntityDisplay entityDisplay { get; private set; }
     [field:SerializeField] public Dictionary<TAlteredEffects.AlteredEffects, int> alteredEffects { get; private set; } = new Dictionary<TAlteredEffects.AlteredEffects, int>();
     [field:SerializeField] public Dictionary<TAlteredEffects.AlteredEffects, int> alteredEffectsLimit { get; private set; } = new Dictionary<TAlteredEffects.AlteredEffects, int>();
     [field:SerializeField] public Dictionary<CardData, int> frenzyAttacks { get; private set; } = new Dictionary<CardData, int>();

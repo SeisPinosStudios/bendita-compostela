@@ -24,7 +24,6 @@ public class InfoText : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandler
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        print($"OnPointerExit");
         Destroy(textBoxObject);
         if(highlight) highlight.SetActive(false);
     }

@@ -21,7 +21,7 @@ public class BattleManager : MonoBehaviour
     {
         Instance = this;
 
-        combatData = GameManager.Instance.combatData;
+        //combatData = GameManager.Instance.combatData;
 
         GenerateEnemies();
 
