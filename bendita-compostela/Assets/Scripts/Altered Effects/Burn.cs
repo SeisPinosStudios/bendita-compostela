@@ -8,7 +8,7 @@ public class Burn : IAlteredEffect
         if (!entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Burn)) return;
 
         var burnStacks = entityEffectsManager.alteredEffects[TAlteredEffects.AlteredEffects.Burn];
-        entity.SufferDamage(burnStacks < 6 ? burnStacks : burnStacks * 2, 0, 0.0f, true);
+        entity.SufferDamage(burnStacks < entityEffectsManager.burnThreshold ? burnStacks : burnStacks * 2, 0, 0.0f, true);
         entityEffectsManager.RemoveEffect(TAlteredEffects.AlteredEffects.Burn, burnStacks);
     }
 }

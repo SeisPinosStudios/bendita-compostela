@@ -6,9 +6,11 @@ using System;
 public class Damage : BasicCardEffect
 {
     public static event Action<GameObject, CardData> OnAttack = delegate { };
+    public static event Action<GameObject, GameObject, CardData> OnAttack2 = delegate { };
     public static void Effect(string damage, CardData card, GameObject user, GameObject target)
     {
         OnAttack(target, card);
+        OnAttack2(target, user, card);
         var entity = user.GetComponent<Entity>();
         var entityEffectsManager = user.GetComponent<EntityEffectsManager>();
         var frenzyStacks = entityEffectsManager.frenzyAttacks.ContainsKey(card) ? entityEffectsManager.frenzyAttacks[card] : 0;
@@ -25,7 +27,7 @@ public class Damage : BasicCardEffect
         {
             multiplier -= 0.5f;
         }
-
+        Debug.Log($"entity damage multiplier {entity.damageMultiplier} | final multiplier {multiplier}");
         return multiplier;
     }
 }

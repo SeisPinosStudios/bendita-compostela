@@ -10,7 +10,7 @@ public class Sword : BaseWeapon
 
     private void Awake()
     {
-        weaponId = 1;
+        weaponId = 0;
         player = GetComponent<Player>();
         chestSynergy = player.playerData.chestArmor.weaponSynergy == weaponId;
         legSynergy = player.playerData.legArmor.weaponSynergy == weaponId;

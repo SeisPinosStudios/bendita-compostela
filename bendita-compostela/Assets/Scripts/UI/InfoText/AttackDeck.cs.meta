@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b6f15edaecdcf6840b173a82bbe7260b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - <textBoxPrefab>k__BackingField: {fileID: 6216814944079965107, guid: 5b65f629a7b302745bc6cf1c9d85a22a, type: 3}
+  - <textObject>k__BackingField: {instanceID: 0}
+  - <textBoxObject>k__BackingField: {instanceID: 0}
+  - <deckImage>k__BackingField: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

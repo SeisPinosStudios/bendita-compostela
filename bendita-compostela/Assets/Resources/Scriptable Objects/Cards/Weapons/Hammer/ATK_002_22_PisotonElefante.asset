@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f95b9b15292dc49a305a65f742c51b, type: 3}
   m_Name: ATK_002_22_PisotonElefante
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: "Pisot\xF3n de Elefante"
   description: 
-  cost: 0
+  cost: 15
   price: 0
-  art: {fileID: 0}
+  art: {fileID: 170369595, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
   miniArt: {fileID: 0}
-  cardEffects: 
-  cardEffectsValues: []
-  printArrow: 0
+  cardEffects: 0000000008000000
+  cardEffectsValues:
+  - 15
+  - 
+  printArrow: 1
   <improvedAttack>k__BackingField: {fileID: 0}

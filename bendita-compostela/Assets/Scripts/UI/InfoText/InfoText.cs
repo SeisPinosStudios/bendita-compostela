@@ -10,20 +10,22 @@ public class InfoText : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandler
     [field:SerializeField] public TextMeshProUGUI textObject { get; private set; }
     [field:SerializeField] public string textToWrite { get; protected set; }
     [field:SerializeField] public GameObject textBoxObject { get; protected set; }
+    [field:SerializeField] public GameObject highlight { get; protected set; }
     private void Awake()
     {
-        textObject = textBoxPrefab.GetComponentInChildren<TextMeshProUGUI>();
-        textObject.text = textToWrite;
+
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
         textBoxObject = Instantiate(textBoxPrefab, CanvasUtils.GetMainCanvas().transform);
+        textBoxObject.GetComponentInChildren<TextMeshProUGUI>().text = textToWrite;
+        if (highlight) highlight.SetActive(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        print($"OnPointerExit");
         Destroy(textBoxObject);
+        if(highlight) highlight.SetActive(false);
     }
 
     public void OnPointerMove(PointerEventData eventData)

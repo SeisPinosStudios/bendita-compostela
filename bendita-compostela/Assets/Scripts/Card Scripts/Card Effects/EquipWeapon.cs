@@ -5,7 +5,7 @@ using System;
 
 public class EquipWeapon : BasicCardEffect
 {
-    public static event Action onEquipWeapon = delegate { };
+    public static event Action OnEquipWeapon = delegate { };
     public static void Effect(string data, CardData card, GameObject user, GameObject target)
     {
         var player = BattleManager.Instance.player;
@@ -17,6 +17,6 @@ public class EquipWeapon : BasicCardEffect
         }
         BattleManager.Instance.player.SetWeapon((WeaponData)card);
         user.AddComponent(Type.GetType(weapon.weaponClassName.ToString()));
-        onEquipWeapon();
+        OnEquipWeapon();
     }
 }

@@ -13,16 +13,16 @@ public class WeaponData : CardData
     [field:SerializeField] public int styleLevel { get; private set; }
     [field:SerializeField] public int ultimateLevel { get; private set; }
 
-    public void AddWeaponLevel()
+    public void UpgradeWeaponLevel()
     {
         weaponLevel += 1;
         for (int i = 0; i < attacks.Count; i++) attacks[i] = attacks[i].improvedAttack;
     }
-    public void AddStyleLevel()
+    public void UpgradeStyleLevel()
     {
         styleLevel += 1;
     }
-    public void AddUltimateLevel()
+    public void UpgradeUltimateLevel()
     {
         ultimateLevel += 1;
         if (ultimateLevel > 1) ultimate = ultimate.improvedAttack;
@@ -32,6 +32,7 @@ public class WeaponData : CardData
     {
         WeaponData card = CreateInstance<WeaponData>();
 
+        card.name = name;
         card.cardName = cardName;
         card.description = description;
         card.cost = cost;

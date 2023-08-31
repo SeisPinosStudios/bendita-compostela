@@ -37,6 +37,7 @@ public class DeckManager : MonoBehaviour
             card.cardData = deckQueue.Dequeue();
             Instantiate(card, hand);
             yield return new WaitForSeconds(delaySeconds);
+            if (deckQueue.Count <= 0) break;
         }
     }
     public void ReturnCards()

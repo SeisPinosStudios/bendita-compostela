@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoemDisplay : MonoBehaviour
+public class PoemsDisplay : MonoBehaviour
 {
     [field:SerializeField] public PlayerData playerData { get; private set; }
     [field:SerializeField] public PoemDataContainer poemDataContainer { get; private set; }
