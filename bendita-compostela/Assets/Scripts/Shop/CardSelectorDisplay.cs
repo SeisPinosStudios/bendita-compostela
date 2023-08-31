@@ -13,6 +13,11 @@ public class CardSelectorDisplay : MonoBehaviour
 
     private void Awake()
     {
+        
+    }
+
+    private void Start()
+    {
         cardData = cardDataContainer.cardData;
         sprite.sprite = cardData.miniArt;
     }

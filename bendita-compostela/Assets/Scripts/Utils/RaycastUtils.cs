@@ -39,6 +39,6 @@ public static class RaycastUtils
     {
         var result = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
-        return result.transform.parent.gameObject;
+        return result ? result.transform.parent.gameObject : null;
     }
 }

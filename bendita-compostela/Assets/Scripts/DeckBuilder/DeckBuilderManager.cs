@@ -16,17 +16,20 @@ public class DeckBuilderManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        
+        StartCoroutine(SetupCoroutine());
     }
     private IEnumerator SetupCoroutine()
     {
-        yield return new WaitUntil(() => GameManager.Instance.playerData);
+        yield return new WaitUntil(() => GameManager.Instance && GameManager.Instance.playerData);
         playerData = GameManager.Instance.playerData;
+        ShowCards();
+        ShowDeckCards();
     }
 
     public void ShowCards()
     {
-        foreach(CardData card in playerData.inventory)
+        var deck = playerData.inventory.Where(card => card is not ArmorData).OrderBy(card => card.cost).ThenBy(card => card.cardName);
+        foreach(CardData card in deck)
         {
             cardDisplayedPrefab.cardData = card;
             if (!displayedCards.Find(displayedCard => displayedCard.cardName == card.cardName)) Instantiate(cardDisplayedPrefab, cardsDisplay);

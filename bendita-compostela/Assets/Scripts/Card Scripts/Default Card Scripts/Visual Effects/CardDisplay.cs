@@ -9,6 +9,7 @@ public class CardDisplay : MonoBehaviour
     [field:SerializeField] public CardData cardData { get; private set; }
     [SerializeField] TextMeshProUGUI nameField, descriptionField, costField;
     [SerializeField] Image art;
+    public bool dragging;
 
     Entity target;
     int finalDamage;
@@ -37,7 +38,8 @@ public class CardDisplay : MonoBehaviour
     }
     private void Update()
     {
-        if (RaycastUtils.Raycast2D().GetComponent<Enemy>()) target = RaycastUtils.Raycast2D().GetComponent<Enemy>();
+        if (dragging && RaycastUtils.Raycast2D() && RaycastUtils.Raycast2D().GetComponent<Enemy>()) 
+            target = RaycastUtils.Raycast2D().GetComponent<Enemy>();
         else target = null;
     }
 }

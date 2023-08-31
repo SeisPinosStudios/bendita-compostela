@@ -9,9 +9,12 @@ public class DeckBuilderCard : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        GameManager.Instance.playerData.deck.Add(cardDataCont.cardData);
-        GameManager.Instance.playerData.inventory.Remove(cardDataCont.cardData);
-        DeckBuilderManager.Instance.displayedCards.Remove(cardDataCont.cardData);
+        var card = GameManager.Instance.playerData.inventory.Find(card => card.cardName == cardDataCont.cardData.cardName);
+
+        GameManager.Instance.playerData.deck.Add(card);
+        GameManager.Instance.playerData.inventory.Remove(card);
+        DeckBuilderManager.Instance.displayedCards.Remove(card);
         if (!DeckBuilderManager.Instance.displayedCards.Find(card => card.cardName == cardDataCont.cardData.cardName)) Destroy(gameObject);
+        DeckBuilderManager.Instance.UpdateDeckCards();
     }
 }

@@ -684,6 +684,7 @@ MonoBehaviour:
   descriptionField: {fileID: 990818162490360802}
   costField: {fileID: 8058855825905352563}
   art: {fileID: 7689330455088447037}
+  dragging: 0
 --- !u!114 &-8927400296690669043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -701,3 +702,4 @@ MonoBehaviour:
   cardDataContainer: {fileID: 752961581588794506}
   cardData: {fileID: 0}
   card: {fileID: 4188301813789642578}
+  <cardDisplay>k__BackingField: {fileID: 3175823880051612337}

@@ -12,6 +12,7 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     [SerializeField] CardDataContainer cardDataContainer;
     [SerializeField] CardData cardData;
     [SerializeField] Card card;
+    [field: SerializeField] public CardDisplay cardDisplay { get; private set; }
     public static event Action onUsing, onReturning;
 
     private void Awake()
@@ -23,9 +24,11 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         parent = transform.parent;
         index = transform.GetSiblingIndex();
         transform.SetParent(transform.root);
+        cardDisplay.dragging = true;
     }
     public void OnDrag(PointerEventData eventData)
     {
+        
         if (eventData.position.y > 400 && cardData.printArrow)
         {
             transform.position = new Vector3(parent.transform.position.x, parent.transform.position.y + 100, 0.0f);
@@ -42,6 +45,7 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     }
     public void OnEndDrag(PointerEventData eventData)
     {
+        cardDisplay.dragging = false;
         if(!cardData.printArrow && eventData.position.y > 400) { UseCard(); return; }
 
         var hit = RaycastUtils.Raycast2D("Enemy");
