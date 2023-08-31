@@ -61,8 +61,14 @@ public class MapManager : MonoBehaviour
     { 
         encounterPrefabsDictionary.Add(NodeEncounter.CombatEncounter, combatPrefab);
         encounterPrefabsDictionary.Add(NodeEncounter.EventEncounter, eventPrefab);
-        encounterPrefabsDictionary.Add(NodeEncounter.ShopEncounter, shopPrefab);        
-        //ConfigureMap();
+        encounterPrefabsDictionary.Add(NodeEncounter.ShopEncounter, shopPrefab);
+
+        if (GameManager.Instance.map != null) LoadMap(GameManager.Instance.map, GameManager.Instance.visitedNodes); 
+        else 
+        {
+            ConfigureMap();
+            GameManager.Instance.SaveGrid(GetCurrentGrid());
+        }
     }
     #endregion    
         
@@ -133,6 +139,7 @@ public class MapManager : MonoBehaviour
     public void NodeSelected(Node nodeSelected)
     {
         nodesVisited.Add(nodeSelected);
+        GameManager.Instance.AddVisitedNode(nodeSelected);
         DisableNotSelectedNodes(nodeSelected);
         EneableNextAvailableNodes(nodeSelected);
     }

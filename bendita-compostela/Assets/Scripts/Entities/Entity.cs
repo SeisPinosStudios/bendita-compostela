@@ -35,24 +35,28 @@ public class Entity : MonoBehaviour
             return;
         }
 
-
         OnDamage();
 
         var finalDamage = damage;
 
         if (!effect)
         {
-            finalDamage = Mathf.RoundToInt((damage + damageBonus - defenseBonus) * (damageMultiplier - CheckDefenseMultiplier()));
+            finalDamage = Mathf.RoundToInt((damage + damageBonus - defenseBonus) * damageMultiplier);
+
         }
 
         currentHP = Mathf.Clamp(currentHP - finalDamage, 0, entityData.HP);
 
+        Debug.Log($"damageBonus {damageBonus} | damageMultiplier {damageMultiplier} | defenseBonus {defenseBonus} | defenseMultiplier {defenseMultiplier}");
+        Debug.Log($"Damaged {name} for {finalDamage} damage");
         entityDisplay.UpdateHealth(entityData.HP, currentHP);
+        CheckDeath();
         return;
     }
     private float CheckDefenseMultiplier()
     {
         var finalDefenseMultiplier = defenseMultiplier;
+
         if (entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Guarded))
         {
             finalDefenseMultiplier += entityEffectsManager.guardedMultiplier;
@@ -97,7 +101,7 @@ public class Entity : MonoBehaviour
 
         return;
     }
-    protected IEnumerator Death()
+    protected virtual IEnumerator Death()
     {
         yield return null;
     }
@@ -107,6 +111,10 @@ public class Entity : MonoBehaviour
     public bool IsDamaged(float percentage)
     {
         return currentHP < entityData.HP * percentage;
+    }
+    public bool IsDead()
+    {
+        return currentHP <= 0;
     }
     public void CheckDeath()
     {

@@ -363,7 +363,7 @@ MonoBehaviour:
   entityDataContainer: {fileID: 7902973688884092947}
   <entityData>k__BackingField: {fileID: 0}
   <entityDisplay>k__BackingField: {fileID: 5231252943997022551}
-  <entityEffectsManager>k__BackingField: {fileID: 0}
+  <entityEffectsManager>k__BackingField: {fileID: 3779116131978059888}
   <entityName>k__BackingField: 
   <currentHP>k__BackingField: 0
   <defenseBonus>k__BackingField: 0

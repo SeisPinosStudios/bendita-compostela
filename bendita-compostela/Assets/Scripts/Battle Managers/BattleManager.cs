@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class BattleManager : MonoBehaviour
     {
         Instance = this;
 
-        //combatData = GameManager.Instance.combatData;
+        combatData = GameManager.Instance.combatData;
 
         GenerateEnemies();
 
@@ -39,12 +40,6 @@ public class BattleManager : MonoBehaviour
             entityDataContainer.entityData = combatData.enemiesData[i];
             Instantiate(entityDataContainer, position, new Quaternion(), enemiesContainer);
         }
-        /*
-        foreach (EnemyData enemy in combatData.enemiesData)
-        {
-            entityDataContainer.entityData = enemy;
-            Instantiate(entityDataContainer, enemiesContainer);
-        }*/
     }
 
     #region Check methods
@@ -59,8 +54,19 @@ public class BattleManager : MonoBehaviour
     #region Game State Methods
     private void CheckGameEnd()
     {
-        if (player.IsDead()) endScreens[1].SetActive(true);
-        if (enemies.Count <= 0) endScreens[0].SetActive(true);
+        if (player.IsDead())
+        {
+            endScreens[1].SetActive(true);
+            return;
+        }
+
+        foreach (Enemy enemy in enemies) if (!enemy.IsDead()) return;
+        endScreens[0].SetActive(true);
+    }
+
+    public void LoadScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
     }
     #endregion
 }

@@ -11,6 +11,5 @@ public class ApplyEffect : BasicCardEffect
         Enum.TryParse(effectData[0], out TAlteredEffects.AlteredEffects effect);
         var value = effectData[1];
         target.GetComponent<EntityEffectsManager>().ApplyEffect(effect, int.Parse(value));
-
     }
 }

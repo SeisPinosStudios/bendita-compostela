@@ -533,10 +533,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7782128095434228822}
-        m_TargetAssemblyTypeName: EntityEffectsManager, Assembly-CSharp
-        m_MethodName: Effect
-        m_Mode: 3
+      - m_Target: {fileID: 1925518835}
+        m_TargetAssemblyTypeName: AttackDeckManager, Assembly-CSharp
+        m_MethodName: DrawAttack
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1321,7 +1321,9 @@ MonoBehaviour:
   <enemies>k__BackingField: []
   <enemyAreaBegin>k__BackingField: {fileID: 1859846699}
   <enemyAreaEnd>k__BackingField: {fileID: 1628125645}
-  <endScreens>k__BackingField: []
+  <endScreens>k__BackingField:
+  - {fileID: 1555979985}
+  - {fileID: 2053653264}
 --- !u!1 &1108733629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,6 +1771,7 @@ MonoBehaviour:
   playerDataPreset: {fileID: 11400000, guid: da62d6f5470ff384badd9e6fe8c4fee4, type: 2}
   <playerData>k__BackingField: {fileID: 0}
   <combatData>k__BackingField: {fileID: 11400000, guid: 42d18fac5f35937418369156bacc266f, type: 2}
+  <visitedNodes>k__BackingField: []
 --- !u!1 &1203641393
 GameObject:
   m_ObjectHideFlags: 0
@@ -3381,8 +3384,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 534d974d1bc10d9459c00c5e9e0ec887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 0}
-  hand: {fileID: 0}
+  cardPrefab: {fileID: 752961581588794506, guid: ad67bb918d8a6984b91f8c7acbd4f52c, type: 3}
+  hand: {fileID: 327054718}
   drawCardDelay: 0.5
   <weaponAttacks>k__BackingField: []
   <costReduction>k__BackingField: 0
@@ -4028,16 +4031,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a19f5fd9c412e7e438354c00f0ef8049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7782128095434228822 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3075034504805580143, guid: d8f013996c64d62409c1c5b3683350ad, type: 3}
-  m_PrefabInstance: {fileID: 7782128095434228818}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aed203166ba544647a90f938b086e8ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

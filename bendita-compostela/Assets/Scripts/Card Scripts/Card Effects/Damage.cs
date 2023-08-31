@@ -27,7 +27,7 @@ public class Damage : BasicCardEffect
         {
             multiplier -= 0.5f;
         }
-
+        Debug.Log($"entity damage multiplier {entity.damageMultiplier} | final multiplier {multiplier}");
         return multiplier;
     }
 }
