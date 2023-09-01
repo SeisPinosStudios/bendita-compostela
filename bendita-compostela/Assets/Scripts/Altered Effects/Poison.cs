@@ -1,9 +1,9 @@
 using UnityEngine;
-using static AlteredEffectInterface;
+using static BasicAlteredEffect;
 
-public class Poison : IAlteredEffect
+public class Poison : BasicAlteredEffect
 {
-    public void Effect(EntityEffectsManager entityEffectsManager, Entity entity, GameObject entityGameObject, Object data)
+    public static void Effect(EntityEffectsManager entityEffectsManager, Entity entity, GameObject entityGameObject, Object data)
     {
         if (!entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Poison)) return;
 

@@ -1,9 +1,9 @@
 using UnityEngine;
-using static AlteredEffectInterface;
+using static BasicAlteredEffect;
 
-public class Burn : IAlteredEffect
+public class Burn : BasicAlteredEffect
 {
-    public void Effect(EntityEffectsManager entityEffectsManager, Entity entity, GameObject entityGameObject, Object data)
+    public static void Effect(EntityEffectsManager entityEffectsManager, Entity entity, GameObject entityGameObject, Object data)
     {
         if (!entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Burn)) return;
 

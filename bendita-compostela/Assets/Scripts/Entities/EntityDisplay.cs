@@ -15,7 +15,7 @@ public class EntityDisplay : MonoBehaviour
 
     private void Awake()
     {
-        entityData = entityDataContainer.entityData;
+        //entityData = entityDataContainer.entityData;
     }
     private void Update()
     {

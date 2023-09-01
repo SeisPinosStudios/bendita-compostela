@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     [field:SerializeField] public CombatData combatData { get; private set; }
     [field: SerializeField, Header("Map State and Progression")] public Grid map { get; private set; }
     [field: SerializeField] public List<Node> visitedNodes { get; private set; }
+    [field: SerializeField, Header("Debug")] public bool debug { get; private set; }
+
 
     private void Awake()
     {
@@ -18,6 +20,14 @@ public class GameManager : MonoBehaviour
         else Destroy(this.gameObject);
         
         playerData = playerDataPreset.Copy();
+
+        if (debug)
+        {
+            playerData.inventory.AddRange(SODataBase.objects);
+            playerData.inventory.AddRange(SODataBase.special);
+            playerData.inventory.AddRange(SODataBase.weapons);
+            playerData.inventory.AddRange(SODataBase.armors);
+        }
     }
 
     #region Combat
@@ -35,6 +45,13 @@ public class GameManager : MonoBehaviour
     public void SaveGrid(Grid grid)
     {
         map = grid;
+    }
+    #endregion
+
+    #region Useful Methods
+    public static void DestoyObject(GameObject gameObject)
+    {
+        DestoyObject(gameObject);
     }
     #endregion
 }

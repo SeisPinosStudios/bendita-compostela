@@ -20,6 +20,7 @@ public class Entity : MonoBehaviour
     [field: SerializeField] public float healingMultiplier { get; protected set; } = 1.0f;
     /*===========EVENTS===========*/
     public event Action OnDamage = delegate { };
+    public event Action<int> OnDamaged = delegate { };
 
     private void Awake()
     {
@@ -42,7 +43,7 @@ public class Entity : MonoBehaviour
         if (!effect)
         {
             finalDamage = Mathf.RoundToInt((damage + damageBonus - defenseBonus) * damageMultiplier);
-
+            OnDamaged(finalDamage);
         }
 
         currentHP = Mathf.Clamp(currentHP - finalDamage, 0, entityData.HP);

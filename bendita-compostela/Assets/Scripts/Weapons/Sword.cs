@@ -29,7 +29,7 @@ public class Sword : BaseWeapon
 
         if (styleAttacks > 0) { styleAttacks--; return; }
 
-        player.DamageMultiplier(styleMultiplier);
+        player.DamageMultiplier(-styleMultiplier);
     }
 
     private void Turn()

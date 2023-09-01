@@ -286,7 +286,7 @@ Transform:
   - {fileID: 4412142821384605629}
   - {fileID: 7419855290221236727}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1154136145657413943
 MonoBehaviour:
@@ -322,9 +322,9 @@ MonoBehaviour:
   <defenseBonus>k__BackingField: 0
   <damageBonus>k__BackingField: 0
   <healingBonus>k__BackingField: 0
-  <defenseMultiplier>k__BackingField: 0
-  <damageMultiplier>k__BackingField: 0
-  <healingMultiplier>k__BackingField: 0
+  <defenseMultiplier>k__BackingField: 1
+  <damageMultiplier>k__BackingField: 1
+  <healingMultiplier>k__BackingField: 1
   <playerData>k__BackingField: {fileID: 0}
   <energy>k__BackingField: 0
   <maxEnergy>k__BackingField: 10

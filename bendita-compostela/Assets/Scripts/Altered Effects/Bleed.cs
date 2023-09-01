@@ -1,9 +1,9 @@
 using UnityEngine;
-using static AlteredEffectInterface;
+using static BasicAlteredEffect;
 
-public class Bleed : IAlteredEffect
+public class Bleed : BasicAlteredEffect
 {
-    public void Effect(EntityEffectsManager entityEffectsManager, Entity entity, GameObject entityGameObject, Object data)
+    public static void Effect(EntityEffectsManager entityEffectsManager, Entity entity, GameObject entityGameObject, Object data)
     {
         var bleedStacks = entityEffectsManager.alteredEffects[TAlteredEffects.AlteredEffects.Bleed];
         entity.SufferDamage(bleedStacks, 0, 0.0f, true);
