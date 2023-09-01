@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class AnticipatedAssault : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        StartCoroutine(PassiveEffect());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator PassiveEffect()
     {
-        
+        yield return new WaitUntil(() => TurnManager.Instance);
+        var enemyBehaviour = GetComponent<EnemyBehaviour>();
+        TurnManager.Instance.turnQueue.AddFirst(enemyBehaviour);
     }
 }

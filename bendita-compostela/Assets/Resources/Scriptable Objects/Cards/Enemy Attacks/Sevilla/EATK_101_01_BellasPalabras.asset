@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f530b1e008ae9e04dacd675378fb4bad, type: 3}
+  m_Name: EATK_101_01_BellasPalabras
+  m_EditorClassIdentifier: 
+  cardName: Bellas palabras
+  description: 
+  cost: 0
+  price: 0
+  art: {fileID: 430914307, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
+  miniArt: {fileID: 0}
+  cardEffects: 01000000
+  cardEffectsValues:
+  - 8
+  printArrow: 0
+  <attackType>k__BackingField: 1

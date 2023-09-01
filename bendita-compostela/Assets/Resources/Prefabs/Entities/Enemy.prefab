@@ -389,6 +389,7 @@ MonoBehaviour:
   <entity>k__BackingField: {fileID: 7642431545003664909}
   <isTurn>k__BackingField: 0
   enemyData: {fileID: 0}
+  <entityEffManager>k__BackingField: {fileID: 3779116131978059888}
   attackPrefab: {fileID: 752961581588794506, guid: ad67bb918d8a6984b91f8c7acbd4f52c, type: 3}
   mainCanvas: {fileID: 0}
   waitTime: 2

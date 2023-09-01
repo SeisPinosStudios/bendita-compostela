@@ -15,5 +15,4 @@ public class EventNodeEncounter : MonoBehaviour
     {
         Instantiate(nodeEvent.nodeInfo.EventPrefab);
     }
-
 }

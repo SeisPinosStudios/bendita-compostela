@@ -15,10 +15,10 @@ MonoBehaviour:
   entityName: "Mat\xEDas"
   HP: 30
   deck:
-  - {fileID: 11400000, guid: 27a4b845142f84447a082a19cc0440c6, type: 2}
   - {fileID: 11400000, guid: c1815956652eaf94fa2e89b6867f5afa, type: 2}
-  - {fileID: 11400000, guid: a1ea002b527113d4691d457290abfce8, type: 2}
   - {fileID: 11400000, guid: 18733997a215bfb40b35eb20e9e52056, type: 2}
+  - {fileID: 11400000, guid: a1ea002b527113d4691d457290abfce8, type: 2}
+  - {fileID: 11400000, guid: 27a4b845142f84447a082a19cc0440c6, type: 2}
   <inventory>k__BackingField:
   - {fileID: 11400000, guid: 50241a5f582a2c74bafd051256156248, type: 2}
   - {fileID: 11400000, guid: 7cd59112645ef614b8ac748634602946, type: 2}
@@ -29,12 +29,7 @@ MonoBehaviour:
   legArmor: {fileID: 11400000, guid: 483be5b2319dcff46807ff2a5aa999f1, type: 2}
   currentHP: 0
   <condecorations>k__BackingField: []
-  <poems>k__BackingField:
-  - {fileID: 11400000, guid: 288fb52bfc52a074fb5345dea2208f3f, type: 2}
-  - {fileID: 11400000, guid: a049b54fb84329246a57f7a799fcd007, type: 2}
-  - {fileID: 11400000, guid: 65e3d982d991e3348bc2504c1e6290c5, type: 2}
-  <poemInventory>k__BackingField:
-  - {fileID: 11400000, guid: 01e0ec1392604614c8272c05ea707c64, type: 2}
-  - {fileID: 11400000, guid: a049b54fb84329246a57f7a799fcd007, type: 2}
+  <poems>k__BackingField: []
+  <poemInventory>k__BackingField: []
   poemSlots: 3
   <coins>k__BackingField: 0

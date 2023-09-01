@@ -28,6 +28,11 @@ public class Card : MonoBehaviour
 
         if (!player.ConsumeEnergy(GetEnergyCost(player))) yield break;
 
+        var user = TurnManager.Instance.entityTurn.GetComponent<EntityEffectsManager>();
+
+        if (user.Suffering(TAlteredEffects.AlteredEffects.Bleed))
+            user.Effect(TAlteredEffects.AlteredEffects.Bleed);
+
         print($"Used card {cardData.cardName}");
         for (int i = 0; i < cardData.cardEffects.Count; i++)
         {
@@ -50,6 +55,11 @@ public class Card : MonoBehaviour
     }
     private IEnumerator UseEnemyCardCoroutine(GameObject target)
     {
+        var user = TurnManager.Instance.entityTurn.GetComponent<EntityEffectsManager>();
+
+        if (user.Suffering(TAlteredEffects.AlteredEffects.Bleed))
+            user.Effect(TAlteredEffects.AlteredEffects.Bleed);
+
         print($"Used card {cardData.cardName}");
         for (int i = 0; i < cardData.cardEffects.Count; i++)
         {

@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerBehaviour : EntityBehaviour
 {
     [SerializeField] Player player;
+    public event Action OnPlayerTurn = delegate { };
     public override void OnTurnBegin()
     {
         print($"{this.name} OnBeginTurn");

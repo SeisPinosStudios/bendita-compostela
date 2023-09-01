@@ -15,7 +15,6 @@ public class Damage : BasicCardEffect
         var entityEffectsManager = user.GetComponent<EntityEffectsManager>();
         var frenzyStacks = entityEffectsManager.frenzyAttacks.ContainsKey(card) ? entityEffectsManager.frenzyAttacks[card] : 0;
 
-        Debug.Log("Damage card " + damage);
         target.GetComponent<Entity>().SufferDamage(int.Parse(damage), entity.damageBonus + frenzyStacks, AttackMultiplier(entity, entityEffectsManager), false);
     }
 

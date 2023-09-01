@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 649a2defc409c4643a30428974671ff3, type: 3}
+  m_Name: ESQ_105_Attack
+  m_EditorClassIdentifier: 
+  <attacks>k__BackingField:
+  - {fileID: 11400000, guid: afda6067573f0ed4ebbcf97f8e4ebd20, type: 2}
+  - {fileID: 11400000, guid: 77b5708205a7e6542b208c5c5ca29831, type: 2}
+  - {fileID: 11400000, guid: afda6067573f0ed4ebbcf97f8e4ebd20, type: 2}
+  - {fileID: 11400000, guid: 739997ea5eba47e48865b4cdb61a4d9d, type: 2}

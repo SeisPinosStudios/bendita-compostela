@@ -63,7 +63,6 @@ public class BattleManager : MonoBehaviour
         foreach (Enemy enemy in enemies) if (!enemy.IsDead()) return;
         endScreens[0].SetActive(true);
     }
-
     public void LoadScene(string scene)
     {
         SceneManager.LoadScene(scene);

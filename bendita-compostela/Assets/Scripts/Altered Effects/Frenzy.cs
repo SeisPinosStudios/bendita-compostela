@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static AlteredEffectInterface;
+using static BasicAlteredEffect;
 
-public class Frenzy : IAlteredEffect
+public class Frenzy : BasicAlteredEffect
 {
-    public void Effect(EntityEffectsManager entityEffectsManager, Entity entity, GameObject entityGameObject, Object data)
+    public static void Effect(EntityEffectsManager entityEffectsManager, Entity entity, GameObject entityGameObject, Object data)
     {
         var card = (CardData)data;
         if (!entityEffectsManager.frenzyAttacks.ContainsKey(card)) entityEffectsManager.frenzyAttacks.Add(card, 1);
