@@ -69,6 +69,6 @@ public class BattleManager : MonoBehaviour
     {
         SceneManager.LoadScene(scene);
     }
-    public void SetInteraction(bool interaction) { blockingImage.SetActive(interaction); }
+    public void SetInteraction(bool interaction) { blockingImage.SetActive(!interaction); }
     #endregion
 }
