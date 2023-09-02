@@ -343,6 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <entityDataContainer>k__BackingField: {fileID: 1154136145657413943}
   <entity>k__BackingField: {fileID: 2625660543139403098}
+  <entityEffManager>k__BackingField: {fileID: 3075034504805580143}
   <isTurn>k__BackingField: 0
   player: {fileID: 2625660543139403098}
 --- !u!114 &8052970605755701664
