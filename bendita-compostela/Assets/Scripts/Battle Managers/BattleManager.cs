@@ -16,6 +16,8 @@ public class BattleManager : MonoBehaviour
     [field: SerializeField] public Transform enemyAreaBegin { get; private set; }
     [field: SerializeField] public Transform enemyAreaEnd { get; private set; }
     [field: SerializeField] public List<GameObject> endScreens { get; private set; }
+    [field: SerializeField] public GameObject blockingImage { get; private set; }
+    /*====EVENTS====*/
     public event Action OnBattleEnd = delegate {};
 
     private void Awake()
@@ -67,5 +69,6 @@ public class BattleManager : MonoBehaviour
     {
         SceneManager.LoadScene(scene);
     }
+    public void SetInteraction(bool interaction) { blockingImage.SetActive(interaction); }
     #endregion
 }

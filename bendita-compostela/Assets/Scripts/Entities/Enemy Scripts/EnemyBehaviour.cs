@@ -6,7 +6,6 @@ using System;
 public class EnemyBehaviour : EntityBehaviour
 {
     [SerializeField, Header("Enemy Behaviour variables")] EnemyData enemyData;
-    [field: SerializeField] public EntityEffectsManager entityEffManager { get; private set; }
     [SerializeField] CardDataContainer attackPrefab;
     [SerializeField] Transform mainCanvas;
     [SerializeField] float waitTime;
@@ -24,8 +23,7 @@ public class EnemyBehaviour : EntityBehaviour
     {
         print($"{this.name} OnBeginTurn");
 
-        if (entityEffManager.Suffering(TAlteredEffects.AlteredEffects.Poison)) 
-            entityEffManager.Effect(TAlteredEffects.AlteredEffects.Poison);
+        entityEffManager.Poison();
 
         if (entityEffManager.Suffering(TAlteredEffects.AlteredEffects.Stun))
         {
@@ -50,8 +48,7 @@ public class EnemyBehaviour : EntityBehaviour
     }
     public override void OnTurnEnd()
     {
-        if (entityEffManager.Suffering(TAlteredEffects.AlteredEffects.Burn))
-            entityEffManager.Effect(TAlteredEffects.AlteredEffects.Burn);
+        entityEffManager.Burn();
 
         isTurn = !isTurn;
         TurnManager.Instance.Turn();

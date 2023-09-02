@@ -21,7 +21,6 @@ public class TurnManager : MonoBehaviour
         turnQueue.AddLast(playerBehaviour);
         foreach (EnemyBehaviour enemy in enemiesBehaviour) turnQueue.AddLast(enemy);
     }
-
     private void Start()
     {
         print($"{turnQueue.First.Value}");
