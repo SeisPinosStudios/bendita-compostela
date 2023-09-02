@@ -11,23 +11,13 @@ public class Damage : BasicCardEffect
     {
         OnAttack(target, card);
         OnAttack2(target, user, card);
-        var entity = user.GetComponent<Entity>();
+
+        var cardUser = user.GetComponent<Entity>();
+
         var entityEffectsManager = user.GetComponent<EntityEffectsManager>();
         var frenzyStacks = entityEffectsManager.frenzyAttacks.ContainsKey(card) ? entityEffectsManager.frenzyAttacks[card] : 0;
 
-        target.GetComponent<Entity>().SufferDamage(int.Parse(damage), entity.damageBonus + frenzyStacks, AttackMultiplier(entity, entityEffectsManager), false);
-    }
-
-    private static float AttackMultiplier(Entity entity, EntityEffectsManager entityEffectsManager)
-    {
-        var multiplier = entity.damageMultiplier;
-
-        if (entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Lead))
-        {
-            multiplier -= 0.5f;
-        }
-        Debug.Log($"entity damage multiplier {entity.damageMultiplier} | final multiplier {multiplier}");
-        return multiplier;
+        target.GetComponent<Entity>().SufferDamage(int.Parse(damage), cardUser.attackBonus + frenzyStacks, cardUser.ComputeAttackMultiplier(), false);
     }
 
     public static string GetDescription(CardData card, Entity user, Entity target)
@@ -35,7 +25,7 @@ public class Damage : BasicCardEffect
         var finalDamage = card.GetDamage();
         var frenzyStacks = user && user.entityEffectsManager.frenzyAttacks.ContainsKey(card) ? user.entityEffectsManager.frenzyAttacks[card] : 0;
 
-        var userDamageBonus = user ? user.damageBonus : 0;
+        var userDamageBonus = user ? user.attackBonus : 0;
         var targetDefenseBonus = target ? target.defenseBonus : 0;
         var userDamageMultiplier = user ? user.GetAttackMultiplier() : 1;
         var targetDefenseMultiplier = target ? target.GetAttackMultiplier() : 1;

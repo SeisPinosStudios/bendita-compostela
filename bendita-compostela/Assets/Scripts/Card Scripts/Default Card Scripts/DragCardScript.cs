@@ -47,8 +47,6 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     }
     public void OnEndDrag(PointerEventData eventData)
     {
-        cardInspection.OnPointerExit(eventData);
-        
         cardDisplay.dragging = false;
         if(!cardData.printArrow && eventData.position.y > 400) { UseCard(); return; }
 

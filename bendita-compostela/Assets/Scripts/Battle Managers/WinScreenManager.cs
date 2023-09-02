@@ -9,6 +9,7 @@ public class WinScreenManager : MonoBehaviour
     [field: SerializeField] public CardDataContainer cardDataContainer { get; private set; }
     [field: SerializeField] public Transform rewardsZone { get; private set; }
     [field: SerializeField] public Toggle deckToggle { get; private set; }
+    [field: SerializeField] public static float condecorationChance { get; private set; }
     public void Awake()
     {
         Instance = this;
@@ -32,7 +33,10 @@ public class WinScreenManager : MonoBehaviour
 
         return rewardList;
     }
+    private void GenerateExtraRewards()
+    {
 
+    }
     private void CardChosen()
     {
         gameObject.SetActive(false);

@@ -16,6 +16,7 @@ public class CardData : ScriptableObject
     public string description;
     public int cost, price;
     public Sprite art, miniArt;
+    [field: SerializeField] public bool attack { get; private set; }
 
     [Header("Card Effects")]
     public List<Effect> cardEffects;
@@ -44,6 +45,10 @@ public class CardData : ScriptableObject
         for (int i = 0; i < cardEffects.Count; i++) if (cardEffects[i] == effect) effects.Add(cardEffectsValues[i]);
         return effects;
     }
+    public bool IsAttack()
+    {
+        return attack;
+    }
     public virtual CardData Copy()
     {
         CardData card = CreateInstance<CardData>();
@@ -58,6 +63,7 @@ public class CardData : ScriptableObject
         card.cardEffects = cardEffects;
         card.cardEffectsValues = cardEffectsValues;
         card.printArrow = printArrow;
+        card.attack = attack;
 
         return card;
     }

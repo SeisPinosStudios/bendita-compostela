@@ -48,8 +48,8 @@ public class DeckManager : MonoBehaviour
     {
         while(hand.childCount > 0)
         {
-            var card = hand.GetChild(0);
-            deckQueue.Enqueue(card.GetComponent<CardDataContainer>().cardData);
+            var card = hand.GetChild(0).GetComponent<CardDataContainer>();
+            if(!card.cardData.attack) deckQueue.Enqueue(card.cardData);
             Destroy(card.gameObject);
             yield return new WaitForSeconds(delaySeconds);
         }
