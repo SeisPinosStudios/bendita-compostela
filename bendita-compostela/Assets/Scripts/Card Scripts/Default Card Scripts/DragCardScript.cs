@@ -13,6 +13,7 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     [SerializeField] CardData cardData;
     [SerializeField] Card card;
     [field: SerializeField] public CardDisplay cardDisplay { get; private set; }
+    [field: SerializeField] public CardInspection cardInspection { get; private set; }
     public static event Action OnUsing, OnReturning;
 
     private void Awake()
@@ -31,10 +32,7 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         
         if (eventData.position.y > 400 && cardData.printArrow)
         {
-            Vector2 pos = new Vector2(parent.transform.position.x, parent.transform.position.y + 100);
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.root as RectTransform,
-                                                                    pos, transform.root.GetComponent<Canvas>().worldCamera, out pos);
-            transform.position = transform.root.gameObject.transform.TransformPoint(pos);
+            GetComponent<RectTransform>().position = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, 120.0f, 1.0f));
 
             OnUsing();
         }
@@ -49,17 +47,18 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     }
     public void OnEndDrag(PointerEventData eventData)
     {
+        cardInspection.OnPointerExit(eventData);
+        
         cardDisplay.dragging = false;
         if(!cardData.printArrow && eventData.position.y > 400) { UseCard(); return; }
 
         var hit = RaycastUtils.Raycast2D("Enemy");
-        if (eventData.position.y < 400 || !hit) { ReturnCardToHand(); return; }
+        if (eventData.position.y < 400 || !hit) { ReturnCardToHand(eventData); return; }
         UseCardOnTarget(hit);
     }
-    private void ReturnCardToHand()
+    private void ReturnCardToHand(PointerEventData eventData)
     {
-        transform.SetParent(parent);
-        transform.SetSiblingIndex(index);
+        cardInspection.OnPointerExit(eventData);
         OnReturning();
     }
     private void UseCardOnTarget(GameObject target)
