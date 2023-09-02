@@ -19,7 +19,7 @@ public class DeckManager : MonoBehaviour
     }
     private IEnumerator SetupDeck()
     {
-        yield return new WaitUntil(() => BattleManager.Instance != null);
+        yield return new WaitForSeconds(0.1f);
         var deck = ListUtils.Shuffle(BattleManager.Instance.player.playerData.deck);
         foreach(CardData card in deck) deckQueue.Enqueue(card);
     }
