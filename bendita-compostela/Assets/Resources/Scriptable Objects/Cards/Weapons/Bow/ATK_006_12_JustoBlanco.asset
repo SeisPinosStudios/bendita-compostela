@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f95b9b15292dc49a305a65f742c51b, type: 3}
   m_Name: ATK_006_12_JustoBlanco
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: "\xA1Justo en el Blanco!"
   description: 
-  cost: 0
+  cost: 2
   price: 0
   art: {fileID: 0}
   miniArt: {fileID: 0}
-  cardEffects: 
-  cardEffectsValues: []
-  printArrow: 0
-  <improvedAttack>k__BackingField: {fileID: 0}
+  cardEffects: 0700000000000000
+  cardEffectsValues:
+  - Frenzy|1
+  - 7
+  printArrow: 1
+  <improvedAttack>k__BackingField: {fileID: 11400000, guid: f2cb2e7c41198394596cd8d3fc2db77c, type: 2}

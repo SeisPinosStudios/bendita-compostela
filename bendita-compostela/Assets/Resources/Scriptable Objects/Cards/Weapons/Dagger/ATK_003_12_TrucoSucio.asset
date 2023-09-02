@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f95b9b15292dc49a305a65f742c51b, type: 3}
   m_Name: ATK_003_12_TrucoSucio
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: Truco Sucio
   description: 
-  cost: 0
+  cost: 1
   price: 0
-  art: {fileID: 0}
+  art: {fileID: 1238041967, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
   miniArt: {fileID: 0}
-  cardEffects: 
-  cardEffectsValues: []
-  printArrow: 0
-  <improvedAttack>k__BackingField: {fileID: 0}
+  cardEffects: 0000000006000000
+  cardEffectsValues:
+  - 
+  - Poison|1
+  printArrow: 1
+  <improvedAttack>k__BackingField: {fileID: 11400000, guid: a7043abe21e4e7f4e8145b9724b4da5e, type: 2}

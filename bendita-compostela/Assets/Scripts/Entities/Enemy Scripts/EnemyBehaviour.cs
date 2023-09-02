@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EnemyBehaviour : EntityBehaviour
 {
     [SerializeField, Header("Enemy Behaviour variables")] EnemyData enemyData;
+    [field: SerializeField] public EntityEffectsManager entityEffManager { get; private set; }
     [SerializeField] CardDataContainer attackPrefab;
     [SerializeField] Transform mainCanvas;
     [SerializeField] float waitTime;
     [field: SerializeField] public Queue<EnemyAttack> attackQueue { get; private set; } = new Queue<EnemyAttack>();
     [field: SerializeField] public EnemyAttackSequence currentSequence { get; private set; }
     [field: SerializeField] public EnemyAttackSequence.SequenceType sequenceType { get; private set; }
+    public event Action OnEnemyTurn = delegate { };
 
     private void Awake()
     {
@@ -20,21 +23,36 @@ public class EnemyBehaviour : EntityBehaviour
     public override void OnTurnBegin()
     {
         print($"{this.name} OnBeginTurn");
+
+        if (entityEffManager.Suffering(TAlteredEffects.AlteredEffects.Poison)) 
+            entityEffManager.Effect(TAlteredEffects.AlteredEffects.Poison);
+
+        if (entityEffManager.Suffering(TAlteredEffects.AlteredEffects.Stun))
+        {
+            OnTurnEnd();
+            return;
+        }
+
         if (attackQueue.Count <= 0) GetNewSequence();
         isTurn = !isTurn;
         OnTurn();
     }
     public override void OnTurn()
     {
+        OnEnemyTurn();
         StartCoroutine(OnTurnCoroutine());
     }
     private IEnumerator OnTurnCoroutine()
     {
         yield return StartCoroutine(Attack());
+        yield return new WaitForSeconds(1.0f);
         OnTurnEnd();
     }
     public override void OnTurnEnd()
     {
+        if (entityEffManager.Suffering(TAlteredEffects.AlteredEffects.Burn))
+            entityEffManager.Effect(TAlteredEffects.AlteredEffects.Burn);
+
         isTurn = !isTurn;
         TurnManager.Instance.Turn();
     }
@@ -47,7 +65,7 @@ public class EnemyBehaviour : EntityBehaviour
         attackPrefab.cardData = attack;
 
         var attackInstance = Instantiate(attackPrefab, mainCanvas);
-        attackInstance.GetComponent<Card>().UseCard(target);
+        attackInstance.GetComponent<Card>().UseEnemyCard(target);
         yield return new WaitForSeconds(waitTime);
         Destroy(attackInstance.gameObject);
     }

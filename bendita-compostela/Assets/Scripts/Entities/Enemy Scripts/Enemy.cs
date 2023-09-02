@@ -23,10 +23,15 @@ public class Enemy : Entity
 
         entityDisplay.UpdateHealth(entityData.HP, currentHP);
     }
-    protected new IEnumerator Death()
+    protected override IEnumerator Death()
     {
-        OnDeath();
+        yield return new WaitForSeconds(1.0f);
         Destroy(gameObject);
         yield return null;
+    }
+
+    private void OnDestroy()
+    {
+        OnDeath();
     }
 }

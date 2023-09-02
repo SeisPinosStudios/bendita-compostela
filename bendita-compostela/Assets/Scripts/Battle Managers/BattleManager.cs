@@ -1,25 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour
 {
-    [field:SerializeField, Header("Battle Setup")] public CombatData combatData { get; private set; }
+    [field: SerializeField, Header("Battle Setup")] public CombatData combatData { get; private set; }
     [SerializeField] EntityDataContainer entityDataContainer;
 
-    [field:SerializeField, Header("Enviroment Variables")] public Transform enemiesContainer { get; private set; }
-    [field:SerializeField] public static BattleManager Instance { get; private set; }
-    [field:SerializeField] public Player player { get; private set; }
-    [field:SerializeField] public List<Enemy> enemies { get; private set; }
-    [field:SerializeField] public Transform enemyAreaBegin { get; private set; }
-    [field:SerializeField] public Transform enemyAreaEnd { get; private set; }
-    [field:SerializeField] public List<GameObject> endScreens { get; private set; }
+    [field: SerializeField, Header("Enviroment Variables")] public Transform enemiesContainer { get; private set; }
+    [field: SerializeField] public static BattleManager Instance { get; private set; }
+    [field: SerializeField] public Player player { get; private set; }
+    [field: SerializeField] public List<Enemy> enemies { get; private set; }
+    [field: SerializeField] public Transform enemyAreaBegin { get; private set; }
+    [field: SerializeField] public Transform enemyAreaEnd { get; private set; }
+    [field: SerializeField] public List<GameObject> endScreens { get; private set; }
+    public event Action OnBattleEnd = delegate {};
 
     private void Awake()
     {
         Instance = this;
 
-        //combatData = GameManager.Instance.combatData;
+        combatData = GameManager.Instance.combatData;
 
         GenerateEnemies();
 
@@ -37,12 +40,6 @@ public class BattleManager : MonoBehaviour
             entityDataContainer.entityData = combatData.enemiesData[i];
             Instantiate(entityDataContainer, position, new Quaternion(), enemiesContainer);
         }
-        /*
-        foreach (EnemyData enemy in combatData.enemiesData)
-        {
-            entityDataContainer.entityData = enemy;
-            Instantiate(entityDataContainer, enemiesContainer);
-        }*/
     }
 
     #region Check methods
@@ -57,8 +54,18 @@ public class BattleManager : MonoBehaviour
     #region Game State Methods
     private void CheckGameEnd()
     {
-        if (player.IsDead()) endScreens[1].SetActive(true);
-        if (enemies.Count <= 0) endScreens[0].SetActive(true);
+        if (player.IsDead())
+        {
+            endScreens[1].SetActive(true);
+            return;
+        }
+
+        foreach (Enemy enemy in enemies) if (!enemy.IsDead()) return;
+        endScreens[0].SetActive(true);
+    }
+    public void LoadScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
     }
     #endregion
 }

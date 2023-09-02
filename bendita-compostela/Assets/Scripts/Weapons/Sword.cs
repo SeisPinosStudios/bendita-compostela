@@ -10,7 +10,7 @@ public class Sword : BaseWeapon
 
     private void Awake()
     {
-        weaponId = 1;
+        weaponId = 0;
         player = GetComponent<Player>();
         chestSynergy = player.playerData.chestArmor.weaponSynergy == weaponId;
         legSynergy = player.playerData.legArmor.weaponSynergy == weaponId;
@@ -29,7 +29,7 @@ public class Sword : BaseWeapon
 
         if (styleAttacks > 0) { styleAttacks--; return; }
 
-        player.DamageMultiplier(styleMultiplier);
+        player.DamageMultiplier(-styleMultiplier);
     }
 
     private void Turn()

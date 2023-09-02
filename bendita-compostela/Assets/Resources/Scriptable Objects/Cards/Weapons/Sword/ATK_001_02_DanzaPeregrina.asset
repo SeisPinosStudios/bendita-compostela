@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Danza Peregrina
   description: 
-  cost: 0
+  cost: 4
   price: 0
-  art: {fileID: 0}
+  art: {fileID: 2142841882, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
   miniArt: {fileID: 0}
   cardEffects: 0000000006000000
   cardEffectsValues:

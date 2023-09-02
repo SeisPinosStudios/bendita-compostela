@@ -18,17 +18,20 @@ public class Card : MonoBehaviour
     {
         StartCoroutine(UseCardCorroutine(target));
     }
-
     public void UseCard()
     {
         StartCoroutine(UseCardCorroutine(null));
     }
-
     IEnumerator UseCardCorroutine(GameObject target)
     {
         var player = BattleManager.Instance.player;
 
         if (!player.ConsumeEnergy(GetEnergyCost(player))) yield break;
+
+        var user = TurnManager.Instance.entityTurn.GetComponent<EntityEffectsManager>();
+
+        if (user.Suffering(TAlteredEffects.AlteredEffects.Bleed))
+            user.Effect(TAlteredEffects.AlteredEffects.Bleed);
 
         print($"Used card {cardData.cardName}");
         for (int i = 0; i < cardData.cardEffects.Count; i++)
@@ -40,6 +43,30 @@ public class Card : MonoBehaviour
 
         Destroy(this.gameObject);
         yield return null;
+    }
+
+    public void UseEnemyCard(GameObject target)
+    {
+        StartCoroutine(UseEnemyCardCoroutine(target));
+    }
+    public void UseEnemyCard()
+    {
+        StartCoroutine(UseEnemyCardCoroutine(null));
+    }
+    private IEnumerator UseEnemyCardCoroutine(GameObject target)
+    {
+        var user = TurnManager.Instance.entityTurn.GetComponent<EntityEffectsManager>();
+
+        if (user.Suffering(TAlteredEffects.AlteredEffects.Bleed))
+            user.Effect(TAlteredEffects.AlteredEffects.Bleed);
+
+        print($"Used card {cardData.cardName}");
+        for (int i = 0; i < cardData.cardEffects.Count; i++)
+        {
+            Type.GetType(cardData.cardEffects[i].ToString())
+                .GetMethod("Effect").Invoke(null, new object[] { cardData.cardEffectsValues[i], cardData, TurnManager.Instance.entityTurn.gameObject, target });
+            yield return new WaitForSeconds(0.0f);
+        }
     }
 
     private int GetEnergyCost(Player player)

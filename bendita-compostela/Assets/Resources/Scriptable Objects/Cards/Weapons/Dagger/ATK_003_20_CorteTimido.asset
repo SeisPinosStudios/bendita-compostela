@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f95b9b15292dc49a305a65f742c51b, type: 3}
   m_Name: ATK_003_20_CorteTimido
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: "Corte T\xEDmido"
   description: 
   cost: 0
   price: 0
-  art: {fileID: 0}
+  art: {fileID: 919792594, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
   miniArt: {fileID: 0}
-  cardEffects: 
-  cardEffectsValues: []
-  printArrow: 0
+  cardEffects: 00000000
+  cardEffectsValues:
+  - 3
+  printArrow: 1
   <improvedAttack>k__BackingField: {fileID: 0}

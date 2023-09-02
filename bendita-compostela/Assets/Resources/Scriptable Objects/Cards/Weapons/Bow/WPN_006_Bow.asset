@@ -12,18 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f4d891fd188894fa6be30df36d7c76, type: 3}
   m_Name: WPN_006_Bow
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: Arco
   description: 
   cost: 0
-  price: 0
-  art: {fileID: 0}
-  miniArt: {fileID: 0}
-  cardEffects: 
-  cardEffectsValues: []
+  price: 3
+  art: {fileID: -1971310070, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
+  miniArt: {fileID: -7154276959611731847, guid: b0492a3b5e9bcac42a9d2131ed5fc5f2, type: 3}
+  cardEffects: 03000000
+  cardEffectsValues:
+  - 
   printArrow: 0
-  <attacks>k__BackingField: []
-  <weaponId>k__BackingField: 0
-  <weaponClassName>k__BackingField: 0
+  <weaponId>k__BackingField: 5
+  <weaponClassName>k__BackingField: 5
+  <attacks>k__BackingField:
+  - {fileID: 11400000, guid: 2c17a42f2b6e635439241d47da09dc34, type: 2}
+  - {fileID: 11400000, guid: 58220f2212e3d2048a027438194c359d, type: 2}
+  - {fileID: 11400000, guid: 35d63e2597124c744a02d9c0b2b431e1, type: 2}
+  - {fileID: 11400000, guid: f745c81ffd0ef1844b2daf6371eec87a, type: 2}
+  <ultimate>k__BackingField: {fileID: 11400000, guid: f78d2c974c4279447995d3d47443bd7f, type: 2}
   <weaponLevel>k__BackingField: 0
   <styleLevel>k__BackingField: 0
   <ultimateLevel>k__BackingField: 0

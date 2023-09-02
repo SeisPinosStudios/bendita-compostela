@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SerpentineGrace : MonoBehaviour
+public class SerpentineGrace : BasicPassive
 {
-    // Start is called before the first frame update
-    void Start()
+    [field: SerializeField] public bool active { get; private set; }
+    private void Awake()
     {
-        
+        GetComponent<EnemyBehaviour>().OnEnemyTurn += PassiveEffect;
+        TurnManager.Instance.playerBehaviour.OnPlayerTurn += ResetPassive;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PassiveEffect()
     {
-        
+        if (!active) return;
+        if (BattleManager.Instance.player.entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Poison))
+            TurnManager.Instance.turnQueue.AddFirst(GetComponent<EnemyBehaviour>());
+
+        active = false;
+    }
+
+    private void ResetPassive()
+    {
+        active = true;
     }
 }

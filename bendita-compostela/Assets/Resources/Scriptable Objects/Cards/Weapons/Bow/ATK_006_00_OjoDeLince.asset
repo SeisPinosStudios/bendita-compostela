@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f95b9b15292dc49a305a65f742c51b, type: 3}
   m_Name: ATK_006_00_OjoDeLince
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: "Ojo de Lince Ib\xE9rico"
   description: 
   cost: 0
   price: 0
   art: {fileID: 0}
   miniArt: {fileID: 0}
-  cardEffects: 
-  cardEffectsValues: []
-  printArrow: 0
-  <improvedAttack>k__BackingField: {fileID: 0}
+  cardEffects: 06000000
+  cardEffectsValues:
+  - Marked|1
+  printArrow: 1
+  <improvedAttack>k__BackingField: {fileID: 11400000, guid: f640968b74225da4c9f6585523f5f392, type: 2}

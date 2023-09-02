@@ -58,9 +58,6 @@ public class Player : Entity
     #endregion
 
     #region Check Methods
-    public bool IsDead()
-    {
-        return currentHP <= 0;
-    }
+    
     #endregion
 }

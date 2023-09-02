@@ -69,6 +69,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardDataContainer: {fileID: 5463638292455816910}
   cardData: {fileID: 0}
+  <interact>k__BackingField: 1
+  <cardCollider>k__BackingField: {fileID: 2966026559876350211}
 --- !u!114 &7803053706445925766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,6 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardDataContainer: {fileID: 5463638292455816910}
   cardData: {fileID: 0}
+  <cardSelector>k__BackingField: {fileID: 1308139504037740509}
   sprite: {fileID: 3812005779562882709}
   highlight: {fileID: 8050752547139724141}
   display: {fileID: 6346333395374161573}

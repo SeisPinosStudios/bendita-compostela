@@ -11,7 +11,7 @@ public class Hammer : BaseWeapon
 
     private void Awake()
     {
-        weaponId = 2;
+        weaponId = 1;
         player = BattleManager.Instance.player;
 
         styleAttackThreshold = player.weapon.styleLevel == 2 ? 4 : 5;
@@ -35,12 +35,12 @@ public class Hammer : BaseWeapon
     {
         if(styleAttacks < styleAttackThreshold) { styleAttacks++; return; }
 
-        if (int.Parse(card.GetDamage()) <= 0) return;
+        if (card.GetDamage() <= 0) return;
 
         var enemies = BattleManager.Instance.enemies;
         foreach (Enemy enemy in enemies) 
             if (enemy != target.GetComponent<Enemy>()) 
-                enemy.SufferDamage(int.Parse(card.GetDamage()), player.damageBonus, player.damageMultiplier, false);
+                enemy.SufferDamage(card.GetDamage(), player.damageBonus, player.damageMultiplier, false);
 
         ResetStyle();
     }
