@@ -1327,6 +1327,7 @@ MonoBehaviour:
   <endScreens>k__BackingField:
   - {fileID: 1555979985}
   - {fileID: 2053653264}
+  <blockingImage>k__BackingField: {fileID: 1254350239}
 --- !u!1 &1108733629
 GameObject:
   m_ObjectHideFlags: 0
