@@ -96,9 +96,9 @@ MonoBehaviour:
   m_fontSize: 0.25
   m_fontSizeBase: 0.25
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 0.25
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 0.15
+  m_fontSizeMax: 0.25
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 4096
@@ -260,4 +260,6 @@ MonoBehaviour:
   <textToWrite>k__BackingField: 
   <textBoxObject>k__BackingField: {fileID: 0}
   <highlight>k__BackingField: {fileID: 0}
+  <progress>k__BackingField: 0
+  <progressBar>k__BackingField: {fileID: 0}
   <effectDisplay>k__BackingField: {fileID: 678472934270943576}

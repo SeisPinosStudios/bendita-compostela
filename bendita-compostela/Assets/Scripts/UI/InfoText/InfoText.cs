@@ -12,8 +12,8 @@ public class InfoText : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandler
     [field:SerializeField] public string textToWrite { get; protected set; }
     [field:SerializeField] public GameObject textBoxObject { get; protected set; }
     [field:SerializeField] public GameObject highlight { get; protected set; }
-    [field: SerializeField] public float progress { get; private set; }
-    [field: SerializeField] public Image progressBar { get; private set; }
+    [field: SerializeField] public float progress { get; protected set; }
+    [field: SerializeField] public Image progressBar { get; protected set; }
     
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -21,7 +21,7 @@ public class InfoText : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandler
         StartCoroutine(OnPointerEnterCoroutine(eventData));
     }
 
-    public IEnumerator OnPointerEnterCoroutine(PointerEventData eventData)
+    public virtual IEnumerator OnPointerEnterCoroutine(PointerEventData eventData)
     {
         textBoxObject = Instantiate(textBoxPrefab, CanvasUtils.GetMainCanvas().transform);
         progressBar = textBoxObject.GetComponent<Image>();
@@ -58,7 +58,7 @@ public class InfoText : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandler
         MoveTextToPointer(eventData);
     }
 
-    private void MoveTextToPointer(PointerEventData eventData)
+    protected virtual void MoveTextToPointer(PointerEventData eventData)
     {
         Vector2 pos;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.root as RectTransform,
@@ -66,7 +66,7 @@ public class InfoText : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandler
         textBoxObject.transform.position = CanvasUtils.GetMainCanvas().transform.TransformPoint(pos);
     }
 
-    private void ShowTextBox()
+    protected void ShowTextBox()
     {
         textBoxObject.transform.GetChild(0).gameObject.SetActive(true);
     }

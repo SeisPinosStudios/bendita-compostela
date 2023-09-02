@@ -16,6 +16,7 @@ public class EntityDisplay : MonoBehaviour
     private void Awake()
     {
         //entityData = entityDataContainer.entityData;
+        alteredEffectsZone.GetComponentInParent<Canvas>().worldCamera = Camera.main;
     }
     private void Update()
     {
