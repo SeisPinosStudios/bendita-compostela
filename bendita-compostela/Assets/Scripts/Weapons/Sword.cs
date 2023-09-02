@@ -19,7 +19,7 @@ public class Sword : BaseWeapon
         styleMultiplier = player.weapon.styleLevel == 0 ? 0.5f : player.weapon.styleLevel;
 
         Damage.OnAttack += Style;
-        TurnManager.Instance.onTurn += Turn;
+        TurnManager.Instance.playerBehaviour.OnPlayerTurn += Turn;
         Turn();
     }
 
@@ -34,7 +34,7 @@ public class Sword : BaseWeapon
 
     private void Turn()
     {
+        if(styleAttacks <= 0) player.DamageMultiplier(styleMultiplier);
         styleAttacks = 1 + (chestSynergy ? (1 * chestLevel) + 1 : 0);
-        player.DamageMultiplier(styleMultiplier);
     }
 }

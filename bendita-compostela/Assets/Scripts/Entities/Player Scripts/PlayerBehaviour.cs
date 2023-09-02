@@ -14,7 +14,9 @@ public class PlayerBehaviour : EntityBehaviour
     }
     private IEnumerator OnTurnBeginCorroutine()
     {
-       entityEffManager.Poison();
+        OnPlayerTurn();
+
+        entityEffManager.Poison();
 
         if (entityEffManager.Suffering(TAlteredEffects.AlteredEffects.Stun))
         {
