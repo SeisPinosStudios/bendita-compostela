@@ -32,6 +32,18 @@ public class CardData : ScriptableObject
         if (!cardEffects.Contains(Effect.Heal)) return null;
         return cardEffectsValues[cardEffects.IndexOf(Effect.Heal)];
     }
+    public List<string> GetAlteredEffects()
+    {
+        var effects = new List<string>();
+        for (int i = 0; i < cardEffects.Count; i++) if (cardEffects[i] == Effect.ApplyEffect) effects.Add(cardEffectsValues[i]);
+        return effects;
+    }
+    public List<string> GetEffect(Effect effect)
+    {
+        var effects = new List<string>();
+        for (int i = 0; i < cardEffects.Count; i++) if (cardEffects[i] == effect) effects.Add(cardEffectsValues[i]);
+        return effects;
+    }
     public virtual CardData Copy()
     {
         CardData card = CreateInstance<CardData>();

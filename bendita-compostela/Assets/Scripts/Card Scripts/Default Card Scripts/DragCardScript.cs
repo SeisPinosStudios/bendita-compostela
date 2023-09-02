@@ -13,7 +13,7 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     [SerializeField] CardData cardData;
     [SerializeField] Card card;
     [field: SerializeField] public CardDisplay cardDisplay { get; private set; }
-    public static event Action onUsing, onReturning;
+    public static event Action OnUsing, OnReturning;
 
     private void Awake()
     {
@@ -31,8 +31,12 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         
         if (eventData.position.y > 400 && cardData.printArrow)
         {
-            transform.position = new Vector3(parent.transform.position.x, parent.transform.position.y + 100, 0.0f);
-            onUsing();
+            Vector2 pos = new Vector2(parent.transform.position.x, parent.transform.position.y + 100);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.root as RectTransform,
+                                                                    pos, transform.root.GetComponent<Canvas>().worldCamera, out pos);
+            transform.position = transform.root.gameObject.transform.TransformPoint(pos);
+
+            OnUsing();
         }
         else
         {
@@ -40,7 +44,7 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.root as RectTransform, 
                                                                     eventData.position, transform.root.GetComponent<Canvas>().worldCamera, out pos);
             transform.position = transform.root.gameObject.transform.TransformPoint(pos);
-            onReturning();
+            OnReturning();
         }
     }
     public void OnEndDrag(PointerEventData eventData)
@@ -56,18 +60,18 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     {
         transform.SetParent(parent);
         transform.SetSiblingIndex(index);
-        onReturning();
+        OnReturning();
     }
     private void UseCardOnTarget(GameObject target)
     {
         print($"Card used on {target.name}");
-        onReturning();
+        OnReturning();
         card.UseCard(target);
     }
     private void UseCard()
     {
         print($"Card used");
-        onReturning();
+        OnReturning();
         card.UseCard();
     }
 }

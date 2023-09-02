@@ -12,4 +12,15 @@ public class Heal : BasicCardEffect
         entity.RestoreHealth(int.Parse(data), entity.healingBonus, entity.healingMultiplier);
         OnHeal(card, user);
     }
+
+    public static string GetDescription(CardData card, Entity user, Entity target)
+    {
+        var data = card.GetEffect(CardData.Effect.Heal);
+
+        var userHealingBonus = user ? user.healingBonus : 0;
+        var userHealingMultiplier = user ? user.healingMultiplier : 1;
+
+        var finalHeal = Mathf.RoundToInt((int.Parse(data[0]) + userHealingBonus) * userHealingMultiplier);
+        return $"Cura {finalHeal}.";
+    }
 }

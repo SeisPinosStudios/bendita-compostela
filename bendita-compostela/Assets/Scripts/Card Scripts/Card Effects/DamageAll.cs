@@ -31,4 +31,20 @@ public class DamageAll : BasicCardEffect
 
         return multiplier;
     }
+
+    public static string GetDescription(CardData card, Entity user, Entity target)
+    {
+        var finalDamage = card.GetDamage();
+        var frenzyStacks = user && user.entityEffectsManager.frenzyAttacks.ContainsKey(card) ? user.entityEffectsManager.frenzyAttacks[card] : 0;
+
+        var userDamageBonus = user ? user.damageBonus : 0;
+        var targetDefenseBonus = target ? target.defenseBonus : 0;
+        var userDamageMultiplier = user ? user.GetAttackMultiplier() : 1;
+        var targetDefenseMultiplier = target ? target.GetAttackMultiplier() : 1;
+
+        finalDamage += frenzyStacks;
+        finalDamage = Mathf.RoundToInt(Mathf.Clamp((finalDamage + userDamageBonus - targetDefenseBonus)
+                       * userDamageMultiplier / targetDefenseMultiplier, 0, 99));
+        return $"Realiza {finalDamage} puntos de daño.";
+    }
 }

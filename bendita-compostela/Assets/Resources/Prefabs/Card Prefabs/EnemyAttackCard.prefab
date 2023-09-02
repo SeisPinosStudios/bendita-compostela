@@ -609,10 +609,8 @@ GameObject:
   - component: {fileID: 752961581588794506}
   - component: {fileID: 4188301813789642578}
   - component: {fileID: 3175823880051612337}
-  - component: {fileID: -8927400296690669043}
-  - component: {fileID: 371672315195035557}
   m_Layer: 0
-  m_Name: DefaultCard
+  m_Name: EnemyAttackCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -686,36 +684,3 @@ MonoBehaviour:
   costField: {fileID: 8058855825905352563}
   art: {fileID: 7689330455088447037}
   dragging: 0
---- !u!114 &-8927400296690669043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8475183939394185113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5971c478cbca33e4c820b2c2fa8deccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 0}
-  index: 0
-  cardDataContainer: {fileID: 752961581588794506}
-  cardData: {fileID: 0}
-  card: {fileID: 4188301813789642578}
-  <cardDisplay>k__BackingField: {fileID: 3175823880051612337}
---- !u!114 &371672315195035557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8475183939394185113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 994d979040ea8c345a01139706b566ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <verticalMovement>k__BackingField: 90
-  <hand>k__BackingField: {fileID: 0}
-  <index>k__BackingField: 0
