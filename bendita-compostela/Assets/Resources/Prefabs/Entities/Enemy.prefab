@@ -308,9 +308,9 @@ GameObject:
   - component: {fileID: 33126375829233125}
   - component: {fileID: 7902973688884092947}
   - component: {fileID: 7642431545003664909}
-  - component: {fileID: 5762668312253699461}
   - component: {fileID: 5231252943997022551}
   - component: {fileID: 3779116131978059888}
+  - component: {fileID: 5762668312253699461}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -364,6 +364,7 @@ MonoBehaviour:
   <entityData>k__BackingField: {fileID: 0}
   <entityDisplay>k__BackingField: {fileID: 5231252943997022551}
   <entityEffectsManager>k__BackingField: {fileID: 3779116131978059888}
+  <entityBehaviour>k__BackingField: {fileID: 5762668312253699461}
   <entityName>k__BackingField: 
   <currentHP>k__BackingField: 0
   <defenseBonus>k__BackingField: 0
@@ -373,28 +374,6 @@ MonoBehaviour:
   <damageMultiplier>k__BackingField: 1
   <healingMultiplier>k__BackingField: 1
   enemyData: {fileID: 0}
---- !u!114 &5762668312253699461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6716929231085287745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 548463d847806c742b4fd91e3aed54c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <entityDataContainer>k__BackingField: {fileID: 7902973688884092947}
-  <entity>k__BackingField: {fileID: 7642431545003664909}
-  <entityEffManager>k__BackingField: {fileID: 3779116131978059888}
-  <isTurn>k__BackingField: 0
-  enemyData: {fileID: 0}
-  attackPrefab: {fileID: 752961581588794506, guid: 99c448be8e73418458111cc0111098dc, type: 3}
-  mainCanvas: {fileID: 0}
-  waitTime: 2
-  <currentSequence>k__BackingField: {fileID: 0}
-  <sequenceType>k__BackingField: 0
 --- !u!114 &5231252943997022551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,6 +425,28 @@ MonoBehaviour:
   <burnThreshold>k__BackingField: 6
   <vulnerableMultiplier>k__BackingField: 0.5
   <guardedMultiplier>k__BackingField: 0.5
+--- !u!114 &5762668312253699461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6716929231085287745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 548463d847806c742b4fd91e3aed54c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <entityDataContainer>k__BackingField: {fileID: 7902973688884092947}
+  <entity>k__BackingField: {fileID: 7642431545003664909}
+  <entityEffManager>k__BackingField: {fileID: 3779116131978059888}
+  <isTurn>k__BackingField: 0
+  enemyData: {fileID: 0}
+  attackPrefab: {fileID: 752961581588794506, guid: 99c448be8e73418458111cc0111098dc, type: 3}
+  mainCanvas: {fileID: 0}
+  waitTime: 2
+  <currentSequence>k__BackingField: {fileID: 0}
+  <sequenceType>k__BackingField: 0
 --- !u!1 &7325598080246620616
 GameObject:
   m_ObjectHideFlags: 0

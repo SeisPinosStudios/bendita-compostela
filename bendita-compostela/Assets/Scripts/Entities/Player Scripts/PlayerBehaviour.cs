@@ -24,8 +24,8 @@ public class PlayerBehaviour : EntityBehaviour
             yield break;
         }
 
-        BattleManager.Instance.SetInteraction(true);
         yield return StartCoroutine(DeckManager.Instance.DrawCardCoroutine(5));
+        BattleManager.Instance.SetInteraction(true);
         player.RestoreEnergy(player.maxEnergy);
         isTurn = !isTurn;
     }

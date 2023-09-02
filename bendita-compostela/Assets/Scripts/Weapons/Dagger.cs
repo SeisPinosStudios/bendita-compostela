@@ -18,6 +18,7 @@ public class Dagger : BaseWeapon
         player = BattleManager.Instance.player;
         playerEffectsManager = player.entityEffectsManager;
         playerEffectsManager.OnEffectApplied += SynergyEffect;
+        TurnManager.Instance.playerBehaviour.OnPlayerTurn += ResetStyle;
 
         chestSynergy = GetChestSynergy();
         legSynergy = GetLegSynergy();
@@ -43,12 +44,14 @@ public class Dagger : BaseWeapon
         
         synergyEffect = false;
     }
-
     private void ResetSynergyEffect()
     {
         synergyEffect = true;
     }
-
+    private void ResetStyle()
+    {
+        player.AttackBonus(-styleBonusAccum);
+    }
     private void OnDestroy()
     {
         BattleManager.Instance.player.AttackBonus(-styleBonusAccum);

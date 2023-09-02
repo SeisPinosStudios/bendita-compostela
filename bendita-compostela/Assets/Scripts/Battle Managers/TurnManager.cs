@@ -30,17 +30,22 @@ public class TurnManager : MonoBehaviour
     public void Turn()
     {
         if (entityTurn) turnQueue.AddLast(entityTurn);
-        foreach (EntityBehaviour behaviour in turnQueue) print(behaviour.name);
         StartCoroutine(TurnCoroutine());
     }
     private IEnumerator TurnCoroutine()
     {
         yield return new WaitUntil(() => entityTurn == null || entityTurn.isTurn == false);
 
-        //entityTurn = turnQueue.Dequeue();
+        while (!turnQueue.First.Value) turnQueue.RemoveFirst();
+
         entityTurn = turnQueue.First.Value;
         turnQueue.RemoveFirst();
+
         entityTurn.OnTurnBegin();
         OnTurn();
+    }
+    public void RemoveBehaviour(EntityBehaviour behaviour)
+    {
+        turnQueue.Remove(behaviour);
     }
 }

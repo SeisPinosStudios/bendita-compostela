@@ -67,6 +67,9 @@ public class Card : MonoBehaviour
                 .GetMethod("Effect").Invoke(null, new object[] { cardData.cardEffectsValues[i], cardData, TurnManager.Instance.entityTurn.gameObject, target });
             yield return new WaitForSeconds(0.0f);
         }
+
+        yield return new WaitForSeconds(1.0f);
+        Destroy(gameObject);
     }
 
     private int GetEnergyCost(Player player)

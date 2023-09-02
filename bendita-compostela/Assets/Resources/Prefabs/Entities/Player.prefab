@@ -261,9 +261,9 @@ GameObject:
   - component: {fileID: 6653970511835604285}
   - component: {fileID: 1154136145657413943}
   - component: {fileID: 2625660543139403098}
-  - component: {fileID: 7968599129663581284}
   - component: {fileID: 8052970605755701664}
   - component: {fileID: 3075034504805580143}
+  - component: {fileID: 7968599129663581284}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -317,6 +317,7 @@ MonoBehaviour:
   <entityData>k__BackingField: {fileID: 0}
   <entityDisplay>k__BackingField: {fileID: 8052970605755701664}
   <entityEffectsManager>k__BackingField: {fileID: 3075034504805580143}
+  <entityBehaviour>k__BackingField: {fileID: 7968599129663581284}
   <entityName>k__BackingField: 
   <currentHP>k__BackingField: 0
   <defenseBonus>k__BackingField: 0
@@ -329,23 +330,6 @@ MonoBehaviour:
   <energy>k__BackingField: 0
   <maxEnergy>k__BackingField: 10
   <weapon>k__BackingField: {fileID: 0}
---- !u!114 &7968599129663581284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5148348253315319041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a19f5fd9c412e7e438354c00f0ef8049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <entityDataContainer>k__BackingField: {fileID: 1154136145657413943}
-  <entity>k__BackingField: {fileID: 2625660543139403098}
-  <entityEffManager>k__BackingField: {fileID: 3075034504805580143}
-  <isTurn>k__BackingField: 0
-  player: {fileID: 2625660543139403098}
 --- !u!114 &8052970605755701664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,6 +369,23 @@ MonoBehaviour:
   <burnThreshold>k__BackingField: 6
   <vulnerableMultiplier>k__BackingField: 0.5
   <guardedMultiplier>k__BackingField: 0.5
+--- !u!114 &7968599129663581284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5148348253315319041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a19f5fd9c412e7e438354c00f0ef8049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <entityDataContainer>k__BackingField: {fileID: 1154136145657413943}
+  <entity>k__BackingField: {fileID: 2625660543139403098}
+  <entityEffManager>k__BackingField: {fileID: 3075034504805580143}
+  <isTurn>k__BackingField: 0
+  player: {fileID: 2625660543139403098}
 --- !u!1 &6309765968142272855
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,6 +18,7 @@ public class EnemyBehaviour : EntityBehaviour
     {
         enemyData = (EnemyData)entityDataContainer.entityData;
         mainCanvas = GameObject.FindGameObjectWithTag("MainCanvas").transform;
+        ((Enemy)entity).OnDeath += Death;
     }
     public override void OnTurnBegin()
     {
@@ -53,8 +54,6 @@ public class EnemyBehaviour : EntityBehaviour
         isTurn = !isTurn;
         TurnManager.Instance.Turn();
     }
-
-
     private IEnumerator Attack()
     {
         var attack = attackQueue.Dequeue();
@@ -64,7 +63,7 @@ public class EnemyBehaviour : EntityBehaviour
         var attackInstance = Instantiate(attackPrefab, mainCanvas);
         attackInstance.GetComponent<Card>().UseEnemyCard(target);
         yield return new WaitForSeconds(waitTime);
-        Destroy(attackInstance.gameObject);
+        //Destroy(attackInstance.gameObject);
     }
     private void GetNewSequence()
     {
@@ -99,5 +98,10 @@ public class EnemyBehaviour : EntityBehaviour
         if (attack.attackType == EnemyAttack.AttackType.Attack) return BattleManager.Instance.player.gameObject;
 
         return null;
+    }
+    private void Death()
+    {
+        StopAllCoroutines();
+        TurnManager.Instance.Turn();
     }
 }

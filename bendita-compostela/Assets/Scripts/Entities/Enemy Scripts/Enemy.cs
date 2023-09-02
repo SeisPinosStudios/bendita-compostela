@@ -25,11 +25,11 @@ public class Enemy : Entity
     }
     protected override IEnumerator Death()
     {
+        TurnManager.Instance.RemoveBehaviour(entityBehaviour);
         yield return new WaitForSeconds(1.0f);
         Destroy(gameObject);
         yield return null;
     }
-
     private void OnDestroy()
     {
         OnDeath();

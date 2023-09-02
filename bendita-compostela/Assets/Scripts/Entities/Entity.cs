@@ -10,6 +10,7 @@ public class Entity : MonoBehaviour
     [field: SerializeField] public EntityData entityData { get; protected set; }
     [field: SerializeField] public EntityDisplay entityDisplay { get; protected set; }
     [field: SerializeField] public EntityEffectsManager entityEffectsManager { get; protected set; }
+    [field: SerializeField] public EntityBehaviour entityBehaviour { get; protected set; }
     [field: SerializeField, Header("Entity Data")] public string entityName { get; protected set; }
     [field: SerializeField] public int currentHP { get; protected set; }
     [field: SerializeField, Header("Stat Bonus")] public int defenseBonus { get; protected set; }
@@ -42,7 +43,7 @@ public class Entity : MonoBehaviour
 
         if (!effect)
         {
-            finalDamage = Mathf.RoundToInt((damage + damageBonus - defenseBonus) * damageMultiplier);
+            finalDamage = Mathf.RoundToInt((damage + damageBonus - defenseBonus) * damageMultiplier / CheckDefenseMultiplier());
             OnDamaged(finalDamage);
         }
 
