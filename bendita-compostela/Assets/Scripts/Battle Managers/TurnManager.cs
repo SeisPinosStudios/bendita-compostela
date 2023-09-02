@@ -11,7 +11,7 @@ public class TurnManager : MonoBehaviour
     [field: SerializeField] public EntityBehaviour entityTurn { get; private set; }
     [field: SerializeField] public List<EnemyBehaviour> enemiesBehaviour { get; private set; }
     [field: SerializeField] public PlayerBehaviour playerBehaviour { get; private set; }
-    public event Action onTurn = delegate { };
+    public event Action OnTurn = delegate { };
 
     private void Awake()
     {
@@ -30,15 +30,17 @@ public class TurnManager : MonoBehaviour
     public void Turn()
     {
         if (entityTurn) turnQueue.AddLast(entityTurn);
+        foreach (EntityBehaviour behaviour in turnQueue) print(behaviour.name);
         StartCoroutine(TurnCoroutine());
     }
     private IEnumerator TurnCoroutine()
     {
         yield return new WaitUntil(() => entityTurn == null || entityTurn.isTurn == false);
+
         //entityTurn = turnQueue.Dequeue();
         entityTurn = turnQueue.First.Value;
         turnQueue.RemoveFirst();
         entityTurn.OnTurnBegin();
-        onTurn();
+        OnTurn();
     }
 }

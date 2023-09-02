@@ -31,7 +31,7 @@ public class DeckManager : MonoBehaviour
     }
     public IEnumerator DrawCardCoroutine(int amount)
     {
-        yield return new WaitUntil(() => deckQueue != null);
+        yield return new WaitUntil(() => deckQueue != null && deckQueue.Count > 0);
         for (int i = 0; i < amount; i++)
         {
             card.cardData = deckQueue.Dequeue();

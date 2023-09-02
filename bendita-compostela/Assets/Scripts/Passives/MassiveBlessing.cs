@@ -8,7 +8,7 @@ public class MassiveBlessing : BasicPassive
     private void Awake()
     {
         enemy = GetComponent<Enemy>();
-        TurnManager.Instance.onTurn += CheckHealth;
+        TurnManager.Instance.OnTurn += CheckHealth;
         Heal.OnHeal += PassiveEffect;
     }
 

@@ -37,7 +37,6 @@ public class PlayerBehaviour : EntityBehaviour
     public override void OnTurnEnd()
     {
         StartCoroutine(OnTurnEndCoroutine());
-        TurnManager.Instance.Turn();
     }
     private IEnumerator OnTurnEndCoroutine()
     {
@@ -45,6 +44,7 @@ public class PlayerBehaviour : EntityBehaviour
 
         BattleManager.Instance.SetInteraction(false);
         yield return StartCoroutine(DeckManager.Instance.ReturnCardsCoroutine());
+        TurnManager.Instance.Turn();
         isTurn = !isTurn;
     }
 }

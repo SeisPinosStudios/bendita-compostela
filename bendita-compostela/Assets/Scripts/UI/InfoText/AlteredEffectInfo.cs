@@ -27,11 +27,8 @@ public class AlteredEffectInfo : InfoText
         {
             progress += Time.deltaTime;
             progressBar.fillAmount = progress;
-            print($"Current WaitTime {progress}");
             yield return null;
         }
-
-        print($"Out of while loop {progress}");
 
         progress = 0;
         progressBar.fillAmount = 0;
