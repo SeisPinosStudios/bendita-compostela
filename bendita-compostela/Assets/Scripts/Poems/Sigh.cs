@@ -6,6 +6,6 @@ public class Sigh : PoemEffect
 {
     public static new void Effect()
     {
-        BattleManager.Instance.player.DamageMultiplier(1.0f);
+        BattleManager.Instance.player.AttackMultiplier(1.0f);
     }
 }

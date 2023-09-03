@@ -29,12 +29,12 @@ public class Sword : BaseWeapon
 
         if (styleAttacks > 0) { styleAttacks--; return; }
 
-        player.DamageMultiplier(-styleMultiplier);
+        player.AttackMultiplier(-styleMultiplier);
     }
 
     private void Turn()
     {
-        if(styleAttacks <= 0) player.DamageMultiplier(styleMultiplier);
+        if(styleAttacks <= 0) player.AttackMultiplier(styleMultiplier);
         styleAttacks = 1 + (chestSynergy ? (1 * chestLevel) + 1 : 0);
     }
 }

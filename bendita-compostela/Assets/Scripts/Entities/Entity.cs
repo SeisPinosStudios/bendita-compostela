@@ -137,7 +137,7 @@ public class Entity : MonoBehaviour
     #endregion
 
     #region Entity stats methods
-    public void DamageMultiplier(float amount) { attackMultiplier += amount; }
+    public void AttackMultiplier(float amount) { attackMultiplier += amount; }
     public void DefenseMultiplier(float amount) { defenseMultiplier += amount; }
     public void HealingMultiplier(float amount) { healingMultiplier += amount; }
     public void DefenseBonus(int amount) { defenseBonus += amount; }
