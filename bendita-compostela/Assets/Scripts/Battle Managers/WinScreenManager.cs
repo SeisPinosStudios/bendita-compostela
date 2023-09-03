@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+using System.Text;
 
 public class WinScreenManager : MonoBehaviour
 {
@@ -9,7 +11,7 @@ public class WinScreenManager : MonoBehaviour
     [field: SerializeField] public CardDataContainer cardDataContainer { get; private set; }
     [field: SerializeField] public Transform rewardsZone { get; private set; }
     [field: SerializeField] public Toggle deckToggle { get; private set; }
-    [field: SerializeField] public static float condecorationChance { get; private set; }
+    [field: SerializeField] public static float condecorationChance { get; private set; } = 5.0f;
     public void Awake()
     {
         Instance = this;
@@ -27,15 +29,31 @@ public class WinScreenManager : MonoBehaviour
         var objects = SODataBase.objects;
         var rewardList = new List<CardData>();
 
-        rewardList.Add(objects[Random.Range(0, objects.Count)]);
-        rewardList.Add(objects[Random.Range(0, objects.Count)]);
-        rewardList.Add(objects[Random.Range(0, objects.Count)]);
+        rewardList.Add(objects[UnityEngine.Random.Range(0, objects.Count)]);
+        rewardList.Add(objects[UnityEngine.Random.Range(0, objects.Count)]);
+        rewardList.Add(objects[UnityEngine.Random.Range(0, objects.Count)]);
 
         return rewardList;
     }
     private void GenerateExtraRewards()
     {
+        var text = new StringBuilder();
+        var coins = 0;
+        foreach (EnemyData enemy in BattleManager.Instance.combatData.enemiesData)
+            coins += enemy.reward;
 
+        GameManager.Instance.playerData.AddCoins(coins);
+        text.Append($"{coins} monedas.");
+
+        var obtainedCond = UnityEngine.Random.Range(0, 100) < condecorationChance;
+        var condecoration = SODataBase.obtainableCondecorations[UnityEngine.Random.Range(0, SODataBase.obtainableCondecorations.Count)];
+        if (obtainedCond)
+        {
+            GameManager.Instance.playerData.condecorations.Add(condecoration);
+            Type.GetType(condecoration.type.ToString()).GetMethod("OnObtain").Invoke(null, null);
+        }
+
+        if (obtainedCond) text.Append($"{condecoration.name}:{condecoration.description}");
     }
     private void CardChosen()
     {
