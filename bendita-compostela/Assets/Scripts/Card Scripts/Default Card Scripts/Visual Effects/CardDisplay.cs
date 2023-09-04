@@ -42,7 +42,7 @@ public class CardDisplay : MonoBehaviour
     }
     private string GetDescription(CardData.Effect effect)
     {
-        var entity = SceneManager.GetActiveScene().ToString() == "Battle" ? TurnManager.Instance.entityTurn.entity : null;
+        var entity = SceneManager.GetActiveScene().name == "Battle" ? TurnManager.Instance.entityTurn.entity : null;
 
         var description = (string)Type.GetType(effect.ToString()).GetMethod("GetDescription")
             .Invoke(null, new object[] { cardDataContainer.cardData, entity, target ? target : null });

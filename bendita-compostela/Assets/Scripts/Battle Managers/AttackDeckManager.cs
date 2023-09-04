@@ -46,7 +46,7 @@ public class AttackDeckManager : MonoBehaviour
         var weapon = BattleManager.Instance.player.weapon;
         for(int i = 0; i < amount; i++)
         {
-            cardPrefab.cardData = weapon.attacks[UnityEngine.Random.Range(0, weapon.attacks.Count)];
+            cardPrefab.cardData = weaponAttacks[UnityEngine.Random.Range(0, weaponAttacks.Count)];
             Instantiate(cardPrefab, hand);
             yield return new WaitForSeconds(drawCardDelay);
         }
@@ -59,7 +59,12 @@ public class AttackDeckManager : MonoBehaviour
     }
     public void ReduceAttackCost(int amount)
     {
-        foreach (WeaponAttackData attack in weaponAttacks) attack.cost = Mathf.Clamp(attack.cost - costReduction, 0, attack.cost);
+        foreach (WeaponAttackData attack in weaponAttacks) attack.cost = Mathf.Clamp(attack.cost - amount, 0, attack.cost);
     }
     public void AddFreeDraw(int amount) { freeDraw += amount; }
+
+    private void OnDestroy()
+    {
+        EquipWeapon.OnEquipWeapon -= FetchAttacks;
+    }
 }

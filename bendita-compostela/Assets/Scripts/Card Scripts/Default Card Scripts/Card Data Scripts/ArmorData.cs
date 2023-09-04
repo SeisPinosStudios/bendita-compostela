@@ -35,6 +35,7 @@ public class ArmorData : CardData
         card.id = id;
         card.equipmentScreenIcon = equipmentScreenIcon;
         card.equipmentScreenDescription = equipmentScreenDescription;
+        card.armorType = armorType;
 
         return card;
     }

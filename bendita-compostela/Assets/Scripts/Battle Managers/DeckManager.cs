@@ -38,9 +38,10 @@ public class DeckManager : MonoBehaviour
 
             card.cardData = deckQueue.Dequeue();
             Instantiate(card, hand);
-            SoundManager.Instance.PlaySound(drawCardSoundEffect);
             yield return new WaitForSeconds(delaySeconds);
             if (deckQueue.Count <= 0) break;
+
+            SoundManager.Instance.PlaySound(drawCardSoundEffect);
         }
     }
     public void ReturnCards()

@@ -49,9 +49,9 @@ public class Spear : BaseWeapon
     {
         if(!chestSynergy) return;
         if(user.GetComponent<Entity>().GetType() == typeof(Player)) return;
-        if (!user.GetComponent<EntityEffectsManager>().Suffering(TAlteredEffects.AlteredEffects.Invulnerable)) return;
+        if (!target.GetComponent<EntityEffectsManager>().Suffering(TAlteredEffects.AlteredEffects.Invulnerable)) return;
 
-        target.GetComponent<Entity>().SufferDamage(Mathf.RoundToInt(card.GetDamage() * GetStyleMultiplier()), 0, 0.0f, true);
+        user.GetComponent<Entity>().SufferDamage(Mathf.RoundToInt(card.GetDamage() * (0.5f + (0.25f * GetLegLevel()))), 0, 0.0f, true);
     }
 
     private void LegSynergy()
