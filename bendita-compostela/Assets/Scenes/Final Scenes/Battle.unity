@@ -1326,6 +1326,7 @@ MonoBehaviour:
   <endScreens>k__BackingField:
   - {fileID: 1555979985}
   - {fileID: 2053653264}
+  battleMusic: {fileID: 8300000, guid: 3eaf4382a788b7047bd6c5ed37c79c44, type: 3}
 --- !u!1 &1108733629
 GameObject:
   m_ObjectHideFlags: 0
@@ -3374,6 +3375,7 @@ MonoBehaviour:
   <cardsToDraw>k__BackingField: 5
   hand: {fileID: 327054718}
   card: {fileID: 752961581588794506, guid: ad67bb918d8a6984b91f8c7acbd4f52c, type: 3}
+  drawCardSoundEffect: {fileID: 8300000, guid: 58044b4d41b3de246943a96743ace02e, type: 3}
   delaySeconds: 0.5
 --- !u!114 &1925518835
 MonoBehaviour:

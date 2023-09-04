@@ -16,6 +16,7 @@ public class MapManager : MonoBehaviour
     [SerializeField] private GameObject nodePrefab;
     [SerializeField] private GameObject mapSpace; 
     [SerializeField] private GameObject lineRendererPrefab;
+    [SerializeField] private AudioClip mapMusic;
     
     [Header("Map Configuration")]
     [SerializeField] private int NUM_NODES;
@@ -55,6 +56,7 @@ public class MapManager : MonoBehaviour
         {
             Destroy(gameObject);
         }       
+        SoundManager.Instance.PlayMusic(mapMusic);
     }
     
     private void Start() 

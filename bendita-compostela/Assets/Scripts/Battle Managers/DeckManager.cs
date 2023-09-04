@@ -9,6 +9,7 @@ public class DeckManager : MonoBehaviour
     [SerializeField] Queue<CardData> deckQueue = new Queue<CardData>();
     [SerializeField] Transform hand;
     [SerializeField] CardDataContainer card;
+    [SerializeField] AudioClip drawCardSoundEffect;
 
     [SerializeField] float delaySeconds;
 
@@ -34,8 +35,10 @@ public class DeckManager : MonoBehaviour
         yield return new WaitUntil(() => deckQueue != null);
         for (int i = 0; i < amount; i++)
         {
+
             card.cardData = deckQueue.Dequeue();
             Instantiate(card, hand);
+            SoundManager.Instance.PlaySound(drawCardSoundEffect);
             yield return new WaitForSeconds(delaySeconds);
             if (deckQueue.Count <= 0) break;
         }
@@ -50,7 +53,8 @@ public class DeckManager : MonoBehaviour
         {
             var card = hand.GetChild(0);
             deckQueue.Enqueue(card.GetComponent<CardDataContainer>().cardData);
-            Destroy(card.gameObject);
+            Destroy(card.gameObject);                    
+            SoundManager.Instance.PlaySound(drawCardSoundEffect);
             yield return new WaitForSeconds(delaySeconds);
         }
     }
