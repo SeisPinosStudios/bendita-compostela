@@ -13,7 +13,6 @@ public class Card : MonoBehaviour
     {
         cardData = cardDataContainer.cardData;
     }
-
     public void UseCard(GameObject target)
     {
         StartCoroutine(UseCardCorroutine(target));
@@ -35,12 +34,12 @@ public class Card : MonoBehaviour
 
         print($"Used card {cardData.cardName}");
         for (int i = 0; i < cardData.cardEffects.Count; i++)
-        {
+        {            
             Type.GetType(cardData.cardEffects[i].ToString())
-                .GetMethod("Effect").Invoke(null, new object[] { cardData.cardEffectsValues[i], cardData, TurnManager.Instance.entityTurn.gameObject, target });
+                .GetMethod("Effect").Invoke(null, new object[] { cardData.cardEffectsValues[i], cardData, TurnManager.Instance.entityTurn.gameObject, target });            
             yield return new WaitForSeconds(0.0f);
         }
-
+                        
         Destroy(this.gameObject);
         yield return null;
     }

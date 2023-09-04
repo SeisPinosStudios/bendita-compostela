@@ -51,6 +51,7 @@ public class Entity : MonoBehaviour
         Debug.Log($"damageBonus {damageBonus} | damageMultiplier {damageMultiplier} | defenseBonus {defenseBonus} | defenseMultiplier {defenseMultiplier}");
         Debug.Log($"Damaged {name} for {finalDamage} damage");
         entityDisplay.UpdateHealth(entityData.HP, currentHP);
+        entityDisplay.HitAnimation();
         CheckDeath();
         return;
     }

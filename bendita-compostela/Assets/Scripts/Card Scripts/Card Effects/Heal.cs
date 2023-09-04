@@ -10,6 +10,7 @@ public class Heal : BasicCardEffect
     {
         var entity = user.GetComponent<Entity>();
         entity.RestoreHealth(int.Parse(data), entity.healingBonus, entity.healingMultiplier);
+        target.GetComponent<EntityDisplay>().Heal();
         OnHeal(card, user);
     }
 }

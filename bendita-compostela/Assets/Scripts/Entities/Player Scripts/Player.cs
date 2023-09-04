@@ -15,7 +15,8 @@ public class Player : Entity
     private void Awake()
     {
         entityData = entityDataContainer.entityData;
-        playerData = (PlayerData)entityDataContainer.entityData;
+        playerData = (PlayerData)entityDataContainer.entityData;        
+        entityDisplay.entityAnimator.runtimeAnimatorController = playerData.playerAnimator;
         EntitySetup();
     }
 

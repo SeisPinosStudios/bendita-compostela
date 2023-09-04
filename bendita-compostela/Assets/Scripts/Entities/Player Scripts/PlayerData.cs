@@ -10,6 +10,7 @@ public class PlayerData : EntityData
     [field: SerializeField] public List<CardData> inventory { get; private set; } = new List<CardData>();
     public ArmorData chestArmor, legArmor;
     public int currentHP;
+    [field: SerializeField] public RuntimeAnimatorController playerAnimator { get; private set; }
     [field:SerializeField, Header("Condecorations")] public List<CondecorationData> condecorations { get; private set; } = new List<CondecorationData>();
     [field: SerializeField, Header("Poems")] public List<PoemData> poems { get; private set; } = new List<PoemData>();
     [field: SerializeField] public List<PoemData> poemInventory { get; private set; } = new List<PoemData>();

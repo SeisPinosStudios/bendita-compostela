@@ -12,6 +12,7 @@ public class EntityDisplay : MonoBehaviour
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] Transform alteredEffectsZone;
     [SerializeField] AlteredEffectDisplay alteredEffectDisplay;
+    [SerializeField] public Animator entityAnimator;
 
     private void Awake()
     {
@@ -38,5 +39,42 @@ public class EntityDisplay : MonoBehaviour
             alteredEffectDisplay.value = $"x{effect.Value}";
             Instantiate(alteredEffectDisplay, alteredEffectsZone);
         }
+    }
+    public void HitAnimation()
+    {
+        Debug.Log("HITTED ANIMATION");
+        entityAnimator.SetTrigger("Hitted");
+        entityAnimator.SetInteger("SlashType",Random.Range(0,8));
+        entityAnimator.SetInteger("SlashType",0);        
+    }
+    public void AttackAnimation()
+    {
+        entityAnimator.SetTrigger("Attack");
+    }    
+    public void Bleed()
+    {
+        entityAnimator.SetInteger("BleedType",Random.Range(0,8));        
+        entityAnimator.SetInteger("BleedType",0);                
+    }
+    public void Burn()
+    {
+        entityAnimator.SetTrigger("Burn");
+    }
+    public void Poison()
+    {
+        entityAnimator.SetTrigger("Poison");
+    }
+    public void Heal()
+    {
+        entityAnimator.SetTrigger("Heal");
+    }
+    public void Vulnerable()
+    {
+        entityAnimator.SetTrigger("Vulnerable");
+    }
+    //OnlyPlayer
+    public void SetWeaponDisplay()
+    {
+
     }
 }

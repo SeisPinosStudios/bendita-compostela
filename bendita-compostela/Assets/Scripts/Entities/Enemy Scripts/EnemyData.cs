@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New enemy data", menuName = "Bendita Compostela/Enemy/Enemy")]
@@ -7,6 +8,7 @@ public class EnemyData : EntityData
 {
     [field: SerializeField, Header("Enemy Stats")] public int damageMitigation { get; private set; }
     [field: SerializeField] public Sprite enemySprite { get; private set; }
+    [field: SerializeField] public RuntimeAnimatorController enemyAnimator { get; private set; }
     [field: SerializeField] public int reward { get; private set; }
     [field: SerializeField, Header("Passives")] public List<BasicPassive.Passive> passives { get; private set; }
     [field: SerializeField] public List<TAlteredEffects.AlteredEffects> resistances { get; private set; } = new List<TAlteredEffects.AlteredEffects>();

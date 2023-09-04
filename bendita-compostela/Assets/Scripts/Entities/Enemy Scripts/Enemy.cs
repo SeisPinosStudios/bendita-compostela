@@ -12,6 +12,7 @@ public class Enemy : Entity
     {
         entityData = entityDataContainer.entityData;
         enemyData = (EnemyData)entityData;
+        entityDisplay.entityAnimator.runtimeAnimatorController = enemyData.enemyAnimator;
         SetupEntity();
     }
     private void SetupEntity()

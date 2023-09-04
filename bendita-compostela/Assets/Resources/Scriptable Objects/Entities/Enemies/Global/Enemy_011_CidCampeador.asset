@@ -16,6 +16,7 @@ MonoBehaviour:
   HP: 50
   <damageMitigation>k__BackingField: 0
   <enemySprite>k__BackingField: {fileID: 21300000, guid: f95dc24a4c554814fa0372220541f286, type: 3}
+  <enemyAnimator>k__BackingField: {fileID: 22100000, guid: 11492994c40a3494b8caabf44f86a1df, type: 2}
   <reward>k__BackingField: 5
   <passives>k__BackingField: 0b000000
   <resistances>k__BackingField: 

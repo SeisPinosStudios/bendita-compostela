@@ -1774,7 +1774,7 @@ MonoBehaviour:
   <playerData>k__BackingField: {fileID: 0}
   <combatData>k__BackingField: {fileID: 11400000, guid: 42d18fac5f35937418369156bacc266f, type: 2}
   <visitedNodes>k__BackingField: []
-  <debug>k__BackingField: 0
+  <debug>k__BackingField: 1
 --- !u!1 &1203641393
 GameObject:
   m_ObjectHideFlags: 0
