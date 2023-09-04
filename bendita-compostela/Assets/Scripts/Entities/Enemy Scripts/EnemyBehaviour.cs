@@ -6,7 +6,6 @@ using System;
 public class EnemyBehaviour : EntityBehaviour
 {
     [SerializeField, Header("Enemy Behaviour variables")] EnemyData enemyData;
-    [field: SerializeField] public EntityEffectsManager entityEffManager { get; private set; }
     [SerializeField] CardDataContainer attackPrefab;
     [SerializeField] Transform mainCanvas;
     [SerializeField] float waitTime;
@@ -19,13 +18,13 @@ public class EnemyBehaviour : EntityBehaviour
     {
         enemyData = (EnemyData)entityDataContainer.entityData;
         mainCanvas = GameObject.FindGameObjectWithTag("MainCanvas").transform;
+        ((Enemy)entity).OnDeath += Death;
     }
     public override void OnTurnBegin()
     {
         print($"{this.name} OnBeginTurn");
 
-        if (entityEffManager.Suffering(TAlteredEffects.AlteredEffects.Poison)) 
-            entityEffManager.Effect(TAlteredEffects.AlteredEffects.Poison);
+        entityEffManager.Poison();
 
         if (entityEffManager.Suffering(TAlteredEffects.AlteredEffects.Stun))
         {
@@ -50,14 +49,11 @@ public class EnemyBehaviour : EntityBehaviour
     }
     public override void OnTurnEnd()
     {
-        if (entityEffManager.Suffering(TAlteredEffects.AlteredEffects.Burn))
-            entityEffManager.Effect(TAlteredEffects.AlteredEffects.Burn);
+        entityEffManager.Burn();
 
         isTurn = !isTurn;
         TurnManager.Instance.Turn();
     }
-
-
     private IEnumerator Attack()
     {
         var attack = attackQueue.Dequeue();
@@ -67,7 +63,7 @@ public class EnemyBehaviour : EntityBehaviour
         var attackInstance = Instantiate(attackPrefab, mainCanvas);
         attackInstance.GetComponent<Card>().UseEnemyCard(target);
         yield return new WaitForSeconds(waitTime);
-        Destroy(attackInstance.gameObject);
+        //Destroy(attackInstance.gameObject);
     }
     private void GetNewSequence()
     {
@@ -102,5 +98,10 @@ public class EnemyBehaviour : EntityBehaviour
         if (attack.attackType == EnemyAttack.AttackType.Attack) return BattleManager.Instance.player.gameObject;
 
         return null;
+    }
+    private void Death()
+    {
+        StopAllCoroutines();
+        TurnManager.Instance.Turn();
     }
 }

@@ -63,6 +63,10 @@ public class EntityEffectsManager : MonoBehaviour
     {
         burnThreshold = value;
     }
+    public void UpdateEffectLimit(TAlteredEffects.AlteredEffects effect, int amount)
+    {
+        alteredEffectsLimit[effect] += amount;
+    }
     #endregion
 
     #region Effect Methods
@@ -75,6 +79,21 @@ public class EntityEffectsManager : MonoBehaviour
     {
         Type.GetType(effect.ToString()).GetMethod("Effect").Invoke(null, new object[] { this, entity, this.gameObject, data });
         UpdateEffects();
+    }
+    public void Poison()
+    {
+        if (Suffering(TAlteredEffects.AlteredEffects.Poison))
+            Effect(TAlteredEffects.AlteredEffects.Poison);
+    }
+    public void Bleed()
+    {
+        if (Suffering(TAlteredEffects.AlteredEffects.Bleed))
+            Effect(TAlteredEffects.AlteredEffects.Bleed);
+    }
+    public void Burn()
+    {
+        if (Suffering(TAlteredEffects.AlteredEffects.Burn))
+            Effect(TAlteredEffects.AlteredEffects.Burn);
     }
     #endregion
 

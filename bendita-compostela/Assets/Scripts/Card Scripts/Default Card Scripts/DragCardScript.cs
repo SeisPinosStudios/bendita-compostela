@@ -13,7 +13,8 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     [SerializeField] CardData cardData;
     [SerializeField] Card card;
     [field: SerializeField] public CardDisplay cardDisplay { get; private set; }
-    public static event Action onUsing, onReturning;
+    [field: SerializeField] public CardInspection cardInspection { get; private set; }
+    public static event Action OnUsing, OnReturning;
 
     private void Awake()
     {
@@ -31,8 +32,9 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         
         if (eventData.position.y > 400 && cardData.printArrow)
         {
-            transform.position = new Vector3(parent.transform.position.x, parent.transform.position.y + 100, 0.0f);
-            onUsing();
+            GetComponent<RectTransform>().position = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, 120.0f, 1.0f));
+
+            OnUsing();
         }
         else
         {
@@ -40,7 +42,7 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.root as RectTransform, 
                                                                     eventData.position, transform.root.GetComponent<Canvas>().worldCamera, out pos);
             transform.position = transform.root.gameObject.transform.TransformPoint(pos);
-            onReturning();
+            OnReturning();
         }
     }
     public void OnEndDrag(PointerEventData eventData)
@@ -49,25 +51,24 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         if(!cardData.printArrow && eventData.position.y > 400) { UseCard(); return; }
 
         var hit = RaycastUtils.Raycast2D("Enemy");
-        if (eventData.position.y < 400 || !hit) { ReturnCardToHand(); return; }
+        if (eventData.position.y < 400 || !hit) { ReturnCardToHand(eventData); return; }
         UseCardOnTarget(hit);
     }
-    private void ReturnCardToHand()
+    private void ReturnCardToHand(PointerEventData eventData)
     {
-        transform.SetParent(parent);
-        transform.SetSiblingIndex(index);
-        onReturning();
+        cardInspection.OnPointerExit(eventData);
+        OnReturning();
     }
     private void UseCardOnTarget(GameObject target)
     {
         print($"Card used on {target.name}");
-        onReturning();
+        OnReturning();
         card.UseCard(target);
     }
     private void UseCard()
     {
         print($"Card used");
-        onReturning();
+        OnReturning();
         card.UseCard();
     }
 }

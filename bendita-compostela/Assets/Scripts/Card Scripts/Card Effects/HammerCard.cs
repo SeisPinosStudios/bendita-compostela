@@ -11,4 +11,9 @@ public class HammerCard : BasicCardEffect
     {
         OnHammerCard(card, target);
     }
+
+    public static string GetDescription(CardData card, Entity user, Entity target)
+    {
+        return null;
+    }
 }

@@ -7,7 +7,7 @@ public class ChainedBile : BasicPassive
     [field: SerializeField] public bool passiveActive;
     private void Awake()
     {
-        TurnManager.Instance.onTurn += PassiveEffect;
+        TurnManager.Instance.OnTurn += PassiveEffect;
     }
 
     private void PassiveEffect()
@@ -24,5 +24,6 @@ public class ChainedBile : BasicPassive
     private void OnDestroy()
     {
         if (passiveActive) BattleManager.Instance.player.DefenseBonus(1);
+        TurnManager.Instance.OnTurn -= PassiveEffect;
     }
 }

@@ -19,4 +19,9 @@ public class EquipWeapon : BasicCardEffect
         user.AddComponent(Type.GetType(weapon.weaponClassName.ToString()));
         OnEquipWeapon();
     }
+
+    public static string GetDescription(CardData card, Entity user, Entity target)
+    {
+        return null;
+    }
 }

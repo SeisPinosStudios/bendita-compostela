@@ -9,4 +9,9 @@ public class Special : BasicCardEffect
         if(index != "") GameManager.Instance.playerData.deck.Add(SODataBase.special[int.Parse(index)]);
         GameManager.Instance.playerData.deck.Remove(card);
     }
+
+    public static string GetDescription(CardData card, Entity user, Entity target)
+    {
+        return null;
+    }
 }

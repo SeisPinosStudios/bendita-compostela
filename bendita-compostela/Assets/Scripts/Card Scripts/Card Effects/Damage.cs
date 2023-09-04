@@ -11,23 +11,31 @@ public class Damage : BasicCardEffect
     {
         OnAttack(target, card);
         OnAttack2(target, user, card);
-        var entity = user.GetComponent<Entity>();
+
+        var cardUser = user.GetComponent<Entity>();
+
         var entityEffectsManager = user.GetComponent<EntityEffectsManager>();
         var frenzyStacks = entityEffectsManager.frenzyAttacks.ContainsKey(card) ? entityEffectsManager.frenzyAttacks[card] : 0;
 
+
         user.GetComponent<EntityDisplay>().AttackAnimation();
-        target.GetComponent<Entity>().SufferDamage(int.Parse(damage), entity.damageBonus + frenzyStacks, AttackMultiplier(entity, entityEffectsManager), false);
+        target.GetComponent<Entity>().SufferDamage(int.Parse(damage), cardUser.attackBonus + frenzyStacks, cardUser.ComputeAttackMultiplier(), false);
+
     }
 
-    private static float AttackMultiplier(Entity entity, EntityEffectsManager entityEffectsManager)
+    public static string GetDescription(CardData card, Entity user, Entity target)
     {
-        var multiplier = entity.damageMultiplier;
+        var finalDamage = card.GetDamage();
+        var frenzyStacks = user && user.entityEffectsManager.frenzyAttacks.ContainsKey(card) ? user.entityEffectsManager.frenzyAttacks[card] : 0;
 
-        if (entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Lead))
-        {
-            multiplier -= 0.5f;
-        }
-        Debug.Log($"entity damage multiplier {entity.damageMultiplier} | final multiplier {multiplier}");
-        return multiplier;
+        var userDamageBonus = user ? user.attackBonus : 0;
+        var targetDefenseBonus = target ? target.defenseBonus : 0;
+        var userDamageMultiplier = user ? user.GetAttackMultiplier() : 1;
+        var targetDefenseMultiplier = target ? target.GetAttackMultiplier() : 1;
+
+        finalDamage += frenzyStacks;
+        finalDamage = Mathf.RoundToInt(Mathf.Clamp((finalDamage + userDamageBonus - targetDefenseBonus) 
+                       * userDamageMultiplier / targetDefenseMultiplier, 0, 99));
+        return $"Realiza {finalDamage} puntos de daño.";
     }
 }

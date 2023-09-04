@@ -7,7 +7,8 @@ public class CardData : ScriptableObject
 {
     public enum Effect
     {
-        Damage, Heal, DrawCards, EquipWeapon, RestoreEnergy, Cleanse, ApplyEffect, SelfApplyEffect, HammerCard, HealOthers, DamageAll, ApplyEffectAll, Special
+        Damage, Heal, DrawCards, EquipWeapon, RestoreEnergy, Cleanse, ApplyEffect, SelfApplyEffect, HammerCard, HealOthers, DamageAll, ApplyEffectAll, Special,
+        DrawAttack
     }
 
     [Header("Card Info")]
@@ -16,6 +17,7 @@ public class CardData : ScriptableObject
     public string description;
     public int cost, price;
     public Sprite art, miniArt;
+    [field: SerializeField] public bool attack { get; private set; }
 
     [Header("Card Effects")]
     public List<Effect> cardEffects;
@@ -32,6 +34,22 @@ public class CardData : ScriptableObject
         if (!cardEffects.Contains(Effect.Heal)) return null;
         return cardEffectsValues[cardEffects.IndexOf(Effect.Heal)];
     }
+    public List<string> GetAlteredEffects()
+    {
+        var effects = new List<string>();
+        for (int i = 0; i < cardEffects.Count; i++) if (cardEffects[i] == Effect.ApplyEffect) effects.Add(cardEffectsValues[i]);
+        return effects;
+    }
+    public List<string> GetEffect(Effect effect)
+    {
+        var effects = new List<string>();
+        for (int i = 0; i < cardEffects.Count; i++) if (cardEffects[i] == effect) effects.Add(cardEffectsValues[i]);
+        return effects;
+    }
+    public bool IsAttack()
+    {
+        return attack;
+    }
     public virtual CardData Copy()
     {
         CardData card = CreateInstance<CardData>();
@@ -46,6 +64,7 @@ public class CardData : ScriptableObject
         card.cardEffects = cardEffects;
         card.cardEffectsValues = cardEffectsValues;
         card.printArrow = printArrow;
+        card.attack = attack;
 
         return card;
     }

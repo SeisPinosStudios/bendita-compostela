@@ -240,7 +240,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: aplica <sprite=3>x1 aplica <sprite=4>x2
+  m_text: aplica <sprite=5>x1 aplica <sprite=4>x2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8292293de51fa954dad069d209aa962f, type: 2}
   m_sharedMaterial: {fileID: 3113392560914456956, guid: 8292293de51fa954dad069d209aa962f, type: 2}
@@ -259,7 +259,7 @@ MonoBehaviour:
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 11400000, guid: cd56028443425e747b90855ab6c0c5d5, type: 2}
+  m_spriteAsset: {fileID: 11400000, guid: 295a6c8accf1f8949a2ae8f84651fa69, type: 2}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 15, y: 15, z: 15, w: 15}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -610,6 +610,7 @@ GameObject:
   - component: {fileID: 4188301813789642578}
   - component: {fileID: 3175823880051612337}
   - component: {fileID: -8927400296690669043}
+  - component: {fileID: 371672315195035557}
   m_Layer: 0
   m_Name: DefaultCard
   m_TagString: Untagged
@@ -703,3 +704,19 @@ MonoBehaviour:
   cardData: {fileID: 0}
   card: {fileID: 4188301813789642578}
   <cardDisplay>k__BackingField: {fileID: 3175823880051612337}
+  <cardInspection>k__BackingField: {fileID: 371672315195035557}
+--- !u!114 &371672315195035557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8475183939394185113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 994d979040ea8c345a01139706b566ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <verticalMovement>k__BackingField: 90
+  <hand>k__BackingField: {fileID: 0}
+  <index>k__BackingField: 0

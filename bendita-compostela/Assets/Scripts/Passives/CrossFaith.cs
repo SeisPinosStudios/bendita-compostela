@@ -14,4 +14,9 @@ public class CrossFaith : BasicPassive
         var entity = GetComponent<Entity>();
         if (Random.Range(0, 2) > 0) entity.RestoreHealth(Mathf.RoundToInt(card.GetDamage() / 2), entity.healingBonus, entity.healingMultiplier);
     }
+
+    private void OnDestroy()
+    {
+        Damage.OnAttack2 -= PassiveEffect;
+    }
 }

@@ -8,7 +8,7 @@ public class MassiveBlessing : BasicPassive
     private void Awake()
     {
         enemy = GetComponent<Enemy>();
-        TurnManager.Instance.onTurn += CheckHealth;
+        TurnManager.Instance.OnTurn += CheckHealth;
         Heal.OnHeal += PassiveEffect;
     }
 
@@ -22,5 +22,10 @@ public class MassiveBlessing : BasicPassive
         foreach (Enemy enemy in BattleManager.Instance.enemies) 
             if (enemy != this.enemy) 
                 enemy.RestoreHealth(int.Parse(card.GetHeal()), enemy.healingBonus, enemy.healingMultiplier);
+    }
+    private void OnDestroy()
+    {
+        TurnManager.Instance.OnTurn -= CheckHealth;
+        Heal.OnHeal -= PassiveEffect;
     }
 }

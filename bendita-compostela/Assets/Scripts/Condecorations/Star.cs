@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Star : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        TurnManager.Instance.playerBehaviour.OnPlayerTurn += DisableCond;
+        BattleManager.Instance.player.AttackMultiplier(1.0f);
     }
-
-    // Update is called once per frame
-    void Update()
+    private void DisableCond()
+    {
+        BattleManager.Instance.player.AttackMultiplier(-1.0f);
+    }
+    public static void OnObtain()
     {
         
     }

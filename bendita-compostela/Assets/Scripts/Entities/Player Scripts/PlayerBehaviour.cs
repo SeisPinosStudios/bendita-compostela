@@ -14,7 +14,18 @@ public class PlayerBehaviour : EntityBehaviour
     }
     private IEnumerator OnTurnBeginCorroutine()
     {
+        OnPlayerTurn();
+
+        entityEffManager.Poison();
+
+        if (entityEffManager.Suffering(TAlteredEffects.AlteredEffects.Stun))
+        {
+            OnTurnEnd();
+            yield break;
+        }
+
         yield return StartCoroutine(DeckManager.Instance.DrawCardCoroutine(5));
+        BattleManager.Instance.SetInteraction(true);
         player.RestoreEnergy(player.maxEnergy);
         isTurn = !isTurn;
     }
@@ -26,11 +37,14 @@ public class PlayerBehaviour : EntityBehaviour
     public override void OnTurnEnd()
     {
         StartCoroutine(OnTurnEndCoroutine());
-        TurnManager.Instance.Turn();
     }
     private IEnumerator OnTurnEndCoroutine()
     {
+        entityEffManager.Burn();
+
+        BattleManager.Instance.SetInteraction(false);
         yield return StartCoroutine(DeckManager.Instance.ReturnCardsCoroutine());
+        TurnManager.Instance.Turn();
         isTurn = !isTurn;
     }
 }

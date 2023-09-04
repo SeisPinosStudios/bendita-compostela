@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class Jug : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Awake()
     {
-        
+        BattleManager.Instance.player.AddMaxEnergy(2);
     }
-
-    // Update is called once per frame
-    void Update()
+    public static void OnObtain()
     {
         
     }

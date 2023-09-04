@@ -23,4 +23,9 @@ public class ExpressDefense : BasicPassive
         }
         attacks++;
     }
+
+    private void OnDestroy()
+    {
+        GetComponent<Enemy>().OnDamage -= PassiveEffect;
+    }
 }

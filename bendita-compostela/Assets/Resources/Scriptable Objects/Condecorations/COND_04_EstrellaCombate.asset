@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff81fe1da9604a4885a56a0fe0023aa, type: 3}
   m_Name: COND_04_EstrellaCombate
   m_EditorClassIdentifier: 
-  <condecorationName>k__BackingField: 
-  <description>k__BackingField: 
-  <sprite>k__BackingField: {fileID: 0}
-  <id>k__BackingField: 0
-  <type>k__BackingField: 0
+  <condecorationName>k__BackingField: Estrella de Combate
+  <description>k__BackingField: "Duplica el da\xF1o con armas durante el primer turno
+    de cada combate."
+  <sprite>k__BackingField: {fileID: -2127367036, guid: bc54a54914d36ba49961bfbe1e0760b9, type: 3}
+  <id>k__BackingField: 4
+  <type>k__BackingField: 4
+  <special>k__BackingField: 0

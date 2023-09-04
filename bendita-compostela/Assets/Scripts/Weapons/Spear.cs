@@ -27,7 +27,7 @@ public class Spear : BaseWeapon
         if (index == BattleManager.Instance.enemies.Count - 1) return;
         
         BattleManager.Instance.enemies[index+1]
-            .SufferDamage(Mathf.RoundToInt(card.GetDamage() * GetStyleMultiplier()), player.damageBonus, player.damageMultiplier, false);
+            .SufferDamage(Mathf.RoundToInt(card.GetDamage() * GetStyleMultiplier()), player.attackBonus, player.attackMultiplier, false);
     }
 
     private float GetStyleMultiplier()

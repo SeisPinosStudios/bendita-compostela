@@ -17,7 +17,14 @@ public class AnvilUpgradeSelector : MonoBehaviour, IPointerEnterHandler, IPointe
 
     private void Awake()
     {
+        StartCoroutine(StartCoroutine());
+    }
+
+    IEnumerator StartCoroutine()
+    {
+        yield return new WaitUntil(() =>  AnvilUpgradeManager.Instance);
         AnvilUpgradeManager.Instance.OnEquipmentSelected += UpdateIcons;
+        UpdateIcons();
     }
 
     private void UpdateIcons()
@@ -27,15 +34,13 @@ public class AnvilUpgradeSelector : MonoBehaviour, IPointerEnterHandler, IPointe
         {
             upgradeIcon.sprite = icons[((WeaponData)equipment).weaponId];
         }
-        
+        if (equipment is ArmorData) upgradeIcon.sprite = icons[((ArmorData)equipment).id];
     }
-
     public void Disable()
     {
         interactionEnabled = false;
-        upgradeIcon.color = new Color(0.8f, 0.8f, 0.8f);
+        upgradeIcon.color = new Color(0.5f, 0.5f, 0.5f);
     }
-
     public void Enable()
     {
         interactionEnabled = true;
@@ -49,6 +54,8 @@ public class AnvilUpgradeSelector : MonoBehaviour, IPointerEnterHandler, IPointe
     public void OnPointerUp(PointerEventData eventData)
     {
         if (!GameManager.Instance.playerData.SpendCoins(cost)) return;
+
+        if (!interactionEnabled) return;
 
         switch (upgradeType)
         {
@@ -76,6 +83,11 @@ public class AnvilUpgradeSelector : MonoBehaviour, IPointerEnterHandler, IPointe
     public void OnPointerExit(PointerEventData eventData)
     {
 
+    }
+
+    private void OnDestroy()
+    {
+        AnvilUpgradeManager.Instance.OnEquipmentSelected -= UpdateIcons;
     }
 
 }

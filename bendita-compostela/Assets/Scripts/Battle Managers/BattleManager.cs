@@ -16,7 +16,12 @@ public class BattleManager : MonoBehaviour
     [field: SerializeField] public Transform enemyAreaBegin { get; private set; }
     [field: SerializeField] public Transform enemyAreaEnd { get; private set; }
     [field: SerializeField] public List<GameObject> endScreens { get; private set; }
+
     [SerializeField] private AudioClip battleMusic;
+
+    [field: SerializeField] public GameObject blockingImage { get; private set; }
+    /*====EVENTS====*/
+    
     public event Action OnBattleEnd = delegate {};
 
     private void Awake()
@@ -37,9 +42,14 @@ public class BattleManager : MonoBehaviour
     {
         float space = (Mathf.Abs(enemyAreaBegin.position.x) + Mathf.Abs(enemyAreaEnd.position.x)) / combatData.enemiesData.Count;
 
+        var center = Mathf.Lerp(enemyAreaBegin.position.x, enemyAreaEnd.position.x, 0.5f);
+
+        var startingPoint = center - space * ((combatData.enemiesData.Count - 1) / 2);
+
+
         for(int i = 0; i < combatData.enemiesData.Count; i++)
         {
-            var position = new Vector3(enemyAreaBegin.position.x + space * i, enemyAreaBegin.position.y, 0.0f);
+            var position = new Vector3(startingPoint + space * i, enemyAreaBegin.position.y, 0.0f);
             entityDataContainer.entityData = combatData.enemiesData[i];
             Instantiate(entityDataContainer, position, new Quaternion(), enemiesContainer);
         }
@@ -70,5 +80,12 @@ public class BattleManager : MonoBehaviour
     {
         SceneManager.LoadScene(scene);
     }
+    public void SetInteraction(bool interaction) { blockingImage.SetActive(!interaction); }
     #endregion
+
+    private void OnDestroy()
+    {
+        foreach (Enemy enemy in enemies) enemy.OnDeath -= CheckGameEnd;
+        player.OnDeath -= CheckGameEnd;
+    }
 }

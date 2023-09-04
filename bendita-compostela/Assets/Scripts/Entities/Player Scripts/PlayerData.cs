@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-[CreateAssetMenu(fileName = "NewPlayer", menuName = "Bendita Compostela/New player data")]
+[CreateAssetMenu(fileName = "New Player", menuName = "Bendita Compostela/Player Data")]
 public class PlayerData : EntityData
 {
     public List<CardData> deck = new List<CardData>();
@@ -51,6 +51,7 @@ public class PlayerData : EntityData
 
         player.chestArmor = chestArmor.Copy();
         player.legArmor = legArmor.Copy();
+        player.HP = HP;
         player.currentHP = currentHP;
         player.condecorations = condecorations;
         player.poems = poems;

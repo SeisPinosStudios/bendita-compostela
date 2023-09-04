@@ -40,7 +40,7 @@ public class Hammer : BaseWeapon
         var enemies = BattleManager.Instance.enemies;
         foreach (Enemy enemy in enemies) 
             if (enemy != target.GetComponent<Enemy>()) 
-                enemy.SufferDamage(card.GetDamage(), player.damageBonus, player.damageMultiplier, false);
+                enemy.SufferDamage(card.GetDamage(), player.attackBonus, player.attackMultiplier, false);
 
         ResetStyle();
     }

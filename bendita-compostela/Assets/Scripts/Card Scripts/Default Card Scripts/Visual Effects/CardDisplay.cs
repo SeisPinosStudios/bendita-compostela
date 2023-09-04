@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Text;
+using System;
+using UnityEngine.SceneManagement;
 
 public class CardDisplay : MonoBehaviour
 {
@@ -26,20 +28,34 @@ public class CardDisplay : MonoBehaviour
         if (cardData is WeaponData or ArmorData) costField.transform.parent.gameObject.SetActive(false);
     }
 
-    private void CalculateFinalDamage()
+    public void BuildDescription()
     {
-        var user = TurnManager.Instance.entityTurn.GetComponent<Entity>();
+        var description = new StringBuilder();
 
-        var finalDamage = (cardData.GetDamage() + user.damageBonus - (target ? target.defenseBonus : 0) * (user.GetAttackMultiplier() - (target ? target.GetDefenseMultiplier() : 0)));
+        foreach(CardData.Effect effect in cardData.cardEffects)
+        {
+            description.Append(GetDescription(effect) != null ? GetDescription(effect) : "");
+            description.Append(" ");
+        }
+
+        descriptionField.text = description.ToString();
     }
-    private void GetDescription()
+    private string GetDescription(CardData.Effect effect)
     {
+        var entity = SceneManager.GetActiveScene().ToString() == "Battle" ? TurnManager.Instance.entityTurn.entity : null;
 
+        var description = (string)Type.GetType(effect.ToString()).GetMethod("GetDescription")
+            .Invoke(null, new object[] { cardDataContainer.cardData, entity, target ? target : null });
+
+        return description;
     }
+    
     private void Update()
     {
         if (dragging && RaycastUtils.Raycast2D() && RaycastUtils.Raycast2D().GetComponent<Enemy>()) 
             target = RaycastUtils.Raycast2D().GetComponent<Enemy>();
         else target = null;
+
+        BuildDescription();
     }
 }

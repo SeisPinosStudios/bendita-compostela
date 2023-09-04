@@ -16,4 +16,9 @@ public class FerociousRage : BasicPassive
     {
         enemy.AttackBonus(1);
     }
+
+    private void OnDestroy()
+    {
+        enemy.OnDamage -= PassiveEffect;
+    }
 }

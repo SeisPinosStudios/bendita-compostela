@@ -11,7 +11,7 @@ public class TurnManager : MonoBehaviour
     [field: SerializeField] public EntityBehaviour entityTurn { get; private set; }
     [field: SerializeField] public List<EnemyBehaviour> enemiesBehaviour { get; private set; }
     [field: SerializeField] public PlayerBehaviour playerBehaviour { get; private set; }
-    public event Action onTurn = delegate { };
+    public event Action OnTurn = delegate { };
 
     private void Awake()
     {
@@ -21,7 +21,6 @@ public class TurnManager : MonoBehaviour
         turnQueue.AddLast(playerBehaviour);
         foreach (EnemyBehaviour enemy in enemiesBehaviour) turnQueue.AddLast(enemy);
     }
-
     private void Start()
     {
         print($"{turnQueue.First.Value}");
@@ -36,10 +35,17 @@ public class TurnManager : MonoBehaviour
     private IEnumerator TurnCoroutine()
     {
         yield return new WaitUntil(() => entityTurn == null || entityTurn.isTurn == false);
-        //entityTurn = turnQueue.Dequeue();
+
+        while (!turnQueue.First.Value) turnQueue.RemoveFirst();
+
         entityTurn = turnQueue.First.Value;
         turnQueue.RemoveFirst();
+
         entityTurn.OnTurnBegin();
-        onTurn();
+        OnTurn();
+    }
+    public void RemoveBehaviour(EntityBehaviour behaviour)
+    {
+        turnQueue.Remove(behaviour);
     }
 }

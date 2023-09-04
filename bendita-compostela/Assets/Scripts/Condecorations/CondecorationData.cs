@@ -11,4 +11,5 @@ public class CondecorationData : ScriptableObject
     [field:SerializeField] public Sprite sprite { get; private set; }
     [field:SerializeField] public int id { get; private set; }
     [field:SerializeField] public CondecorationType type { get; private set; }
+    [field : SerializeField] public bool special { get; private set; }
 }

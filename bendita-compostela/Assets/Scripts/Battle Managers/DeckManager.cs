@@ -20,7 +20,7 @@ public class DeckManager : MonoBehaviour
     }
     private IEnumerator SetupDeck()
     {
-        yield return new WaitUntil(() => BattleManager.Instance != null);
+        yield return new WaitForSeconds(0.1f);
         var deck = ListUtils.Shuffle(BattleManager.Instance.player.playerData.deck);
         foreach(CardData card in deck) deckQueue.Enqueue(card);
     }
@@ -32,7 +32,7 @@ public class DeckManager : MonoBehaviour
     }
     public IEnumerator DrawCardCoroutine(int amount)
     {
-        yield return new WaitUntil(() => deckQueue != null);
+        yield return new WaitUntil(() => deckQueue != null && deckQueue.Count > 0);
         for (int i = 0; i < amount; i++)
         {
 
@@ -51,9 +51,9 @@ public class DeckManager : MonoBehaviour
     {
         while(hand.childCount > 0)
         {
-            var card = hand.GetChild(0);
-            deckQueue.Enqueue(card.GetComponent<CardDataContainer>().cardData);
-            Destroy(card.gameObject);                    
+            var card = hand.GetChild(0).GetComponent<CardDataContainer>();
+            if(!card.cardData.attack) deckQueue.Enqueue(card.cardData);
+            Destroy(card.gameObject);
             SoundManager.Instance.PlaySound(drawCardSoundEffect);
             yield return new WaitForSeconds(delaySeconds);
         }

@@ -27,6 +27,7 @@ public class Player : Entity
         this.defenseBonus = playerData.chestArmor.defenseBonus + playerData.legArmor.defenseBonus;
 
         entityDisplay.UpdateHealth(entityData.HP, currentHP);
+        GenerateCondecorations();
     }
     private void GenerateCondecorations()
     {
@@ -55,6 +56,16 @@ public class Player : Entity
     public void SetWeapon(WeaponData weapon)
     {
         this.weapon = weapon;
+    }
+    protected override IEnumerator Death()
+    {
+        if(GetComponent<Friend>() != null && GetComponent<Friend>().active)
+        {
+            RestoreHealth(1, 0, 1);
+            yield break;
+        }
+
+        yield return null;
     }
     #endregion
 

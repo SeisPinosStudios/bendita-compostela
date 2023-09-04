@@ -6,6 +6,6 @@ public class NoStepBack : PoemEffect
 {
     public static new void Effect()
     {
-        foreach (Enemy enemy in BattleManager.Instance.enemies) enemy.DamageMultiplier(-0.25f);
+        foreach (Enemy enemy in BattleManager.Instance.enemies) enemy.AttackMultiplier(-0.25f);
     }
 }
