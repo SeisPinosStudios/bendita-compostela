@@ -18,11 +18,12 @@ MonoBehaviour:
   price: 0
   art: {fileID: 942625454, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
   miniArt: {fileID: -8998793451906749479, guid: b0492a3b5e9bcac42a9d2131ed5fc5f2, type: 3}
+  <attack>k__BackingField: 0
   cardEffects: 
   cardEffectsValues: []
   printArrow: 0
   <defenseBonus>k__BackingField: 1
-  <id>k__BackingField: 0
+  <id>k__BackingField: 9
   <weaponSynergy>k__BackingField: 4
   <synergyLevel>k__BackingField: 0
   <armorLevel>k__BackingField: 0

@@ -25,4 +25,9 @@ public class PackBehaviour : BasicPassive
         enemy.DefenseBonus(-2);
         enemy.GetComponent<EntityEffectsManager>().GuardedMultiplier(-0.25f);
     }
+
+    private void OnDestroy()
+    {
+        foreach (Enemy enemy in enemies) enemy.OnDeath -= CheckAllies;
+    }
 }

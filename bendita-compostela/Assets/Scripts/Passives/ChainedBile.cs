@@ -24,5 +24,6 @@ public class ChainedBile : BasicPassive
     private void OnDestroy()
     {
         if (passiveActive) BattleManager.Instance.player.DefenseBonus(1);
+        TurnManager.Instance.OnTurn -= PassiveEffect;
     }
 }

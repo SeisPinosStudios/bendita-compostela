@@ -23,4 +23,9 @@ public class MassiveBlessing : BasicPassive
             if (enemy != this.enemy) 
                 enemy.RestoreHealth(int.Parse(card.GetHeal()), enemy.healingBonus, enemy.healingMultiplier);
     }
+    private void OnDestroy()
+    {
+        TurnManager.Instance.OnTurn -= CheckHealth;
+        Heal.OnHeal -= PassiveEffect;
+    }
 }

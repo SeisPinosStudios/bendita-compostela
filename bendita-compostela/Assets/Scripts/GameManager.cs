@@ -23,10 +23,11 @@ public class GameManager : MonoBehaviour
 
         if (debug)
         {
-            playerData.inventory.AddRange(SODataBase.objects);
-            playerData.inventory.AddRange(SODataBase.special);
-            playerData.inventory.AddRange(SODataBase.weapons);
-            playerData.inventory.AddRange(SODataBase.armors);
+            foreach (CardData objectCard in SODataBase.objects) playerData.inventory.Add(objectCard.Copy());
+            foreach (CardData special in SODataBase.special) playerData.inventory.Add(special.Copy());
+            foreach (WeaponData weapon in SODataBase.weapons) playerData.inventory.Add(weapon.Copy());
+            foreach (ArmorData armor in SODataBase.armors) playerData.inventory.Add(armor.Copy());
+            playerData.AddCoins(100);
         }
     }
 

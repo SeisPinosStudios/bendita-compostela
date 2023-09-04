@@ -76,4 +76,10 @@ public class BattleManager : MonoBehaviour
     }
     public void SetInteraction(bool interaction) { blockingImage.SetActive(!interaction); }
     #endregion
+
+    private void OnDestroy()
+    {
+        foreach (Enemy enemy in enemies) enemy.OnDeath -= CheckGameEnd;
+        player.OnDeath -= CheckGameEnd;
+    }
 }

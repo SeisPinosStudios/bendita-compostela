@@ -24,4 +24,10 @@ public class SerpentineGrace : BasicPassive
     {
         active = true;
     }
+
+    private void OnDestroy()
+    {
+        GetComponent<EnemyBehaviour>().OnEnemyTurn -= PassiveEffect;
+        TurnManager.Instance.playerBehaviour.OnPlayerTurn -= ResetPassive;
+    }
 }

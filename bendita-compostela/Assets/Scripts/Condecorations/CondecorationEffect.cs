@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class CondecorationEffect : MonoBehaviour
 {
-    public interface ICondecoration
-    {
-        static void OnObtain() { }
-    }
+    
 }

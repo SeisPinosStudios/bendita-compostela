@@ -14,6 +14,7 @@ public class AnvilUpgradeManager : MonoBehaviour
     [field: SerializeField] public Transform armorSynergyButtons { get; private set; }
     [field: SerializeField] public Transform armorDefenseButtons { get; private set; }
     [field: SerializeField] public Image selectedEquipmentImage { get; private set; }
+    /*====EVENTS====*/
     public event Action OnEquipmentSelected = delegate { };
 
     private void Awake()

@@ -26,6 +26,7 @@ public class Player : Entity
         this.defenseBonus = playerData.chestArmor.defenseBonus + playerData.legArmor.defenseBonus;
 
         entityDisplay.UpdateHealth(entityData.HP, currentHP);
+        GenerateCondecorations();
     }
     private void GenerateCondecorations()
     {

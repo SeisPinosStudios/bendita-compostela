@@ -15,6 +15,7 @@ public class Staff : BaseWeapon
         Style();
 
         if (chestSynergy) ChestSynergy();
+        if (legSynergy) LegSynergy();
     }
 
     private void Style()
@@ -24,6 +25,10 @@ public class Staff : BaseWeapon
     private void ChestSynergy()
     {
         AttackDeckManager.Instance.ReduceAttackCost(GetChestLevel()+1);
+    }
+    private void LegSynergy()
+    {
+        BattleManager.Instance.player.HealingBonus(GetLegLevel() + 1);
     }
 
     private void OnDestroy()

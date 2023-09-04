@@ -63,6 +63,10 @@ public class EntityEffectsManager : MonoBehaviour
     {
         burnThreshold = value;
     }
+    public void UpdateEffectLimit(TAlteredEffects.AlteredEffects effect, int amount)
+    {
+        alteredEffectsLimit[effect] += amount;
+    }
     #endregion
 
     #region Effect Methods
