@@ -55,6 +55,16 @@ public class Player : Entity
     {
         this.weapon = weapon;
     }
+    protected override IEnumerator Death()
+    {
+        if(GetComponent<Friend>() != null && GetComponent<Friend>().active)
+        {
+            RestoreHealth(1, 0, 1);
+            yield break;
+        }
+
+        yield return null;
+    }
     #endregion
 
     #region Check Methods

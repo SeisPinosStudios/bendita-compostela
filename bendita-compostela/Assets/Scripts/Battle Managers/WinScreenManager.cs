@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Text;
+using TMPro;
 
 public class WinScreenManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class WinScreenManager : MonoBehaviour
     [field: SerializeField] public Transform rewardsZone { get; private set; }
     [field: SerializeField] public Toggle deckToggle { get; private set; }
     [field: SerializeField] public static float condecorationChance { get; private set; } = 5.0f;
+    [field: SerializeField] public TextMeshProUGUI otherRewards { get; private set; }
     public void Awake()
     {
         Instance = this;
@@ -22,6 +24,8 @@ public class WinScreenManager : MonoBehaviour
             var reward = Instantiate(cardDataContainer, rewardsZone);
             reward.GetComponent<CardCollection>().OnCardChosen += CardChosen;
         }
+
+        GenerateExtraRewards();
     }
 
     private List<CardData> GenerateRewards()

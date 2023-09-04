@@ -18,6 +18,7 @@ MonoBehaviour:
   price: 0
   art: {fileID: 0}
   miniArt: {fileID: 0}
+  <attack>k__BackingField: 1
   cardEffects: 0000000006000000
   cardEffectsValues:
   - 14

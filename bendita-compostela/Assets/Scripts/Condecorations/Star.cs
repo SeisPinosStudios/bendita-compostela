@@ -15,6 +15,6 @@ public class Star : MonoBehaviour
     }
     public static void OnObtain()
     {
-        return;
+        
     }
 }

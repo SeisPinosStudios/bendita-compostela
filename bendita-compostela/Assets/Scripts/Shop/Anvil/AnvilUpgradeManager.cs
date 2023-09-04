@@ -13,6 +13,7 @@ public class AnvilUpgradeManager : MonoBehaviour
     [field: SerializeField] public Transform weaponUltiButtons { get; private set; }
     [field: SerializeField] public Transform armorSynergyButtons { get; private set; }
     [field: SerializeField] public Transform armorDefenseButtons { get; private set; }
+    [field: SerializeField] public Image selectedEquipmentImage { get; private set; }
     public event Action OnEquipmentSelected = delegate { };
 
     private void Awake()
@@ -25,6 +26,8 @@ public class AnvilUpgradeManager : MonoBehaviour
         selectedEquipment = equipment;
         if (equipment is WeaponData) UpdateWeaponButtons();
         if (equipment is ArmorData) UpdateArmorButtons();
+        selectedEquipmentImage.gameObject.SetActive(true);
+        selectedEquipmentImage.sprite = selectedEquipment.miniArt;
         OnEquipmentSelected();
     }
 
@@ -34,13 +37,13 @@ public class AnvilUpgradeManager : MonoBehaviour
         var weapon = (WeaponData)selectedEquipment;
         foreach (Transform button in weaponDamageButtons)
         {
-            if (button.GetSiblingIndex() < weapon.weaponLevel) button.GetComponent<AnvilUpgradeSelector>().Disable();
+            if (button.GetSiblingIndex() < weapon.weaponLevel+1) button.GetComponent<AnvilUpgradeSelector>().Disable();
             else button.GetComponent<AnvilUpgradeSelector>().Enable();
         }
 
         foreach (Transform button in weaponStyleButtons)
         {
-            if (button.GetSiblingIndex() < weapon.styleLevel) button.GetComponent<AnvilUpgradeSelector>().Disable();
+            if (button.GetSiblingIndex() < weapon.styleLevel+1) button.GetComponent<AnvilUpgradeSelector>().Disable();
             else button.GetComponent<AnvilUpgradeSelector>().Enable();
         }
 
@@ -56,13 +59,13 @@ public class AnvilUpgradeManager : MonoBehaviour
 
         foreach (Transform button in armorSynergyButtons)
         {
-            if (button.GetSiblingIndex() < armor.synergyLevel) button.GetComponent<AnvilUpgradeSelector>().Disable();
+            if (button.GetSiblingIndex() < armor.synergyLevel+1) button.GetComponent<AnvilUpgradeSelector>().Disable();
             else button.GetComponent<AnvilUpgradeSelector>().Enable();
         }
 
         foreach (Transform button in armorDefenseButtons)
         {
-            if (button.GetSiblingIndex() < armor.armorLevel) button.GetComponent<AnvilUpgradeSelector>().Disable();
+            if (button.GetSiblingIndex() < armor.armorLevel+1) button.GetComponent<AnvilUpgradeSelector>().Disable();
             else button.GetComponent<AnvilUpgradeSelector>().Enable();
         }
     }

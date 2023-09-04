@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff81fe1da9604a4885a56a0fe0023aa, type: 3}
   m_Name: COND_00_MeritoAmigo
   m_EditorClassIdentifier: 
-  <condecorationName>k__BackingField: 
-  <description>k__BackingField: 
-  <sprite>k__BackingField: {fileID: 0}
+  <condecorationName>k__BackingField: "M\xE9rito al Fiel Ameowgo"
+  <description>k__BackingField: "Una vez por combate, al morir, recuperar\xE1s un
+    punto de vida."
+  <sprite>k__BackingField: {fileID: -1832044364, guid: bc54a54914d36ba49961bfbe1e0760b9, type: 3}
   <id>k__BackingField: 0
   <type>k__BackingField: 0
+  <special>k__BackingField: 1
