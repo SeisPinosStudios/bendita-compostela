@@ -70,6 +70,7 @@ public class Entity : MonoBehaviour
         {
             finalDefenseMultiplier -= entityEffectsManager.vulnerableMultiplier;
             entityEffectsManager.RemoveEffect(TAlteredEffects.AlteredEffects.Vulnerable, 1);
+            entityDisplay.Vulnerable();
         }
 
         return finalDefenseMultiplier;

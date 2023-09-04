@@ -37,6 +37,7 @@ public class EntityEffectsManager : MonoBehaviour
         if (resistances.Contains(effect)) return;
         alteredEffects[effect] = Mathf.Clamp(alteredEffects[effect] + value, 0, alteredEffectsLimit[effect]);
         OnEffectApplied(effect, value);
+        entityDisplay.DisplayEffectAnimation(effect);
         UpdateEffects();
     }
     public void RemoveEffect(TAlteredEffects.AlteredEffects effect, int value)
@@ -83,17 +84,31 @@ public class EntityEffectsManager : MonoBehaviour
     public void Poison()
     {
         if (Suffering(TAlteredEffects.AlteredEffects.Poison))
+        {
             Effect(TAlteredEffects.AlteredEffects.Poison);
+            entityDisplay.Poison();
+        }
+            
+
     }
     public void Bleed()
     {
         if (Suffering(TAlteredEffects.AlteredEffects.Bleed))
+        {
             Effect(TAlteredEffects.AlteredEffects.Bleed);
+            entityDisplay.Bleed();
+        }
+            
+
     }
     public void Burn()
     {
         if (Suffering(TAlteredEffects.AlteredEffects.Burn))
+        {
             Effect(TAlteredEffects.AlteredEffects.Burn);
+            entityDisplay.Burn();
+        }
+            
     }
     #endregion
 

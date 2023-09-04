@@ -71,6 +71,7 @@ MonoBehaviour:
   cardData: {fileID: 0}
   <interact>k__BackingField: 1
   <cardCollider>k__BackingField: {fileID: 2966026559876350211}
+  buySound: {fileID: 8300000, guid: 44f6902944618724298e9256de571f7a, type: 3}
 --- !u!114 &7803053706445925766
 MonoBehaviour:
   m_ObjectHideFlags: 0
