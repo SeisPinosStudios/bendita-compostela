@@ -26,6 +26,9 @@ public class EventMischievousCheese : MonoBehaviour
     public Sound cheeseEventMusic;
 
     public GameObject eventPanel;
+
+    public GameObject nextButton;
+    public GameObject rewardWindow;
     
     private int textIdx = 0;
     private string cheesePicked;
@@ -41,12 +44,15 @@ public class EventMischievousCheese : MonoBehaviour
             //SI HA SELECCIONADO EL QUESO CORRECTO
             textBox.text = "¡Enhorabuena joven peregrino!, sabía que podías estar a la altura de mis quesos ";
             shepardImage.sprite = shepardReactionImageList[0];
+            nextButton.SetActive(true);
+            nextButton.GetComponent<Button>().onClick.AddListener(()=>rewardWindow.SetActive(true));
+            nextButton.GetComponent<Button>().onClick.AddListener(()=>rewardWindow.GetComponent<EventRewardDisplay>().SetTextReward("Obtuviste carta Queso \nRecuperas un 20% de la vida"));
         }                
         else
         {
             //SI NO LO HA SELECCIONADO
           textBox.text = "No mereces mis quesos joven peregrino, ¡largo de aquí! Has echado a perder mi tiempo";          
-          shepardImage.sprite = shepardReactionImageList[1];
+          shepardImage.sprite = shepardReactionImageList[1];          
         } 
 
     }
@@ -105,6 +111,11 @@ public class EventMischievousCheese : MonoBehaviour
                 cheese.SetActive(true);
             }
             textBox.text = eventText.text[textIdx] + selectedCheese;   
+        }
+        else if(textIdx == 5) 
+        {
+            nextButton.SetActive(false);
+            textBox.text = eventText.text[textIdx];
         }
         else textBox.text = eventText.text[textIdx];        
         textIdx++;
