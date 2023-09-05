@@ -370,8 +370,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <playerData>k__BackingField: {fileID: 0}
-  <condDataContainer>k__BackingField: {fileID: 0}
-  <condDisplayObject>k__BackingField: {fileID: 0}
+  <condDataContainer>k__BackingField: {fileID: 4791591137640729275, guid: 4d1e8edc4377af4408b680d68101e0cf, type: 3}
+  <condDisplayObject>k__BackingField: {fileID: 2093151914}
 --- !u!1 &100949275
 GameObject:
   m_ObjectHideFlags: 0
