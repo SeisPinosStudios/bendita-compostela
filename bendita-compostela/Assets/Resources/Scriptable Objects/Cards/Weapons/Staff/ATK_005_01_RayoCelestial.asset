@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: ATK_005_01_RayoCelestial
   m_EditorClassIdentifier: 
   cardName: Rayo Celestial
+  <cardId>k__BackingField: 0
   description: 
   cost: 3
   price: 0
-  art: {fileID: 1742237999, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
+  art: {fileID: 87296101, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
   miniArt: {fileID: 0}
   <attack>k__BackingField: 1
   cardEffects: 0000000006000000

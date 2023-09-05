@@ -22,7 +22,7 @@ public class CombatNodeEvent : MonoBehaviour
     public IEnumerator ToCombatCoroutine()
     {
         StartCoroutine(LoadAsyncScene());
-        yield return StartCoroutine(MapManager.Instance.GetComponent<FadeUtils>().FadeOutCoroutine(1.0f));
+        yield return StartCoroutine(MapManager.Instance.GetComponent<FadeUtils>().FadeOutCoroutine(1f));
         sceneLoad.allowSceneActivation = true;
         yield return null;
     }

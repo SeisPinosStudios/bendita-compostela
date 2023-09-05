@@ -27,6 +27,7 @@ public class Enemy : Entity
     protected override IEnumerator Death()
     {
         TurnManager.Instance.RemoveBehaviour(entityBehaviour);
+        BattleManager.Instance.enemies.Remove(this);
         yield return new WaitForSeconds(1.0f);
         Destroy(gameObject);
         yield return null;

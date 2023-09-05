@@ -57,7 +57,7 @@ public class FadeUtils : MonoBehaviour
 
         yield return null;
     }
-    
+
     private IEnumerator FadeToAlpha(float targetAlpha, Action onComplete,float fadeDuration)
     {        
         isFading = true;
