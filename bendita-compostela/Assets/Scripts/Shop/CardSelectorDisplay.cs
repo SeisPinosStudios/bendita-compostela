@@ -10,6 +10,7 @@ public class CardSelectorDisplay : MonoBehaviour
     [SerializeField] SpriteRenderer sprite, highlight;
     [SerializeField] GameObject display;
     [SerializeField] Animator animator;
+    
 
     private void Awake()
     {
@@ -41,7 +42,7 @@ public class CardSelectorDisplay : MonoBehaviour
         if (!cardSelector.interact) return;
         ShopSelectionManager.Instance.ClearCardShown();
         display.SetActive(false);
-        animator.Play("BuyCardAnimation");
+        animator.Play("BuyCardAnimation");        
         Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length - 0.5f);
     }
 }

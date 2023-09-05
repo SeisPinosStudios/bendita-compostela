@@ -10,6 +10,8 @@ public class CardSelector : MonoBehaviour
     [field: SerializeField] public bool interact { get; private set; }
     [field: SerializeField] public PolygonCollider2D cardCollider { get; private set; }
 
+    [SerializeField] AudioClip buySound;
+
     private void Awake()
     {
         cardData = cardDataContainer.cardData;
@@ -39,7 +41,7 @@ public class CardSelector : MonoBehaviour
             GameManager.Instance.playerData.inventory.Add(((ArmorData)cardData).Copy());
             return;
         }
-
+        SoundManager.Instance.PlaySound(buySound);
         GameManager.Instance.playerData.inventory.Add(cardData.Copy());
     }
 

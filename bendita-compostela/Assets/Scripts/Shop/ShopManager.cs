@@ -9,9 +9,13 @@ public class ShopManager : MonoBehaviour
     [field: SerializeField] public Transform armorSelectors { get; private set; }
     [field: SerializeField] public Transform objectSelectors { get; private set; }
     [field: SerializeField] public Transform specialSelectors { get; private set; }
+    [field: SerializeField, Header("Shop Music")] private AudioClip shopMusic;
+    
     private void Awake()
     {
         Instance = this;
+
+        SoundManager.Instance.PlayMusic(shopMusic);
 
         foreach (Transform selector in weaponSelectors)
             selector.GetComponent<CardDataContainer>().cardData = SODataBase.weapons[Random.Range(0, SODataBase.weapons.Count)];

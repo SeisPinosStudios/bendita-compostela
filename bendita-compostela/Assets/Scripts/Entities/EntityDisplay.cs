@@ -63,16 +63,19 @@ public class EntityDisplay : MonoBehaviour
                 Burn();
                 break;
             case TAlteredEffects.AlteredEffects.Exhaust:
+            //meter exhaust
                 break;
             case TAlteredEffects.AlteredEffects.Disarmed:
                 break;
             case TAlteredEffects.AlteredEffects.Marked:
                 break;
             case TAlteredEffects.AlteredEffects.Stun:
+            //meter anim
                 break;
             case TAlteredEffects.AlteredEffects.Lead:
                 break;
             case TAlteredEffects.AlteredEffects.Frenzy:
+            //meter anim
                 break;            
         }
     }
