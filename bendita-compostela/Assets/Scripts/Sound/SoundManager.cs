@@ -24,10 +24,22 @@ public class SoundManager : MonoBehaviour
     {
         effectsSource.PlayOneShot(clip);
     }
+    public void PlaySound(AudioClip clip, float volume)
+    {
+        effectsSource.PlayOneShot(clip,volume);
+    }
     public void PlayMusic(AudioClip clip)
     {                
         musicSource.Stop();
-        musicSource.PlayOneShot(clip);
         musicSource.loop = true;
+        musicSource.PlayOneShot(clip);
+        
+    }
+    public void PlayMusic(AudioClip clip, float volume)
+    {                
+        musicSource.Stop();
+        musicSource.loop = true;
+        musicSource.PlayOneShot(clip,volume);
+        
     }
 }

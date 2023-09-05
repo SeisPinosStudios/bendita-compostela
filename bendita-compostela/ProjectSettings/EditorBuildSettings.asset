@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TestScenes/Event Test/Event Scene.unity
     guid: 11bb6b1a42ff69149a54660df669f234
   - enabled: 1
+    path: Assets/Scenes/Final Scenes/Map.unity
+    guid: c31d5247fec1ef84c8c7daf01ae88cb3
+  - enabled: 1
     path: Assets/Scenes/Final Scenes/Shop.unity
     guid: 1898a95d461dbd645a817d194074797b
   - enabled: 1

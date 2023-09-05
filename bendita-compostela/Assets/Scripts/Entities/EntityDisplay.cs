@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Diagnostics;
+using System;
+using Random = UnityEngine.Random;
+
 
 public class EntityDisplay : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class EntityDisplay : MonoBehaviour
     [SerializeField] Transform alteredEffectsZone;
     [SerializeField] AlteredEffectDisplay alteredEffectDisplay;
     [SerializeField] public Animator entityAnimator;
+    public bool showLogs = true;
 
     private void Awake()
     {
@@ -91,27 +94,49 @@ public class EntityDisplay : MonoBehaviour
     }    
     public void Bleed()
     {        
+        Log("Bleed Animation");
         entityAnimator.SetInteger("BleedType",Random.Range(1,9));                   
     }
     public void Burn()
     {
+        Log("Burn Animation");
         entityAnimator.SetTrigger("Burn");
     }
     public void Poison()
     {
+        Log("Poison Animation");
         entityAnimator.SetTrigger("Poison");
     }
     public void Heal()
     {
+        Log("Heal Animation");
         entityAnimator.SetTrigger("Heal");
     }
     public void Vulnerable()
     {
+        Log("Vulnerable Animation");
         entityAnimator.SetTrigger("Vulnerable");
     }
-    //OnlyPlayer
-    public void SetWeaponDisplay()
+    public void Frenzy()
     {
+        Log("Frenzy Animation");
+        entityAnimator.SetTrigger("Frenzy");
+    }
+    public void Stun()
+    {
+        Log("Stun Animation");
+        entityAnimator.SetTrigger("Stun");
+    }
+    //OnlyPlayer
+    public void SetWeaponDisplay(int weaponId)
+    {
+        Log($"Weapon {weaponId} Animation");
+        entityAnimator.SetInteger("WeaponType", weaponId+1);
+    }
 
+    void Log(object message)
+    {
+        if(showLogs) Debug.Log(message);
+        
     }
 }
