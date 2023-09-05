@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: ESQ_001_Default
   m_EditorClassIdentifier: 
   <attacks>k__BackingField:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: e8ba6ff7fee1e5643bd38941da7014f5, type: 2}
+  - {fileID: 11400000, guid: e8ba6ff7fee1e5643bd38941da7014f5, type: 2}
+  - {fileID: 11400000, guid: 131a3621f2d0f39449c1e84a115deccf, type: 2}

@@ -10,7 +10,7 @@ public class CondecorationsDisplay : MonoBehaviour
 
     private void Awake()
     {
-        
+        StartCoroutine(SetupCoroutine());
     }
     private IEnumerator SetupCoroutine()
     {

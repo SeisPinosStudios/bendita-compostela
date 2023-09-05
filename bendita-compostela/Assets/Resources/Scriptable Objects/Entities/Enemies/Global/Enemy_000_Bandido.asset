@@ -20,8 +20,8 @@ MonoBehaviour:
   <reward>k__BackingField: 5
   <passives>k__BackingField: 00000000
   <resistances>k__BackingField: 
-  <defaultSequence>k__BackingField: {fileID: 11400000, guid: d8b13ba2bdfe2d94d9a6fcdfea27ffe9, type: 2}
-  <attackSequence>k__BackingField: {fileID: 11400000, guid: f3e7434beecda034c8699708f1dd0de8, type: 2}
+  <defaultSequence>k__BackingField: {fileID: 11400000, guid: cea785b53f2eb4642b79148666eb4e13, type: 2}
+  <attackSequence>k__BackingField: {fileID: 11400000, guid: cc2d783b99fb01541ac248c9385b1bbc, type: 2}
   <healSequence>k__BackingField: {fileID: 0}
   <dyingSequence>k__BackingField: {fileID: 0}
   <isBoss>k__BackingField: 0
