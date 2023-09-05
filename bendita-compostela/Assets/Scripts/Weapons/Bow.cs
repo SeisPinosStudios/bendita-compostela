@@ -56,4 +56,21 @@ public class Bow : BaseWeapon
         Damage.OnAttack -= Style;
         AttackDeckManager.Instance.OnCardDraw -= ChestSynergy;
     }
+
+    #region Description
+    public static string GetChestDescription()
+    {
+        if (GameManager.Instance.playerData.chestArmor.synergyLevel == 2) return "Sinergia con arco: tus robos del mazo de ataques no cuestan energía.";
+        return $"Sinergia con arco: cada {2 - GameManager.Instance.playerData.chestArmor.synergyLevel} robos del mazo de ataques, tu siguiente robo es gratis.";
+    }
+    public static string GetLegDescription()
+    {
+        return $"Sinergia con arco: aumenta tu energía máxima {2 * (GameManager.Instance.playerData.legArmor.synergyLevel + 1)} puntos.";
+    }
+    public static string GetStyleDescription()
+    {
+        return $"Estilo: tu maestría con el arco permite recuperar {(BattleManager.Instance.player.weapon.styleLevel > 0 ? 4 : 3)} cada " +
+            $"{(BattleManager.Instance.player.weapon.styleLevel < 2 ? 5 : 4)} ataques.";
+    }
+    #endregion
 }

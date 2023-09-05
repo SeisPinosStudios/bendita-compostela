@@ -51,7 +51,7 @@ public class Spear : BaseWeapon
         if(user.GetComponent<Entity>().GetType() == typeof(Player)) return;
         if (!target.GetComponent<EntityEffectsManager>().Suffering(TAlteredEffects.AlteredEffects.Invulnerable)) return;
 
-        user.GetComponent<Entity>().SufferDamage(Mathf.RoundToInt(card.GetDamage() * (0.5f + (0.25f * GetLegLevel()))), 0, 0.0f, true);
+        user.GetComponent<Entity>().SufferDamage(Mathf.RoundToInt(card.GetDamage() * (0.5f + (0.25f * GetChestLevel()))), 0, 0.0f, true);
     }
 
     private void LegSynergy()
@@ -60,4 +60,39 @@ public class Spear : BaseWeapon
 
         if (GetLegLevel() != 0) player.entityEffectsManager.GuardedMultiplier(0.25f);
     }
+
+    #region Description
+    public static string GetChestDescription()
+    {
+        return $"Sinergia con lanza: cuando recibas un ataque teniendo el efecto Invulnerable, devuelve un" +
+            $" {0.5f + (0.25f * GameManager.Instance.playerData.chestArmor.synergyLevel) * 100}% del daño.";
+    }
+    public static string GetLegDescription()
+    {
+        if (GameManager.Instance.playerData.legArmor.synergyLevel != 0)
+            return $"Sinergia con lanza: el efecto En Guardia de los enemigos pasa a bloquear " +
+                $"{0.5 - (GameManager.Instance.playerData.legArmor.synergyLevel < 2 ? 0.25f : 0.5f)} del daño. Tu efecto En Guardia pasa a bloquear 75% del daño.";
+
+        return $"Sinergia con lanza: el efecto En Guardia de los enemigos pasa a bloquear 25% del daño.";
+    }
+    public static string GetStyleDescription()
+    {
+        return $"Estilo: cuando atacas a un enemigo, el enemigo posicionado detrás sufrirá un {GetStyleMultiplier(BattleManager.Instance.player.weapon.styleLevel)*100}% " +
+            $"del daño.";
+    }
+    private static float GetStyleMultiplier(int styleLevel)
+    {
+        switch (styleLevel)
+        {
+            case 0:
+                return 0.5f;
+            case 1:
+                return 1.0f;
+            case 2:
+                return 2.0f;
+        }
+
+        return 0.0f;
+    }
+    #endregion
 }

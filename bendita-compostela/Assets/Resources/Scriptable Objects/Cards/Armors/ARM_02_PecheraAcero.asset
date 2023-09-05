@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ARM_02_PecheraAcero
   m_EditorClassIdentifier: 
   cardName: Pechera de Acero
+  <cardId>k__BackingField: 0
   description: 
   cost: 0
   price: 0
@@ -23,7 +24,7 @@ MonoBehaviour:
   cardEffectsValues: []
   printArrow: 0
   <defenseBonus>k__BackingField: 2
-  <id>k__BackingField: 2
+  <armorId>k__BackingField: 2
   <weaponSynergy>k__BackingField: 1
   <synergyLevel>k__BackingField: 0
   <armorLevel>k__BackingField: 0

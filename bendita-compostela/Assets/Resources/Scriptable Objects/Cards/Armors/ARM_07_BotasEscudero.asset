@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ARM_07_BotasEscudero
   m_EditorClassIdentifier: 
   cardName: Botas de Escudero
+  <cardId>k__BackingField: 0
   description: 
   cost: 0
   price: 0
@@ -23,7 +24,7 @@ MonoBehaviour:
   cardEffectsValues: []
   printArrow: 0
   <defenseBonus>k__BackingField: 2
-  <id>k__BackingField: 7
+  <armorId>k__BackingField: 7
   <weaponSynergy>k__BackingField: 3
   <synergyLevel>k__BackingField: 0
   <armorLevel>k__BackingField: 0

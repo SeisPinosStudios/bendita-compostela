@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ARM_08_TunicaApostol
   m_EditorClassIdentifier: 
   cardName: "T\xFAnica de Ap\xF3stol"
+  <cardId>k__BackingField: 0
   description: 
   cost: 0
   price: 0
@@ -23,7 +24,7 @@ MonoBehaviour:
   cardEffectsValues: []
   printArrow: 0
   <defenseBonus>k__BackingField: 1
-  <id>k__BackingField: 8
+  <armorId>k__BackingField: 8
   <weaponSynergy>k__BackingField: 4
   <synergyLevel>k__BackingField: 0
   <armorLevel>k__BackingField: 0

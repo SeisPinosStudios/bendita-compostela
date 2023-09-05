@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ARM_10_ChalecoAlba
   m_EditorClassIdentifier: 
   cardName: Chaleco del Alba
+  <cardId>k__BackingField: 0
   description: 
   cost: 0
   price: 0
@@ -23,7 +24,7 @@ MonoBehaviour:
   cardEffectsValues: []
   printArrow: 0
   <defenseBonus>k__BackingField: 1
-  <id>k__BackingField: 10
+  <armorId>k__BackingField: 20
   <weaponSynergy>k__BackingField: 5
   <synergyLevel>k__BackingField: 0
   <armorLevel>k__BackingField: 0

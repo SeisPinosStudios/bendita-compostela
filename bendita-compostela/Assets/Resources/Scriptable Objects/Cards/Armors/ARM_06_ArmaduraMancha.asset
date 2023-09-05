@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ARM_06_ArmaduraMancha
   m_EditorClassIdentifier: 
   cardName: Armadura de La Mancha
+  <cardId>k__BackingField: 0
   description: 
   cost: 0
   price: 0
@@ -23,7 +24,7 @@ MonoBehaviour:
   cardEffectsValues: []
   printArrow: 0
   <defenseBonus>k__BackingField: 3
-  <id>k__BackingField: 6
+  <armorId>k__BackingField: 6
   <weaponSynergy>k__BackingField: 3
   <synergyLevel>k__BackingField: 0
   <armorLevel>k__BackingField: 0

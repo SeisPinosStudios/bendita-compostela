@@ -34,7 +34,7 @@ public class AnvilUpgradeSelector : MonoBehaviour, IPointerEnterHandler, IPointe
         {
             upgradeIcon.sprite = icons[((WeaponData)equipment).weaponId];
         }
-        if (equipment is ArmorData) upgradeIcon.sprite = icons[((ArmorData)equipment).id];
+        if (equipment is ArmorData) upgradeIcon.sprite = icons[((ArmorData)equipment).armorId];
     }
     public void Disable()
     {

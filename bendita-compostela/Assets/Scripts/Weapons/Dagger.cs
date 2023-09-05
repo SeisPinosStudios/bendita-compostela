@@ -62,5 +62,20 @@ public class Dagger : BaseWeapon
         BattleManager.Instance.OnBattleEnd -= ResetSynergyEffect;
     }
 
-
+    #region Description
+    public static string GetChestDescription()
+    {
+        return $"Sinergia con daga: una vez por combate, al ser envenenado, te libras del efecto veneno y en cambio aplicas " +
+            $"{GameManager.Instance.playerData.chestArmor.synergyLevel + 1} cargas de veneno a todos los enemigos.";
+    }
+    public static string GetLegDescription()
+    {
+        return $"Sinergia con daga: aumenta el daño acumulable por veneno a {8 + GameManager.Instance.playerData.legArmor.synergyLevel * 2} puntos de daño.";
+    }
+    public static string GetStyleDescription()
+    {
+        return $"Estilo: cuando sólo queda un enemigo, cada ataque de daga aumenta tu daño con todos los ataques {BattleManager.Instance.player.weapon.styleLevel + 1} " +
+            $"hasta el final del turno.";
+    }
+    #endregion
 }

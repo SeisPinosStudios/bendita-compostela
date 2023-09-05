@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ARM_11_BotasLigeras
   m_EditorClassIdentifier: 
   cardName: Botas Ligeras
+  <cardId>k__BackingField: 0
   description: 
   cost: 0
   price: 0
@@ -23,7 +24,7 @@ MonoBehaviour:
   cardEffectsValues: []
   printArrow: 0
   <defenseBonus>k__BackingField: 1
-  <id>k__BackingField: 11
+  <armorId>k__BackingField: 11
   <weaponSynergy>k__BackingField: 5
   <synergyLevel>k__BackingField: 0
   <armorLevel>k__BackingField: 0

@@ -13,6 +13,7 @@ public class CardData : ScriptableObject
 
     [Header("Card Info")]
     public string cardName;
+    [field: SerializeField] public int cardId { get; protected set; }
     [TextArea(5,10)]
     public string description;
     public int cost, price;
