@@ -18,7 +18,6 @@ public class EnemyBehaviour : EntityBehaviour
     {
         enemyData = (EnemyData)entityDataContainer.entityData;
         mainCanvas = GameObject.FindGameObjectWithTag("MainCanvas").transform;
-        ((Enemy)entity).OnDeath += Death;
     }
     public override void OnTurnBegin()
     {
@@ -100,7 +99,7 @@ public class EnemyBehaviour : EntityBehaviour
 
         return null;
     }
-    private void Death()
+    public void Death()
     {
         StopAllCoroutines();
         TurnManager.Instance.Turn();
