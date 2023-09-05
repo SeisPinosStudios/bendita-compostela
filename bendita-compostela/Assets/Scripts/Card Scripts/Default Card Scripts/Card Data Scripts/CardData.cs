@@ -50,6 +50,11 @@ public class CardData : ScriptableObject
     {
         return attack;
     }
+    public void Cost(int amount)
+    {
+        cost += amount;
+        Debug.Log($"Reduced card {name} cost by {amount}");
+    }
     public virtual CardData Copy()
     {
         CardData card = CreateInstance<CardData>();

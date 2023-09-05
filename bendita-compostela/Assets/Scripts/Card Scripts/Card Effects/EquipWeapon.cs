@@ -14,10 +14,13 @@ public class EquipWeapon : BasicCardEffect
         { 
             DeckManager.Instance.AddCardToDeck(player.weapon);
             UnityEngine.Object.Destroy(user.GetComponent<BaseWeapon>());
+            foreach (Transform child in AttackDeckManager.Instance.hand)
+                if (child.GetComponent<CardDataContainer>().cardData is WeaponAttackData)
+                    GameObject.Destroy(child.gameObject);
         }
         BattleManager.Instance.player.SetWeapon((WeaponData)card);
-        user.AddComponent(Type.GetType(weapon.weaponClassName.ToString()));
         OnEquipWeapon();
+        user.AddComponent(Type.GetType(weapon.weaponClassName.ToString()));
     }
 
     public static string GetDescription(CardData card, Entity user, Entity target)

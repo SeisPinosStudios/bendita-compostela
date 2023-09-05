@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7231013813287967031}
   - component: {fileID: 5182426489344916778}
-  - component: {fileID: 4791591137640729275}
-  - component: {fileID: 5638989215714016651}
   - component: {fileID: 2006449453818758721}
   - component: {fileID: 7131715664939645918}
+  - component: {fileID: 4791591137640729275}
+  - component: {fileID: 4300224831344268448}
+  - component: {fileID: 4950559421676600149}
   m_Layer: 0
   m_Name: CondecorationIcon
   m_TagString: Untagged
@@ -49,36 +50,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5873774821684317884}
   m_CullTransparentMesh: 1
---- !u!114 &4791591137640729275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5873774821684317884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c43ab06c1940834ea73b26f20c8e192, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <condecorationData>k__BackingField: {fileID: 0}
---- !u!114 &5638989215714016651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5873774821684317884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dfd5ace3fc6bb746aae5785b9157e7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <textBoxPrefab>k__BackingField: {fileID: 6216814944079965107, guid: 5b65f629a7b302745bc6cf1c9d85a22a, type: 3}
-  <textObject>k__BackingField: {fileID: 0}
-  <textToWrite>k__BackingField: "Esto es una condecoraci\xF3n"
-  <textBoxObject>k__BackingField: {fileID: 0}
-  <highlight>k__BackingField: {fileID: 0}
 --- !u!114 &2006449453818758721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,3 +136,50 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4791591137640729275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5873774821684317884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c43ab06c1940834ea73b26f20c8e192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  condecorationData: {fileID: 11400000, guid: 7b1d9bb32e36374458fec8760f600e53, type: 2}
+--- !u!114 &4300224831344268448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5873774821684317884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e184ff12321b25408cc90decf26547c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <condecorationDataContainer>k__BackingField: {fileID: 4791591137640729275}
+  <condecorationImage>k__BackingField: {fileID: 2006449453818758721}
+--- !u!114 &4950559421676600149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5873774821684317884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92aa7583ad0d1914eae06a4654a7995c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <textBoxPrefab>k__BackingField: {fileID: 6216814944079965107, guid: 5b65f629a7b302745bc6cf1c9d85a22a, type: 3}
+  <textObject>k__BackingField: {fileID: 0}
+  <textToWrite>k__BackingField: 
+  <textBoxObject>k__BackingField: {fileID: 0}
+  <highlight>k__BackingField: {fileID: 0}
+  <progress>k__BackingField: 0
+  <progressBar>k__BackingField: {fileID: 0}
+  <condDataContainer>k__BackingField: {fileID: 4791591137640729275}

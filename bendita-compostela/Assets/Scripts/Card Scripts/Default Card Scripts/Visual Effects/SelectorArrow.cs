@@ -28,7 +28,7 @@ public class SelectorArrow : MonoBehaviour
             //transform.position = from;
             transform.up = to - transform.position;
 
-            var size = ((from - to).magnitude)/3;
+            var size = ((from - to).magnitude)/2;
             sprite.size = new Vector2(0.4f, size);
         }
         else

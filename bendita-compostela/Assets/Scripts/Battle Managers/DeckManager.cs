@@ -38,9 +38,10 @@ public class DeckManager : MonoBehaviour
 
             card.cardData = deckQueue.Dequeue();
             Instantiate(card, hand);
-            SoundManager.Instance.PlaySound(drawCardSoundEffect);
             yield return new WaitForSeconds(delaySeconds);
             if (deckQueue.Count <= 0) break;
+
+            SoundManager.Instance.PlaySound(drawCardSoundEffect);
         }
     }
     public void ReturnCards()
@@ -49,13 +50,14 @@ public class DeckManager : MonoBehaviour
     }
     public IEnumerator ReturnCardsCoroutine()
     {
+        var delay = 1.0f / hand.childCount;
         while(hand.childCount > 0)
         {
             var card = hand.GetChild(0).GetComponent<CardDataContainer>();
-            if(!card.cardData.attack) deckQueue.Enqueue(card.cardData);
+            if(card.cardData is not WeaponAttackData) deckQueue.Enqueue(card.cardData);
             Destroy(card.gameObject);
             SoundManager.Instance.PlaySound(drawCardSoundEffect);
-            yield return new WaitForSeconds(delaySeconds);
+            yield return new WaitForSeconds(delay);
         }
     }
     public void AddCardToDeck(CardData card)

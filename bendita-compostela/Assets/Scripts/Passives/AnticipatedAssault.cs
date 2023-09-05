@@ -13,6 +13,7 @@ public class AnticipatedAssault : MonoBehaviour
     {
         yield return new WaitUntil(() => TurnManager.Instance);
         var enemyBehaviour = GetComponent<EnemyBehaviour>();
+        TurnManager.Instance.turnQueue.Remove(enemyBehaviour);
         TurnManager.Instance.turnQueue.AddFirst(enemyBehaviour);
     }
 }

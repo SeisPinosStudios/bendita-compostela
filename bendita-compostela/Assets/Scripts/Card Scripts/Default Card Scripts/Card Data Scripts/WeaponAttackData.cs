@@ -21,6 +21,7 @@ public class WeaponAttackData : CardData
         card.cardEffectsValues = cardEffectsValues;
         card.printArrow = printArrow;
         card.improvedAttack = improvedAttack;
+        card.name = name;
 
         return card;
     }
