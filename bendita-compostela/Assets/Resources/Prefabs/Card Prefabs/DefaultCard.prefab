@@ -717,6 +717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 994d979040ea8c345a01139706b566ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <cardDisplay>k__BackingField: {fileID: 3175823880051612337}
   <verticalMovement>k__BackingField: 90
   <hand>k__BackingField: {fileID: 0}
   <index>k__BackingField: 0

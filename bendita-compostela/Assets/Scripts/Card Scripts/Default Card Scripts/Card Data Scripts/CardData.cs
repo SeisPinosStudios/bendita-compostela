@@ -13,6 +13,7 @@ public class CardData : ScriptableObject
 
     [Header("Card Info")]
     public string cardName;
+    [field: SerializeField] public int cardId { get; protected set; }
     [TextArea(5,10)]
     public string description;
     public int cost, price;
@@ -45,6 +46,15 @@ public class CardData : ScriptableObject
         var effects = new List<string>();
         for (int i = 0; i < cardEffects.Count; i++) if (cardEffects[i] == effect) effects.Add(cardEffectsValues[i]);
         return effects;
+    }
+    public bool AppliesEffect(TAlteredEffects.AlteredEffects effect)
+    {
+        for (int i = 0; i < cardEffects.Count; i++)
+            if (cardEffects[i] == Effect.ApplyEffect)
+                if (cardEffectsValues[i].Split("|")[0] == effect.ToString())
+                    return true;
+        
+        return false;
     }
     public bool IsAttack()
     {
