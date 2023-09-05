@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CondecorationInfo : InfoText
 {
-    [field: SerializeField] public CondecorationDataContainer condDataContainer { get; private set; }
+    [field: SerializeField, Header("Condecoration")] public CondecorationDataContainer condDataContainer { get; private set; }
 
     private void Awake()
     {
