@@ -24,6 +24,7 @@ public class CombatNodeEvent : MonoBehaviour
         StartCoroutine(LoadAsyncScene());
         yield return StartCoroutine(MapManager.Instance.GetComponent<FadeUtils>().FadeOutCoroutine(1f));
         sceneLoad.allowSceneActivation = true;
+        yield return null;
     }
 
     private IEnumerator LoadAsyncScene()
