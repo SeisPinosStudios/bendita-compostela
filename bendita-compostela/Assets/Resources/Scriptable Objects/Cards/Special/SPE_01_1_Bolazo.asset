@@ -17,7 +17,7 @@ MonoBehaviour:
   description: 
   cost: 3
   price: 0
-  art: {fileID: 1943508457, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
+  art: {fileID: -1046734708, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
   miniArt: {fileID: -1647406128882786110, guid: b0492a3b5e9bcac42a9d2131ed5fc5f2, type: 3}
   <attack>k__BackingField: 0
   cardEffects: 000000000c000000

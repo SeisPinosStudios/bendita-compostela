@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: ATK_005_22_RayoExpiador
   m_EditorClassIdentifier: 
   cardName: Rayo Expiador
+  <cardId>k__BackingField: 0
   description: 
   cost: 5
   price: 0
-  art: {fileID: -624553969, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
+  art: {fileID: 1670529047, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
   miniArt: {fileID: 0}
   <attack>k__BackingField: 1
   cardEffects: 0000000006000000

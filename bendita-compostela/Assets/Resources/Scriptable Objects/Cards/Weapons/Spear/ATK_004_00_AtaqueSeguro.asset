@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: ATK_004_00_AtaqueSeguro
   m_EditorClassIdentifier: 
   cardName: Ataque Seguro
+  <cardId>k__BackingField: 0
   description: 
   cost: 3
   price: 0
-  art: {fileID: 372666778, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
+  art: {fileID: 299956915, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
   miniArt: {fileID: 0}
   <attack>k__BackingField: 1
   cardEffects: 00000000

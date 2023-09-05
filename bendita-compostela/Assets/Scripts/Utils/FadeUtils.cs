@@ -39,6 +39,30 @@ public class FadeUtils : MonoBehaviour
         }
     }
 
+    public IEnumerator FadeOutCoroutine(float fadeTime)
+    {
+        if (!imageComponent.gameObject.activeSelf) imageComponent.gameObject.SetActive(true);
+        for (float i = 0; i <= fadeTime; i += Time.deltaTime)
+        {
+            imageComponent.color = new Color(0f, 0f, 0f, i / fadeTime);
+            yield return null;
+        }
+
+        yield return null;
+    }
+
+    public IEnumerator FadeInCoroutine(float fadeTime)
+    {
+        if (!imageComponent.gameObject.activeSelf) imageComponent.gameObject.SetActive(true);
+        for (float i = fadeTime; i >= 0; i -= Time.deltaTime)
+        {
+            imageComponent.color = new Color(0f, 0f, 0f, i / fadeTime);
+            yield return null;
+        }
+
+        yield return null;
+    }
+
     // Corrutina para realizar la transición de transparencia
     private IEnumerator FadeToAlpha(float targetAlpha, Action onComplete)
     {        

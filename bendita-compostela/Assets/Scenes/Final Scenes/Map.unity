@@ -1391,10 +1391,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1452019582}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62f81ffd52a579c4796f2bb3f1ca54f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 2503d226469f89d4d87a3efbea78fabb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <fadeImage>k__BackingField: {fileID: 822491466}
+  fadeDuration: 0
+  imageComponent: {fileID: 822491466}
+  isFading: 0
 --- !u!1 &1600697149
 GameObject:
   m_ObjectHideFlags: 0
