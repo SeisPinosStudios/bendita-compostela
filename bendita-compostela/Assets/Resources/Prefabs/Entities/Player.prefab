@@ -170,7 +170,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2927171455234333776}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3500001, y: 0.12666668, z: 0}
+  m_LocalPosition: {x: 0, y: 0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.33333334}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -443,7 +443,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3741044718517036737}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3500001, y: 0.12666668, z: 0}
+  m_LocalPosition: {x: 0, y: 0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.33333334}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -648,7 +648,7 @@ Transform:
   - {fileID: 4412142821384605629}
   - {fileID: 7419855290221236727}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1154136145657413943
 MonoBehaviour:
@@ -711,6 +711,7 @@ MonoBehaviour:
   alteredEffectsZone: {fileID: 4426645685752796740}
   alteredEffectDisplay: {fileID: 678472934270943576, guid: 1b3ddc24a8343644096c3e21f7b698ff, type: 3}
   entityAnimator: {fileID: 3017040527718966374}
+  showLogs: 1
   player: {fileID: 2625660543139403098}
   energyText: {fileID: 8720745609731044279}
 --- !u!114 &3075034504805580143

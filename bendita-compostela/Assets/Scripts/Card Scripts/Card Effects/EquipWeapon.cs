@@ -19,6 +19,7 @@ public class EquipWeapon : BasicCardEffect
                     GameObject.Destroy(child.gameObject);
         }
         BattleManager.Instance.player.SetWeapon((WeaponData)card);
+        player.GetComponent<EntityDisplay>().SetWeaponDisplay(weapon.weaponId);
         OnEquipWeapon();
         user.AddComponent(Type.GetType(weapon.weaponClassName.ToString()));
     }

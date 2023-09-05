@@ -108,6 +108,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: SlashType
     m_EventTreshold: 6
+  - m_ConditionMode: 1
+    m_ConditionEvent: Hitted
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2735750853655886642}
   m_Solo: 0
@@ -160,6 +163,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: BleedType
     m_EventTreshold: 4
+  - m_ConditionMode: 1
+    m_ConditionEvent: Attack
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 568544030602977766}
   m_Solo: 0
@@ -185,6 +191,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: BleedType
     m_EventTreshold: 6
+  - m_ConditionMode: 1
+    m_ConditionEvent: Attack
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8414949477087469938}
   m_Solo: 0
@@ -530,6 +539,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: BleedType
     m_EventTreshold: 8
+  - m_ConditionMode: 1
+    m_ConditionEvent: Attack
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8749559742626345081}
   m_Solo: 0
@@ -695,6 +707,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: BleedType
     m_EventTreshold: 1
+  - m_ConditionMode: 1
+    m_ConditionEvent: Attack
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2417860925966680483}
   m_Solo: 0
@@ -720,6 +735,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: BleedType
     m_EventTreshold: 7
+  - m_ConditionMode: 1
+    m_ConditionEvent: Attack
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6646092403014102788}
   m_Solo: 0
@@ -745,6 +763,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: SlashType
     m_EventTreshold: 8
+  - m_ConditionMode: 1
+    m_ConditionEvent: Hitted
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3412520676960599679}
   m_Solo: 0
@@ -770,6 +791,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: SlashType
     m_EventTreshold: 2
+  - m_ConditionMode: 1
+    m_ConditionEvent: Hitted
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4680162747717343062}
   m_Solo: 0
@@ -874,6 +898,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: BleedType
     m_EventTreshold: 3
+  - m_ConditionMode: 1
+    m_ConditionEvent: Attack
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6997971790160924559}
   m_Solo: 0
@@ -899,6 +926,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: SlashType
     m_EventTreshold: 4
+  - m_ConditionMode: 1
+    m_ConditionEvent: Hitted
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5066866332933894772}
   m_Solo: 0
@@ -995,6 +1025,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: BleedType
     m_EventTreshold: 2
+  - m_ConditionMode: 1
+    m_ConditionEvent: Attack
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4321877822735773433}
   m_Solo: 0
@@ -1171,6 +1204,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: SlashType
     m_EventTreshold: 1
+  - m_ConditionMode: 1
+    m_ConditionEvent: Hitted
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4191495843303394432}
   m_Solo: 0
@@ -1346,61 +1382,61 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Hitted
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Burn
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Poison
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Heal
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Vulnerable
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: SlashType
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: BleedType
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Stun
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Frenzy
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: EnemyDisplay
@@ -1473,6 +1509,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: SlashType
     m_EventTreshold: 3
+  - m_ConditionMode: 1
+    m_ConditionEvent: Hitted
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7204637185770842795}
   m_Solo: 0
@@ -1618,6 +1657,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: SlashType
     m_EventTreshold: 5
+  - m_ConditionMode: 1
+    m_ConditionEvent: Hitted
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -312566172545233638}
   m_Solo: 0
@@ -1993,6 +2035,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: BleedType
     m_EventTreshold: 5
+  - m_ConditionMode: 1
+    m_ConditionEvent: Attack
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -443281832657878673}
   m_Solo: 0
@@ -2104,6 +2149,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: SlashType
     m_EventTreshold: 7
+  - m_ConditionMode: 1
+    m_ConditionEvent: Hitted
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7455875562941749227}
   m_Solo: 0
