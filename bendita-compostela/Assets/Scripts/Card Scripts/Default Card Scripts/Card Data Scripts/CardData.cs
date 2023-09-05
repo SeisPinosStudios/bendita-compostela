@@ -47,6 +47,15 @@ public class CardData : ScriptableObject
         for (int i = 0; i < cardEffects.Count; i++) if (cardEffects[i] == effect) effects.Add(cardEffectsValues[i]);
         return effects;
     }
+    public bool AppliesEffect(TAlteredEffects.AlteredEffects effect)
+    {
+        for (int i = 0; i < cardEffects.Count; i++)
+            if (cardEffects[i] == Effect.ApplyEffect)
+                if (cardEffectsValues[i].Split("|")[0] == effect.ToString())
+                    return true;
+        
+        return false;
+    }
     public bool IsAttack()
     {
         return attack;

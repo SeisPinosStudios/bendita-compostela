@@ -30,7 +30,7 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     public void OnDrag(PointerEventData eventData)
     {
         
-        if (eventData.position.y > 400 && cardData.printArrow)
+        if (eventData.position.y > 300 && cardData.printArrow)
         {
             GetComponent<RectTransform>().position = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, 120.0f, 1.0f));
 
@@ -48,25 +48,27 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     public void OnEndDrag(PointerEventData eventData)
     {
         cardDisplay.dragging = false;
-        if(!cardData.printArrow && eventData.position.y > 400) { UseCard(); return; }
+        if(!cardData.printArrow && eventData.position.y > 400) { UseCard(eventData); return; }
 
         var hit = RaycastUtils.Raycast2D("Enemy");
         if (eventData.position.y < 400 || !hit) { ReturnCardToHand(eventData); return; }
-        UseCardOnTarget(hit);
+        UseCardOnTarget(eventData, hit);
     }
     private void ReturnCardToHand(PointerEventData eventData)
     {
         cardInspection.OnPointerExit(eventData);
         OnReturning();
     }
-    private void UseCardOnTarget(GameObject target)
+    private void UseCardOnTarget(PointerEventData eventData, GameObject target)
     {
+        cardInspection.OnPointerExit(eventData);
         print($"Card used on {target.name}");
         OnReturning();
         card.UseCard(target);
     }
-    private void UseCard()
+    private void UseCard(PointerEventData eventData)
     {
+        cardInspection.OnPointerExit(eventData);
         print($"Card used");
         OnReturning();
         card.UseCard();

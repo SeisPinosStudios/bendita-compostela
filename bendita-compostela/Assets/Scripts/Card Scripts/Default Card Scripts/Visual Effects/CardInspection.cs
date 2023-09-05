@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class CardInspection : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    [field: SerializeField] public CardDisplay cardDisplay { get; private set; }
     [field: SerializeField] public float verticalMovement { get; private set; }
     [field: SerializeField] public HorizontalLayoutGroup hand { get; private set; }
     [field: SerializeField] public int index { get; private set; }
@@ -31,6 +32,8 @@ public class CardInspection : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (cardDisplay.dragging) return;
+        if (!inspecting) return;
         transform.localPosition -= new Vector3(0.0f, verticalMovement, 0.0f);
         transform.SetParent(hand.transform, true);
         transform.SetSiblingIndex(index);

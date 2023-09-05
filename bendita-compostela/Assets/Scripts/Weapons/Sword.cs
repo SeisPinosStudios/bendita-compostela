@@ -84,7 +84,7 @@ public class Sword : BaseWeapon
     }
     public static string GetStyleDescription()
     {
-        return $"Estilo: el primer ataque de cada turno hace un {(BattleManager.Instance.player.weapon.styleLevel == 0 ? 0.5f : BattleManager.Instance.player.weapon.styleLevel)*100} más de daño.";
+        return $"Estilo: el primer ataque de cada turno hace un {(BattleManager.Instance.player.weapon.styleLevel == 0 ? 0.5f : BattleManager.Instance.player.weapon.styleLevel)*100}% más de daño.";
     }
     #endregion
 }

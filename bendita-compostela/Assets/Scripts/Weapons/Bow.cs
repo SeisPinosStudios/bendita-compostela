@@ -10,6 +10,7 @@ public class Bow : BaseWeapon
     [field: SerializeField] public int synergyDraws { get; private set; }
     private void Awake()
     {
+        weaponId = 5;
         Damage.OnAttack += Style;
         AttackDeckManager.Instance.OnCardDraw += ChestSynergy;
 
@@ -43,6 +44,7 @@ public class Bow : BaseWeapon
         if (!chestSynergy) return;
         if (synergyDraws < 1 - GetChestLevel()) synergyDraws++;
         AttackDeckManager.Instance.AddFreeDraw(1);
+        synergyDraws = 0;
     }
 
     private void LegSynergy()

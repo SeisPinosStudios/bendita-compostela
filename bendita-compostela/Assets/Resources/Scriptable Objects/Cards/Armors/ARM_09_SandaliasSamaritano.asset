@@ -26,6 +26,7 @@ MonoBehaviour:
   <defenseBonus>k__BackingField: 1
   <armorId>k__BackingField: 9
   <weaponSynergy>k__BackingField: 4
+  <weaponSynergyClass>k__BackingField: 4
   <synergyLevel>k__BackingField: 0
   <armorLevel>k__BackingField: 0
   <equipmentScreenIcon>k__BackingField: {fileID: 4817912294021003100, guid: 7fdda56d25d1f034897e45af910f2185, type: 3}

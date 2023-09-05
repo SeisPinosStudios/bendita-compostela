@@ -22,7 +22,7 @@ public class CardDisplay : MonoBehaviour
         cardData = cardDataContainer.cardData;
         nameField.text = cardData.cardName;
         descriptionField.text = cardData.description;
-        costField.text = cardData.cost == 0 ? "" : cardData.cost.ToString();
+        costField.text = cardData.cost.ToString();
         art.sprite = cardData.art;
 
         if (cardData is WeaponData or ArmorData) costField.transform.parent.gameObject.SetActive(false);

@@ -28,7 +28,7 @@ public class EnemyBehaviour : EntityBehaviour
 
         if (entityEffManager.Suffering(TAlteredEffects.AlteredEffects.Stun))
         {
-            //player.entityDisplay.Stun();
+            entityEffManager.RemoveEffect(TAlteredEffects.AlteredEffects.Stun, 1);
             OnTurnEnd();
             return;
         }

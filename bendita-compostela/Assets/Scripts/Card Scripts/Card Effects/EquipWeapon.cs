@@ -10,6 +10,13 @@ public class EquipWeapon : BasicCardEffect
     {
         var player = BattleManager.Instance.player;
         var weapon = (WeaponData)card;
+
+        if (player.entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Disarmed))
+        {
+            DeckManager.Instance.AddCardToDeck(card);
+            return;
+        }
+
         if (player.weapon) 
         { 
             DeckManager.Instance.AddCardToDeck(player.weapon);
