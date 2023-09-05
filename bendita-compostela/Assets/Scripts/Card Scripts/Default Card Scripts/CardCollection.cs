@@ -24,6 +24,6 @@ public class CardCollection : MonoBehaviour
     }
     public void LeaveCombat()
     {
-        BattleManager.Instance.LoadScene("MapTestScene");
+        BattleManager.Instance.LoadScene("Map");
     }
 }
