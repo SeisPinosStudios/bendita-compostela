@@ -29,6 +29,7 @@ public class Dagger : BaseWeapon
 
     private void Style(GameObject target, CardData card)
     {
+        if (target.GetComponent<Entity>() is Player) return;
         if (BattleManager.Instance.enemies.Count > 1) return;
         styleBonusAccum += styleBonus;
         BattleManager.Instance.player.AttackBonus(styleBonus);
@@ -55,6 +56,10 @@ public class Dagger : BaseWeapon
     private void OnDestroy()
     {
         BattleManager.Instance.player.AttackBonus(-styleBonusAccum);
+        playerEffectsManager.OnEffectApplied -= SynergyEffect;
+        TurnManager.Instance.playerBehaviour.OnPlayerTurn -= ResetStyle;
+        Damage.OnAttack -= Style;
+        BattleManager.Instance.OnBattleEnd -= ResetSynergyEffect;
     }
 
 

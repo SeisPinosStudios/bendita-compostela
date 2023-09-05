@@ -49,4 +49,11 @@ public class Bow : BaseWeapon
     {
         player.AddMaxEnergy(2 * (GetLegLevel() + 1));
     }
+
+    private void OnDestroy()
+    {
+        if (legSynergy) player.AddMaxEnergy(-2 * (GetLegLevel() + 1));
+        Damage.OnAttack -= Style;
+        AttackDeckManager.Instance.OnCardDraw -= ChestSynergy;
+    }
 }

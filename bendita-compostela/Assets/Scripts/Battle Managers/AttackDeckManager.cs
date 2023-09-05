@@ -7,7 +7,7 @@ public class AttackDeckManager : MonoBehaviour
 {
     [field: SerializeField] public static AttackDeckManager Instance { get; private set; }
     [SerializeField] CardDataContainer cardPrefab;
-    [SerializeField] Transform hand;
+    [field: SerializeField] public Transform hand { get; private set; }
     [SerializeField] float drawCardDelay;
     [field: SerializeField] public List<WeaponAttackData> weaponAttacks { get; private set; }
     [field: SerializeField] public int costReduction { get; private set; }
@@ -54,12 +54,13 @@ public class AttackDeckManager : MonoBehaviour
 
     private void FetchAttacks()
     {
+        Debug.Log($"Fetching Attacks");
         weaponAttacks = new List<WeaponAttackData>();
         foreach (WeaponAttackData attack in BattleManager.Instance.player.weapon.attacks) weaponAttacks.Add(attack.Copy());
     }
     public void ReduceAttackCost(int amount)
     {
-        foreach (WeaponAttackData attack in weaponAttacks) attack.cost = Mathf.Clamp(attack.cost - amount, 0, attack.cost);
+        foreach (WeaponAttackData attack in weaponAttacks) attack.Cost(-amount);
     }
     public void AddFreeDraw(int amount) { freeDraw += amount; }
 

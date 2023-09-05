@@ -38,11 +38,14 @@ public class TurnManager : MonoBehaviour
 
         while (!turnQueue.First.Value) turnQueue.RemoveFirst();
 
+        foreach (EntityBehaviour behaviour in turnQueue) Debug.Log($"TurnManager - turn: {behaviour.name}");
+
         entityTurn = turnQueue.First.Value;
         turnQueue.RemoveFirst();
 
         entityTurn.OnTurnBegin();
         OnTurn();
+        yield break;
     }
     public void RemoveBehaviour(EntityBehaviour behaviour)
     {
