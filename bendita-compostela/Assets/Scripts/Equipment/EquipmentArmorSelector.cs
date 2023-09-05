@@ -24,6 +24,7 @@ public class EquipmentArmorSelector : MonoBehaviour, IPointerClickHandler
         else GameManager.Instance.playerData.legArmor = armor;
 
         ArmorsDisplayManager.Instance.GetEquipedArmor();
+        EquipmentSummary.Instance.UpdateSummary();
     }
     public void Disable()
     {

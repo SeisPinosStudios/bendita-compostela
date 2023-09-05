@@ -23,6 +23,7 @@ public class Damage : BasicCardEffect
         user.GetComponent<EntityDisplay>().AttackAnimation();
         target.GetComponent<Entity>().SufferDamage(int.Parse(damage), cardUser.attackBonus + frenzyStacks, cardUser.ComputeAttackMultiplier(), false);
 
+        Frenzy(card, cardUser);
     }
 
     private static void Marked(string damage, CardData card, GameObject target)
@@ -33,6 +34,15 @@ public class Damage : BasicCardEffect
             enemies[UnityEngine.Random.Range(0, enemies.Count)].SufferDamage(Mathf.RoundToInt(card.GetDamage() * 0.5f), 0, 0, true);
             target.GetComponent<Entity>().entityEffectsManager.RemoveEffect(TAlteredEffects.AlteredEffects.Marked, 1);
         }
+    }
+
+    public static void Frenzy(CardData card, Entity user)
+    {
+        if (!user.entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Frenzy)) return;
+        if (user.entityEffectsManager.frenzyAttacks.ContainsKey(card)) user.entityEffectsManager.frenzyAttacks[card] += 1;
+        else user.entityEffectsManager.frenzyAttacks.Add(card, 1);
+
+        user.entityEffectsManager.RemoveEffect(TAlteredEffects.AlteredEffects.Frenzy, 1);
     }
 
     public static string GetDescription(CardData card, Entity user, Entity target)

@@ -72,4 +72,19 @@ public class Sword : BaseWeapon
             foreach (Enemy enemy in BattleManager.Instance.enemies)
                 enemy.entityEffectsManager.UpdateEffectLimit(TAlteredEffects.AlteredEffects.Bleed, -GetBleedUpgrade());
     }
+
+    #region Description
+    public static string GetChestDescription()
+    {
+        return $"Sinergia con espada: el bonificador de daño por estilo pasa a hacerse en los primeros {GameManager.Instance.playerData.chestArmor.synergyLevel+2} ataques.";
+    }
+    public static string GetLegDescription()
+    {
+        return $"Sinergia con espada: aumenta el límite de cargas de sangrado de los enemigos a {5+(1+2*GameManager.Instance.playerData.legArmor.synergyLevel)} cargas.";
+    }
+    public static string GetStyleDescription()
+    {
+        return $"Estilo: el primer ataque de cada turno hace un {(BattleManager.Instance.player.weapon.styleLevel == 0 ? 0.5f : BattleManager.Instance.player.weapon.styleLevel)*100}% más de daño.";
+    }
+    #endregion
 }

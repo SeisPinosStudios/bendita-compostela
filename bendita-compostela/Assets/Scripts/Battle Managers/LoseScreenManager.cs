@@ -11,9 +11,10 @@ public class LoseScreenManager : MonoBehaviour
 
     public IEnumerator FadeOut()
     {
-        for(float i = 0; i <= 1; i += Time.deltaTime)
+        for(float i = 0; i <= fadeTime; i += Time.deltaTime)
         {
             backgroundImage.color = new Color(0, 0, 0, i);
+            yield return null;
         }
 
         yield return null;
