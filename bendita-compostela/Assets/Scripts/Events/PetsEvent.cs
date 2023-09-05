@@ -39,9 +39,8 @@ public class PetsEvent : MonoBehaviour
     }
 
     private void Start() 
-    {
-        fader.fadeDuration = 1.0f;
-        fader.FadeOut();
+    {        
+        fader.FadeOut(1.0f);
         fader.OnFadeComplete += FishMoves;
     }
     private void FishMoves()
@@ -52,8 +51,7 @@ public class PetsEvent : MonoBehaviour
     }
     private void CatsAppear()
     {
-        fader.fadeDuration = 1.0f;
-        fader.FadeIn();
+        fader.FadeIn(1.0f);
         fader.OnFadeComplete += Stop; 
         
     }
@@ -68,9 +66,8 @@ public class PetsEvent : MonoBehaviour
         foreach (GameObject cat in cats)
         {
             cat.SetActive(true);
-        }
-        fader.fadeDuration = 1.0f;
-        fader.FadeOut();
+        }        
+        fader.FadeOut(1.0f);
         
         fader.OnFadeComplete += FinalScene; 
     }
