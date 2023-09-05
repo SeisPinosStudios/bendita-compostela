@@ -29,7 +29,8 @@ MonoBehaviour:
   legArmor: {fileID: 11400000, guid: 483be5b2319dcff46807ff2a5aa999f1, type: 2}
   currentHP: 0
   <playerAnimator>k__BackingField: {fileID: 9100000, guid: 5c691185b7a76434cab888eaf9267219, type: 2}
-  <condecorations>k__BackingField: []
+  <condecorations>k__BackingField:
+  - {fileID: 11400000, guid: 7b1d9bb32e36374458fec8760f600e53, type: 2}
   <poems>k__BackingField: []
   <poemInventory>k__BackingField: []
   poemSlots: 3

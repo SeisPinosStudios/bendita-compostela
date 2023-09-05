@@ -65,6 +65,8 @@ public class Player : Entity
             yield break;
         }
 
+        OnDeath();
+
         yield return null;
     }
     #endregion

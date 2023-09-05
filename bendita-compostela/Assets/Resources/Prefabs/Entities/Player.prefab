@@ -170,7 +170,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2927171455234333776}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3500001, y: 0.12666668, z: 0}
+  m_LocalPosition: {x: 0, y: 0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.33333334}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -443,7 +443,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3741044718517036737}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3500001, y: 0.12666668, z: 0}
+  m_LocalPosition: {x: 0, y: 0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.33333334}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -683,10 +683,10 @@ MonoBehaviour:
   <entityName>k__BackingField: 
   <currentHP>k__BackingField: 0
   <defenseBonus>k__BackingField: 0
-  <damageBonus>k__BackingField: 0
+  <attackBonus>k__BackingField: 0
   <healingBonus>k__BackingField: 0
   <defenseMultiplier>k__BackingField: 1
-  <damageMultiplier>k__BackingField: 1
+  <attackMultiplier>k__BackingField: 1
   <healingMultiplier>k__BackingField: 1
   <playerData>k__BackingField: {fileID: 0}
   <energy>k__BackingField: 0
@@ -711,6 +711,7 @@ MonoBehaviour:
   alteredEffectsZone: {fileID: 4426645685752796740}
   alteredEffectDisplay: {fileID: 678472934270943576, guid: 1b3ddc24a8343644096c3e21f7b698ff, type: 3}
   entityAnimator: {fileID: 3017040527718966374}
+  showLogs: 1
   player: {fileID: 2625660543139403098}
   energyText: {fileID: 8720745609731044279}
 --- !u!114 &3075034504805580143
@@ -785,7 +786,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.2, y: -1.7}
+  m_AnchoredPosition: {x: -0.86, y: -1.7}
   m_SizeDelta: {x: 80, y: 122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1313437689253633258

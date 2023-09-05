@@ -58,6 +58,7 @@ public class PlayerData : EntityData
         player.poemInventory = poemInventory;
         player.poemSlots = poemSlots;
         player.coins = coins;
+        player.playerAnimator = playerAnimator;
 
         return player;
     }

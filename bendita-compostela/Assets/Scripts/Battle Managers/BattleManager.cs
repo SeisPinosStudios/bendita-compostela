@@ -36,7 +36,6 @@ public class BattleManager : MonoBehaviour
         foreach (Enemy enemy in enemies) enemy.OnDeath += CheckGameEnd;
         player.OnDeath += CheckGameEnd;
         SoundManager.Instance.PlayMusic(battleMusic);
-
     }
     private void GenerateEnemies()
     {
