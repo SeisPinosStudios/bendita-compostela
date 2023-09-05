@@ -1375,6 +1375,7 @@ MonoBehaviour:
   - {fileID: 4993601433415340151, guid: 5c7249498158f4146a1cacfa55367441, type: 3}
   - {fileID: 3689581046917130737, guid: f7e3f9fb58437854eaaf18215e1be097, type: 3}
   - {fileID: 2651772028212057988, guid: acf103dc3ccdedd4583407ec718fbafd, type: 3}
+  - {fileID: 4460225505088185902, guid: 980b8393c5e59c34a990b6cf10f35eb3, type: 3}
   bossPrefab: {fileID: 7206804280604247690, guid: ace04120a6b3abd458a0f42ccfb53908, type: 3}
   combatPrefab: {fileID: 8209055101703948159, guid: bb05d542e66f0b04b8fca5fbaf88cfa7, type: 3}
   eventPrefab: {fileID: 634570367463602674, guid: 5efa264df9d116343a0b702d6d4b8c17, type: 3}
