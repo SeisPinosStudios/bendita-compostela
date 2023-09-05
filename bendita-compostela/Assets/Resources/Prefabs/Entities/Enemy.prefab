@@ -472,13 +472,14 @@ MonoBehaviour:
   <entityData>k__BackingField: {fileID: 0}
   <entityDisplay>k__BackingField: {fileID: 5231252943997022551}
   <entityEffectsManager>k__BackingField: {fileID: 3779116131978059888}
+  <entityBehaviour>k__BackingField: {fileID: 0}
   <entityName>k__BackingField: 
   <currentHP>k__BackingField: 0
   <defenseBonus>k__BackingField: 0
-  <damageBonus>k__BackingField: 0
+  <attackBonus>k__BackingField: 0
   <healingBonus>k__BackingField: 0
   <defenseMultiplier>k__BackingField: 1
-  <damageMultiplier>k__BackingField: 1
+  <attackMultiplier>k__BackingField: 1
   <healingMultiplier>k__BackingField: 1
   enemyData: {fileID: 0}
 --- !u!114 &5762668312253699461
@@ -495,10 +496,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <entityDataContainer>k__BackingField: {fileID: 7902973688884092947}
   <entity>k__BackingField: {fileID: 7642431545003664909}
+  <entityEffManager>k__BackingField: {fileID: 3779116131978059888}
   <isTurn>k__BackingField: 0
   enemyData: {fileID: 0}
-  <entityEffManager>k__BackingField: {fileID: 3779116131978059888}
-  attackPrefab: {fileID: 752961581588794506, guid: ad67bb918d8a6984b91f8c7acbd4f52c, type: 3}
+  attackPrefab: {fileID: 752961581588794506, guid: 99c448be8e73418458111cc0111098dc, type: 3}
   mainCanvas: {fileID: 0}
   waitTime: 2
   <currentSequence>k__BackingField: {fileID: 0}
