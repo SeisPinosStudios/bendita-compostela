@@ -101,6 +101,10 @@ public class PlayerData : EntityData
     {
         currentHP = amount;
     }
+    public void ChangeMaxHP(int amount)
+    {
+        HP += amount;
+    }
     public void AddCondecoration(CondecorationData condecoration)
     {
         condecorations.Add(condecoration);

@@ -9,7 +9,7 @@ public class InfoText : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandler
 {
     [field: SerializeField, Header("Manual")] public GameObject textBoxPrefab { get; private set; }
     [field:SerializeField, Header("Automatic")] public TextMeshProUGUI textObject { get; private set; }
-    [field:SerializeField] public string textToWrite { get; protected set; }
+    [field:SerializeField, TextArea(3, 20)] public string textToWrite { get; protected set; }
     [field:SerializeField] public GameObject textBoxObject { get; protected set; }
     [field:SerializeField] public GameObject highlight { get; protected set; }
     [field: SerializeField] public float progress { get; protected set; }
@@ -62,6 +62,14 @@ public class InfoText : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandler
         RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.root as RectTransform,
                                                                 eventData.position, CanvasUtils.GetMainCanvas().worldCamera, out pos);
         textBoxObject.transform.position = CanvasUtils.GetMainCanvas().transform.TransformPoint(pos);
+
+        if (eventData.position.x < Screen.width * 0.9) return;
+
+        var pointerPosition = new Vector3(eventData.position.x - 200, eventData.position.y, 0);
+
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.root as RectTransform,
+                                                                pointerPosition, CanvasUtils.GetMainCanvas().worldCamera, out pos);
+        textBoxObject.transform.GetChild(0).position = CanvasUtils.GetMainCanvas().transform.TransformPoint(pos);
     }
 
     protected void ShowTextBox()

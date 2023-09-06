@@ -80,9 +80,14 @@ public class Spear : BaseWeapon
 
         return $"Sinergia con lanza: el efecto En Guardia de los enemigos pasa a bloquear 25% del daño.";
     }
-    public static string GetStyleDescription()
+    public static string GetStyleDescription(WeaponData weapon)
     {
-        return $"Estilo: cuando atacas a un enemigo, el enemigo posicionado detrás sufrirá un {GetStyleMultiplier(BattleManager.Instance.player.weapon.styleLevel)*100}% " +
+        return $"Estilo: cuando atacas a un enemigo, el enemigo posicionado detrás sufrirá un {GetStyleMultiplier(weapon.styleLevel)*100}% " +
+            $"del daño.";
+    }
+    public static string GetStyleDescriptionByLevel(int styleLevel)
+    {
+        return $"Estilo: cuando atacas a un enemigo, el enemigo posicionado detrás sufrirá un {GetStyleMultiplier(styleLevel) * 100}% " +
             $"del daño.";
     }
     private static float GetStyleMultiplier(int styleLevel)
@@ -98,6 +103,19 @@ public class Spear : BaseWeapon
         }
 
         return 0.0f;
+    }
+    public static string GetSynergyDescriptionByLevel(int synergyLevel, int armorType)
+    {
+        if (armorType == 0)
+            return $"Sinergia con lanza: cuando recibas un ataque teniendo el efecto Invulnerable, devuelve un" +
+            $" {0.5f + (0.25f * synergyLevel) * 100}% del daño.";
+
+        else
+            if (synergyLevel != 0)
+                return $"Sinergia con lanza: el efecto En Guardia de los enemigos pasa a bloquear " +
+                    $"{0.5 - (synergyLevel < 2 ? 0.25f : 0.5f)} del daño. Tu efecto En Guardia pasa a bloquear 75% del daño.";
+
+            return $"Sinergia con lanza: el efecto En Guardia de los enemigos pasa a bloquear 25% del daño.";
     }
     #endregion
 }

@@ -13,7 +13,7 @@ public class Vieja : BookEventController
 
     public void Option2()
     {
-        GameManager.Instance.playerData.condecorations.Add(rewardCond);
+        GameManager.Instance.playerData.AddCondecoration(rewardCond);
     }
 
     public void Option3()

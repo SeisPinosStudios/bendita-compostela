@@ -118,10 +118,24 @@ public class Hammer : BaseWeapon
     {
         return $"Sinergia con martillo: aumenta tu daño con ataques en {GetDamageBonus(GameManager.Instance.playerData.legArmor.synergyLevel)} puntos de daño.";
     }
-    public static string GetStyleDescription()
+    public static string GetStyleDescription(WeaponData weapon)
     {
-        return $"Estilo: al lanzar {(BattleManager.Instance.player.weapon.styleLevel == 2 ? 4 : 5)} tu siguiente ataque hará un " +
-            $"{(BattleManager.Instance.player.weapon.styleLevel == 0 ? 0.5f : 1.0f)*100} de su daño al resto de enemigos.";
+        return $"Estilo: al lanzar {(weapon.styleLevel == 2 ? 4 : 5)} tu siguiente ataque hará un " +
+            $"{(weapon.styleLevel == 0 ? 0.5f : 1.0f)*100} de su daño al resto de enemigos.";
+    }
+    public static string GetStyleDescriptionByLevel(int styleLevel)
+    {
+        return $"Estilo: al lanzar {(styleLevel == 2 ? 4 : 5)} tu siguiente ataque hará un " +
+            $"{(styleLevel == 0 ? 0.5f : 1.0f) * 100} de su daño al resto de enemigos.";
+    }
+    public static string GetSynergyDescriptionByLevel(int synergyLevel, int armorType)
+    {
+        if (armorType == 0)
+            return $"Sinergia con martillo: aumenta el daño contra objetivos vulnerables a un {GetEnemyMultiplier(synergyLevel)}%. " +
+            $"También aumenta el daño extra que sufres estando vulnerable a un {GetPlayerMultiplier(synergyLevel)}%.";
+
+        else
+            return $"Sinergia con martillo: aumenta tu daño con ataques en {GetDamageBonus(synergyLevel)} puntos de daño.";
     }
     private static float GetEnemyMultiplier(int chestLevel)
     {

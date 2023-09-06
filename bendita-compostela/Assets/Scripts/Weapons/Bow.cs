@@ -72,10 +72,24 @@ public class Bow : BaseWeapon
     {
         return $"Sinergia con arco: aumenta tu energía máxima {2 * (GameManager.Instance.playerData.legArmor.synergyLevel + 1)} puntos.";
     }
-    public static string GetStyleDescription()
+    public static string GetStyleDescription(WeaponData weapon)
     {
-        return $"Estilo: tu maestría con el arco permite recuperar {(BattleManager.Instance.player.weapon.styleLevel > 0 ? 4 : 3)} cada " +
-            $"{(BattleManager.Instance.player.weapon.styleLevel < 2 ? 5 : 4)} ataques.";
+        return $"Estilo: tu maestría con el arco permite recuperar {(weapon.styleLevel > 0 ? 4 : 3)} cada " +
+            $"{(weapon.styleLevel < 2 ? 5 : 4)} ataques.";
+    }
+    public static string GetStyleDescriptionByLevel(int styleLevel)
+    {
+        return $"Estilo: tu maestría con el arco permite recuperar {(styleLevel > 0 ? 4 : 3)} cada " +
+            $"{(styleLevel < 2 ? 5 : 4)} ataques.";
+    }
+    public static string GetSynergyDescriptionByLevel(int synergyLevel, int armorType)
+    {
+        if (armorType == 0)
+            if (synergyLevel == 2) return "Sinergia con arco: tus robos del mazo de ataques no cuestan energía.";
+            else return $"Sinergia con arco: cada {2 - synergyLevel} robos del mazo de ataques, tu siguiente robo es gratis.";
+
+        else
+            return $"Sinergia con arco: aumenta tu energía máxima {2 * (synergyLevel + 1)} puntos.";
     }
     #endregion
 }
