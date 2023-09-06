@@ -61,6 +61,11 @@ public class Spear : BaseWeapon
         if (GetLegLevel() != 0) player.entityEffectsManager.GuardedMultiplier(0.25f);
     }
 
+    private void OnDestroy()
+    {
+        Damage.OnAttack2 -= ChestSynergy;
+    }
+
     #region Description
     public static string GetChestDescription()
     {

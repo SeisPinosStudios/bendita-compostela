@@ -11,7 +11,6 @@ public class Damage : BasicCardEffect
     public static void Effect(string damage, CardData card, GameObject user, GameObject target)
     {
         OnAttack(target, card);
-        OnAttack2(target, user, card);
 
         var cardUser = user.GetComponent<Entity>();
 
@@ -23,6 +22,7 @@ public class Damage : BasicCardEffect
         user.GetComponent<EntityDisplay>().AttackAnimation();
         target.GetComponent<Entity>().SufferDamage(int.Parse(damage), cardUser.attackBonus + frenzyStacks, cardUser.ComputeAttackMultiplier(), false);
 
+        OnAttack2(target, user, card);
         Frenzy(card, cardUser);
     }
 
