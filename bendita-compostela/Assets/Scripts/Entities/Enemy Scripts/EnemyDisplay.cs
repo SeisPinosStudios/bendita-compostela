@@ -40,7 +40,7 @@ public class EnemyDisplay : EntityDisplay
     }
     public override void UpdateAlteredEffectsDisplay(EntityEffectsManager manager)
     {
-        for (int i = 0; i < transform.childCount; i++) Destroy(transform.GetChild(i).gameObject);
+        for (int i = 0; i < alteredEffectsZone.childCount; i++) Destroy(alteredEffectsZone.GetChild(i).gameObject);
 
         foreach (KeyValuePair<TAlteredEffects.AlteredEffects, int> effect in manager.alteredEffects)
         {
