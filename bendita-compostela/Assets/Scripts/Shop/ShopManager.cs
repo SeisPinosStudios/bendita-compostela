@@ -9,6 +9,7 @@ public class ShopManager : MonoBehaviour
     [field: SerializeField] public Transform armorSelectors { get; private set; }
     [field: SerializeField] public Transform objectSelectors { get; private set; }
     [field: SerializeField] public Transform specialSelectors { get; private set; }
+    [field: SerializeField] public Transform poemSelectors { get; private set; }
     [field: SerializeField, Header("Shop Music")] private AudioClip shopMusic;
     
     private void Awake()
@@ -26,6 +27,9 @@ public class ShopManager : MonoBehaviour
 
         foreach (Transform selector in specialSelectors)
             selector.GetComponent<CardDataContainer>().cardData = SODataBase.special[Mathf.FloorToInt(Random.Range(0, SODataBase.special.Count) / 3)];
+
+        foreach (Transform selector in poemSelectors)
+            selector.GetComponent<PoemDataContainer>().poemData = SODataBase.poems[Random.Range(0, SODataBase.poems.Count)];
     }
 
     private IEnumerator Start()

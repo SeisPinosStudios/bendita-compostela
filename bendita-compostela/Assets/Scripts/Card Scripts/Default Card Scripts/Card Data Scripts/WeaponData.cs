@@ -27,6 +27,10 @@ public class WeaponData : CardData
         ultimateLevel += 1;
         if (ultimateLevel > 1) ultimate = ultimate.improvedAttack;
     }
+    public bool IsUlti(WeaponAttackData attack)
+    {
+        return ultimate.cardName == attack.cardName;
+    }
 
     public new WeaponData Copy()
     {

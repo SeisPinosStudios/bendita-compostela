@@ -6,6 +6,7 @@ public class CardSelector : MonoBehaviour
 {
     [SerializeField] CardDataContainer cardDataContainer;
     [SerializeField] CardData cardData;
+    [field: SerializeField] public CardSelectorDisplay cardSelectorDisplay { get; private set; }
     [field: SerializeField] public bool interact { get; private set; }
     [field: SerializeField] public PolygonCollider2D cardCollider { get; private set; }
 
@@ -35,7 +36,9 @@ public class CardSelector : MonoBehaviour
     {
         if (!interact) return;
 
-        if(cardData is WeaponData)
+        if (!GameManager.Instance.playerData.SpendCoins(cardData.price)) return;
+
+        if (cardData is WeaponData)
         {
             GameManager.Instance.playerData.inventory.Add(((WeaponData)cardData).Copy());
             return;
@@ -48,11 +51,11 @@ public class CardSelector : MonoBehaviour
         }
         SoundManager.Instance.PlaySound(buySound);
         GameManager.Instance.playerData.inventory.Add(cardData.Copy());
+        cardSelectorDisplay.BuyAnimation();
     }
 
     public void Disable()
     {
-        print($"{this.name} Disable");
         cardCollider.enabled = false;
         interact = false;
     }

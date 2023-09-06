@@ -8,6 +8,7 @@ public class AnvilUpgradeSelector : MonoBehaviour, IPointerEnterHandler, IPointe
 {
     public enum UpgradeType { Damage, Style, Ulti, Level, Synergy}
     [field: SerializeField] public UpgradeType upgradeType { get; private set; }
+    [field: SerializeField] public int upgradeLevel { get; private set; }
     [field: SerializeField] public Image upgradeIcon { get; private set; }
     [field: SerializeField] public List<Sprite> icons { get; private set; }
     [field: SerializeField] public GameObject highlight { get; private set; }
@@ -60,18 +61,23 @@ public class AnvilUpgradeSelector : MonoBehaviour, IPointerEnterHandler, IPointe
         switch (upgradeType)
         {
             case UpgradeType.Damage:
+                if (((WeaponData)AnvilUpgradeManager.Instance.selectedEquipment).weaponLevel >= upgradeLevel) return;
                 AnvilUpgradeManager.Instance.UpgradeWeaponDamage();
                 return;
             case UpgradeType.Style:
+                if (((WeaponData)AnvilUpgradeManager.Instance.selectedEquipment).styleLevel >= upgradeLevel) return;
                 AnvilUpgradeManager.Instance.UpgradeWeaponStyle();
                 return;
             case UpgradeType.Ulti:
+                if (((WeaponData)AnvilUpgradeManager.Instance.selectedEquipment).ultimateLevel >= upgradeLevel) return;
                 AnvilUpgradeManager.Instance.UpgradeWeaponUlti();
                 return;
             case UpgradeType.Level:
+                if (((ArmorData)AnvilUpgradeManager.Instance.selectedEquipment).armorLevel >= upgradeLevel) return;
                 AnvilUpgradeManager.Instance.UpgradeArmorLevel();
                 return;
             case UpgradeType.Synergy:
+                if (((ArmorData)AnvilUpgradeManager.Instance.selectedEquipment).synergyLevel >= upgradeLevel) return;
                 AnvilUpgradeManager.Instance.UpdateArmorSynergy();
                 return;
         }

@@ -19,7 +19,7 @@ public class AnvilSynergyInfo : InfoText
         var equipment = AnvilUpgradeManager.Instance.selectedEquipment;
         if (equipment is ArmorData)
             stringBuilder.Append((string)Type.GetType(((ArmorData)equipment).weaponSynergyClass.ToString())
-                .GetMethod("GetSynergyDescriptionByLevel").Invoke(null, new object[] { synergyLevel }));
+                .GetMethod("GetSynergyDescriptionByLevel").Invoke(null, new object[] { synergyLevel, ((ArmorData)equipment).armorType }));
 
         if (synergyLevel > 0) stringBuilder.Append($"\nCoste de la mejora a nivel {synergyLevel}: {10 + 10*synergyLevel}");
 

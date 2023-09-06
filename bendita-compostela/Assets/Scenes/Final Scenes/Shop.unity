@@ -482,10 +482,14 @@ PrefabInstance:
       propertyPath: <icons>k__BackingField.Array.data[11]
       value: 
       objectReference: {fileID: 7266293656875486055, guid: 2da07d62a6458594f86180127557d7cd, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 111095170976868075, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1749673362462207473, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1536895551}
   m_SourcePrefab: {fileID: 100100000, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
 --- !u!1 &49859083
 GameObject:
@@ -534,6 +538,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 49859083}
   m_CullTransparentMesh: 1
+--- !u!1 &55094793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1749673362462207473, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+  m_PrefabInstance: {fileID: 543077066}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &80751632
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,6 +1249,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1014311188}
     m_Modifications:
+    - target: {fileID: 111095170976868075, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      propertyPath: <textToWrite>k__BackingField
+      value: 'Cada mejora de defensa aumenta en 1 la defensa del equipamiento seleccionado.
+
+        Precio
+        de la mejora a nivel 1:  20'
+      objectReference: {fileID: 0}
     - target: {fileID: 1254572219652953956, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1909,6 +1925,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 934312001}
     m_Modifications:
+    - target: {fileID: 111095170976868075, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      propertyPath: <textToWrite>k__BackingField
+      value: "Las mejoras de da\xF1o mejoran la efectividad de los ataques del arma.\nCoste
+        de esta mejora a nivel 1: 15"
+      objectReference: {fileID: 0}
     - target: {fileID: 1254572219652953956, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2047,6 +2068,11 @@ RectTransform:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6689971438760404976, guid: b19606292f0a1544cb4aa76ed712bc3d, type: 3}
   m_PrefabInstance: {fileID: 1237383832}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &229995332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1749673362462207473, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+  m_PrefabInstance: {fileID: 1739666661}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &230379466 stripped
 RectTransform:
@@ -2729,10 +2755,14 @@ PrefabInstance:
       propertyPath: <icons>k__BackingField.Array.data[11]
       value: 
       objectReference: {fileID: 8473929200729045472, guid: 2da07d62a6458594f86180127557d7cd, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 111095170976868075, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1749673362462207473, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1910599684}
   m_SourcePrefab: {fileID: 100100000, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
 --- !u!1001 &362526705
 PrefabInstance:
@@ -2892,6 +2922,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 577146058}
     m_Modifications:
+    - target: {fileID: 111095170976868075, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      propertyPath: <textToWrite>k__BackingField
+      value: "La mejora de Ultimate a\xF1ade a tu repertorio de ataques un nuevo
+        ataque muy poderoso que s\xF3lo puede salir una vez por combate.\nPrecio
+        de la mejora a nivel 2: 30"
+      objectReference: {fileID: 0}
     - target: {fileID: 1254572219652953956, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3982,6 +4018,11 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!224 &503840743 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+  m_PrefabInstance: {fileID: 1250920847}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &506457093
 GameObject:
   m_ObjectHideFlags: 0
@@ -4199,10 +4240,14 @@ PrefabInstance:
       propertyPath: <icons>k__BackingField.Array.data[5]
       value: 
       objectReference: {fileID: -974434128, guid: 66dcaa2a3f9ebea4f888fc1b77e62752, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 111095170976868075, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1749673362462207473, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1525872625}
   m_SourcePrefab: {fileID: 100100000, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
 --- !u!1 &574587997
 GameObject:
@@ -4613,10 +4658,16 @@ Transform:
   m_Children:
   - {fileID: 26294185}
   - {fileID: 1270912226}
+  - {fileID: 1987606533}
   - {fileID: 1798840264}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &757866988 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1749673362462207473, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+  m_PrefabInstance: {fileID: 349576939}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &798664679
 GameObject:
   m_ObjectHideFlags: 0
@@ -5279,6 +5330,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1014311188}
     m_Modifications:
+    - target: {fileID: 111095170976868075, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      propertyPath: <textToWrite>k__BackingField
+      value: Cada mejora de defensa aumenta en 1 la defensa del equipamiento seleccionado.
+      objectReference: {fileID: 0}
     - target: {fileID: 1254572219652953956, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5745,6 +5800,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982199703}
   m_CullTransparentMesh: 1
+--- !u!1 &989520175 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1749673362462207473, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+  m_PrefabInstance: {fileID: 1127505854}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &989520179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989520175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4672d0fd88d281649bdca27acbaa583f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <textBoxPrefab>k__BackingField: {fileID: 6216814944079965107, guid: 5b65f629a7b302745bc6cf1c9d85a22a, type: 3}
+  <textObject>k__BackingField: {fileID: 0}
+  <textToWrite>k__BackingField: 
+  <textBoxObject>k__BackingField: {fileID: 0}
+  <highlight>k__BackingField: {fileID: 0}
+  <progress>k__BackingField: 0
+  <progressBar>k__BackingField: {fileID: 0}
+  <styleLevel>k__BackingField: 1
 --- !u!1 &1014311187
 GameObject:
   m_ObjectHideFlags: 0
@@ -6860,10 +6940,18 @@ PrefabInstance:
       propertyPath: <icons>k__BackingField.Array.data[5]
       value: 
       objectReference: {fileID: -1814820968, guid: 66dcaa2a3f9ebea4f888fc1b77e62752, type: 3}
-    m_RemovedComponents: []
+    - target: {fileID: 8473622556416278620, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      propertyPath: <styleLevel>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 111095170976868075, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1749673362462207473, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 989520179}
   m_SourcePrefab: {fileID: 100100000, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
 --- !u!224 &1128009785 stripped
 RectTransform:
@@ -6918,6 +7006,7 @@ MonoBehaviour:
   <armorSelectors>k__BackingField: {fileID: 1052060148}
   <objectSelectors>k__BackingField: {fileID: 835363540}
   <specialSelectors>k__BackingField: {fileID: 1033962242}
+  <poemSelectors>k__BackingField: {fileID: 1987606533}
   shopMusic: {fileID: 8300000, guid: 135ea13c456dd744696a6fa22c583224, type: 3}
 --- !u!224 &1159551516 stripped
 RectTransform:
@@ -7272,6 +7361,75 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b19606292f0a1544cb4aa76ed712bc3d, type: 3}
+--- !u!1001 &1250920847
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1987606533}
+    m_Modifications:
+    - target: {fileID: 259429068146135871, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_Name
+      value: PoemSelector
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
 --- !u!1 &1256655339
 GameObject:
   m_ObjectHideFlags: 0
@@ -7459,6 +7617,26 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1254572219652953956, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
   m_PrefabInstance: {fileID: 1739666661}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1419347205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229995332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4672d0fd88d281649bdca27acbaa583f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <textBoxPrefab>k__BackingField: {fileID: 6216814944079965107, guid: 5b65f629a7b302745bc6cf1c9d85a22a, type: 3}
+  <textObject>k__BackingField: {fileID: 0}
+  <textToWrite>k__BackingField: 
+  <textBoxObject>k__BackingField: {fileID: 0}
+  <highlight>k__BackingField: {fileID: 0}
+  <progress>k__BackingField: 0
+  <progressBar>k__BackingField: {fileID: 0}
+  <styleLevel>k__BackingField: 2
 --- !u!1001 &1425195171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7467,6 +7645,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 577146058}
     m_Modifications:
+    - target: {fileID: 111095170976868075, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      propertyPath: <textToWrite>k__BackingField
+      value: "La mejora de Ultimate a\xF1ade a tu repertorio de ataques un nuevo
+        ataque muy poderoso que s\xF3lo puede salir una vez por combate.\nPrecio
+        de la mejora a nivel 1: 15"
+      objectReference: {fileID: 0}
     - target: {fileID: 1254572219652953956, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -7752,10 +7936,14 @@ PrefabInstance:
       propertyPath: <icons>k__BackingField.Array.data[11]
       value: 
       objectReference: {fileID: -9167173345117749054, guid: 2da07d62a6458594f86180127557d7cd, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 111095170976868075, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1749673362462207473, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2109448531}
   m_SourcePrefab: {fileID: 100100000, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
 --- !u!224 &1507577153 stripped
 RectTransform:
@@ -7767,6 +7955,26 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1254572219652953956, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
   m_PrefabInstance: {fileID: 543077066}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1525872625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55094793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4672d0fd88d281649bdca27acbaa583f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <textBoxPrefab>k__BackingField: {fileID: 6216814944079965107, guid: 5b65f629a7b302745bc6cf1c9d85a22a, type: 3}
+  <textObject>k__BackingField: {fileID: 0}
+  <textToWrite>k__BackingField: 
+  <textBoxObject>k__BackingField: {fileID: 0}
+  <highlight>k__BackingField: {fileID: 0}
+  <progress>k__BackingField: 0
+  <progressBar>k__BackingField: {fileID: 0}
+  <styleLevel>k__BackingField: 0
 --- !u!1 &1526268070
 GameObject:
   m_ObjectHideFlags: 0
@@ -8002,6 +8210,31 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b19606292f0a1544cb4aa76ed712bc3d, type: 3}
+--- !u!1 &1536895547 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1749673362462207473, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+  m_PrefabInstance: {fileID: 42348230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1536895551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536895547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01855a88f6c0b7445a51d5be2409b7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <textBoxPrefab>k__BackingField: {fileID: 6216814944079965107, guid: 5b65f629a7b302745bc6cf1c9d85a22a, type: 3}
+  <textObject>k__BackingField: {fileID: 0}
+  <textToWrite>k__BackingField: 
+  <textBoxObject>k__BackingField: {fileID: 0}
+  <highlight>k__BackingField: {fileID: 0}
+  <progress>k__BackingField: 0
+  <progressBar>k__BackingField: {fileID: 0}
+  <synergyLevel>k__BackingField: 1
 --- !u!224 &1563312236 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1254572219652953956, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
@@ -8508,6 +8741,7 @@ MonoBehaviour:
   - {fileID: 1052060148}
   - {fileID: 835363540}
   - {fileID: 1033962242}
+  <poemDisplayTransform>k__BackingField: []
 --- !u!1001 &1617343737
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8516,6 +8750,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1014311188}
     m_Modifications:
+    - target: {fileID: 111095170976868075, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      propertyPath: <textToWrite>k__BackingField
+      value: 'Cada mejora de defensa aumenta en 1 la defensa del equipamiento seleccionado.
+
+        Coste
+        de la mejora a nivel 2: 30'
+      objectReference: {fileID: 0}
     - target: {fileID: 1254572219652953956, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -8788,6 +9029,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 934312001}
     m_Modifications:
+    - target: {fileID: 111095170976868075, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      propertyPath: <textToWrite>k__BackingField
+      value: "Las mejoras de da\xF1o mejoran la efectividad de los ataques del arma.\nCoste
+        de la mejora a nivel 2: 30"
+      objectReference: {fileID: 0}
     - target: {fileID: 1254572219652953956, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -9202,10 +9448,18 @@ PrefabInstance:
       propertyPath: <icons>k__BackingField.Array.data[5]
       value: 
       objectReference: {fileID: 1384454644, guid: 66dcaa2a3f9ebea4f888fc1b77e62752, type: 3}
-    m_RemovedComponents: []
+    - target: {fileID: 8473622556416278620, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      propertyPath: <styleLevel>k__BackingField
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 111095170976868075, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1749673362462207473, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1419347205}
   m_SourcePrefab: {fileID: 100100000, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
 --- !u!1 &1758917391
 GameObject:
@@ -9238,6 +9492,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1761502161 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+  m_PrefabInstance: {fileID: 6518759395891927454}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1772002149
 GameObject:
   m_ObjectHideFlags: 0
@@ -9568,6 +9827,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 934312001}
     m_Modifications:
+    - target: {fileID: 111095170976868075, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      propertyPath: <textToWrite>k__BackingField
+      value: "Las mejoras de da\xF1o mejoran la efectividad de los ataques del arma."
+      objectReference: {fileID: 0}
     - target: {fileID: 1254572219652953956, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -9820,6 +10083,26 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1254572219652953956, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
   m_PrefabInstance: {fileID: 349576939}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1910599684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757866988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01855a88f6c0b7445a51d5be2409b7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <textBoxPrefab>k__BackingField: {fileID: 6216814944079965107, guid: 5b65f629a7b302745bc6cf1c9d85a22a, type: 3}
+  <textObject>k__BackingField: {fileID: 0}
+  <textToWrite>k__BackingField: 
+  <textBoxObject>k__BackingField: {fileID: 0}
+  <highlight>k__BackingField: {fileID: 0}
+  <progress>k__BackingField: 0
+  <progressBar>k__BackingField: {fileID: 0}
+  <synergyLevel>k__BackingField: 0
 --- !u!1 &1958520942
 GameObject:
   m_ObjectHideFlags: 0
@@ -9896,6 +10179,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958520942}
   m_CullTransparentMesh: 1
+--- !u!1 &1987606532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1987606533}
+  m_Layer: 0
+  m_Name: PoemSelectors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1987606533
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987606532}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1761502161}
+  - {fileID: 503840743}
+  m_Father: {fileID: 745386484}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 4.33, y: 0.8}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2029040096
 GameObject:
   m_ObjectHideFlags: 0
@@ -10393,6 +10714,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108151922}
   m_CullTransparentMesh: 1
+--- !u!1 &2109448527 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1749673362462207473, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+  m_PrefabInstance: {fileID: 1469225393}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2109448531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109448527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01855a88f6c0b7445a51d5be2409b7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <textBoxPrefab>k__BackingField: {fileID: 6216814944079965107, guid: 5b65f629a7b302745bc6cf1c9d85a22a, type: 3}
+  <textObject>k__BackingField: {fileID: 0}
+  <textToWrite>k__BackingField: 
+  <textBoxObject>k__BackingField: {fileID: 0}
+  <highlight>k__BackingField: {fileID: 0}
+  <progress>k__BackingField: 0
+  <progressBar>k__BackingField: {fileID: 0}
+  <synergyLevel>k__BackingField: 2
 --- !u!1001 &3338244417820345770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10494,3 +10840,68 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b85baedf8a424e24881d629de2ecaa82, type: 3}
+--- !u!1001 &6518759395891927454
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1987606533}
+    m_Modifications:
+    - target: {fileID: 259429068146135871, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_Name
+      value: PoemSelector
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281523455241176945, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411558319421110076, guid: f4dd0121a0512df4090bf68381316a81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f4dd0121a0512df4090bf68381316a81, type: 3}

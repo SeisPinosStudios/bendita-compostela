@@ -12,6 +12,7 @@ public class AttackDeckManager : MonoBehaviour
     [field: SerializeField] public List<WeaponAttackData> weaponAttacks { get; private set; }
     [field: SerializeField] public int costReduction { get; private set; }
     [field: SerializeField] public int freeDraw { get; private set; }
+    [field: SerializeField] public bool ulti { get; private set; }
     /*====EVENTS====*/
     public event Action OnCardDraw = delegate { };
 
@@ -46,8 +47,12 @@ public class AttackDeckManager : MonoBehaviour
         var weapon = BattleManager.Instance.player.weapon;
         for(int i = 0; i < amount; i++)
         {
-            cardPrefab.cardData = weaponAttacks[UnityEngine.Random.Range(0, weaponAttacks.Count)];
+            var attack = weaponAttacks[UnityEngine.Random.Range(0, weaponAttacks.Count)];
+            cardPrefab.cardData = attack;
             Instantiate(cardPrefab, hand);
+
+            if (weapon.IsUlti(attack)) weaponAttacks.Remove(attack);
+
             yield return new WaitForSeconds(drawCardDelay);
         }
     }
@@ -57,6 +62,7 @@ public class AttackDeckManager : MonoBehaviour
         Debug.Log($"Fetching Attacks");
         weaponAttacks = new List<WeaponAttackData>();
         foreach (WeaponAttackData attack in BattleManager.Instance.player.weapon.attacks) weaponAttacks.Add(attack.Copy());
+        if (BattleManager.Instance.player.weapon.ultimateLevel > 0) weaponAttacks.Add(BattleManager.Instance.player.weapon.ultimate);
     }
     public void ReduceAttackCost(int amount)
     {
