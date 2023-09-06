@@ -13,10 +13,8 @@ public class NodeEvent : MonoBehaviour
     // TODO remake with delegates
     private void Update() 
     {
-        if(nodeCollider.enabled == false) sprRenderer.color = new Color(sprRenderer.color.r,sprRenderer.color.g,sprRenderer.color.b,0.5f);        
-        else sprRenderer.color = new Color(sprRenderer.color.r,sprRenderer.color.g,sprRenderer.color.b,1f);
+        if(nodeCollider.enabled == false) sprRenderer.color = new Color(0.5660378f,0.5660378f,0.5660378f,1f);        
+        else sprRenderer.color = new Color(1,1,1,1);                   
         
-        if(isCompleted) sprRenderer.sprite = completedNodeSprite;        
-        
-    }
+    }    
 }
