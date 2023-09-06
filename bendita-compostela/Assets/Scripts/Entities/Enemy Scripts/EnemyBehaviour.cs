@@ -102,6 +102,6 @@ public class EnemyBehaviour : EntityBehaviour
     public void Death()
     {
         StopAllCoroutines();
-        TurnManager.Instance.Turn();
+        if(TurnManager.Instance.entityTurn == this) TurnManager.Instance.Turn();
     }
 }
