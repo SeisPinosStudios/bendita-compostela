@@ -139,6 +139,5 @@ public class EntityDisplay : MonoBehaviour
     void Log(object message)
     {
         if(showLogs) Debug.Log(message);
-        
     }
 }

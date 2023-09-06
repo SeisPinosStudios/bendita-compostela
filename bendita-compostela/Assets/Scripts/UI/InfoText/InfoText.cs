@@ -17,6 +17,7 @@ public class InfoText : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandler
     
     public void OnPointerEnter(PointerEventData eventData)
     {
+        progress = 0;
         if (highlight) highlight.SetActive(true);
         StartCoroutine(OnPointerEnterCoroutine(eventData));
     }

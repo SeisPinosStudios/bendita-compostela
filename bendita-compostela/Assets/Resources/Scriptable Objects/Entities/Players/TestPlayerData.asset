@@ -27,9 +27,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 240bc2aa1588c2c498f1eec70a54b746, type: 2}
   chestArmor: {fileID: 11400000, guid: a5aed68d8f592ec46830596ef6a89444, type: 2}
   legArmor: {fileID: 11400000, guid: 483be5b2319dcff46807ff2a5aa999f1, type: 2}
-  currentHP: 0
+  currentHP: 30
   <playerAnimator>k__BackingField: {fileID: 9100000, guid: 5c691185b7a76434cab888eaf9267219, type: 2}
   <condecorations>k__BackingField:
+  - {fileID: 11400000, guid: 7b1d9bb32e36374458fec8760f600e53, type: 2}
   - {fileID: 11400000, guid: 7b1d9bb32e36374458fec8760f600e53, type: 2}
   <poems>k__BackingField: []
   <poemInventory>k__BackingField: []

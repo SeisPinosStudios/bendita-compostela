@@ -53,8 +53,9 @@ public class PlayerData : EntityData
         player.legArmor = legArmor.Copy();
         player.HP = HP;
         player.currentHP = currentHP;
-        player.condecorations = condecorations;
-        player.poems = poems;
+        foreach (CondecorationData condecoration in condecorations) player.condecorations.Add(condecoration);
+        foreach (PoemData poem in poems) player.poems.Add(poem);
+        foreach (PoemData poem in poemInventory) player.poemInventory.Add(poem);
         player.poemInventory = poemInventory;
         player.poemSlots = poemSlots;
         player.coins = coins;
@@ -94,5 +95,9 @@ public class PlayerData : EntityData
     public void ChangeCurrentHP(int amount)
     {
         currentHP = Mathf.Clamp(currentHP + amount, 1, HP);
+    }
+    public void SetCurrentHP(int amount)
+    {
+        currentHP = amount;
     }
 }
