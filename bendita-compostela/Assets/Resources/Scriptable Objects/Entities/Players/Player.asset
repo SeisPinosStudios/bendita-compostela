@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   entityName: 
-  HP: 0
+  HP: 40
   deck: []
   <inventory>k__BackingField: []
   chestArmor: {fileID: 0}
   legArmor: {fileID: 0}
   currentHP: 0
-  <playerAnimator>k__BackingField: {fileID: 0}
+  <playerAnimator>k__BackingField: {fileID: 9100000, guid: 5c691185b7a76434cab888eaf9267219, type: 2}
   <condecorations>k__BackingField: []
   <poems>k__BackingField: []
   <poemInventory>k__BackingField: []
