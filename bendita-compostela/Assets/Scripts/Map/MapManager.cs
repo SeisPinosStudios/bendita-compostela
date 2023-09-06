@@ -181,8 +181,8 @@ public class MapManager : MonoBehaviour
             var line = Instantiate(lineRendererPrefab, new Vector2(0,0), Quaternion.identity,mapSpace.transform);
             LineRenderer lineRenderer = line.GetComponent<LineRenderer>();
             lineRenderer.positionCount = mapGrid.Height+1;      
-            lineRenderer.sortingOrder = 1;
-            lineRenderer.widthMultiplier = 0.1f;            
+            lineRenderer.sortingOrder = 0;
+            lineRenderer.widthMultiplier = 0.5f;            
             for (int i = 0; i < path.Count; i++)
             {
                     lineRenderer.SetPosition(i,new Vector2(path[i].NodePos.x - MAP_DISPLAY_OFFSET.x, path[i].NodePos.y - MAP_DISPLAY_OFFSET.y));                
