@@ -629,6 +629,8 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 31d0691072d46bf49aac718ab62d2ce1, type: 3}
     volume: 1
   eventPanel: {fileID: 2651772028212057988}
+  nextButton: {fileID: 0}
+  rewardWindow: {fileID: 0}
 --- !u!114 &271684511131049731
 MonoBehaviour:
   m_ObjectHideFlags: 0

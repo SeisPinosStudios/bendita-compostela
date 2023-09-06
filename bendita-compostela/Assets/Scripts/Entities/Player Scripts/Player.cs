@@ -23,7 +23,7 @@ public class Player : Entity
     #region Setup Methods
     private void EntitySetup()
     {
-        this.currentHP = playerData.HP;
+        this.currentHP = playerData.currentHP;
         this.defenseBonus = playerData.chestArmor.defenseBonus + playerData.legArmor.defenseBonus;
 
         entityDisplay.UpdateHealth(entityData.HP, currentHP);

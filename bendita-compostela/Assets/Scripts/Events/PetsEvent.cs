@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PetsEvent : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class PetsEvent : MonoBehaviour
     [SerializeField] Sound catsSound;
     [SerializeField] Sound catHappySound;
     [SerializeField] Sound catsMusic;
+
+    [field: SerializeField, Header("Condecoration Poem")] public CondecorationData condecorationReward { get; private set; }
     #endregion
 
     #region Rewards DIEGO AQUI  
@@ -22,12 +25,14 @@ public class PetsEvent : MonoBehaviour
     {   
         // SI ALIMENTAS AL GATO
         OpenRewardWindow("Condecoración Fiel Ameowgo");
+        GameManager.Instance.playerData.AddCondecoration(condecorationReward);
         SoundManager.Instance.PlayMusic(catHappySound.AudioClip, catHappySound.Volume);
     }
     public void Throw()
     {
         // SI LO TIRAS AL RIO
         OpenRewardWindow("Obtienes condecoración Orden de Samael");
+        GameManager.Instance.playerData.AddCondecoration(condecorationReward);
     }
     #endregion
 

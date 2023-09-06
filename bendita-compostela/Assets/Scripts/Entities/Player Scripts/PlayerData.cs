@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 [CreateAssetMenu(fileName = "New Player", menuName = "Bendita Compostela/Player Data")]
 public class PlayerData : EntityData
@@ -99,5 +100,10 @@ public class PlayerData : EntityData
     public void SetCurrentHP(int amount)
     {
         currentHP = amount;
+    }
+    public void AddCondecoration(CondecorationData condecoration)
+    {
+        condecorations.Add(condecoration);
+        Type.GetType(condecoration.type.ToString()).GetMethod("OnObtain").Invoke(null, null);
     }
 }

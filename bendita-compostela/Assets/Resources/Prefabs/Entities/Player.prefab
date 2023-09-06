@@ -949,8 +949,8 @@ MonoBehaviour:
   <image>k__BackingField: {fileID: 4638504053316947912}
   <sprites>k__BackingField:
   - {fileID: 1822301131, guid: 66dcaa2a3f9ebea4f888fc1b77e62752, type: 3}
-  - {fileID: 497674478, guid: 66dcaa2a3f9ebea4f888fc1b77e62752, type: 3}
   - {fileID: 49678042, guid: 66dcaa2a3f9ebea4f888fc1b77e62752, type: 3}
+  - {fileID: 497674478, guid: 66dcaa2a3f9ebea4f888fc1b77e62752, type: 3}
   - {fileID: 1013223449, guid: 66dcaa2a3f9ebea4f888fc1b77e62752, type: 3}
   - {fileID: -997076430, guid: 66dcaa2a3f9ebea4f888fc1b77e62752, type: 3}
   - {fileID: -974434128, guid: 66dcaa2a3f9ebea4f888fc1b77e62752, type: 3}
