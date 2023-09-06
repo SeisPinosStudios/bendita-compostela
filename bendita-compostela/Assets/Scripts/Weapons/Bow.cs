@@ -8,6 +8,7 @@ public class Bow : BaseWeapon
     [field: SerializeField] public int styleAttacksThreshold { get; private set; }
     [field: SerializeField] public int styleRecover { get; private set; }
     [field: SerializeField] public int synergyDraws { get; private set; }
+    [field: SerializeField] public bool activeStyle { get; private set; } = false;
     private void Awake()
     {
         weaponId = 5;
@@ -42,9 +43,11 @@ public class Bow : BaseWeapon
     private void ChestSynergy()
     {
         if (!chestSynergy) return;
-        if (synergyDraws < 1 - GetChestLevel()) synergyDraws++;
+        if (activeStyle && GetChestLevel() != 2) { activeStyle = false; return; }
+        if (synergyDraws < 1 - GetChestLevel()) { synergyDraws++; return; }
         AttackDeckManager.Instance.AddFreeDraw(1);
         synergyDraws = 0;
+        activeStyle = true;
     }
 
     private void LegSynergy()
