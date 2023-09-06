@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 5135095925711978439}
   - component: {fileID: 4678216402480822172}
   - component: {fileID: 9217402047712768622}
+  - component: {fileID: 6583320166224503342}
   m_Layer: 0
   m_Name: Sequence
   m_TagString: Untagged
@@ -329,6 +330,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6583320166224503342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2949427729489581301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2d4c0f0886c4046a121ec4c6dba91d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 5073834889583353343}
+  parentSpriteHeight: 0
 --- !u!1 &6454212745414268413
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +538,7 @@ MonoBehaviour:
   alteredEffectsZone: {fileID: 8331931327145655908}
   alteredEffectDisplay: {fileID: 678472934270943576, guid: 1b3ddc24a8343644096c3e21f7b698ff, type: 3}
   entityAnimator: {fileID: 2653217540466531882}
+  showLogs: 1
   <enemySprite>k__BackingField: {fileID: 5073834889583353343}
   <enemyData>k__BackingField: {fileID: 0}
   <sequenceSprites>k__BackingField:
