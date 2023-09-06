@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnticipatedAssault : MonoBehaviour
+public class AnticipatedAssault : BasicPassive
 {
     private void Awake()
     {

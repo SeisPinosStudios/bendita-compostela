@@ -924,8 +924,8 @@ TextureImporter:
       name: UI_Cards_38
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 1844
+        x: 0
+        y: 1668
         width: 128
         height: 176
       alignment: 0
@@ -945,8 +945,8 @@ TextureImporter:
       name: UI_Cards_39
       rect:
         serializedVersion: 2
-        x: 1152
-        y: 1844
+        x: 128
+        y: 1668
         width: 128
         height: 176
       alignment: 0
@@ -966,7 +966,7 @@ TextureImporter:
       name: UI_Cards_40
       rect:
         serializedVersion: 2
-        x: 0
+        x: 256
         y: 1668
         width: 128
         height: 176
@@ -987,7 +987,7 @@ TextureImporter:
       name: UI_Cards_41
       rect:
         serializedVersion: 2
-        x: 128
+        x: 384
         y: 1668
         width: 128
         height: 176
@@ -1008,7 +1008,7 @@ TextureImporter:
       name: UI_Cards_42
       rect:
         serializedVersion: 2
-        x: 256
+        x: 512
         y: 1668
         width: 128
         height: 176
@@ -1029,7 +1029,7 @@ TextureImporter:
       name: UI_Cards_43
       rect:
         serializedVersion: 2
-        x: 384
+        x: 640
         y: 1668
         width: 128
         height: 176
@@ -1050,7 +1050,7 @@ TextureImporter:
       name: UI_Cards_44
       rect:
         serializedVersion: 2
-        x: 512
+        x: 768
         y: 1668
         width: 128
         height: 176
@@ -1071,7 +1071,7 @@ TextureImporter:
       name: UI_Cards_45
       rect:
         serializedVersion: 2
-        x: 640
+        x: 896
         y: 1668
         width: 128
         height: 176
@@ -1092,7 +1092,7 @@ TextureImporter:
       name: UI_Cards_46
       rect:
         serializedVersion: 2
-        x: 768
+        x: 1024
         y: 1668
         width: 128
         height: 176
@@ -1113,7 +1113,7 @@ TextureImporter:
       name: UI_Cards_47
       rect:
         serializedVersion: 2
-        x: 896
+        x: 1152
         y: 1668
         width: 128
         height: 176
@@ -1134,8 +1134,8 @@ TextureImporter:
       name: UI_Cards_48
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 1668
+        x: 0
+        y: 1492
         width: 128
         height: 176
       alignment: 0
@@ -1155,8 +1155,8 @@ TextureImporter:
       name: UI_Cards_49
       rect:
         serializedVersion: 2
-        x: 1152
-        y: 1668
+        x: 128
+        y: 1492
         width: 128
         height: 176
       alignment: 0
@@ -1176,7 +1176,7 @@ TextureImporter:
       name: UI_Cards_50
       rect:
         serializedVersion: 2
-        x: 0
+        x: 256
         y: 1492
         width: 128
         height: 176
@@ -1197,7 +1197,7 @@ TextureImporter:
       name: UI_Cards_51
       rect:
         serializedVersion: 2
-        x: 128
+        x: 384
         y: 1492
         width: 128
         height: 176
@@ -1218,7 +1218,7 @@ TextureImporter:
       name: UI_Cards_52
       rect:
         serializedVersion: 2
-        x: 256
+        x: 512
         y: 1492
         width: 128
         height: 176
@@ -1239,7 +1239,7 @@ TextureImporter:
       name: UI_Cards_53
       rect:
         serializedVersion: 2
-        x: 384
+        x: 640
         y: 1492
         width: 128
         height: 176
@@ -1260,7 +1260,7 @@ TextureImporter:
       name: UI_Cards_54
       rect:
         serializedVersion: 2
-        x: 512
+        x: 768
         y: 1492
         width: 128
         height: 176
@@ -1281,7 +1281,7 @@ TextureImporter:
       name: UI_Cards_55
       rect:
         serializedVersion: 2
-        x: 640
+        x: 896
         y: 1492
         width: 128
         height: 176
@@ -1302,7 +1302,7 @@ TextureImporter:
       name: UI_Cards_56
       rect:
         serializedVersion: 2
-        x: 768
+        x: 1024
         y: 1492
         width: 128
         height: 176
@@ -1323,7 +1323,7 @@ TextureImporter:
       name: UI_Cards_57
       rect:
         serializedVersion: 2
-        x: 896
+        x: 1152
         y: 1492
         width: 128
         height: 176
@@ -1344,8 +1344,8 @@ TextureImporter:
       name: UI_Cards_58
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 1492
+        x: 0
+        y: 1316
         width: 128
         height: 176
       alignment: 0
@@ -1365,8 +1365,8 @@ TextureImporter:
       name: UI_Cards_59
       rect:
         serializedVersion: 2
-        x: 1152
-        y: 1492
+        x: 128
+        y: 1316
         width: 128
         height: 176
       alignment: 0
@@ -1386,7 +1386,7 @@ TextureImporter:
       name: UI_Cards_60
       rect:
         serializedVersion: 2
-        x: 0
+        x: 256
         y: 1316
         width: 128
         height: 176
@@ -1407,7 +1407,7 @@ TextureImporter:
       name: UI_Cards_61
       rect:
         serializedVersion: 2
-        x: 128
+        x: 384
         y: 1316
         width: 128
         height: 176
@@ -1428,7 +1428,7 @@ TextureImporter:
       name: UI_Cards_62
       rect:
         serializedVersion: 2
-        x: 256
+        x: 512
         y: 1316
         width: 128
         height: 176
@@ -1449,7 +1449,7 @@ TextureImporter:
       name: UI_Cards_63
       rect:
         serializedVersion: 2
-        x: 384
+        x: 640
         y: 1316
         width: 128
         height: 176
@@ -1470,7 +1470,7 @@ TextureImporter:
       name: UI_Cards_64
       rect:
         serializedVersion: 2
-        x: 512
+        x: 768
         y: 1316
         width: 128
         height: 176
@@ -1491,7 +1491,7 @@ TextureImporter:
       name: UI_Cards_65
       rect:
         serializedVersion: 2
-        x: 640
+        x: 896
         y: 1316
         width: 128
         height: 176
@@ -1512,7 +1512,7 @@ TextureImporter:
       name: UI_Cards_66
       rect:
         serializedVersion: 2
-        x: 768
+        x: 1024
         y: 1316
         width: 128
         height: 176
@@ -1533,8 +1533,8 @@ TextureImporter:
       name: UI_Cards_67
       rect:
         serializedVersion: 2
-        x: 896
-        y: 1316
+        x: 0
+        y: 1140
         width: 128
         height: 176
       alignment: 0
@@ -1554,8 +1554,8 @@ TextureImporter:
       name: UI_Cards_68
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 1316
+        x: 128
+        y: 1140
         width: 128
         height: 176
       alignment: 0
@@ -1575,7 +1575,7 @@ TextureImporter:
       name: UI_Cards_69
       rect:
         serializedVersion: 2
-        x: 0
+        x: 256
         y: 1140
         width: 128
         height: 176
@@ -1596,7 +1596,7 @@ TextureImporter:
       name: UI_Cards_70
       rect:
         serializedVersion: 2
-        x: 128
+        x: 384
         y: 1140
         width: 128
         height: 176
@@ -1617,7 +1617,7 @@ TextureImporter:
       name: UI_Cards_71
       rect:
         serializedVersion: 2
-        x: 256
+        x: 512
         y: 1140
         width: 128
         height: 176
@@ -1638,7 +1638,7 @@ TextureImporter:
       name: UI_Cards_72
       rect:
         serializedVersion: 2
-        x: 384
+        x: 640
         y: 1140
         width: 128
         height: 176
@@ -1659,7 +1659,7 @@ TextureImporter:
       name: UI_Cards_73
       rect:
         serializedVersion: 2
-        x: 512
+        x: 768
         y: 1140
         width: 128
         height: 176
@@ -1680,7 +1680,7 @@ TextureImporter:
       name: UI_Cards_74
       rect:
         serializedVersion: 2
-        x: 640
+        x: 896
         y: 1140
         width: 128
         height: 176
@@ -1701,7 +1701,7 @@ TextureImporter:
       name: UI_Cards_75
       rect:
         serializedVersion: 2
-        x: 768
+        x: 1024
         y: 1140
         width: 128
         height: 176
@@ -1722,7 +1722,7 @@ TextureImporter:
       name: UI_Cards_76
       rect:
         serializedVersion: 2
-        x: 896
+        x: 1152
         y: 1140
         width: 128
         height: 176
@@ -1743,8 +1743,8 @@ TextureImporter:
       name: UI_Cards_77
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 1140
+        x: 0
+        y: 964
         width: 128
         height: 176
       alignment: 0
@@ -1764,8 +1764,8 @@ TextureImporter:
       name: UI_Cards_78
       rect:
         serializedVersion: 2
-        x: 1152
-        y: 1140
+        x: 128
+        y: 964
         width: 128
         height: 176
       alignment: 0
@@ -1785,7 +1785,7 @@ TextureImporter:
       name: UI_Cards_79
       rect:
         serializedVersion: 2
-        x: 0
+        x: 256
         y: 964
         width: 128
         height: 176
@@ -1806,7 +1806,7 @@ TextureImporter:
       name: UI_Cards_80
       rect:
         serializedVersion: 2
-        x: 128
+        x: 384
         y: 964
         width: 128
         height: 176
@@ -1827,7 +1827,7 @@ TextureImporter:
       name: UI_Cards_81
       rect:
         serializedVersion: 2
-        x: 256
+        x: 512
         y: 964
         width: 128
         height: 176
@@ -1848,7 +1848,7 @@ TextureImporter:
       name: UI_Cards_82
       rect:
         serializedVersion: 2
-        x: 384
+        x: 640
         y: 964
         width: 128
         height: 176
@@ -1869,7 +1869,7 @@ TextureImporter:
       name: UI_Cards_83
       rect:
         serializedVersion: 2
-        x: 512
+        x: 768
         y: 964
         width: 128
         height: 176
@@ -1890,7 +1890,7 @@ TextureImporter:
       name: UI_Cards_84
       rect:
         serializedVersion: 2
-        x: 640
+        x: 896
         y: 964
         width: 128
         height: 176
@@ -1911,7 +1911,7 @@ TextureImporter:
       name: UI_Cards_85
       rect:
         serializedVersion: 2
-        x: 768
+        x: 1024
         y: 964
         width: 128
         height: 176
@@ -1932,7 +1932,7 @@ TextureImporter:
       name: UI_Cards_86
       rect:
         serializedVersion: 2
-        x: 896
+        x: 1152
         y: 964
         width: 128
         height: 176
@@ -1953,8 +1953,8 @@ TextureImporter:
       name: UI_Cards_87
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 964
+        x: 0
+        y: 788
         width: 128
         height: 176
       alignment: 0
@@ -1974,8 +1974,8 @@ TextureImporter:
       name: UI_Cards_88
       rect:
         serializedVersion: 2
-        x: 1152
-        y: 964
+        x: 128
+        y: 788
         width: 128
         height: 176
       alignment: 0
@@ -1995,7 +1995,7 @@ TextureImporter:
       name: UI_Cards_89
       rect:
         serializedVersion: 2
-        x: 0
+        x: 256
         y: 788
         width: 128
         height: 176
@@ -2016,7 +2016,7 @@ TextureImporter:
       name: UI_Cards_90
       rect:
         serializedVersion: 2
-        x: 128
+        x: 384
         y: 788
         width: 128
         height: 176
@@ -2037,7 +2037,7 @@ TextureImporter:
       name: UI_Cards_91
       rect:
         serializedVersion: 2
-        x: 256
+        x: 512
         y: 788
         width: 128
         height: 176
@@ -2058,7 +2058,7 @@ TextureImporter:
       name: UI_Cards_92
       rect:
         serializedVersion: 2
-        x: 384
+        x: 640
         y: 788
         width: 128
         height: 176
@@ -2079,7 +2079,7 @@ TextureImporter:
       name: UI_Cards_93
       rect:
         serializedVersion: 2
-        x: 512
+        x: 768
         y: 788
         width: 128
         height: 176
@@ -2100,7 +2100,7 @@ TextureImporter:
       name: UI_Cards_94
       rect:
         serializedVersion: 2
-        x: 640
+        x: 896
         y: 788
         width: 128
         height: 176
@@ -2121,7 +2121,7 @@ TextureImporter:
       name: UI_Cards_95
       rect:
         serializedVersion: 2
-        x: 768
+        x: 1024
         y: 788
         width: 128
         height: 176
@@ -2142,7 +2142,7 @@ TextureImporter:
       name: UI_Cards_96
       rect:
         serializedVersion: 2
-        x: 896
+        x: 1152
         y: 788
         width: 128
         height: 176
@@ -2163,8 +2163,8 @@ TextureImporter:
       name: UI_Cards_97
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 788
+        x: 0
+        y: 612
         width: 128
         height: 176
       alignment: 0
@@ -2184,8 +2184,8 @@ TextureImporter:
       name: UI_Cards_98
       rect:
         serializedVersion: 2
-        x: 1152
-        y: 788
+        x: 256
+        y: 612
         width: 128
         height: 176
       alignment: 0
@@ -2205,7 +2205,7 @@ TextureImporter:
       name: UI_Cards_99
       rect:
         serializedVersion: 2
-        x: 0
+        x: 384
         y: 612
         width: 128
         height: 176
@@ -2226,7 +2226,7 @@ TextureImporter:
       name: UI_Cards_100
       rect:
         serializedVersion: 2
-        x: 256
+        x: 512
         y: 612
         width: 128
         height: 176
@@ -2247,7 +2247,7 @@ TextureImporter:
       name: UI_Cards_101
       rect:
         serializedVersion: 2
-        x: 384
+        x: 768
         y: 612
         width: 128
         height: 176
@@ -2268,7 +2268,7 @@ TextureImporter:
       name: UI_Cards_102
       rect:
         serializedVersion: 2
-        x: 512
+        x: 1024
         y: 612
         width: 128
         height: 176
@@ -2289,8 +2289,8 @@ TextureImporter:
       name: UI_Cards_103
       rect:
         serializedVersion: 2
-        x: 768
-        y: 612
+        x: 0
+        y: 436
         width: 128
         height: 176
       alignment: 0
@@ -2310,8 +2310,8 @@ TextureImporter:
       name: UI_Cards_104
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 612
+        x: 128
+        y: 436
         width: 128
         height: 176
       alignment: 0
@@ -2331,7 +2331,7 @@ TextureImporter:
       name: UI_Cards_105
       rect:
         serializedVersion: 2
-        x: 0
+        x: 256
         y: 436
         width: 128
         height: 176
@@ -2352,7 +2352,7 @@ TextureImporter:
       name: UI_Cards_106
       rect:
         serializedVersion: 2
-        x: 128
+        x: 384
         y: 436
         width: 128
         height: 176
@@ -2373,7 +2373,7 @@ TextureImporter:
       name: UI_Cards_107
       rect:
         serializedVersion: 2
-        x: 256
+        x: 512
         y: 436
         width: 128
         height: 176
@@ -2478,7 +2478,7 @@ TextureImporter:
       name: UI_Cards_112
       rect:
         serializedVersion: 2
-        x: 384
+        x: 256
         y: 260
         width: 128
         height: 176
@@ -2499,7 +2499,7 @@ TextureImporter:
       name: UI_Cards_113
       rect:
         serializedVersion: 2
-        x: 896
+        x: 384
         y: 260
         width: 128
         height: 176
@@ -2520,7 +2520,7 @@ TextureImporter:
       name: UI_Cards_114
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 512
         y: 260
         width: 128
         height: 176
@@ -2541,8 +2541,8 @@ TextureImporter:
       name: UI_Cards_115
       rect:
         serializedVersion: 2
-        x: 0
-        y: 84
+        x: 896
+        y: 260
         width: 128
         height: 176
       alignment: 0
@@ -2562,8 +2562,8 @@ TextureImporter:
       name: UI_Cards_116
       rect:
         serializedVersion: 2
-        x: 128
-        y: 84
+        x: 1024
+        y: 260
         width: 128
         height: 176
       alignment: 0
@@ -2583,7 +2583,7 @@ TextureImporter:
       name: UI_Cards_117
       rect:
         serializedVersion: 2
-        x: 256
+        x: 0
         y: 84
         width: 128
         height: 176
@@ -2604,7 +2604,7 @@ TextureImporter:
       name: UI_Cards_118
       rect:
         serializedVersion: 2
-        x: 384
+        x: 128
         y: 84
         width: 128
         height: 176
@@ -2625,7 +2625,7 @@ TextureImporter:
       name: UI_Cards_119
       rect:
         serializedVersion: 2
-        x: 512
+        x: 256
         y: 84
         width: 128
         height: 176
@@ -2646,7 +2646,7 @@ TextureImporter:
       name: UI_Cards_120
       rect:
         serializedVersion: 2
-        x: 640
+        x: 384
         y: 84
         width: 128
         height: 176
@@ -2659,6 +2659,48 @@ TextureImporter:
       bones: []
       spriteID: 4efe33a7d4499e94faf4b726d9eca53b
       internalID: 256191167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Cards_121
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 84
+        width: 128
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deb6af95b32125e4b9c6ec7fc6e6d9bf
+      internalID: 1876730545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Cards_122
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 84
+        width: 128
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 493c8ce3fea2c794bbcdbd9cd1d4dee9
+      internalID: -2141681575
       vertices: []
       indices: 
       edges: []
@@ -2700,6 +2742,8 @@ TextureImporter:
       UI_Cards_119: 811495113
       UI_Cards_12: -1658820531
       UI_Cards_120: 256191167
+      UI_Cards_121: 1876730545
+      UI_Cards_122: -2141681575
       UI_Cards_13: -521491020
       UI_Cards_14: 1051522221
       UI_Cards_15: 1774357094

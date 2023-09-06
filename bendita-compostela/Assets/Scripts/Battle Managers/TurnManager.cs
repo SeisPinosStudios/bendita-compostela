@@ -21,9 +21,10 @@ public class TurnManager : MonoBehaviour
         turnQueue.AddLast(playerBehaviour);
         foreach (EnemyBehaviour enemy in enemiesBehaviour) turnQueue.AddLast(enemy);
     }
-    private void Start()
+    private IEnumerator Start()
     {
         print($"{turnQueue.First.Value}");
+        yield return new WaitForSeconds(1.0f);
         Turn();
     }
 

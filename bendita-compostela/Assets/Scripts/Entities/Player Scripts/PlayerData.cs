@@ -91,4 +91,8 @@ public class PlayerData : EntityData
     {
         coins += amount;
     }
+    public void ChangeCurrentHP(int amount)
+    {
+        currentHP = Mathf.Clamp(currentHP + amount, 1, HP);
+    }
 }
