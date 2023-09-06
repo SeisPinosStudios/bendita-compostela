@@ -30,6 +30,7 @@ public class EnemyDisplay : EntityDisplay
             healthbarBackground.sprite = bossBarBackground;
             healthbarFill.sprite = bossBarFill;
         }
+        sequenceIcon.gameObject.GetComponent<IntentionPosChange>().SetUpPosition();
 
         passiveindex = enemyData.passives.Count;
         GeneratePassiveIcons();
