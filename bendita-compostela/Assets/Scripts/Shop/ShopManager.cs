@@ -15,8 +15,6 @@ public class ShopManager : MonoBehaviour
     {
         Instance = this;
 
-        SoundManager.Instance.PlayMusic(shopMusic);
-
         foreach (Transform selector in weaponSelectors)
             selector.GetComponent<CardDataContainer>().cardData = SODataBase.weapons[Random.Range(0, SODataBase.weapons.Count)];
 
@@ -28,5 +26,11 @@ public class ShopManager : MonoBehaviour
 
         foreach (Transform selector in specialSelectors)
             selector.GetComponent<CardDataContainer>().cardData = SODataBase.special[Mathf.FloorToInt(Random.Range(0, SODataBase.special.Count) / 3)];
+    }
+
+    private IEnumerator Start()
+    {
+        yield return new WaitUntil(() => SoundManager.Instance);
+        SoundManager.Instance.PlayMusic(shopMusic);
     }
 }

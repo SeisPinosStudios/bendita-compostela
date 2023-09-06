@@ -519,10 +519,11 @@ MonoBehaviour:
   <entityDataContainer>k__BackingField: {fileID: 7902973688884092947}
   <entityData>k__BackingField: {fileID: 0}
   healthBar: {fileID: 1322594789834722973}
-  healthText: {fileID: 3352284925373693598}
-  alteredEffectsZone: {fileID: 8331931327145655908}
-  alteredEffectDisplay: {fileID: 678472934270943576, guid: 1b3ddc24a8343644096c3e21f7b698ff, type: 3}
+  <healthText>k__BackingField: {fileID: 3352284925373693598}
+  <alteredEffectsZone>k__BackingField: {fileID: 8331931327145655908}
+  <alteredEffectDisplay>k__BackingField: {fileID: 678472934270943576, guid: 1b3ddc24a8343644096c3e21f7b698ff, type: 3}
   entityAnimator: {fileID: 2653217540466531882}
+  showLogs: 1
   <enemySprite>k__BackingField: {fileID: 5073834889583353343}
   <enemyData>k__BackingField: {fileID: 0}
   <sequenceSprites>k__BackingField:
@@ -533,6 +534,8 @@ MonoBehaviour:
   <enemyBehaviour>k__BackingField: {fileID: 5762668312253699461}
   <displayObject>k__BackingField: {fileID: 280338338929955545}
   <sequenceIcon>k__BackingField: {fileID: 9217402047712768622}
+  <passiveDisplay>k__BackingField: {fileID: 6973793862655089172, guid: 0b22ea7e90691cd4abbecbbab6cbdc3d, type: 3}
+  <passiveindex>k__BackingField: 0
   <bossBarBackground>k__BackingField: {fileID: 0}
   <bossBarFill>k__BackingField: {fileID: 0}
   <healthbarBackground>k__BackingField: {fileID: 0}

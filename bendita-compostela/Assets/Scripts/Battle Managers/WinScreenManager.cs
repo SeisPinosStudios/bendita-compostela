@@ -26,7 +26,10 @@ public class WinScreenManager : MonoBehaviour
         }
 
         GenerateExtraRewards();
+    }
 
+    private void OnEnable()
+    {
         GameManager.Instance.playerData.currentHP = BattleManager.Instance.player.currentHP;
     }
 
