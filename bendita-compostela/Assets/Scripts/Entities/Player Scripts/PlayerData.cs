@@ -50,8 +50,8 @@ public class PlayerData : EntityData
             player.inventory.Add(card.Copy());
         }
 
-        player.chestArmor = chestArmor.Copy();
-        player.legArmor = legArmor.Copy();
+        player.chestArmor = chestArmor ? chestArmor.Copy() : null;
+        player.legArmor = legArmor ? legArmor.Copy() : null;
         player.HP = HP;
         player.currentHP = currentHP;
         foreach (CondecorationData condecoration in condecorations) player.condecorations.Add(condecoration);
