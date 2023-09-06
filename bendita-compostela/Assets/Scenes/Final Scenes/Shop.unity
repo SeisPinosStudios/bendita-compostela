@@ -431,6 +431,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      propertyPath: <upgradeLevel>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.size
       value: 12
       objectReference: {fileID: 0}
@@ -1353,6 +1357,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      propertyPath: <upgradeLevel>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.size
       value: 12
       objectReference: {fileID: 0}
@@ -2025,6 +2033,10 @@ PrefabInstance:
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <cost>k__BackingField
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      propertyPath: <upgradeLevel>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.size
@@ -3022,6 +3034,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <upgradeType>k__BackingField
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      propertyPath: <upgradeLevel>k__BackingField
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
@@ -5437,51 +5453,51 @@ PrefabInstance:
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.data[0]
       value: 
-      objectReference: {fileID: 634362305, guid: 16540726e2c5fa042987f9a6cee2f120, type: 3}
+      objectReference: {fileID: -2068456959, guid: e5916cc75ab399841b28c43e38cd86c6, type: 3}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.data[1]
       value: 
-      objectReference: {fileID: 525624663, guid: 16540726e2c5fa042987f9a6cee2f120, type: 3}
+      objectReference: {fileID: -1272790805, guid: e5916cc75ab399841b28c43e38cd86c6, type: 3}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.data[2]
       value: 
-      objectReference: {fileID: 2128464485, guid: 16540726e2c5fa042987f9a6cee2f120, type: 3}
+      objectReference: {fileID: 418270815, guid: e5916cc75ab399841b28c43e38cd86c6, type: 3}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.data[3]
       value: 
-      objectReference: {fileID: -141870169, guid: 16540726e2c5fa042987f9a6cee2f120, type: 3}
+      objectReference: {fileID: 1729437052, guid: e5916cc75ab399841b28c43e38cd86c6, type: 3}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.data[4]
       value: 
-      objectReference: {fileID: 1288987502, guid: 16540726e2c5fa042987f9a6cee2f120, type: 3}
+      objectReference: {fileID: 592214678, guid: e5916cc75ab399841b28c43e38cd86c6, type: 3}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.data[5]
       value: 
-      objectReference: {fileID: 2062616532, guid: 16540726e2c5fa042987f9a6cee2f120, type: 3}
+      objectReference: {fileID: -1627634804, guid: e5916cc75ab399841b28c43e38cd86c6, type: 3}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.data[6]
       value: 
-      objectReference: {fileID: -1401894681, guid: 16540726e2c5fa042987f9a6cee2f120, type: 3}
+      objectReference: {fileID: 581729133, guid: e5916cc75ab399841b28c43e38cd86c6, type: 3}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.data[7]
       value: 
-      objectReference: {fileID: 1660756742, guid: 16540726e2c5fa042987f9a6cee2f120, type: 3}
+      objectReference: {fileID: -112994015, guid: e5916cc75ab399841b28c43e38cd86c6, type: 3}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.data[8]
       value: 
-      objectReference: {fileID: -584807723, guid: 16540726e2c5fa042987f9a6cee2f120, type: 3}
+      objectReference: {fileID: -969774367, guid: e5916cc75ab399841b28c43e38cd86c6, type: 3}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.data[9]
       value: 
-      objectReference: {fileID: 938096368, guid: 16540726e2c5fa042987f9a6cee2f120, type: 3}
+      objectReference: {fileID: 277607987, guid: e5916cc75ab399841b28c43e38cd86c6, type: 3}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.data[10]
       value: 
-      objectReference: {fileID: 360438678, guid: 16540726e2c5fa042987f9a6cee2f120, type: 3}
+      objectReference: {fileID: 1186917216, guid: e5916cc75ab399841b28c43e38cd86c6, type: 3}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.data[11]
       value: 
-      objectReference: {fileID: -853085932, guid: 16540726e2c5fa042987f9a6cee2f120, type: 3}
+      objectReference: {fileID: 185773735, guid: e5916cc75ab399841b28c43e38cd86c6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6913,6 +6929,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      propertyPath: <upgradeLevel>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -7748,6 +7768,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      propertyPath: <upgradeLevel>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -7883,6 +7907,10 @@ PrefabInstance:
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <upgradeType>k__BackingField
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      propertyPath: <upgradeLevel>k__BackingField
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.size
@@ -8854,6 +8882,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      propertyPath: <upgradeLevel>k__BackingField
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.size
       value: 12
       objectReference: {fileID: 0}
@@ -9125,6 +9157,10 @@ PrefabInstance:
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <cost>k__BackingField
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      propertyPath: <upgradeLevel>k__BackingField
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.size
@@ -9419,6 +9455,10 @@ PrefabInstance:
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <upgradeType>k__BackingField
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
+      propertyPath: <upgradeLevel>k__BackingField
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.size
@@ -9930,27 +9970,27 @@ PrefabInstance:
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.data[0]
       value: 
-      objectReference: {fileID: 229066184, guid: 16540726e2c5fa042987f9a6cee2f120, type: 3}
+      objectReference: {fileID: 1884056267, guid: e5916cc75ab399841b28c43e38cd86c6, type: 3}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.data[1]
       value: 
-      objectReference: {fileID: 4710771, guid: 16540726e2c5fa042987f9a6cee2f120, type: 3}
+      objectReference: {fileID: -1770934906, guid: e5916cc75ab399841b28c43e38cd86c6, type: 3}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.data[2]
       value: 
-      objectReference: {fileID: 1751768081, guid: 16540726e2c5fa042987f9a6cee2f120, type: 3}
+      objectReference: {fileID: -200561380, guid: e5916cc75ab399841b28c43e38cd86c6, type: 3}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.data[3]
       value: 
-      objectReference: {fileID: 1303980373, guid: 16540726e2c5fa042987f9a6cee2f120, type: 3}
+      objectReference: {fileID: -1444379392, guid: e5916cc75ab399841b28c43e38cd86c6, type: 3}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.data[4]
       value: 
-      objectReference: {fileID: 1591744422, guid: 16540726e2c5fa042987f9a6cee2f120, type: 3}
+      objectReference: {fileID: -663365785, guid: e5916cc75ab399841b28c43e38cd86c6, type: 3}
     - target: {fileID: 8294955852070494305, guid: 7cb81e23983840f4590c2d4ff34a347e, type: 3}
       propertyPath: <icons>k__BackingField.Array.data[5]
       value: 
-      objectReference: {fileID: -95282276, guid: 16540726e2c5fa042987f9a6cee2f120, type: 3}
+      objectReference: {fileID: -2100986893, guid: e5916cc75ab399841b28c43e38cd86c6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

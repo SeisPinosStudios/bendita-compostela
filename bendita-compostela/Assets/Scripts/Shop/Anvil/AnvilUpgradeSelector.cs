@@ -54,30 +54,33 @@ public class AnvilUpgradeSelector : MonoBehaviour, IPointerEnterHandler, IPointe
     }
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (!GameManager.Instance.playerData.SpendCoins(cost)) return;
-
         if (!interactionEnabled) return;
 
         switch (upgradeType)
         {
             case UpgradeType.Damage:
-                if (((WeaponData)AnvilUpgradeManager.Instance.selectedEquipment).weaponLevel >= upgradeLevel) return;
+                if (((WeaponData)AnvilUpgradeManager.Instance.selectedEquipment).weaponLevel != upgradeLevel - 1) return;
+                if (!GameManager.Instance.playerData.SpendCoins(cost)) return;
                 AnvilUpgradeManager.Instance.UpgradeWeaponDamage();
                 return;
             case UpgradeType.Style:
-                if (((WeaponData)AnvilUpgradeManager.Instance.selectedEquipment).styleLevel >= upgradeLevel) return;
+                if (((WeaponData)AnvilUpgradeManager.Instance.selectedEquipment).styleLevel != upgradeLevel - 1) return;
+                if (!GameManager.Instance.playerData.SpendCoins(cost)) return;
                 AnvilUpgradeManager.Instance.UpgradeWeaponStyle();
                 return;
             case UpgradeType.Ulti:
-                if (((WeaponData)AnvilUpgradeManager.Instance.selectedEquipment).ultimateLevel >= upgradeLevel) return;
+                if (((WeaponData)AnvilUpgradeManager.Instance.selectedEquipment).ultimateLevel != upgradeLevel - 1) return;
+                if (!GameManager.Instance.playerData.SpendCoins(cost)) return;
                 AnvilUpgradeManager.Instance.UpgradeWeaponUlti();
                 return;
             case UpgradeType.Level:
-                if (((ArmorData)AnvilUpgradeManager.Instance.selectedEquipment).armorLevel >= upgradeLevel) return;
+                if (((ArmorData)AnvilUpgradeManager.Instance.selectedEquipment).armorLevel != upgradeLevel - 1) return;
+                if (!GameManager.Instance.playerData.SpendCoins(cost)) return;
                 AnvilUpgradeManager.Instance.UpgradeArmorLevel();
                 return;
             case UpgradeType.Synergy:
-                if (((ArmorData)AnvilUpgradeManager.Instance.selectedEquipment).synergyLevel >= upgradeLevel) return;
+                if (((ArmorData)AnvilUpgradeManager.Instance.selectedEquipment).synergyLevel != upgradeLevel - 1) return;
+                if (!GameManager.Instance.playerData.SpendCoins(cost)) return;
                 AnvilUpgradeManager.Instance.UpdateArmorSynergy();
                 return;
         }

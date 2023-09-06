@@ -68,6 +68,8 @@ public class Sword : BaseWeapon
     {
         Damage.OnAttack -= Style;
 
+        if(styleAttacks > 0) player.AttackMultiplier(-styleMultiplier);
+
         if(legSynergy)
             foreach (Enemy enemy in BattleManager.Instance.enemies)
                 enemy.entityEffectsManager.UpdateEffectLimit(TAlteredEffects.AlteredEffects.Bleed, -GetBleedUpgrade());
