@@ -29,6 +29,11 @@ public class GameManager : MonoBehaviour
             foreach (ArmorData armor in SODataBase.armors) playerData.inventory.Add(armor.Copy());
             playerData.AddCoins(100);
         }
+        else
+        {
+            playerData.deck.Add(SODataBase.weapons[Random.Range(0, SODataBase.weapons.Count)]);
+            for(int i = 0; i < 6; i++) playerData.deck.Add(SODataBase.objects[Random.Range(0, SODataBase.objects.Count)]);
+        }
     }
 
     #region Combat

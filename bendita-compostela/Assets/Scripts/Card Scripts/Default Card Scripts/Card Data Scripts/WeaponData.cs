@@ -48,6 +48,7 @@ public class WeaponData : CardData
         card.printArrow = printArrow;
         card.weaponId = weaponId;
         card.weaponClassName = weaponClassName;
+        foreach(WeaponAttackData attack in attacks) card.attacks.Add(attack.Copy());
         card.attacks = attacks;
         card.ultimate = ultimate;
         card.weaponLevel = weaponLevel;
