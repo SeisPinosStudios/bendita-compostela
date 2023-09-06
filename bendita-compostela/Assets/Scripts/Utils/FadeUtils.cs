@@ -34,7 +34,7 @@ public class FadeUtils : MonoBehaviour
         }
     }
 
-     public IEnumerator FadeOutCoroutine(float fadeTime)
+    public IEnumerator FadeOutCoroutine(float fadeTime)
     {
         if (!imageComponent.gameObject.activeSelf) imageComponent.gameObject.SetActive(true);
         for (float i = 0; i <= fadeTime; i += Time.deltaTime)

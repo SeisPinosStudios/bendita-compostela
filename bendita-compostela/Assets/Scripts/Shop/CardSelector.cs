@@ -13,6 +13,12 @@ public class CardSelector : MonoBehaviour
 
     private void Awake()
     {
+        
+    }
+
+    private IEnumerator Start()
+    {
+        yield return new WaitUntil(() => cardDataContainer.cardData);
         cardData = cardDataContainer.cardData;
     }
 

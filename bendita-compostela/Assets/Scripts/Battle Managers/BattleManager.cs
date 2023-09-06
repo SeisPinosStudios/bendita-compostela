@@ -43,7 +43,9 @@ public class BattleManager : MonoBehaviour
 
         var center = Mathf.Lerp(enemyAreaBegin.position.x, enemyAreaEnd.position.x, 0.5f);
 
-        var startingPoint = center - space * ((combatData.enemiesData.Count - 1) / 2);
+        var startingPoint = center - space * ((combatData.enemiesData.Count - 1) / 2f);
+
+        Debug.Log($"Enemy generation | center point: {center} | start point: {startingPoint} | Info: {space}  {(combatData.enemiesData.Count - 1)/2}");
 
 
         for(int i = 0; i < combatData.enemiesData.Count; i++)

@@ -17,8 +17,9 @@ public class CardSelectorDisplay : MonoBehaviour
         
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
+        yield return new WaitUntil(() => cardDataContainer.cardData);
         cardData = cardDataContainer.cardData;
         sprite.sprite = cardData.miniArt;
     }
