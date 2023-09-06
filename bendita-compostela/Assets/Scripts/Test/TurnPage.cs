@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
+
 public class TurnPage: MonoBehaviour
 {
     // Start is called before the first frame update
@@ -17,20 +19,17 @@ public class TurnPage: MonoBehaviour
     public Button button;
     public int nextPage;
 
-    //Sound assets
-    [SerializeField] List<AudioClip> audios;
-
-
-
     void Start()
     {
-        SoundManager.Instance.PlayMusic(audios[0], 1f);
+    
         nextPage = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+      
+
         if (nextPage == 4)
         {
             Debug.Log("hola");
@@ -48,9 +47,10 @@ public class TurnPage: MonoBehaviour
 
     private IEnumerator FinalTransition()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(7);
         _animator.SetBool("isFading", true);
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("MainMenu");
     }
+    
 }
