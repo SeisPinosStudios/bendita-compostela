@@ -55,6 +55,7 @@ public class AttackDeckManager : MonoBehaviour
             BattleManager.Instance.soundList.PlaySound("Draw");
             yield return new WaitForSeconds(drawCardDelay);
         }
+        yield return null;
     }
 
     private void FetchAttacks()

@@ -25,7 +25,11 @@ public class Card : MonoBehaviour
     {
         var player = BattleManager.Instance.player;
 
-        if (!player.ConsumeEnergy(GetEnergyCost(player))) yield break;
+        if (!player.ConsumeEnergy(GetEnergyCost(player)))
+        {
+            BattleManager.Instance.soundList.PlaySound("NoEnergy");
+            yield break;
+        }
 
         var user = TurnManager.Instance.entityTurn.GetComponent<EntityEffectsManager>();
 

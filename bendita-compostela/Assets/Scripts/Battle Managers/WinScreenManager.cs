@@ -30,6 +30,15 @@ public class WinScreenManager : MonoBehaviour
         GenerateExtraRewards();
         GameManager.Instance.playerData.SetCurrentHP(BattleManager.Instance.player.currentHP);
         StartCoroutine(LoadMapCoroutine());
+
+        
+        BattleManager.Instance.soundList.PlaySound("WinSound");
+    }
+
+    public IEnumerator Start()
+    {
+        yield return new WaitForSeconds(BattleManager.Instance.soundList.vfxSoundsList.Find(audio => audio.soundName == "WinSound").AudioClip.length);
+        BattleManager.Instance.soundList.PlayMusic("WinMusic");
     }
 
     private List<CardData> GenerateRewards()

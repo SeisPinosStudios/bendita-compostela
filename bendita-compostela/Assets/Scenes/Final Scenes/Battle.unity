@@ -1905,6 +1905,9 @@ MonoBehaviour:
   - <soundName>k__BackingField: Combat
     audioClip: {fileID: 8300000, guid: 3eaf4382a788b7047bd6c5ed37c79c44, type: 3}
     volume: 1
+  - <soundName>k__BackingField: WinMusic
+    audioClip: {fileID: 8300000, guid: 0e8c090fbcd441448aa5de9b69af5e82, type: 3}
+    volume: 1
   vfxSoundsList:
   - <soundName>k__BackingField: Poison
     audioClip: {fileID: 8300000, guid: 1e5e2fd0156e6e244b40e47b8a5e1d0f, type: 3}
@@ -1941,6 +1944,12 @@ MonoBehaviour:
     volume: 1
   - <soundName>k__BackingField: Draw
     audioClip: {fileID: 8300000, guid: 58044b4d41b3de246943a96743ace02e, type: 3}
+    volume: 1
+  - <soundName>k__BackingField: WinSound
+    audioClip: {fileID: 8300000, guid: a07f8669ae083e143b25a8a3424d3ceb, type: 3}
+    volume: 1
+  - <soundName>k__BackingField: NoEnergy
+    audioClip: {fileID: 8300000, guid: e2b18fa5a2d210847ac970ae55c9acf2, type: 3}
     volume: 1
 --- !u!1 &1108733629
 GameObject:

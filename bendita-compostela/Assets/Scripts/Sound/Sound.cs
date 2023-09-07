@@ -26,6 +26,6 @@ public class Sound
     }
     public void PlayMusic() 
     {
-        SoundManager.Instance.PlayMusic(this);
+        SoundManager.Instance.PlayMusic(audioClip, volume);
     }
 }
