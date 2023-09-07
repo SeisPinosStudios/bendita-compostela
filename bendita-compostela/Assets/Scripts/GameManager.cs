@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class GameManager : MonoBehaviour
         {
             playerData.deck.Add(SODataBase.weapons[Random.Range(0, SODataBase.weapons.Count)]);
             for(int i = 0; i < 6; i++) playerData.deck.Add(SODataBase.objects[Random.Range(0, SODataBase.objects.Count)]);
+            playerData.chestArmor = SODataBase.chestArmors[Random.Range(0, SODataBase.armors.Count)];
+            playerData.legArmor = SODataBase.legArmors[Random.Range(0, SODataBase.armors.Count)];
         }
     }
 
