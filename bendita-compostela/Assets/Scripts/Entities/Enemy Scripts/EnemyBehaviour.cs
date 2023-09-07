@@ -62,6 +62,7 @@ public class EnemyBehaviour : EntityBehaviour
 
         var attackInstance = Instantiate(attackPrefab, mainCanvas);
         attackInstance.GetComponent<Card>().UseEnemyCard(target);
+        attackInstance.GetComponent<CardDisplay>().target = target.GetComponent<Entity>();
         yield return new WaitForSeconds(waitTime);
         //Destroy(attackInstance.gameObject);
     }
