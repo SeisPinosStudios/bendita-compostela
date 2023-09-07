@@ -28,6 +28,7 @@ public class Enemy : Entity
     {
         TurnManager.Instance.RemoveBehaviour(entityBehaviour);
         BattleManager.Instance.enemies.Remove(this);
+        ((EnemyBehaviour)entityBehaviour).Death();
         yield return new WaitForSeconds(1.0f);
         Destroy(gameObject);
         yield return null;

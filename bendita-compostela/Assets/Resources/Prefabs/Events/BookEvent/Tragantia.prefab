@@ -93,6 +93,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 8503661534059273221}
+  hoverSound:
+    audioClip: {fileID: 0}
+    volume: 0
 --- !u!114 &4964485050314405521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1169,6 +1172,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 8093159396988854739}
+  hoverSound:
+    audioClip: {fileID: 0}
+    volume: 0
 --- !u!114 &6844691906184765431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1391,7 +1397,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4370176967297649835
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1465,6 +1471,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 6475197592228597477}
+  hoverSound:
+    audioClip: {fileID: 0}
+    volume: 0
 --- !u!114 &6796433229777344658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1655,7 +1664,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4886095525687562975}
         m_TargetAssemblyTypeName: BookEventController, Assembly-CSharp
         m_MethodName: TurnPage
         m_Mode: 1
@@ -1716,3 +1725,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 4160985758243892789}
+  hoverSound:
+    audioClip: {fileID: 0}
+    volume: 0

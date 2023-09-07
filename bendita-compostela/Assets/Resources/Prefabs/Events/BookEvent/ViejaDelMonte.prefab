@@ -169,6 +169,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 7314755979525756254}
+  hoverSound:
+    audioClip: {fileID: 0}
+    volume: 0
 --- !u!114 &3534067890907469973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +219,18 @@ MonoBehaviour:
       - m_Target: {fileID: 7691007546776211883}
         m_TargetAssemblyTypeName: Vieja, Assembly-CSharp
         m_MethodName: Option3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7691007546776211883}
+        m_TargetAssemblyTypeName: BookEventController, Assembly-CSharp
+        m_MethodName: EndEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -318,6 +333,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 7216488389183821186}
+  hoverSound:
+    audioClip: {fileID: 0}
+    volume: 0
 --- !u!114 &4682146095221982246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,6 +383,18 @@ MonoBehaviour:
       - m_Target: {fileID: 7691007546776211883}
         m_TargetAssemblyTypeName: Vieja, Assembly-CSharp
         m_MethodName: Option2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7691007546776211883}
+        m_TargetAssemblyTypeName: BookEventController, Assembly-CSharp
+        m_MethodName: EndEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1196,6 +1226,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 5232180437521604609}
+  hoverSound:
+    audioClip: {fileID: 0}
+    volume: 0
 --- !u!1 &8094754866150957392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1576,6 +1609,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 4036763835244859640}
+  hoverSound:
+    audioClip: {fileID: 0}
+    volume: 0
 --- !u!114 &3006575426227839370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1623,6 +1659,18 @@ MonoBehaviour:
       - m_Target: {fileID: 7691007546776211883}
         m_TargetAssemblyTypeName: Vieja, Assembly-CSharp
         m_MethodName: Option1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7691007546776211883}
+        m_TargetAssemblyTypeName: BookEventController, Assembly-CSharp
+        m_MethodName: EndEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 [CreateAssetMenu(fileName = "New Player", menuName = "Bendita Compostela/Player Data")]
 public class PlayerData : EntityData
@@ -49,12 +50,13 @@ public class PlayerData : EntityData
             player.inventory.Add(card.Copy());
         }
 
-        player.chestArmor = chestArmor.Copy();
-        player.legArmor = legArmor.Copy();
+        player.chestArmor = chestArmor ? chestArmor.Copy() : null;
+        player.legArmor = legArmor ? legArmor.Copy() : null;
         player.HP = HP;
         player.currentHP = currentHP;
-        player.condecorations = condecorations;
-        player.poems = poems;
+        foreach (CondecorationData condecoration in condecorations) player.condecorations.Add(condecoration);
+        foreach (PoemData poem in poems) player.poems.Add(poem);
+        foreach (PoemData poem in poemInventory) player.poemInventory.Add(poem);
         player.poemInventory = poemInventory;
         player.poemSlots = poemSlots;
         player.coins = coins;
@@ -76,8 +78,8 @@ public class PlayerData : EntityData
         var armors = new List<CardData>();
 
         armors.AddRange(inventory.Where(card => card.GetType() == typeof(ArmorData)));
-        armors.Add(chestArmor);
-        armors.Add(legArmor);
+        if(chestArmor) armors.Add(chestArmor);
+        if(legArmor) armors.Add(legArmor);
 
         return armors;
     }
@@ -94,5 +96,25 @@ public class PlayerData : EntityData
     public void ChangeCurrentHP(int amount)
     {
         currentHP = Mathf.Clamp(currentHP + amount, 1, HP);
+    }
+    public void SetCurrentHP(int amount)
+    {
+        currentHP = amount;
+    }
+    public void ChangeMaxHP(int amount)
+    {
+        HP += amount;
+    }
+    public int GetDefense()
+    {
+        var defense = 0;
+        if (chestArmor) defense += chestArmor.defenseBonus;
+        if(legArmor) defense += legArmor.defenseBonus;
+        return defense;
+    }
+    public void AddCondecoration(CondecorationData condecoration)
+    {
+        condecorations.Add(condecoration);
+        Type.GetType(condecoration.type.ToString()).GetMethod("OnObtain").Invoke(null, null);
     }
 }

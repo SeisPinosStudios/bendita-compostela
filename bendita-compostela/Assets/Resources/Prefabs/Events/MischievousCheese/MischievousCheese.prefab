@@ -629,6 +629,8 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 31d0691072d46bf49aac718ab62d2ce1, type: 3}
     volume: 1
   eventPanel: {fileID: 2651772028212057988}
+  nextButton: {fileID: 6591725497981797480}
+  rewardWindow: {fileID: 7709127535245541900}
 --- !u!114 &271684511131049731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1754,6 +1756,11 @@ PrefabInstance:
 --- !u!224 &5221481278966565899 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 572834522712611815, guid: a2ac7c37c9f8c3048986c64fb866ef57, type: 3}
+  m_PrefabInstance: {fileID: 5730109768634865644}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7709127535245541900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2700227795594008032, guid: a2ac7c37c9f8c3048986c64fb866ef57, type: 3}
   m_PrefabInstance: {fileID: 5730109768634865644}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9097058344744785284

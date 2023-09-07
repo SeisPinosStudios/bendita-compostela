@@ -19,4 +19,11 @@ public class Boogey : BasicPassive
     {
         TurnManager.Instance.playerBehaviour.OnPlayerTurn -= Effect;
     }
+
+    #region Description
+    public static string GetDescription()
+    {
+        return $"Intimidación del Saco: cuando Matías se equipe un arma pasará a sufrir Desarmado <sprite=7> durante el resto del combate";
+    }
+    #endregion
 }

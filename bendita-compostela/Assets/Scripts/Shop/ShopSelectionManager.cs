@@ -12,6 +12,7 @@ public class ShopSelectionManager : MonoBehaviour
     [SerializeField] Transform cardShowcase; //Position where the selected card will be instantiated;
     [SerializeField] GameObject cardInstance; //When a card is selected, this variable references de instantiated card prefab in the showcase slot
     [field: SerializeField] public List<Transform> cardDisplayTransform { get; private set; }
+    [field: SerializeField] public List<Transform> poemDisplayTransform { get; private set; }
 
     private void Awake()
     {
@@ -37,9 +38,13 @@ public class ShopSelectionManager : MonoBehaviour
         foreach (Transform transform in cardDisplayTransform) 
             foreach (Transform child in transform) 
                 child.GetComponent<CardSelector>().Disable();
+
+        foreach (Transform child in poemDisplayTransform) child.GetComponent<PoemSelector>().Disable();
     }
     public void EnableInteraction()
     {
         foreach (Transform transform in cardDisplayTransform) foreach (Transform child in transform) child.GetComponent<CardSelector>().Enable();
+
+        foreach (Transform child in poemDisplayTransform) child.GetComponent<PoemSelector>().Enable();
     }
 }

@@ -7,7 +7,7 @@ public class WeaponData : CardData
 {
     [field: SerializeField, Header("Weapon Info")] public int weaponId { get; private set; }
     [field: SerializeField] public BaseWeapon.Weapons weaponClassName { get; private set; }
-    [field:SerializeField, Header("Weapon Attacks")] public List<WeaponAttackData> attacks { get; private set; }
+    [field:SerializeField, Header("Weapon Attacks")] public List<WeaponAttackData> attacks { get; private set; } = new List<WeaponAttackData>();
     [field:SerializeField] public WeaponAttackData ultimate { get; private set; }
     [field:SerializeField, Header("Weapon Improvements")] public int weaponLevel { get; private set; }
     [field:SerializeField] public int styleLevel { get; private set; }
@@ -27,6 +27,10 @@ public class WeaponData : CardData
         ultimateLevel += 1;
         if (ultimateLevel > 1) ultimate = ultimate.improvedAttack;
     }
+    public bool IsUlti(WeaponAttackData attack)
+    {
+        return ultimate.cardName == attack.cardName;
+    }
 
     public new WeaponData Copy()
     {
@@ -44,6 +48,7 @@ public class WeaponData : CardData
         card.printArrow = printArrow;
         card.weaponId = weaponId;
         card.weaponClassName = weaponClassName;
+        foreach(WeaponAttackData attack in attacks) card.attacks.Add(attack.Copy());
         card.attacks = attacks;
         card.ultimate = ultimate;
         card.weaponLevel = weaponLevel;

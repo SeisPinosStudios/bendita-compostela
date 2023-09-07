@@ -15,6 +15,12 @@ public class SynergyInfo : InfoText
 
     private void Awake()
     {
+        if (leg ? !GameManager.Instance.playerData.legArmor : !GameManager.Instance.playerData.chestArmor)
+        {
+            this.gameObject.SetActive(false);
+            return;
+        }
+
         armor = leg ? GameManager.Instance.playerData.legArmor : GameManager.Instance.playerData.chestArmor;
         var method = armor.armorType == 1 ? "GetLegDescription" : "GetChestDescription";
 
@@ -31,7 +37,6 @@ public class SynergyInfo : InfoText
         if (armor.weaponSynergy == BattleManager.Instance.player.weapon.weaponId) image.color = new Color(1, 1, 1);
         else image.color = new Color(0.5f, 0.5f, 0.5f);
     }
-
     public override IEnumerator OnPointerEnterCoroutine(PointerEventData eventData)
     {
         textBoxObject = Instantiate(textBoxPrefab, CanvasUtils.GetMainCanvas().transform);
@@ -52,7 +57,6 @@ public class SynergyInfo : InfoText
         textBoxObject.GetComponentInChildren<TextMeshProUGUI>().text = textToWrite;
         yield return null;
     }
-
     protected override void MoveTextToPointer(PointerEventData eventData)
     {
         var pointerEventData = new PointerEventData(EventSystem.current);
@@ -63,7 +67,6 @@ public class SynergyInfo : InfoText
                                                                 pointerEventData.position, CanvasUtils.GetMainCanvas().worldCamera, out pos);
         textBoxObject.transform.position = CanvasUtils.GetMainCanvas().transform.TransformPoint(pos);
     }
-
     private void OnDestroy()
     {
         EquipWeapon.OnEquipWeapon -= CheckSynergy;

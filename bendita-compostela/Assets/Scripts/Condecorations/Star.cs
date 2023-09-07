@@ -6,12 +6,22 @@ public class Star : MonoBehaviour
 {
     private void Awake()
     {
-        TurnManager.Instance.playerBehaviour.OnPlayerTurn += DisableCond;
+        TurnManager.Instance.playerBehaviour.OnPlayerTurn += EnableCond;
+        Damage.OnAttack2 += DisableCond;
+    }
+    private void DisableCond(GameObject target, GameObject user, CardData card)
+    {
+        if (user.GetComponent<Entity>() is not Player) return;
+        BattleManager.Instance.player.AttackMultiplier(-1.0f);
+    }
+    private void EnableCond()
+    {
         BattleManager.Instance.player.AttackMultiplier(1.0f);
     }
-    private void DisableCond()
+    private void OnDestroy()
     {
-        BattleManager.Instance.player.AttackMultiplier(-1.0f);
+        TurnManager.Instance.playerBehaviour.OnPlayerTurn -= EnableCond;
+        Damage.OnAttack2 -= DisableCond;
     }
     public static void OnObtain()
     {

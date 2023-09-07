@@ -9,9 +9,10 @@ public class Backpack : MonoBehaviour, IPointerClickHandler
     [field: SerializeField] public Transform equipment { get; private set; }
     [field: SerializeField] public bool isOpen { get; private set; } = false;
     bool isbackpackOpen = false;
-
+    [SerializeField] private Sound openBackpackSound;
     [SerializeField] private Animator backpackAnimator;
     [SerializeField] private Animator backpackHoverAnimator;
+
 
     public event Action OnFinish;
     private void OnEnable() {
@@ -26,6 +27,7 @@ public class Backpack : MonoBehaviour, IPointerClickHandler
         {
             backpackAnimator.SetBool("isOpen", !isbackpackOpen);
             backpackHoverAnimator.SetBool("isOpen", !isbackpackOpen);            
+            SoundManager.Instance.PlaySound(openBackpackSound);
             isOpen = true;
         }                
     }

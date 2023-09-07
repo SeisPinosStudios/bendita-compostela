@@ -23,6 +23,6 @@ MonoBehaviour:
   cardEffects: 0000000008000000
   cardEffectsValues:
   - 15
-  - null
+  - 
   printArrow: 1
   <improvedAttack>k__BackingField: {fileID: 0}

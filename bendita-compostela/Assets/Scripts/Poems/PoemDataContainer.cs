@@ -10,6 +10,12 @@ public class PoemDataContainer : MonoBehaviour
 
     private void Awake()
     {
+        
+    }
+
+    private IEnumerator Start()
+    {
+        yield return new WaitUntil(() => poemData);
         poemEffect = (PoemEffect)gameObject.AddComponent(Type.GetType(poemData.type.ToString()));
     }
 

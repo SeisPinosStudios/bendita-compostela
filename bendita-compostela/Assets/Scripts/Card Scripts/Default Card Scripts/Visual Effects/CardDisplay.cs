@@ -39,6 +39,11 @@ public class CardDisplay : MonoBehaviour
         }
 
         descriptionField.text = description.ToString();
+
+        if(SceneManager.GetActiveScene().name == "Battle")
+            costField.text = TurnManager.Instance.entityTurn.entity.entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Exhaust) 
+                                ? (cardData.cost + 1).ToString() : cardData.cost.ToString();
+        else costField.text = cardData.cost.ToString();
     }
     private string GetDescription(CardData.Effect effect)
     {

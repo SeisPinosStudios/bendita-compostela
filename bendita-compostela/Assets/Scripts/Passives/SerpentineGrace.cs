@@ -30,4 +30,11 @@ public class SerpentineGrace : BasicPassive
         GetComponent<EnemyBehaviour>().OnEnemyTurn -= PassiveEffect;
         TurnManager.Instance.playerBehaviour.OnPlayerTurn -= ResetPassive;
     }
+
+    #region Description
+    public static string GetDescription()
+    {
+        return "Gracia Serpentina: si Matías sufre Veneno <sprite=1>, la Tragantía atacrá dos veces seguidas";
+    }
+    #endregion
 }

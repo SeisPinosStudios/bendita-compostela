@@ -20,7 +20,7 @@ public class WeaponAttackData : CardData
         card.cardEffects = cardEffects;
         card.cardEffectsValues = cardEffectsValues;
         card.printArrow = printArrow;
-        card.improvedAttack = improvedAttack;
+        card.improvedAttack = improvedAttack ? improvedAttack.Copy() : null;
         card.name = name;
 
         return card;

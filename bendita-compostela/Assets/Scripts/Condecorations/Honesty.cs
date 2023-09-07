@@ -6,6 +6,6 @@ public class Honesty : MonoBehaviour
 {
     public static void OnObtain()
     {
-        GameManager.Instance.playerData.HP += 7;
+        GameManager.Instance.playerData.ChangeMaxHP(7);
     }
 }
