@@ -46,7 +46,7 @@ public class CinematicSound : MonoBehaviour
     }
     IEnumerator OtherSongs()
     {
-        for (int i = 0; i<=6; i++)
+        for (int i = 0; i<=5; i++)
         {
             songs[i].Play();
         }
@@ -58,6 +58,11 @@ public class CinematicSound : MonoBehaviour
 
     IEnumerator IncreaseVolume()
     {
+        if (currentIndex == 6)
+        {
+            songs[currentIndex].Play();
+            songs[currentIndex].Stop();
+        }
         for (float i = 0; i <= 4f; i += Time.deltaTime)
         {
             songs[currentIndex].volume = i / 4f;

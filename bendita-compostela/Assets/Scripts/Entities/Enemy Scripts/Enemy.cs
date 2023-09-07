@@ -6,7 +6,7 @@ using System;
 public class Enemy : Entity
 {
     [SerializeField, Header("Enemy Section")] EnemyData enemyData;
-    public event Action OnDeath;
+    public event Action OnDeath = delegate { };
 
     private void Awake()
     {
