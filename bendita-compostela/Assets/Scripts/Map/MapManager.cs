@@ -130,7 +130,7 @@ public class MapManager : MonoBehaviour
         DisplayMap();
         foreach (Node node in currentProgression)
         {
-            nodeGameObjects[node.NodePos].GetComponent<NodeEvent>().isCompleted = true;
+            nodeGameObjects[node.NodePos].GetComponent<NodeEvent>().NodeIsCompleted();
         }
         EneableNextAvailableNodes(currentProgression[currentProgression.Count-1]);
     }
@@ -143,7 +143,7 @@ public class MapManager : MonoBehaviour
         nodesVisited.Add(nodeSelected);
         GameManager.Instance.AddVisitedNode(nodeSelected);
         DisableNotSelectedNodes(nodeSelected);
-        EneableNextAvailableNodes(nodeSelected);
+        //EneableNextAvailableNodes(nodeSelected);
     }
     #endregion
 
@@ -201,7 +201,7 @@ public class MapManager : MonoBehaviour
         }
     }
     
-    private void EneableNextAvailableNodes(Node nodeSelected)
+    public void EneableNextAvailableNodes(Node nodeSelected)
     {
         foreach (Node node in nodeSelected.futureNodes)
         {

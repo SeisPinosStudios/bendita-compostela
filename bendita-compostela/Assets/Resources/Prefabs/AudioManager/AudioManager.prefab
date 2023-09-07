@@ -32,7 +32,7 @@ Transform:
   - {fileID: 732670573311789802}
   - {fileID: 5640895561863049456}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9101348324742837128
 MonoBehaviour:
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 2711167112642587079}
   effectsSource: {fileID: 4777036919552628888}
+  generalVolume: 1
 --- !u!1 &7716490973684186346
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +223,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3166841146492972988}
   - component: {fileID: 5036430848425312894}
   - component: {fileID: 363967915716627882}
+  - component: {fileID: 5852184800740848998}
   m_Layer: 0
   m_Name: BossEvent
   m_TagString: Untagged
@@ -198,6 +199,23 @@ MonoBehaviour:
   buttonClickSound:
     audioClip: {fileID: 8300000, guid: 32c43137650c3ea478ceb9993b2f1149, type: 3}
     volume: 1
+--- !u!114 &5852184800740848998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7206804280604247690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2503d226469f89d4d87a3efbea78fabb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageComponent: {fileID: 0}
+  rendererComponent: {fileID: 5983822783838237384}
+  isFading: 0
+  loopFade: 0
+  loopFadeSpeed: 0.5
 --- !u!1 &8076515701483482807
 GameObject:
   m_ObjectHideFlags: 0

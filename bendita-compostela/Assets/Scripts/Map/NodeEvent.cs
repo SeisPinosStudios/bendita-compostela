@@ -19,7 +19,7 @@ public class NodeEvent : MonoBehaviour
     {
         sprRenderer.color = new Color(1,1,1,1);
         nodeCollider.enabled = true;
-        GetComponent<FadeUtils>().StartLoopFade();        
+        GetComponent<FadeUtils>()?.StartLoopFade();        
     }
     public void NodeIsCompleted()
     {

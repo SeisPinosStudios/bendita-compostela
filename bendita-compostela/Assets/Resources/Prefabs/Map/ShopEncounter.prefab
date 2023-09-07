@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2006538831028890191}
   - component: {fileID: 217193823115468287}
   - component: {fileID: 2789501693305130190}
+  - component: {fileID: 3607039479109574997}
   m_Layer: 0
   m_Name: ShopEncounter
   m_TagString: Untagged
@@ -198,6 +199,23 @@ MonoBehaviour:
   buttonClickSound:
     audioClip: {fileID: 8300000, guid: 32c43137650c3ea478ceb9993b2f1149, type: 3}
     volume: 1
+--- !u!114 &3607039479109574997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2272757743687770519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2503d226469f89d4d87a3efbea78fabb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageComponent: {fileID: 0}
+  rendererComponent: {fileID: 6146077815825779250}
+  isFading: 0
+  loopFade: 0
+  loopFadeSpeed: 0.5
 --- !u!1 &6923957907816469343
 GameObject:
   m_ObjectHideFlags: 0
