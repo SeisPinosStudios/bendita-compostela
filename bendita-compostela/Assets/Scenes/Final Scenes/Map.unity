@@ -1852,7 +1852,7 @@ MonoBehaviour:
   <equipment>k__BackingField: {fileID: 0}
   <isOpen>k__BackingField: 0
   openBackpackSound:
-    audioClip: {fileID: 8300000, guid: e6a3ec7707a4eb74e913104068d3c5f7, type: 3}
+    audioClip: {fileID: 8300000, guid: 0a2601f4672c3d84f8cc02e6fa5c01cb, type: 3}
     volume: 1
   backpackAnimator: {fileID: 1602003314}
   backpackHoverAnimator: {fileID: 1041534062}

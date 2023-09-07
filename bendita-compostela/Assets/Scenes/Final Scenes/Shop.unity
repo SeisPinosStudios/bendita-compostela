@@ -6357,7 +6357,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -99
-  m_Sprite: {fileID: 21300000, guid: 2df5808ed92ba534994cf13d5f441ea5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08ef74f8b0319544caac11b2f1061c8c, type: 3}
   m_Color: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8147,6 +8147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 798664680}
   effectsSource: {fileID: 811414315}
+  generalVolume: 1
 --- !u!4 &1526268072
 Transform:
   m_ObjectHideFlags: 0
