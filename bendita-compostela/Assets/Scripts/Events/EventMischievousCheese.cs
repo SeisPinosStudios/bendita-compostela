@@ -47,6 +47,7 @@ public class EventMischievousCheese : MonoBehaviour
             nextButton.SetActive(true);
             nextButton.GetComponent<Button>().onClick.AddListener(()=>rewardWindow.SetActive(true));
             nextButton.GetComponent<Button>().onClick.AddListener(()=>rewardWindow.GetComponent<EventRewardDisplay>().SetTextReward("Obtuviste carta Queso \nRecuperas un 20% de la vida"));
+            GameManager.Instance.playerData.ChangeCurrentHP(Mathf.RoundToInt(GameManager.Instance.playerData.HP * 0.2f));
         }                
         else
         {

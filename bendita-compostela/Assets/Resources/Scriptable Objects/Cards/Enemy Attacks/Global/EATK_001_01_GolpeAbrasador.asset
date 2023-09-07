@@ -13,13 +13,16 @@ MonoBehaviour:
   m_Name: EATK_001_01_GolpeAbrasador
   m_EditorClassIdentifier: 
   cardName: Golpe Abrasador
+  <cardId>k__BackingField: 0
   description: 
   cost: 0
   price: 0
   art: {fileID: 430914307, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
   miniArt: {fileID: 0}
   <attack>k__BackingField: 0
-  cardEffects: 
-  cardEffectsValues: []
+  cardEffects: 0000000006000000
+  cardEffectsValues:
+  - 4
+  - Burn|4
   printArrow: 0
   <attackType>k__BackingField: 0

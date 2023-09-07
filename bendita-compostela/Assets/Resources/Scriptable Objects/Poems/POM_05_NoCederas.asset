@@ -15,6 +15,7 @@ MonoBehaviour:
   <poemName>k__BackingField: "No Ceder\xE1s"
   <description>k__BackingField: "Los enemigos har\xE1n 25% menos de da\xF1o durante
     el resto del combate."
+  <price>k__BackingField: 10
   <sprite>k__BackingField: {fileID: 21300000, guid: 85544a80d0f2bd340bead2c6a1676f26, type: 3}
   <closedSprite>k__BackingField: {fileID: 21300000, guid: 61244b6f73d54b8498d181d232498fee, type: 3}
   <id>k__BackingField: 4

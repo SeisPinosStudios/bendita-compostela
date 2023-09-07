@@ -19,4 +19,11 @@ public class CrossFaith : BasicPassive
     {
         Damage.OnAttack2 -= PassiveEffect;
     }
+
+    #region Description
+    public static string GetDescription()
+    {
+        return $"Bajo la Fé de la Cruz: 50% de probabilidad de recuperar el 50% del daño de un ataque";
+    }
+    #endregion
 }

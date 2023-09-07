@@ -23,6 +23,6 @@ MonoBehaviour:
   cardEffects: 0600000008000000
   cardEffectsValues:
   - Vulnerable|1
-  - null
+  - 
   printArrow: 1
   <improvedAttack>k__BackingField: {fileID: 11400000, guid: 2de6ecf69eca1cc4da45afc69b786a47, type: 2}

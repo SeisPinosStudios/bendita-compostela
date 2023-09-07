@@ -28,4 +28,11 @@ public class MassiveBlessing : BasicPassive
         TurnManager.Instance.OnTurn -= CheckHealth;
         Heal.OnHeal -= PassiveEffect;
     }
+
+    #region Description
+    public static string GetDescription()
+    {
+        return "Bendición Masiva: mientras la Tarasca esté por encima del 50% de la vida, las curaciones que use se aplicarán a todos los enemigos";
+    }
+    #endregion
 }

@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 5533193508947214870}
   - component: {fileID: 6328802127182671607}
   - component: {fileID: 8294955852070494305}
+  - component: {fileID: 111095170976868075}
   m_Layer: 0
   m_Name: UpgradeButton
   m_TagString: Untagged
@@ -142,3 +143,22 @@ MonoBehaviour:
   <highlighImage>k__BackingField: {fileID: 0}
   <interactionEnabled>k__BackingField: 0
   <cost>k__BackingField: 0
+--- !u!114 &111095170976868075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749673362462207473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dfd5ace3fc6bb746aae5785b9157e7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <textBoxPrefab>k__BackingField: {fileID: 6216814944079965107, guid: 5b65f629a7b302745bc6cf1c9d85a22a, type: 3}
+  <textObject>k__BackingField: {fileID: 0}
+  <textToWrite>k__BackingField: 
+  <textBoxObject>k__BackingField: {fileID: 0}
+  <highlight>k__BackingField: {fileID: 0}
+  <progress>k__BackingField: 0
+  <progressBar>k__BackingField: {fileID: 0}

@@ -28,4 +28,11 @@ public class ExpressDefense : BasicPassive
     {
         GetComponent<Enemy>().OnDamage -= PassiveEffect;
     }
+
+    #region Description
+    public static string GetDescription()
+    {
+        return $"Defensa Express: al recibir 4 ataques aumenta su defensa en 3 puntos";
+    }
+    #endregion
 }

@@ -449,11 +449,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c710b4c3ccc93844f81fa3780244689f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDataPreset: {fileID: 11400000, guid: da62d6f5470ff384badd9e6fe8c4fee4, type: 2}
+  playerDataPreset: {fileID: 11400000, guid: b42919c634245b340866b1d772e44b7f, type: 2}
   <playerData>k__BackingField: {fileID: 0}
   <combatData>k__BackingField: {fileID: 0}
   <visitedNodes>k__BackingField: []
-  <debug>k__BackingField: 1
+  <debug>k__BackingField: 0
 --- !u!4 &309286968
 Transform:
   m_ObjectHideFlags: 0
@@ -2294,7 +2294,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 64, y: 64}
-  m_Spacing: {x: 32, y: 0}
+  m_Spacing: {x: 64, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 4
 --- !u!1 &1808223644
@@ -2339,6 +2339,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 360399141}
     m_Modifications:
+    - target: {fileID: 3119397722721505625, guid: 0a011616d1de7d24bbbf94aebf6ad49c, type: 3}
+      propertyPath: m_text
+      value: 30/30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3119397722721505625, guid: 0a011616d1de7d24bbbf94aebf6ad49c, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3119397722721505625, guid: 0a011616d1de7d24bbbf94aebf6ad49c, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4842203151689066357, guid: 0a011616d1de7d24bbbf94aebf6ad49c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

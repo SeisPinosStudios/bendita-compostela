@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System;
 using System.Text;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class WinScreenManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class WinScreenManager : MonoBehaviour
     [field: SerializeField] public Toggle deckToggle { get; private set; }
     [field: SerializeField] public static float condecorationChance { get; private set; } = 5.0f;
     [field: SerializeField] public TextMeshProUGUI otherRewards { get; private set; }
+    public AsyncOperation sceneLoad;
     public void Awake()
     {
         Instance = this;
@@ -26,8 +28,8 @@ public class WinScreenManager : MonoBehaviour
         }
 
         GenerateExtraRewards();
-
-        GameManager.Instance.playerData.currentHP = BattleManager.Instance.player.currentHP;
+        GameManager.Instance.playerData.SetCurrentHP(BattleManager.Instance.player.currentHP);
+        StartCoroutine(LoadMapCoroutine());
     }
 
     private List<CardData> GenerateRewards()
@@ -60,9 +62,18 @@ public class WinScreenManager : MonoBehaviour
         }
 
         if (obtainedCond) text.Append($"{condecoration.name}:{condecoration.description}");
+
+        otherRewards.text = text.ToString();
     }
     private void CardChosen()
     {
         gameObject.SetActive(false);
+    }
+
+    private IEnumerator LoadMapCoroutine()
+    {
+        sceneLoad = SceneManager.LoadSceneAsync("Map");
+        sceneLoad.allowSceneActivation = false;
+        yield return null;
     }
 }
