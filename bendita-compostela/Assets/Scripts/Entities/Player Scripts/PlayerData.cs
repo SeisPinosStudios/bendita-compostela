@@ -78,8 +78,8 @@ public class PlayerData : EntityData
         var armors = new List<CardData>();
 
         armors.AddRange(inventory.Where(card => card.GetType() == typeof(ArmorData)));
-        armors.Add(chestArmor);
-        armors.Add(legArmor);
+        if(chestArmor) armors.Add(chestArmor);
+        if(legArmor) armors.Add(legArmor);
 
         return armors;
     }
@@ -104,6 +104,13 @@ public class PlayerData : EntityData
     public void ChangeMaxHP(int amount)
     {
         HP += amount;
+    }
+    public int GetDefense()
+    {
+        var defense = 0;
+        if (chestArmor) defense += chestArmor.defenseBonus;
+        if(legArmor) defense += legArmor.defenseBonus;
+        return defense;
     }
     public void AddCondecoration(CondecorationData condecoration)
     {

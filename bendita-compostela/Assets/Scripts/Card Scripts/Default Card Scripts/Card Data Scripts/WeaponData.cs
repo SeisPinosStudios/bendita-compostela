@@ -7,7 +7,7 @@ public class WeaponData : CardData
 {
     [field: SerializeField, Header("Weapon Info")] public int weaponId { get; private set; }
     [field: SerializeField] public BaseWeapon.Weapons weaponClassName { get; private set; }
-    [field:SerializeField, Header("Weapon Attacks")] public List<WeaponAttackData> attacks { get; private set; }
+    [field:SerializeField, Header("Weapon Attacks")] public List<WeaponAttackData> attacks { get; private set; } = new List<WeaponAttackData>();
     [field:SerializeField] public WeaponAttackData ultimate { get; private set; }
     [field:SerializeField, Header("Weapon Improvements")] public int weaponLevel { get; private set; }
     [field:SerializeField] public int styleLevel { get; private set; }
