@@ -34,8 +34,8 @@ public class GameManager : MonoBehaviour
         {
             playerData.deck.Add(SODataBase.weapons[Random.Range(0, SODataBase.weapons.Count)]);
             for(int i = 0; i < 6; i++) playerData.deck.Add(SODataBase.objects[Random.Range(0, SODataBase.objects.Count)]);
-            playerData.chestArmor = SODataBase.chestArmors[Random.Range(0, SODataBase.armors.Count)].Copy();
-            playerData.legArmor = SODataBase.legArmors[Random.Range(0, SODataBase.armors.Count)].Copy();
+            playerData.chestArmor = SODataBase.chestArmors[Random.Range(0, SODataBase.chestArmors.Count)].Copy();
+            playerData.legArmor = SODataBase.legArmors[Random.Range(0, SODataBase.legArmors.Count)].Copy();
         }
     }
 

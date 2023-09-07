@@ -17,5 +17,5 @@ public class SODataBase : MonoBehaviour
         Resources.LoadAll<ArmorData>("Scriptable Objects/Cards/Armors").Where(armor => armor.armorType == 0).ToList();
 
     [field: SerializeField] public static List<ArmorData> legArmors { get; private set; } =
-    Resources.LoadAll<ArmorData>("Scriptable Objects/Cards/Armors").Where(armor => armor.armorType == 1).ToList();
+        Resources.LoadAll<ArmorData>("Scriptable Objects/Cards/Armors").Where(armor => armor.armorType == 1).ToList();
 }
