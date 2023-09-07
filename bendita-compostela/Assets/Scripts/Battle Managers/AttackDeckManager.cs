@@ -59,7 +59,11 @@ public class AttackDeckManager : MonoBehaviour
 
     private void FetchAttacks()
     {
-        Debug.Log($"Fetching Attacks");
+        StartCoroutine(FetchAttacksCoroutine());
+    }
+    private IEnumerator FetchAttacksCoroutine()
+    {
+        yield return new WaitUntil(() => BattleManager.Instance.player.weapon);
         weaponAttacks = new List<WeaponAttackData>();
         foreach (WeaponAttackData attack in BattleManager.Instance.player.weapon.attacks) weaponAttacks.Add(attack.Copy());
         if (BattleManager.Instance.player.weapon.ultimateLevel > 0) weaponAttacks.Add(BattleManager.Instance.player.weapon.ultimate);
