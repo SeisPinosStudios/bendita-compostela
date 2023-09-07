@@ -249,6 +249,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &348798365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 348798367}
+  - component: {fileID: 348798366}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &348798366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348798365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c710b4c3ccc93844f81fa3780244689f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDataPreset: {fileID: 11400000, guid: b42919c634245b340866b1d772e44b7f, type: 2}
+  <playerData>k__BackingField: {fileID: 0}
+  <combatData>k__BackingField: {fileID: 0}
+  <visitedNodes>k__BackingField: []
+  <debug>k__BackingField: 0
+--- !u!4 &348798367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348798365}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.7009811, y: 1.2941272, z: -10.017917}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &384709468
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SettingsCanvas: {fileID: 0}
   mainMenuMusic:
+    <soundName>k__BackingField: 
     audioClip: {fileID: 8300000, guid: 3b6134f54f56a8240a6701b4cd474049, type: 3}
     volume: 0.7
 --- !u!1 &397311920
@@ -389,6 +439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 1315510549}
   hoverSound:
+    <soundName>k__BackingField: 
     audioClip: {fileID: 8300000, guid: df564403b5e65914cbdf5e6252dde7f3, type: 3}
     volume: 0.5
 --- !u!1 &409106232
@@ -893,6 +944,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 1322993228}
   hoverSound:
+    <soundName>k__BackingField: 
     audioClip: {fileID: 8300000, guid: df564403b5e65914cbdf5e6252dde7f3, type: 3}
     volume: 0.5
 --- !u!1 &755805013
@@ -1112,6 +1164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 428642066}
   hoverSound:
+    <soundName>k__BackingField: 
     audioClip: {fileID: 8300000, guid: df564403b5e65914cbdf5e6252dde7f3, type: 3}
     volume: 0.5
 --- !u!1 &978287761
@@ -1305,6 +1358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 616751659}
   hoverSound:
+    <soundName>k__BackingField: 
     audioClip: {fileID: 8300000, guid: df564403b5e65914cbdf5e6252dde7f3, type: 3}
     volume: 0.5
 --- !u!1 &1315510547

@@ -36,6 +36,7 @@ public class DeckManager : MonoBehaviour
     }
     public IEnumerator DrawCardCoroutine(int amount)
     {
+        var delay = 1.0f / cardsToDraw;
         yield return new WaitUntil(() => deckQueue != null && deckQueue.Count > 0);
         for (int i = 0; i < amount; i++)
         {
@@ -43,7 +44,7 @@ public class DeckManager : MonoBehaviour
             card.cardData = deckQueue.Dequeue();
             Instantiate(card, hand);
             SoundManager.Instance.PlaySound(drawCardSoundEffect);
-            yield return new WaitForSeconds(delaySeconds);
+            yield return new WaitForSeconds(delay);
             if (deckQueue.Count <= 0) break;
 
             

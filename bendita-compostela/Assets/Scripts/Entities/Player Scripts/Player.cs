@@ -14,8 +14,15 @@ public class Player : Entity
     
     private void Awake()
     {
-        entityData = entityDataContainer.entityData;
-        playerData = (PlayerData)entityDataContainer.entityData;        
+        
+    }
+
+    public IEnumerator Start()
+    {
+        yield return new WaitUntil(() => GameManager.Instance.playerData);
+        entityDataContainer.entityData = GameManager.Instance.playerData;
+        entityData = GameManager.Instance.playerData;
+        playerData = GameManager.Instance.playerData;
         entityDisplay.entityAnimator.runtimeAnimatorController = playerData.playerAnimator;
         EntitySetup();
     }
