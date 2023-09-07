@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 
 public class EntityEffectsManager : MonoBehaviour
 {
@@ -37,7 +38,7 @@ public class EntityEffectsManager : MonoBehaviour
         if (resistances.Contains(effect)) return;
         alteredEffects[effect] = Mathf.Clamp(alteredEffects[effect] + value, 0, alteredEffectsLimit[effect]);
         OnEffectApplied(effect, value);
-        entityDisplay.DisplayEffectAnimation(effect);
+        
         UpdateEffects();
     }
     public void RemoveEffect(TAlteredEffects.AlteredEffects effect, int value)
@@ -86,6 +87,7 @@ public class EntityEffectsManager : MonoBehaviour
         if (Suffering(TAlteredEffects.AlteredEffects.Poison))
         {
             Effect(TAlteredEffects.AlteredEffects.Poison);
+            BattleManager.Instance.soundList.PlaySound("Poison");
             entityDisplay.Poison();
         }
             
@@ -106,6 +108,7 @@ public class EntityEffectsManager : MonoBehaviour
         if (Suffering(TAlteredEffects.AlteredEffects.Burn))
         {
             Effect(TAlteredEffects.AlteredEffects.Burn);
+            BattleManager.Instance.soundList.PlaySound("Burn");
             entityDisplay.Burn();
         }
             

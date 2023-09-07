@@ -52,7 +52,7 @@ public class AttackDeckManager : MonoBehaviour
             Instantiate(cardPrefab, hand);
 
             if (weapon.IsUlti(attack)) weaponAttacks.Remove(attack);
-
+            BattleManager.Instance.soundList.PlaySound("Draw");
             yield return new WaitForSeconds(drawCardDelay);
         }
     }

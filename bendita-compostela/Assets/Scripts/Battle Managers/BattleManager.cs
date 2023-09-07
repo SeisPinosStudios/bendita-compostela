@@ -17,7 +17,7 @@ public class BattleManager : MonoBehaviour
     [field: SerializeField] public Transform enemyAreaEnd { get; private set; }
     [field: SerializeField] public List<GameObject> endScreens { get; private set; }
 
-    [SerializeField] private AudioClip battleMusic;
+    [field: SerializeField] public SoundList soundList { get; private set; }
 
     [field: SerializeField] public GameObject blockingImage { get; private set; }
     /*====EVENTS====*/
@@ -28,6 +28,8 @@ public class BattleManager : MonoBehaviour
     {
         Instance = this;
 
+        soundList.PlayMusic("Combat");
+
         combatData = GameManager.Instance.combatData;
 
         GenerateEnemies();
@@ -35,7 +37,8 @@ public class BattleManager : MonoBehaviour
         foreach (Transform child in enemiesContainer) enemies.Add(child.GetComponent<Enemy>());
         foreach (Enemy enemy in enemies) enemy.OnDeath += CheckGameEnd;
         player.OnDeath += CheckGameEnd;
-        SoundManager.Instance.PlayMusic(battleMusic);
+
+        
     }
     private void GenerateEnemies()
     {

@@ -493,6 +493,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2029607818323186925, guid: 951f94460e9000e45be263871906e18f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2029607818323186925, guid: 951f94460e9000e45be263871906e18f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2029607818323186925, guid: 951f94460e9000e45be263871906e18f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2029607818323186925, guid: 951f94460e9000e45be263871906e18f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -540,9 +552,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2494372879515661093, guid: 951f94460e9000e45be263871906e18f, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1669704332}
+    - target: {fileID: 2494372879515661093, guid: 951f94460e9000e45be263871906e18f, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2494372879515661093, guid: 951f94460e9000e45be263871906e18f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3253366832197171319, guid: 951f94460e9000e45be263871906e18f, type: 3}
       propertyPath: m_Name
       value: SettingsCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6404758311787794396, guid: 951f94460e9000e45be263871906e18f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 22.000004
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1292,6 +1320,7 @@ Transform:
   m_Children:
   - {fileID: 1426783889}
   - {fileID: 1669704333}
+  - {fileID: 1426122483}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1813,6 +1842,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1081427074}
   - component: {fileID: 1081427075}
+  - component: {fileID: 1081427076}
   m_Layer: 0
   m_Name: BattleManager
   m_TagString: Untagged
@@ -1857,8 +1887,61 @@ MonoBehaviour:
   <endScreens>k__BackingField:
   - {fileID: 1555979985}
   - {fileID: 2053653264}
-  battleMusic: {fileID: 8300000, guid: 3eaf4382a788b7047bd6c5ed37c79c44, type: 3}
+  <soundList>k__BackingField: {fileID: 1081427076}
   <blockingImage>k__BackingField: {fileID: 2123136042}
+--- !u!114 &1081427076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081427073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04fa35afe57a3bc45aa4012bb3ff84ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicList:
+  - <soundName>k__BackingField: Combat
+    audioClip: {fileID: 8300000, guid: 3eaf4382a788b7047bd6c5ed37c79c44, type: 3}
+    volume: 1
+  vfxSoundsList:
+  - <soundName>k__BackingField: Poison
+    audioClip: {fileID: 8300000, guid: 1e5e2fd0156e6e244b40e47b8a5e1d0f, type: 3}
+    volume: 1
+  - <soundName>k__BackingField: Burn
+    audioClip: {fileID: 8300000, guid: 6f1a383bd543ef94193b99437aa50f12, type: 3}
+    volume: 1
+  - <soundName>k__BackingField: Vulnerable
+    audioClip: {fileID: 8300000, guid: 81c82e33a782c0048b2afdb4083769e9, type: 3}
+    volume: 0
+  - <soundName>k__BackingField: Heal
+    audioClip: {fileID: 8300000, guid: d21a4dd72b54eb94398f8eb856e817e8, type: 3}
+    volume: 1
+  - <soundName>k__BackingField: Slash
+    audioClip: {fileID: 8300000, guid: 7b602dbb8ac3c714ca030831e01e34a2, type: 3}
+    volume: 1
+  - <soundName>k__BackingField: Sword
+    audioClip: {fileID: 8300000, guid: 757f6e31402b3f8458a8c8b13546f1be, type: 3}
+    volume: 1
+  - <soundName>k__BackingField: Bow
+    audioClip: {fileID: 8300000, guid: 559dcce5a68c61b49a504b22a363ff3b, type: 3}
+    volume: 1
+  - <soundName>k__BackingField: Hammer
+    audioClip: {fileID: 8300000, guid: 987efa66261a6804d9e65899ac65ee04, type: 3}
+    volume: 1
+  - <soundName>k__BackingField: Staff
+    audioClip: {fileID: 8300000, guid: 3ff315c1ef3046541a704e6b07764a59, type: 3}
+    volume: 1
+  - <soundName>k__BackingField: Spear
+    audioClip: {fileID: 8300000, guid: bad5ac5c241bf784e995995373c0b463, type: 3}
+    volume: 1
+  - <soundName>k__BackingField: Dagger
+    audioClip: {fileID: 8300000, guid: 6ecee3b9afabbc2499c24ad2f2a071ad, type: 3}
+    volume: 1
+  - <soundName>k__BackingField: Draw
+    audioClip: {fileID: 8300000, guid: 58044b4d41b3de246943a96743ace02e, type: 3}
+    volume: 1
 --- !u!1 &1108733629
 GameObject:
   m_ObjectHideFlags: 0
@@ -2592,6 +2675,37 @@ Transform:
   - {fileID: 90586656}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1426122482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1426122483}
+  m_Layer: 0
+  m_Name: Sounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1426122483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426122482}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 850143497}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1426783888
 GameObject:

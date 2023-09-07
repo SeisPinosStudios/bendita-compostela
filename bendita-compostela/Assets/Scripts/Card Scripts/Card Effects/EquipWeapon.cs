@@ -29,6 +29,7 @@ public class EquipWeapon : BasicCardEffect
         player.GetComponent<EntityDisplay>().SetWeaponDisplay(weapon.weaponId);
         OnEquipWeapon();
         user.AddComponent(Type.GetType(weapon.weaponClassName.ToString()));
+        BattleManager.Instance.soundList.PlaySound(weapon.weaponClassName.ToString());
     }
 
     public static string GetDescription(CardData card, Entity user, Entity target)
