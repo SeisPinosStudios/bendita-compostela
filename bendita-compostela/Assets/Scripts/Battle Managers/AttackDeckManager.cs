@@ -18,8 +18,8 @@ public class AttackDeckManager : MonoBehaviour
 
     private void Awake()
     {
-        if (!Instance) Instance = this;
-        EquipWeapon.OnEquipWeapon += () => StartCoroutine(FetchAttacks());
+        Instance = this;
+        EquipWeapon.OnEquipWeapon += FetchAttacks;
     }
 
     public void DrawFreeAttack(int amount)
@@ -57,9 +57,8 @@ public class AttackDeckManager : MonoBehaviour
         }
     }
 
-    private IEnumerator FetchAttacks()
+    private void FetchAttacks()
     {
-        yield return new WaitUntil(() => BattleManager.Instance.player.weapon);
         Debug.Log($"Fetching Attacks");
         weaponAttacks = new List<WeaponAttackData>();
         foreach (WeaponAttackData attack in BattleManager.Instance.player.weapon.attacks) weaponAttacks.Add(attack.Copy());
@@ -73,6 +72,6 @@ public class AttackDeckManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        EquipWeapon.OnEquipWeapon -= () => StartCoroutine(FetchAttacks());
+        EquipWeapon.OnEquipWeapon -= FetchAttacks;
     }
 }
