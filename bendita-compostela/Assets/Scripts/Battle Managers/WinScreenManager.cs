@@ -57,8 +57,7 @@ public class WinScreenManager : MonoBehaviour
         var condecoration = SODataBase.obtainableCondecorations[UnityEngine.Random.Range(0, SODataBase.obtainableCondecorations.Count)];
         if (obtainedCond)
         {
-            GameManager.Instance.playerData.condecorations.Add(condecoration);
-            Type.GetType(condecoration.type.ToString()).GetMethod("OnObtain").Invoke(null, null);
+            GameManager.Instance.playerData.AddCondecoration(condecoration);
         }
 
         if (obtainedCond) text.Append($"{condecoration.name}:{condecoration.description}");

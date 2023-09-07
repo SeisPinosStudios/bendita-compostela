@@ -11,7 +11,8 @@ public class FadeUtils : MonoBehaviour
 
     public event Action OnFadeComplete;    
     public void FadeIn(float fadeDuration)
-    {        
+    {
+        if (!imageComponent.gameObject.activeSelf) imageComponent.gameObject.SetActive(true);
         if (!isFading)
         {
             StartCoroutine(FadeToAlpha(1.0f, () => {                
@@ -22,7 +23,8 @@ public class FadeUtils : MonoBehaviour
         }
     }
     public void FadeOut(float fadeDuration)
-    {        
+    {
+        if (!imageComponent.gameObject.activeSelf) imageComponent.gameObject.SetActive(true);
         if (!isFading)
         {
             StartCoroutine(FadeToAlpha(0.0f, () => {
@@ -79,7 +81,9 @@ public class FadeUtils : MonoBehaviour
 
         imageComponent.color = targetColor;
         isFading = false;
-        
+
+        if(targetAlpha <= 0f) imageComponent.gameObject.SetActive(false);
+
         if (onComplete != null)
             onComplete.Invoke();
     }

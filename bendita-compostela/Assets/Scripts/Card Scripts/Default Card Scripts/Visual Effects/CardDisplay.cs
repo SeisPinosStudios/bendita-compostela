@@ -13,7 +13,7 @@ public class CardDisplay : MonoBehaviour
     [SerializeField] Image art;
     public bool dragging;
 
-    Entity target;
+    [field: SerializeField] public Entity target;
     int finalDamage;
     StringBuilder descriptionBuilder;
 
@@ -57,10 +57,10 @@ public class CardDisplay : MonoBehaviour
     
     private void Update()
     {
+        BuildDescription();
+
         if (dragging && RaycastUtils.Raycast2D() && RaycastUtils.Raycast2D().GetComponent<Enemy>()) 
             target = RaycastUtils.Raycast2D().GetComponent<Enemy>();
         else target = null;
-
-        BuildDescription();
     }
 }

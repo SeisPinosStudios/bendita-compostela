@@ -22,6 +22,10 @@ public class DeckManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         var deck = ListUtils.Shuffle(BattleManager.Instance.player.playerData.deck);
+        while (!WeaponOnTop(deck))
+        {
+            deck = ListUtils.Shuffle(BattleManager.Instance.player.playerData.deck);
+        }
         foreach(CardData card in deck) deckQueue.Enqueue(card);
     }
 
@@ -63,6 +67,11 @@ public class DeckManager : MonoBehaviour
     public void AddCardToDeck(CardData card)
     {
         deckQueue.Enqueue(card);
+    }
+    public bool WeaponOnTop(List<CardData> deck)
+    {
+        for (int i = 0; i < 5; i++) if (deck[i] is WeaponData) return true;
+        return false;
     }
     #endregion
 

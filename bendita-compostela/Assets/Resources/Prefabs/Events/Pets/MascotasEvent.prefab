@@ -408,6 +408,9 @@ MonoBehaviour:
   catsMusic:
     audioClip: {fileID: 8300000, guid: b57e68c7701651e46af67ed5e85cd37f, type: 3}
     volume: 0.127
+  <condecorationReward>k__BackingField:
+  - {fileID: 11400000, guid: 1fe407e0c768b6b49b2322c30daa955e, type: 2}
+  - {fileID: 11400000, guid: 02d03d52b407a63439dc52f8408202ee, type: 2}
 --- !u!1 &5388120620489143982
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,7 +754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1584538361555523634
 RectTransform:
   m_ObjectHideFlags: 0
@@ -822,7 +825,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2503d226469f89d4d87a3efbea78fabb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 1
   imageComponent: {fileID: 4019670668545553265}
   isFading: 0
 --- !u!1 &7452799540789060891
@@ -1251,6 +1253,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SettingsCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3253366832197171319, guid: 951f94460e9000e45be263871906e18f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1283,19 +1289,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 572834522712611815, guid: a2ac7c37c9f8c3048986c64fb866ef57, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 572834522712611815, guid: a2ac7c37c9f8c3048986c64fb866ef57, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 572834522712611815, guid: a2ac7c37c9f8c3048986c64fb866ef57, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 572834522712611815, guid: a2ac7c37c9f8c3048986c64fb866ef57, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 572834522712611815, guid: a2ac7c37c9f8c3048986c64fb866ef57, type: 3}
       propertyPath: m_SizeDelta.x
