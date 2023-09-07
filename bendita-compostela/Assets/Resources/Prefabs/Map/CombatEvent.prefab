@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 8775447806073846997}
   - component: {fileID: 3341858318882652117}
   - component: {fileID: 3807699513625240706}
+  - component: {fileID: 9208882454156078650}
   m_Layer: 0
   m_Name: CombatEvent
   m_TagString: Untagged
@@ -237,7 +238,6 @@ MonoBehaviour:
   isCompleted: 0
   sprRenderer: {fileID: 7745804999470223232}
   nodeCollider: {fileID: 5405487767480743191}
-  completedNodeSprite: {fileID: 21300000, guid: fccf0db4b62664943a8f2878d0155dd4, type: 3}
 --- !u!114 &3341858318882652117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,3 +267,20 @@ MonoBehaviour:
   hoverSound:
     audioClip: {fileID: 0}
     volume: 0
+--- !u!114 &9208882454156078650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8209055101703948159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2503d226469f89d4d87a3efbea78fabb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageComponent: {fileID: 0}
+  rendererComponent: {fileID: 7745804999470223232}
+  isFading: 0
+  loopFade: 0
+  loopFadeSpeed: 0.5

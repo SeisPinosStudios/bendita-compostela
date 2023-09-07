@@ -152,7 +152,6 @@ MonoBehaviour:
   isCompleted: 0
   sprRenderer: {fileID: 5983822783838237384}
   nodeCollider: {fileID: 8331465600324873794}
-  completedNodeSprite: {fileID: 21300000, guid: 0e350d5dea9d1a54ca4665a1647c7e28, type: 3}
 --- !u!114 &3166841146492972988
 MonoBehaviour:
   m_ObjectHideFlags: 0

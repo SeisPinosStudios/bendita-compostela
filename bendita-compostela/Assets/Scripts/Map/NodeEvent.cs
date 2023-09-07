@@ -7,12 +7,12 @@ public class NodeEvent : MonoBehaviour
     public Node nodeInfo;
     public bool isCompleted = false;
     [SerializeField] private SpriteRenderer sprRenderer;
-    [SerializeField] private BoxCollider2D nodeCollider;     
+    [SerializeField] private BoxCollider2D nodeCollider;         
         
     // TODO remake with delegates
     private void Update() 
     {
-        if(nodeCollider.enabled == false)
+        if(!nodeCollider.enabled)
         {
             sprRenderer.color = new Color(0.5660378f,0.5660378f,0.5660378f,1f);        
             if(isCompleted)
@@ -26,4 +26,8 @@ public class NodeEvent : MonoBehaviour
         }
         
     }    
+    public void NodeIsSelectable()
+    {
+        GetComponent<FadeUtils>().StartLoopFade();
+    }
 }

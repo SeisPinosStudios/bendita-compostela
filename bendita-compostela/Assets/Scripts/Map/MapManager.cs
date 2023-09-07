@@ -194,7 +194,10 @@ public class MapManager : MonoBehaviour
     {
         foreach (Vector2 key in nodeGameObjects.Keys)
         {
-            if(key.y == 0)nodeGameObjects[key].GetComponent<Collider2D>().enabled = true;            
+            if(key.y == 0)
+            {
+                nodeGameObjects[key].GetComponent<Collider2D>().enabled = true;                            
+            }
         }
     }
     
@@ -202,7 +205,7 @@ public class MapManager : MonoBehaviour
     {
         foreach (Node node in nodeSelected.futureNodes)
         {
-            nodeGameObjects[node.NodePos].GetComponent<Collider2D>().enabled = true;
+            nodeGameObjects[node.NodePos].GetComponent<Collider2D>().enabled = true;            
         }
     }
     private void DisableNotSelectedNodes(Node nodeSelected)
@@ -213,7 +216,7 @@ public class MapManager : MonoBehaviour
             {
                 nodeGameObjects[key].GetComponent<Collider2D>().enabled = false;                
             }            
-            nodeGameObjects[nodeSelected.NodePos].GetComponent<NodeEvent>().isCompleted = true;
+            nodeGameObjects[nodeSelected.NodePos].GetComponent<NodeEvent>().isCompleted = true;            
         }
         
     }
