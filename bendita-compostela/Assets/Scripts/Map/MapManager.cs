@@ -16,7 +16,7 @@ public class MapManager : MonoBehaviour
     [SerializeField] private GameObject nodePrefab;
     [SerializeField] private GameObject mapSpace; 
     [SerializeField] private GameObject lineRendererPrefab;
-    [SerializeField] private AudioClip mapMusic;
+    [SerializeField] private Sound mapMusic;
     
     [Header("Map Configuration")]
     [SerializeField] private int NUM_NODES;
@@ -56,7 +56,7 @@ public class MapManager : MonoBehaviour
         {
             Destroy(gameObject);
         }       
-        SoundManager.Instance.PlayMusic(mapMusic);
+        SoundManager.Instance.PlayMusic(mapMusic.AudioClip,mapMusic.Volume);
     }
     
     private void Start() 
@@ -196,7 +196,7 @@ public class MapManager : MonoBehaviour
         {
             if(key.y == 0)
             {
-                nodeGameObjects[key].GetComponent<Collider2D>().enabled = true;                            
+                nodeGameObjects[key].GetComponent<NodeEvent>().NodeIsSelectable();
             }
         }
     }
@@ -205,7 +205,7 @@ public class MapManager : MonoBehaviour
     {
         foreach (Node node in nodeSelected.futureNodes)
         {
-            nodeGameObjects[node.NodePos].GetComponent<Collider2D>().enabled = true;            
+            nodeGameObjects[node.NodePos].GetComponent<NodeEvent>().NodeIsSelectable();
         }
     }
     private void DisableNotSelectedNodes(Node nodeSelected)
@@ -214,9 +214,9 @@ public class MapManager : MonoBehaviour
         {
             if(key.y == nodeSelected.NodePos.y)
             {
-                nodeGameObjects[key].GetComponent<Collider2D>().enabled = false;                
+                nodeGameObjects[key].GetComponent<NodeEvent>().DisableUncompletedNode();
             }            
-            nodeGameObjects[nodeSelected.NodePos].GetComponent<NodeEvent>().isCompleted = true;            
+            nodeGameObjects[nodeSelected.NodePos].GetComponent<NodeEvent>().NodeIsCompleted();
         }
         
     }

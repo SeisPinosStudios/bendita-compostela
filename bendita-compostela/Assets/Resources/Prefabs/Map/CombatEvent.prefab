@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 3341858318882652117}
   - component: {fileID: 3807699513625240706}
   - component: {fileID: 9208882454156078650}
+  - component: {fileID: 6986826339013251976}
   m_Layer: 0
   m_Name: CombatEvent
   m_TagString: Untagged
@@ -164,7 +165,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: a44c5665151623b4196f8eb67d84d5f9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -284,3 +285,18 @@ MonoBehaviour:
   isFading: 0
   loopFade: 0
   loopFadeSpeed: 0.5
+--- !u!114 &6986826339013251976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8209055101703948159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f18017d4dca86514483783beeeeeff3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonClickSound:
+    audioClip: {fileID: 8300000, guid: 32c43137650c3ea478ceb9993b2f1149, type: 3}
+    volume: 1
