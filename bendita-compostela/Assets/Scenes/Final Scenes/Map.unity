@@ -1613,10 +1613,10 @@ MonoBehaviour:
   encounterProbabilities:
   - nodeEncounter: 1
     minProbabilityRange: 0
-    maxProbabilityRange: 90
+    maxProbabilityRange: 70
   - nodeEncounter: 2
-    minProbabilityRange: -2
-    maxProbabilityRange: -2
+    minProbabilityRange: 71
+    maxProbabilityRange: 90
   - nodeEncounter: 3
     minProbabilityRange: 91
     maxProbabilityRange: 100
@@ -1632,6 +1632,10 @@ MonoBehaviour:
   shopPrefab: {fileID: 2272757743687770519, guid: 1eb4e3fba82c6ac4db3424cc10acc8eb, type: 3}
   MAP_DISPLAY_OFFSET: {x: 1, y: 4}
   nodesVisited: []
+  currentNode:
+    nodeEncounter: 0
+    combatData: {fileID: 0}
+    eventPrefab: {fileID: 0}
 --- !u!114 &1452019585
 MonoBehaviour:
   m_ObjectHideFlags: 0
