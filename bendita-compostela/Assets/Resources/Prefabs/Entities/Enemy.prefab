@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 4678216402480822172}
   - component: {fileID: 9217402047712768622}
   - component: {fileID: 6583320166224503342}
+  - component: {fileID: 4603826951423802433}
   m_Layer: 0
   m_Name: Sequence
   m_TagString: Untagged
@@ -344,6 +345,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 5073834889583353343}
   parentSpriteHeight: 0
+--- !u!114 &4603826951423802433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2949427729489581301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c362d0a7ee5acc64687d56261d5493a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <textBoxPrefab>k__BackingField: {fileID: 6216814944079965107, guid: 5b65f629a7b302745bc6cf1c9d85a22a, type: 3}
+  <textObject>k__BackingField: {fileID: 0}
+  <textToWrite>k__BackingField: "La intenci\xF3n determina los ataques que usar\xE1
+    el personaje, m\xE1s ofensivos o defensivos."
+  <textBoxObject>k__BackingField: {fileID: 0}
+  <highlight>k__BackingField: {fileID: 0}
+  <progress>k__BackingField: 0
+  <progressBar>k__BackingField: {fileID: 0}
 --- !u!1 &6454212745414268413
 GameObject:
   m_ObjectHideFlags: 0
