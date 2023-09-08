@@ -770,6 +770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 932787820}
   hoverSound:
+    <soundName>k__BackingField: 
     audioClip: {fileID: 0}
     volume: 0
 --- !u!114 &820020003
@@ -785,6 +786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonClickSound:
+    <soundName>k__BackingField: 
     audioClip: {fileID: 8300000, guid: 32c43137650c3ea478ceb9993b2f1149, type: 3}
     volume: 1
 --- !u!1 &822491464
@@ -1377,6 +1379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 1041534063}
   hoverSound:
+    <soundName>k__BackingField: 
     audioClip: {fileID: 0}
     volume: 0
 --- !u!1 &1304043384
@@ -1596,6 +1599,7 @@ MonoBehaviour:
   mapSpace: {fileID: 1095727256}
   lineRendererPrefab: {fileID: 5952450093074384266, guid: cc9bd79819eb9d9489075f1251a09048, type: 3}
   mapMusic:
+    <soundName>k__BackingField: 
     audioClip: {fileID: 8300000, guid: 99f4e46de4704234eb354e5de9c343c2, type: 3}
     volume: 1
   NUM_NODES: 27
@@ -1609,10 +1613,10 @@ MonoBehaviour:
   encounterProbabilities:
   - nodeEncounter: 1
     minProbabilityRange: 0
-    maxProbabilityRange: 70
-  - nodeEncounter: 2
-    minProbabilityRange: 71
     maxProbabilityRange: 90
+  - nodeEncounter: 2
+    minProbabilityRange: -2
+    maxProbabilityRange: -2
   - nodeEncounter: 3
     minProbabilityRange: 91
     maxProbabilityRange: 100
@@ -1852,6 +1856,7 @@ MonoBehaviour:
   <equipment>k__BackingField: {fileID: 0}
   <isOpen>k__BackingField: 0
   openBackpackSound:
+    <soundName>k__BackingField: 
     audioClip: {fileID: 8300000, guid: 0a2601f4672c3d84f8cc02e6fa5c01cb, type: 3}
     volume: 1
   backpackAnimator: {fileID: 1602003314}
@@ -2086,6 +2091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 1561381979}
   hoverSound:
+    <soundName>k__BackingField: 
     audioClip: {fileID: 0}
     volume: 0
 --- !u!114 &1664424982
@@ -2101,6 +2107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonClickSound:
+    <soundName>k__BackingField: 
     audioClip: {fileID: 8300000, guid: 32c43137650c3ea478ceb9993b2f1149, type: 3}
     volume: 1
 --- !u!1 &1703735614
