@@ -40,12 +40,11 @@ public class DeckManager : MonoBehaviour
         yield return new WaitUntil(() => deckQueue != null);
         for (int i = 0; i < amount; i++)
         {
-
+            if (deckQueue.Count <= 0) break;
             card.cardData = deckQueue.Dequeue();
             Instantiate(card, hand);
             SoundManager.Instance.PlaySound(drawCardSoundEffect);
             yield return new WaitForSeconds(delay);
-            if (deckQueue.Count <= 0) break;
         }
         Debug.Log($"Draw Coroutine Finished");
         yield return null;
