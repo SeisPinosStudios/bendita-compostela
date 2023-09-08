@@ -38,6 +38,13 @@ public class GameManager : MonoBehaviour
             playerData.legArmor = SODataBase.legArmors[Random.Range(0, SODataBase.legArmors.Count)].Copy();
         }
     }
+    private void Update() 
+    {
+        if (Input.GetKeyDown(KeyCode.)) 
+        {
+        
+        }
+    }
 
     #region Combat
     public void SetCombat(CombatData combatData)
