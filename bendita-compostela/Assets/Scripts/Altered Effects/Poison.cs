@@ -18,4 +18,9 @@ public class Poison : BasicAlteredEffect
         return $"<sprite=1> Veneno: Al principio del turno, sufre daño que va aumentando con cada turno con veneno. " +
             $"Daño actual: {entityEffManager.accumPoison}.";
     }
+
+    public static string GetBasicDescription()
+    {
+        return $"<sprite=1> Veneno: al principio del turno recibe daño que incrementa con cada turno sufriendo veneno";
+    }
 }

@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 8742493061009169119}
   - component: {fileID: 4673832099822923267}
   - component: {fileID: 917492217834269744}
+  - component: {fileID: 911515910838895549}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -288,6 +289,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &911515910838895549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3456609785024559036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c96d3c48090fb45918f09dc3e63203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textBoxPrefab: {fileID: 6216814944079965107, guid: 5b65f629a7b302745bc6cf1c9d85a22a, type: 3}
 --- !u!1 &7782587136406350063
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,6 +376,7 @@ MonoBehaviour:
   costField: {fileID: 2120799570910204193}
   art: {fileID: 6175347007669483962}
   dragging: 0
+  target: {fileID: 0}
 --- !u!114 &1253024993260098490
 MonoBehaviour:
   m_ObjectHideFlags: 0

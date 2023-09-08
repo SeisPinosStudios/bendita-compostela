@@ -8,4 +8,9 @@ public class Disarmed : BasicAlteredEffect
     {
         return $"<sprite=7> Desarmado: No puedes ni cambiar ni equiparte armas.";
     }
+
+    public static string GetBasicDescription()
+    {
+        return Disarmed.GetDescription(null, null);
+    }
 }

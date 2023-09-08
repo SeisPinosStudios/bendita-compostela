@@ -8,4 +8,8 @@ public class Exhaust : BasicAlteredEffect
     {
         return $"<sprite=6> Exhausto: Las cartas que juegue cuesta 1 punto más de energía.";
     }
+    public static string GetBasicDescription()
+    {
+        return Exhaust.GetDescription(null, null);
+    }
 }

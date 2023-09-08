@@ -8,4 +8,8 @@ public class Vulnerable : BasicAlteredEffect
     {
         return $"<sprite=2> Vulnerable: El próximo ataque que reciba hará un {entityEffManager.vulnerableMultiplier*100}% más de daño.";
     }
+    public static string GetBasicDescription()
+    {
+        return $"<sprite=2> Vulnerable: los personajes que lo sufran recibirán más daño por ataques";
+    }
 }

@@ -8,4 +8,8 @@ public class Guarded : MonoBehaviour
     {
         return $"<sprite=3> En Guardia: El próximo ataque que reciba hará un {entityEffManager.guardedMultiplier*100}% menos de daño.";
     }
+    public static string GetBasicDescription()
+    {
+        return "<sprite=3> En Guardia: bloquea parte del daño del siguiente ataque";
+    }
 }

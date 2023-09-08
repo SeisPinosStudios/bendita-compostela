@@ -23,7 +23,7 @@ public class SelfApplyEffect : BasicCardEffect
             var splitedData = data.Split("|");
             Enum.TryParse(splitedData[0], out TAlteredEffects.AlteredEffects effect);
             var value = splitedData[1];
-            description.Append($" {value}<sprite={(int)effect}>");
+            description.Append($" {value}<link=\"{effect}\"><sprite={(int)effect}></link>");
         }
         description.Append(".");
         return description.ToString();

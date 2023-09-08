@@ -1251,6 +1251,7 @@ MonoBehaviour:
   <highlight>k__BackingField: {fileID: 0}
   <progress>k__BackingField: 0
   <progressBar>k__BackingField: {fileID: 0}
+  <loadingCircleSpeed>k__BackingField: 1
 --- !u!1 &2445594346943577089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,6 +1990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonClickSound:
+    <soundName>k__BackingField: 
     audioClip: {fileID: 8300000, guid: 32c43137650c3ea478ceb9993b2f1149, type: 3}
     volume: 1
 --- !u!114 &3379982269256715243
@@ -2005,6 +2007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 4539213453865586535}
   hoverSound:
+    <soundName>k__BackingField: 
     audioClip: {fileID: 0}
     volume: 0
 --- !u!1 &3177091607677188306
@@ -3103,7 +3106,7 @@ Canvas:
   m_GameObject: {fileID: 6410387980525127740}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -3115,7 +3118,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 16
   m_TargetDisplay: 0
 --- !u!114 &852254993182491575
 MonoBehaviour:
