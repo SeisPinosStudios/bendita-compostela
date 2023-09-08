@@ -46,9 +46,8 @@ public class DeckManager : MonoBehaviour
             SoundManager.Instance.PlaySound(drawCardSoundEffect);
             yield return new WaitForSeconds(delay);
             if (deckQueue.Count <= 0) break;
-
-            
         }
+        yield return null;
     }
     public void ReturnCards()
     {
@@ -64,8 +63,8 @@ public class DeckManager : MonoBehaviour
             Destroy(card.gameObject);
             SoundManager.Instance.PlaySound(drawCardSoundEffect);
             yield return new WaitForSeconds(delay);
-
         }
+        yield return null;
     }
     public void AddCardToDeck(CardData card)
     {
