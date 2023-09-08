@@ -8,4 +8,8 @@ public class Stun : BasicAlteredEffect
     {
         return $"<sprite=10> Aturdido: Pierde el próximo turno.";
     }
+    public static string GetBasicDescription()
+    {
+        return Stun.GetDescription(null, null);
+    }
 }

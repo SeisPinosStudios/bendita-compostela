@@ -15,4 +15,9 @@ public class Bleed : BasicAlteredEffect
         return $"<sprite=0> Sangrado: al jugar una carta, sufre tantos puntos de daño como cargas de sangrado tenga. " +
         $"Daño actual {entityEffManager.alteredEffects[TAlteredEffects.AlteredEffects.Bleed]}";
     }
+
+    public static string GetBasicDescription()
+    {
+        return $"<sprite=0> Sangrado; provoca tanto daño como cargas de sangrado al utilizar una carta";
+    }
 }

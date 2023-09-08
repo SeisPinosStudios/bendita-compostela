@@ -8,4 +8,8 @@ public class Invulnerable : BasicAlteredEffect
     {
         return $"<sprite=4> Invulnerable: Bloquea completamente el daño de ataques y efectos de estado.";
     }
+    public static string GetBasicDescription()
+    {
+        return Invulnerable.GetDescription(null, null);
+    }
 }

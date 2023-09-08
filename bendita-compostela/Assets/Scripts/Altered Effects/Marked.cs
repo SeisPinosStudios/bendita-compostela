@@ -8,4 +8,8 @@ public class Marked : BasicAlteredEffect
     {
         return $"Al usar un ataque contra este objetivo, otro enemigo aleatorio recibirá un 50% del daño del ataque.";
     }
+    public static string GetBasicDescription()
+    {
+        return Marked.GetDescription(null, null);
+    }
 }

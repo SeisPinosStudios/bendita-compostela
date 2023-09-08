@@ -19,4 +19,9 @@ public class Burn : BasicAlteredEffect
         return $"<sprite=5> Quemado: Al final del turno, sufre tanto daño como cargas de quemado tengas. A partir de {entityEffManager.burnThreshold}" +
             $"cargas el daño se duplica. Daño actual: {finalDamage}";
     }
+
+    public static string GetBasicDescription()
+    {
+        return $"<sprite=5> Quemado: provoca daños al final del turno. A partir de 6 cargas hace el doble de daño";
+    }
 }

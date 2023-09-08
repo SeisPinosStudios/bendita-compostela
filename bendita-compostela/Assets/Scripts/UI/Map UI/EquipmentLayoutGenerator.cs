@@ -9,10 +9,12 @@ public class EquipmentLayoutGenerator : MonoBehaviour
 
     public void GenerateEquipmentLayout()
     {
+        equipmentLayout.GetComponent<Canvas>().worldCamera = Camera.main;
         Instantiate(equipmentLayout);
     }
     public void GenerateInventoryLayout()
     {
+        inventoryLayout.GetComponent<Canvas>().worldCamera = Camera.main;
         Instantiate(inventoryLayout);
     }
 }
