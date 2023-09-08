@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,7 @@ public class EnemyDisplay : EntityDisplay
 {
     [field: SerializeField, Header("Enemy Display")] public SpriteRenderer enemySprite { get; private set; }
     [field: SerializeField] public EnemyData enemyData { get; private set; }
+    [field: SerializeField] public TextMeshProUGUI nameText { get; private set; }
     [field: SerializeField, Header("Enemy Behaviour Display")] public List<Sprite> sequenceSprites { get; private set; }
     [field: SerializeField] public EnemyBehaviour enemyBehaviour { get; private set; }
     [field: SerializeField] public GameObject displayObject { get; private set; }
@@ -33,6 +35,7 @@ public class EnemyDisplay : EntityDisplay
         sequenceIcon.gameObject.GetComponent<IntentionPosChange>().SetUpPosition();
 
         passiveindex = enemyData.passives.Count;
+        nameText.text = enemyData.entityName;
         GeneratePassiveIcons();
     }
     private void Update()
