@@ -26,6 +26,7 @@ public class PlayerBehaviour : EntityBehaviour
         }
 
         yield return StartCoroutine(DeckManager.Instance.DrawCardCoroutine(5));
+        Debug.Log($"Player succeded to draw {5}");
         BattleManager.Instance.SetInteraction(true);
         player.RestoreEnergy(player.maxEnergy);
         isTurn = !isTurn;

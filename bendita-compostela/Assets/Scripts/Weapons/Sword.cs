@@ -7,6 +7,7 @@ public class Sword : BaseWeapon
     [field:SerializeField] public int styleAttacks { get; private set; }
     [field:SerializeField] public int chestLevel { get; private set; }
     [field:SerializeField] public float styleMultiplier { get; private set; }
+    [field: SerializeField] public bool activeStyle { get; private set; } = true;
 
     private void Awake()
     {
@@ -32,12 +33,15 @@ public class Sword : BaseWeapon
 
         if (styleAttacks > 0) { styleAttacks--; return; }
 
-        player.AttackMultiplier(-styleMultiplier);
+        if(activeStyle) player.AttackMultiplier(-styleMultiplier);
+
+        activeStyle = false;
     }
     private void Turn()
     {
         if (styleAttacks <= 0) player.AttackMultiplier(styleMultiplier);
         styleAttacks = 1 + (chestSynergy ? (1 * chestLevel) + 1 : 0);
+        activeStyle = true;
     }
     #endregion
 

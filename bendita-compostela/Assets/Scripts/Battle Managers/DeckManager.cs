@@ -47,6 +47,7 @@ public class DeckManager : MonoBehaviour
             yield return new WaitForSeconds(delay);
             if (deckQueue.Count <= 0) break;
         }
+        Debug.Log($"Draw Coroutine Finished");
         yield return null;
     }
     public void ReturnCards()
