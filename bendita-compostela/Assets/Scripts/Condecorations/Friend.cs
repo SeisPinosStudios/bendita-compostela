@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Friend : MonoBehaviour
 {
-    [field: SerializeField] public bool active { get; private set; } = true;
+    [field: SerializeField] public bool active { get; set; } = true;
     public static void OnObtain()
     {
 

@@ -18,7 +18,7 @@ MonoBehaviour:
   <enemySprite>k__BackingField: {fileID: 21300000, guid: f95dc24a4c554814fa0372220541f286, type: 3}
   <enemyAnimator>k__BackingField: {fileID: 22100000, guid: 49515ec61c5acbd4c9ed50933dcaa823, type: 2}
   <reward>k__BackingField: 5
-  <passives>k__BackingField: 
+  <passives>k__BackingField: 04000000
   <resistances>k__BackingField: 
   <defaultSequence>k__BackingField: {fileID: 11400000, guid: ebd4135b4f874544e98d08dd5fc9611f, type: 2}
   <attackSequence>k__BackingField: {fileID: 0}

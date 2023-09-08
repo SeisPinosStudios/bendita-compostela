@@ -14,7 +14,7 @@ public class InfoText : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandler
     [field:SerializeField] public GameObject highlight { get; protected set; }
     [field: SerializeField] public float progress { get; protected set; }
     [field: SerializeField] public Image progressBar { get; protected set; }
-    [SerializeField] public int loadingCircleSpeed { get; protected set; } = 1;
+    [field: SerializeField] public int loadingCircleSpeed { get; protected set; } = 1;
     
     public void OnPointerEnter(PointerEventData eventData)
     {

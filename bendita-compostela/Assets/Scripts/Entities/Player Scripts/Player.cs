@@ -69,11 +69,10 @@ public class Player : Entity
         if(GetComponent<Friend>() != null && GetComponent<Friend>().active)
         {
             RestoreHealth(1, 0, 1);
+            GetComponent<Friend>().active = false;
             yield break;
         }
-
         OnDeath();
-
         yield return null;
     }
     #endregion
