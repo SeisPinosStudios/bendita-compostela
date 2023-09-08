@@ -14,6 +14,7 @@ public class NodeEvent : MonoBehaviour
         isCompleted = false;
         nodeCollider.enabled = false;
         sprRenderer.color = new Color(0.5660378f,0.5660378f,0.5660378f,1f);
+        GetComponent<FadeUtils>().StopFade();
     }
     public void NodeIsSelectable()
     {
@@ -26,5 +27,6 @@ public class NodeEvent : MonoBehaviour
         isCompleted = true;
         nodeCollider.enabled = false;
         sprRenderer.color = new Color(1,1,1,1);
+        GetComponent<FadeUtils>().StopFade();
     }
 }

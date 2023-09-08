@@ -9,10 +9,13 @@ public class EventNodeEncounter : MonoBehaviour
     {
         Debug.Log("NODE POS:" + nodeEvent.nodeInfo.NodePos);
         Debug.Log("NODE EVENT: " + nodeEvent.nodeInfo.EventPrefab);
-        if(nodeEvent.nodeInfo.futureNodes.Count != 0)MapManager.Instance.NodeSelected(nodeEvent.nodeInfo);        
+        if (nodeEvent.nodeInfo.futureNodes.Count != 0) MapManager.Instance.NodeSelected(nodeEvent.nodeInfo);
+        Instantiate(nodeEvent.nodeInfo.EventPrefab);
+        
+
     }
     private void OnMouseUp() 
     {
-        Instantiate(nodeEvent.nodeInfo.EventPrefab);
+        
     }
 }

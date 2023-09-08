@@ -91,6 +91,7 @@ public class PetsEvent : MonoBehaviour
     }
     public void EndEvent()
     {
+        MapManager.Instance.EneableNextAvailableNodes(MapManager.Instance.currentNode);
         Destroy(gameObject);
     }
     #endregion

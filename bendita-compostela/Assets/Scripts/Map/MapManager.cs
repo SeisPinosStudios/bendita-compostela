@@ -43,6 +43,8 @@ public class MapManager : MonoBehaviour
     
     // Dictionary with the current nodes GO given their position
     private Dictionary<Vector2,GameObject> nodeGameObjects = new Dictionary<Vector2, GameObject>();
+
+    public Node currentNode;
     #endregion
     
     #region Initialization and setup of the Singleton
@@ -141,6 +143,7 @@ public class MapManager : MonoBehaviour
     public void NodeSelected(Node nodeSelected)
     {
         nodesVisited.Add(nodeSelected);
+        currentNode = nodeSelected;
         GameManager.Instance.AddVisitedNode(nodeSelected);
         DisableNotSelectedNodes(nodeSelected);
         //EneableNextAvailableNodes(nodeSelected);
@@ -207,6 +210,7 @@ public class MapManager : MonoBehaviour
         {
             nodeGameObjects[node.NodePos].GetComponent<NodeEvent>().NodeIsSelectable();
         }
+        nodeGameObjects[nodeSelected.NodePos].GetComponent<NodeEvent>().NodeIsCompleted();
     }
     private void DisableNotSelectedNodes(Node nodeSelected)
     {

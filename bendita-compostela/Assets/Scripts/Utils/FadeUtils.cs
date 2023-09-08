@@ -14,9 +14,9 @@ public class FadeUtils : MonoBehaviour
     [SerializeField] private bool loopFade = false;
     [SerializeField] private float loopFadeSpeed = 0.5f;
 
-    public event Action OnFadeComplete;    
+    public event Action OnFadeComplete;
 
-    
+    Coroutine fadeLoopCoroutine;
 
     #region Image Fade with Finish Event
     public void FadeIn(float fadeDuration)
@@ -106,7 +106,11 @@ public class FadeUtils : MonoBehaviour
     }
     public void StartLoopFade()
     {
-        StartCoroutine(FadeInAndOut(loopFadeSpeed));
+        fadeLoopCoroutine = StartCoroutine(FadeInAndOut(loopFadeSpeed));
+    }
+    public void StopFade() 
+    {
+        if(fadeLoopCoroutine != null)StopCoroutine(fadeLoopCoroutine);
     }
     private IEnumerator FadeInAndOut(float fadeSpeed)
     {

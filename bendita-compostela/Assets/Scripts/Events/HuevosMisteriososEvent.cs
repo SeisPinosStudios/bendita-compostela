@@ -7,6 +7,11 @@ public class HuevosMisteriososEvent : BookEventController
     public void EggsEaten()
     {
         MapManager.Instance.SetBoss(1);
-        MapManager.Instance.AsignBossEncounter();
+        MapManager.Instance.AsignBossEncounter();        
+        ExitEvent();
+    }
+    public void ExitEvent()
+    {
+        Destroy(this);
     }
 }
