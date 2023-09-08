@@ -11,6 +11,7 @@ public class CardDisplay : MonoBehaviour
     [field:SerializeField] public CardData cardData { get; private set; }
     [SerializeField] TextMeshProUGUI nameField, descriptionField, costField;
     [SerializeField] Image art;
+    [SerializeField] Animator cardAnimator;
     public bool dragging;
 
     [field: SerializeField] public Entity target;
@@ -24,6 +25,8 @@ public class CardDisplay : MonoBehaviour
         descriptionField.text = cardData.description;
         costField.text = cardData.cost.ToString();
         art.sprite = cardData.art;
+
+        BattleManager.Instance.player.OnEnergyValueChanged += AnimationDisplay;
 
         if (cardData is WeaponData or ArmorData) costField.transform.parent.gameObject.SetActive(false);
     }
@@ -53,6 +56,14 @@ public class CardDisplay : MonoBehaviour
             .Invoke(null, new object[] { cardDataContainer.cardData, entity, target ? target : null });
 
         return description;
+    }
+    private void AnimationDisplay(int newValue) 
+    {
+        if (cardAnimator == null) return;
+        if (newValue>= cardData.cost) cardAnimator.SetBool("isUsable", true);
+        else cardAnimator.SetBool("isUsable", false);
+
+
     }
     
     private void Update()

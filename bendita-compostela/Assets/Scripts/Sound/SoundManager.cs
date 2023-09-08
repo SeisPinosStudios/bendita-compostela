@@ -37,22 +37,25 @@ public class SoundManager : MonoBehaviour
     public void PlayMusic(AudioClip clip)
     {                
         musicSource.Stop();
-        musicSource.loop = true;
-        musicSource.PlayOneShot(clip);
+        musicSource.clip = clip;
+        musicSource.Play();
+        
         
     }
     public void PlayMusic(Sound clip)
-    {                
+    {
         musicSource.Stop();
-        musicSource.loop = true;
-        musicSource.PlayOneShot(clip.AudioClip,clip.Volume);
+        musicSource.clip = clip.AudioClip;
+        musicSource.volume = clip.Volume;
+        musicSource.Play();
         
     }
     public void PlayMusic(AudioClip clip, float volume)
     {                
         musicSource.Stop();
-        musicSource.loop = true;
-        musicSource.PlayOneShot(clip,volume);
+        musicSource.clip = clip;
+        musicSource.volume = volume;
+        musicSource.Play();
         
     }
     public void ChangeMasterVolume(float value)

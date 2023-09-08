@@ -26,11 +26,10 @@ public class BattleManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
-
-        soundList.PlayMusic("Combat");
+        Instance = this;  
 
         combatData = GameManager.Instance.combatData;
+        SetGameMusic();
 
         GenerateEnemies();
 
@@ -57,6 +56,23 @@ public class BattleManager : MonoBehaviour
             entityDataContainer.entityData = combatData.enemiesData[i];
             Instantiate(entityDataContainer, position, new Quaternion(), enemiesContainer);
         }
+    }
+
+    private void SetGameMusic() 
+    {
+        //soundList.musicList.Add(combatData.combatMusic);
+        if (combatData.combatMusic == null)
+        {
+            soundList.PlayMusic("Combat");
+            return;
+        }
+        else
+        {
+            Debug.Log(combatData.combatMusic.soundName);
+            SoundManager.Instance.PlayMusic(combatData.combatMusic);
+            
+        }
+ 
     }
 
     #region Check methods

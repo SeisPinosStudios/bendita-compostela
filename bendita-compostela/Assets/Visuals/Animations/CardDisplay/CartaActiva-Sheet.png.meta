@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 36bf9ed4ba5c5ae45b84ff4ca984152d
+guid: f44d3882db40b374c924563f7c2a1032
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,127 +110,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gamusino-Sheet_0
+      name: CartaActiva-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 128
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d82bb83622d5a041bf57695afe55ccd
+      internalID: -1182701327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartaActiva-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 352
+        width: 128
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e98bc8f27002c884aba4d6f1a7844341
+      internalID: -833495759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartaActiva-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 352
+        width: 128
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ab002fa0d8d5aa46a742516115bb01f
+      internalID: -163137480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartaActiva-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 128
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03e9e7dd28b71f94888d31ec2ac406c4
+      internalID: 1377590904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartaActiva-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 176
+        width: 128
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdcbdadd1bcfad446bcdbdf90c3271cf
+      internalID: -1639131620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartaActiva-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 176
+        width: 128
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3938850b3af7ed24fae5f97adc411124
+      internalID: -1722506846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartaActiva-Sheet_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 128
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a09c0983605b03846bde1899d2d8a8d6
-      internalID: -1147594185
+      spriteID: 4e758a2f776cb774ab1ba1c7fdd40997
+      internalID: 1508118982
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamusino-Sheet_1
+      name: CartaActiva-Sheet_7
       rect:
         serializedVersion: 2
-        x: 112
+        x: 128
         y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 128
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b6ba9191e5f61f428a9f1ebbb8afab4
-      internalID: -1281229530
+      spriteID: 8b4cebef900c2dd40b24ab9fee9cc54c
+      internalID: -572591065
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamusino-Sheet_2
+      name: CartaActiva-Sheet_8
       rect:
         serializedVersion: 2
-        x: 224
-        y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 301
+        y: 79
+        width: 59
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 829d8fcee48fa2c42bb62d0b1012dd91
-      internalID: 551353357
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gamusino-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a82226c5cda2614e972123e22649e41
-      internalID: 1010776470
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gamusino-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d8bda512283c57e43bdc564506ac8fa8
-      internalID: -1887626740
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gamusino-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 560
-        y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f653a5a3c8b52b48ab959ad744ac9ed
-      internalID: 1646183933
+      spriteID: a41090ce7eb82314090b28e846c2841c
+      internalID: 1634177753
       vertices: []
       indices: 
       edges: []
@@ -246,12 +309,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      gamusino-Sheet_0: -1147594185
-      gamusino-Sheet_1: -1281229530
-      gamusino-Sheet_2: 551353357
-      gamusino-Sheet_3: 1010776470
-      gamusino-Sheet_4: -1887626740
-      gamusino-Sheet_5: 1646183933
+      CartaActiva-Sheet_0: -1182701327
+      CartaActiva-Sheet_1: -833495759
+      CartaActiva-Sheet_2: -163137480
+      CartaActiva-Sheet_3: 1377590904
+      CartaActiva-Sheet_4: -1639131620
+      CartaActiva-Sheet_5: -1722506846
+      CartaActiva-Sheet_6: 1508118982
+      CartaActiva-Sheet_7: -572591065
+      CartaActiva-Sheet_8: 1634177753
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 36bf9ed4ba5c5ae45b84ff4ca984152d
+guid: 6d23fcd2aef8fa34dbcdfe792cc0f315
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,127 +110,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gamusino-Sheet_0
+      name: CartaUsableInicio_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 128
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6696d47ec64c4934abe0a78d41744c6f
+      internalID: -184727180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartaUsableInicio_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 352
+        width: 128
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fc9f4edd0d8a794a8e39bfaaf5dc51a
+      internalID: 1801330548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartaUsableInicio_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 352
+        width: 128
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 398da42f4fb0c8b4abbdc78af587b48b
+      internalID: 643749798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartaUsableInicio_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 128
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9743a17a4c2b224eaebb0fc291c6af6
+      internalID: 234423073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartaUsableInicio_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 176
+        width: 128
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c15cd20399937e043a9bd163e11535fe
+      internalID: -280108748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartaUsableInicio_5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 176
+        width: 128
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cf8e03c7ba69ec478208d13970d92c6
+      internalID: -1871547313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartaUsableInicio_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 128
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a09c0983605b03846bde1899d2d8a8d6
-      internalID: -1147594185
+      spriteID: cfb3fb137516da740a127bfdbade90f6
+      internalID: -119733800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gamusino-Sheet_1
+      name: CartaUsableInicio_7
       rect:
         serializedVersion: 2
-        x: 112
+        x: 128
         y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 128
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b6ba9191e5f61f428a9f1ebbb8afab4
-      internalID: -1281229530
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gamusino-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 829d8fcee48fa2c42bb62d0b1012dd91
-      internalID: 551353357
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gamusino-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a82226c5cda2614e972123e22649e41
-      internalID: 1010776470
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gamusino-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d8bda512283c57e43bdc564506ac8fa8
-      internalID: -1887626740
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gamusino-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 560
-        y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f653a5a3c8b52b48ab959ad744ac9ed
-      internalID: 1646183933
+      spriteID: a28364e13e8edd74eaf30ba3051c6aaf
+      internalID: 1485965911
       vertices: []
       indices: 
       edges: []
@@ -246,12 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      gamusino-Sheet_0: -1147594185
-      gamusino-Sheet_1: -1281229530
-      gamusino-Sheet_2: 551353357
-      gamusino-Sheet_3: 1010776470
-      gamusino-Sheet_4: -1887626740
-      gamusino-Sheet_5: 1646183933
+      CartaUsableInicio_0: -184727180
+      CartaUsableInicio_1: 1801330548
+      CartaUsableInicio_2: 643749798
+      CartaUsableInicio_3: 234423073
+      CartaUsableInicio_4: -280108748
+      CartaUsableInicio_5: -1871547313
+      CartaUsableInicio_6: -119733800
+      CartaUsableInicio_7: 1485965911
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

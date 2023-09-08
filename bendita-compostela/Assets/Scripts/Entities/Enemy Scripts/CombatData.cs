@@ -7,4 +7,6 @@ public class CombatData : ScriptableObject
 {
     [Header("Combat Enemies")]        
     public List<EnemyData> enemiesData = new List<EnemyData>();
+
+    public Sound combatMusic;
 }

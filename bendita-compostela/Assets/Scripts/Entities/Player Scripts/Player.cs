@@ -11,6 +11,8 @@ public class Player : Entity
     [field:SerializeField] public WeaponData weapon { get; private set; }
     /*====ACTIONS====*/
     public event Action OnDeath = delegate { };
+    public delegate void EnergyValueChanged(int newValue);
+    public event EnergyValueChanged OnEnergyValueChanged;
     
     private void Awake()
     {
@@ -46,6 +48,7 @@ public class Player : Entity
     public void RestoreEnergy(int amount)
     {
         this.energy = Mathf.Clamp(this.energy + amount, 0, maxEnergy);
+        if(OnEnergyValueChanged != null) OnEnergyValueChanged(this.energy);
         return;
     }
     public void AddMaxEnergy(int amount)
@@ -57,6 +60,7 @@ public class Player : Entity
     {
         if (energy < amount) { Debug.Log($"Not enough energy"); return false; }
         energy -= amount;
+        if (OnEnergyValueChanged != null) OnEnergyValueChanged(energy);
         Debug.Log($"Enough energy to use card");
         return true;
     }

@@ -425,7 +425,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.204, y: 0.3083}
+  m_AnchoredPosition: {x: 1.125, y: 0.432}
   m_SizeDelta: {x: 48, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4678216402480822172
@@ -473,13 +473,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2949427729489581301}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f2d4c0f0886c4046a121ec4c6dba91d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 5073834889583353343}
   parentSpriteHeight: 0
+  screenPosition: {x: 0, y: 0, z: 0}
+  autoAdjust: 0
+  camara: {fileID: 0}
 --- !u!114 &4603826951423802433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,6 +503,7 @@ MonoBehaviour:
   <highlight>k__BackingField: {fileID: 0}
   <progress>k__BackingField: 0
   <progressBar>k__BackingField: {fileID: 0}
+  <loadingCircleSpeed>k__BackingField: 1
 --- !u!1 &6454212745414268413
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +701,7 @@ MonoBehaviour:
   showLogs: 1
   <enemySprite>k__BackingField: {fileID: 5073834889583353343}
   <enemyData>k__BackingField: {fileID: 0}
-  <nameText>k__BackingField: {fileID: 4690302624734254416}
+  <nameText>k__BackingField: {fileID: 0}
   <sequenceSprites>k__BackingField:
   - {fileID: -1500203567, guid: dfe36f96d7f0fe14eabd71c9947acb5f, type: 3}
   - {fileID: -2096570061, guid: dfe36f96d7f0fe14eabd71c9947acb5f, type: 3}
