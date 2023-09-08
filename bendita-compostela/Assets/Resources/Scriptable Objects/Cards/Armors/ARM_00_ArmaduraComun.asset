@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3346df7aaf02184392ce9fcb83d5133, type: 3}
+  m_Name: ARM_00_ArmaduraComun
+  m_EditorClassIdentifier: 
+  cardName: "Armadura Com\xFAn"
+  <cardId>k__BackingField: 0
+  description: 
+  cost: 5
+  price: 0
+  art: {fileID: 295975739, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
+  miniArt: {fileID: 327494958315270252, guid: b0492a3b5e9bcac42a9d2131ed5fc5f2, type: 3}
+  <attack>k__BackingField: 0
+  cardEffects: 
+  cardEffectsValues: []
+  printArrow: 0
+  <defenseBonus>k__BackingField: 3
+  <armorId>k__BackingField: 0
+  <weaponSynergy>k__BackingField: 0
+  <weaponSynergyClass>k__BackingField: 0
+  <synergyLevel>k__BackingField: 0
+  <armorLevel>k__BackingField: 0
+  <equipmentScreenIcon>k__BackingField: {fileID: -7940983177100340235, guid: 7fdda56d25d1f034897e45af910f2185, type: 3}
+  <equipmentScreenDescription>k__BackingField: 
+  <armorType>k__BackingField: 0

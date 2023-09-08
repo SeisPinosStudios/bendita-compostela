@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 568ec354eb73cda41929fe3b53650f4f, type: 3}
+  m_Name: SPE_02_0_Abanicazo
+  m_EditorClassIdentifier: 
+  cardName: Abanicazo
+  <cardId>k__BackingField: 0
+  description: 
+  cost: 4
+  price: 7
+  art: {fileID: 981480121, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
+  miniArt: {fileID: -4946395273226931753, guid: b0492a3b5e9bcac42a9d2131ed5fc5f2, type: 3}
+  <attack>k__BackingField: 0
+  cardEffects: 060000000c000000
+  cardEffectsValues:
+  - Stun|1
+  - 7
+  printArrow: 1

@@ -8,4 +8,10 @@ public class RestoreEnergy : BasicCardEffect
     {
         BattleManager.Instance.player.RestoreEnergy(int.Parse(data));
     }
+
+    public static string GetDescription(CardData card, Entity user, Entity target)
+    {
+        var data = card.GetEffect(CardData.Effect.RestoreEnergy);
+        return $"Restaura {data[0]} puntos de energía.";
+    }
 }

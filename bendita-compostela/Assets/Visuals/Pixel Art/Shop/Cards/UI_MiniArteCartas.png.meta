@@ -1,0 +1,1086 @@
+fileFormatVersion: 2
+guid: 16540726e2c5fa042987f9a6cee2f120
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 348
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c824610e24bd734cb6c4ee7560fc8c2
+      internalID: 1253985552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 348
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2761f52b1ec194f4e94bbbc3ac8f2d3f
+      internalID: -55035081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 348
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5643febf6fbf76e4a8aa71f29137473d
+      internalID: 1938492020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 348
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6faf7cf5b0ba133479086473ac75ca94
+      internalID: 1128984164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 348
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bef4da84008e774bbc3f9efbfdd99ad
+      internalID: -1306114736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 348
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bca52fdf65587043903cf5b12e661a1
+      internalID: -761619460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 348
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 505bb22af155ceb439446f249580dee4
+      internalID: -457497848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 348
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c70047bdbcc6e3c46bbe8b74571810cb
+      internalID: -1165943556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 348
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45359fdabd6d9194ab4104e2cdd6888e
+      internalID: 100697417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 348
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 736adbf3d811b4c48a4ae964764e3fa9
+      internalID: -312065527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 316
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ce119c44bdff0c47897cfaaeabfd9ce
+      internalID: 1505559861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_11
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 316
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f5fef62caf76cc498228386661f5057
+      internalID: 386713816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_12
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 316
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceb9e97b270c2174db3d990cd4ef69bb
+      internalID: -926549822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_13
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 316
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 049c99678d8c8e24aadf04a39fb18855
+      internalID: -2040794605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_14
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 316
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc69a472eef1614189377c1e864b43f
+      internalID: 998909886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_15
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 316
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf001705a3bdb8c4fa3e9a27876dce13
+      internalID: 928765678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_16
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 316
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf8c917fee9c7584c961bdea53b4d2d3
+      internalID: 238949595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_17
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 316
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 023a03565c18dfa47b2ce829748bc238
+      internalID: 1583018329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_18
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 316
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22877de06b947a742b6e5753e49bb39e
+      internalID: 1663942936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_19
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 316
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25bc15c91ddd57d4ea7619d6c8e4bcd2
+      internalID: 1687613777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 284
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1129321e4935cb849813cba1dcdc423e
+      internalID: 634362305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_21
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 284
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c47ecd86af3f34998f8a3e84b38934
+      internalID: 525624663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_22
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 284
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ea1cc6205c86d442b1fd372fb036e53
+      internalID: 2128464485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_23
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 284
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5c910cedbeb9bb46bf055c98c2ca7db
+      internalID: -141870169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_24
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 284
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80352da79be1aa74c80a1a8d3ba7b5db
+      internalID: 1288987502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_25
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 284
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c88b1a1ea804214080659bce3601f39
+      internalID: 2062616532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_26
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 284
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30a5e23c693284f46b9225f58ad0d495
+      internalID: -1401894681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_27
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 284
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b390bda08b1af3409e60b082ff3f7c2
+      internalID: 1660756742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_28
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 284
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f5e48ebaf1ef5944822de8164f1e59a
+      internalID: -584807723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_29
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 284
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5235389d45743e4cbbdbf2720491f3d
+      internalID: 938096368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_30
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 284
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b89bd7f2c2445ce45844d87fccd2616d
+      internalID: 360438678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_31
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 284
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff4b82746623d4245a6287f70b27afe1
+      internalID: -853085932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 252
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e954ec7c4e4c294fa0f4a95aa727f8a
+      internalID: 229066184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_33
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 252
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17fdede578a71ef4a9fb37399de9cc71
+      internalID: 1751768081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_34
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 252
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07026e079c942a8449bb4644e8e61f46
+      internalID: 4710771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_35
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 252
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 548e9b1a0d441584bbf52741b3872716
+      internalID: 1303980373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_36
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 252
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a7dddf3c9ba6648a80f8a26884948d
+      internalID: 1591744422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_37
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 252
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a1f09e47174964fbcab5b4df6534b9
+      internalID: -95282276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 220
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84deaca14c71eb845ba3f5f76104cdcc
+      internalID: 232761251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_39
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 220
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63acd1b03531e3744a9056482ce9dcfa
+      internalID: -160073973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_40
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 220
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2d0114967e30404ca03624d433380f8
+      internalID: -1353022419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_41
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 220
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0d0c6be92a06b349a0a692f76a5ce44
+      internalID: 1968320370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_MiniArteCartas_42
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 220
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd529fc5d0383174a90a5863d4d2e237
+      internalID: -1365432085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      UI_MiniArteCartas_0: 1253985552
+      UI_MiniArteCartas_1: -55035081
+      UI_MiniArteCartas_10: 1505559861
+      UI_MiniArteCartas_11: 386713816
+      UI_MiniArteCartas_12: -926549822
+      UI_MiniArteCartas_13: -2040794605
+      UI_MiniArteCartas_14: 998909886
+      UI_MiniArteCartas_15: 928765678
+      UI_MiniArteCartas_16: 238949595
+      UI_MiniArteCartas_17: 1583018329
+      UI_MiniArteCartas_18: 1663942936
+      UI_MiniArteCartas_19: 1687613777
+      UI_MiniArteCartas_2: 1938492020
+      UI_MiniArteCartas_20: 634362305
+      UI_MiniArteCartas_21: 525624663
+      UI_MiniArteCartas_22: 2128464485
+      UI_MiniArteCartas_23: -141870169
+      UI_MiniArteCartas_24: 1288987502
+      UI_MiniArteCartas_25: 2062616532
+      UI_MiniArteCartas_26: -1401894681
+      UI_MiniArteCartas_27: 1660756742
+      UI_MiniArteCartas_28: -584807723
+      UI_MiniArteCartas_29: 938096368
+      UI_MiniArteCartas_3: 1128984164
+      UI_MiniArteCartas_30: 360438678
+      UI_MiniArteCartas_31: -853085932
+      UI_MiniArteCartas_32: 229066184
+      UI_MiniArteCartas_33: 1751768081
+      UI_MiniArteCartas_34: 4710771
+      UI_MiniArteCartas_35: 1303980373
+      UI_MiniArteCartas_36: 1591744422
+      UI_MiniArteCartas_37: -95282276
+      UI_MiniArteCartas_38: 232761251
+      UI_MiniArteCartas_39: -160073973
+      UI_MiniArteCartas_4: -1306114736
+      UI_MiniArteCartas_40: -1353022419
+      UI_MiniArteCartas_41: 1968320370
+      UI_MiniArteCartas_42: -1365432085
+      UI_MiniArteCartas_5: -761619460
+      UI_MiniArteCartas_6: -457497848
+      UI_MiniArteCartas_7: -1165943556
+      UI_MiniArteCartas_8: 100697417
+      UI_MiniArteCartas_9: -312065527
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

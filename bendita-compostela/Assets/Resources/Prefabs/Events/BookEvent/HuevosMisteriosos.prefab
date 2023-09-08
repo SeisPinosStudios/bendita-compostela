@@ -234,6 +234,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 5734906405405890513}
+  hoverSound:
+    <soundName>k__BackingField: 
+    audioClip: {fileID: 0}
+    volume: 0
 --- !u!114 &1890406356189765299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,9 +282,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8476192188801247315}
+      - m_Target: {fileID: 7351669530146570906}
         m_TargetAssemblyTypeName: BookEventController, Assembly-CSharp
         m_MethodName: EndEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7351669530146570906}
+        m_TargetAssemblyTypeName: HuevosMisteriososEvent, Assembly-CSharp
+        m_MethodName: EggsEaten
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -882,6 +898,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 7286318903892227189}
+  hoverSound:
+    <soundName>k__BackingField: 
+    audioClip: {fileID: 0}
+    volume: 0
 --- !u!114 &8259234603635166817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -926,7 +946,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8476192188801247315}
+      - m_Target: {fileID: 7351669530146570906}
         m_TargetAssemblyTypeName: BookEventController, Assembly-CSharp
         m_MethodName: EndEvent
         m_Mode: 1
@@ -1060,7 +1080,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8476192188801247315}
+      - m_Target: {fileID: 7351669530146570906}
         m_TargetAssemblyTypeName: BookEventController, Assembly-CSharp
         m_MethodName: TurnPage
         m_Mode: 1
@@ -1121,6 +1141,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1632819373315253592}
+  hoverSound:
+    <soundName>k__BackingField: 
+    audioClip: {fileID: 0}
+    volume: 0
 --- !u!1 &7295935414741603678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1133,7 +1157,7 @@ GameObject:
   - component: {fileID: 8892871657891411804}
   - component: {fileID: 8439272618781350946}
   - component: {fileID: 7887381986572098714}
-  - component: {fileID: 8476192188801247315}
+  - component: {fileID: 7351669530146570906}
   m_Layer: 5
   m_Name: HuevosMisteriosos
   m_TagString: Untagged
@@ -1157,7 +1181,7 @@ RectTransform:
   - {fileID: 4441144145390786519}
   - {fileID: 7617126854230125144}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1227,7 +1251,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8476192188801247315
+--- !u!114 &7351669530146570906
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1236,7 +1260,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7295935414741603678}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e891d8a7c35358949bb6a578829ac694, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e689174527e5324e8a53023e0f22c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   eventPanel: {fileID: 7295935414741603678}

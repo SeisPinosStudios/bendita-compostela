@@ -15,7 +15,7 @@ TagManager:
   - UI
   - Background
   - Map
-  - 
+  - Fade
   - 
   - 
   - 
@@ -45,6 +45,12 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 1400681483
+    locked: 0
+  - name: EnitityDisplay
+    uniqueID: 1627754113
+    locked: 0
+  - name: EnitityAlteredEffects
+    uniqueID: 4019084585
     locked: 0
   - name: Map
     uniqueID: 3005827539

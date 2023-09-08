@@ -14,18 +14,27 @@ public class Player : Entity
     
     private void Awake()
     {
-        entityData = entityDataContainer.entityData;
-        playerData = (PlayerData)entityDataContainer.entityData;
+        
+    }
+
+    public IEnumerator Start()
+    {
+        yield return new WaitUntil(() => GameManager.Instance.playerData);
+        entityDataContainer.entityData = GameManager.Instance.playerData;
+        entityData = GameManager.Instance.playerData;
+        playerData = GameManager.Instance.playerData;
+        entityDisplay.entityAnimator.runtimeAnimatorController = playerData.playerAnimator;
         EntitySetup();
     }
 
     #region Setup Methods
     private void EntitySetup()
     {
-        this.currentHP = playerData.HP;
-        this.defenseBonus = playerData.chestArmor.defenseBonus + playerData.legArmor.defenseBonus;
+        currentHP = playerData.currentHP;
+        defenseBonus = playerData.GetDefense();
 
         entityDisplay.UpdateHealth(entityData.HP, currentHP);
+        GenerateCondecorations();
     }
     private void GenerateCondecorations()
     {
@@ -55,12 +64,20 @@ public class Player : Entity
     {
         this.weapon = weapon;
     }
+    protected override IEnumerator Death()
+    {
+        if(GetComponent<Friend>() != null && GetComponent<Friend>().active)
+        {
+            RestoreHealth(1, 0, 1);
+            GetComponent<Friend>().active = false;
+            yield break;
+        }
+        OnDeath();
+        yield return null;
+    }
     #endregion
 
     #region Check Methods
-    public bool IsDead()
-    {
-        return currentHP <= 0;
-    }
+    
     #endregion
 }

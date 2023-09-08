@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f4d891fd188894fa6be30df36d7c76, type: 3}
+  m_Name: WPN_004_Lanza
+  m_EditorClassIdentifier: 
+  cardName: Lanza con Escudo
+  <cardId>k__BackingField: 0
+  description: 
+  cost: 0
+  price: 3
+  art: {fileID: 1679235321, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
+  miniArt: {fileID: -1022012457790527305, guid: b0492a3b5e9bcac42a9d2131ed5fc5f2, type: 3}
+  <attack>k__BackingField: 0
+  cardEffects: 03000000
+  cardEffectsValues:
+  - 
+  printArrow: 0
+  <weaponId>k__BackingField: 3
+  <weaponClassName>k__BackingField: 3
+  <attacks>k__BackingField:
+  - {fileID: 11400000, guid: 226bf2d1145bb2f40ab980ad4871d358, type: 2}
+  - {fileID: 11400000, guid: 6c516f8aa8e59914e8574e7ca672f89c, type: 2}
+  - {fileID: 11400000, guid: b44e950bdf95d3a4998638f788c43f17, type: 2}
+  <ultimate>k__BackingField: {fileID: 11400000, guid: 29b3b571f54e3b949bac6fb4a91352b1, type: 2}
+  <weaponLevel>k__BackingField: 0
+  <styleLevel>k__BackingField: 0
+  <ultimateLevel>k__BackingField: 0

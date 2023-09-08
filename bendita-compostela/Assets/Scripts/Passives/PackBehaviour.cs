@@ -25,4 +25,17 @@ public class PackBehaviour : BasicPassive
         enemy.DefenseBonus(-2);
         enemy.GetComponent<EntityEffectsManager>().GuardedMultiplier(-0.25f);
     }
+
+    private void OnDestroy()
+    {
+        foreach (Enemy enemy in enemies) enemy.OnDeath -= CheckAllies;
+    }
+
+    #region Description
+    public static string GetDescription()
+    {
+        return $"Sentimiento de Manada: mientras la Tarasca tenga aliados vivos sufre 2 puntos menos de daño por ataques y el efecto En Guardia <sprite=3> pasa a proteger " +
+            $"un 75% del daño";
+    }
+    #endregion
 }

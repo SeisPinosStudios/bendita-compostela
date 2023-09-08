@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: x1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 22edad06b9126d54e9302a547d0e41f4, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 15ac5b5a18be3ff47949c7e72cee61cf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8292293de51fa954dad069d209aa962f, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: c19ea3d0f89910043bd58f011f87a0b3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -93,15 +93,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.3
-  m_fontSizeBase: 36
+  m_fontSize: 0.25
+  m_fontSizeBase: 0.25
   m_fontWeight: 400
-  m_enableAutoSizing: 1
-  m_fontSizeMin: 0
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 0.15
+  m_fontSizeMax: 0.25
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 6125467974371415810}
   - component: {fileID: 2010351370788320499}
   - component: {fileID: 678472934270943576}
+  - component: {fileID: 66956322856319526}
   m_Layer: 0
   m_Name: AlteredEffectDisplay
   m_TagString: Untagged
@@ -203,7 +204,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1599745683, guid: 747947cccd8571b44aa42c0cb805752b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -242,3 +243,24 @@ MonoBehaviour:
   valueText: {fileID: 6404293371239362350}
   effect: 0
   value: 0
+--- !u!114 &66956322856319526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8902328564157182011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb5e5c60331e7d44a9162bc49f7f30e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <textBoxPrefab>k__BackingField: {fileID: 6216814944079965107, guid: 5b65f629a7b302745bc6cf1c9d85a22a, type: 3}
+  <textObject>k__BackingField: {fileID: 0}
+  <textToWrite>k__BackingField: 
+  <textBoxObject>k__BackingField: {fileID: 0}
+  <highlight>k__BackingField: {fileID: 0}
+  <progress>k__BackingField: 0
+  <progressBar>k__BackingField: {fileID: 0}
+  <loadingCircleSpeed>k__BackingField: 1
+  <effectDisplay>k__BackingField: {fileID: 678472934270943576}

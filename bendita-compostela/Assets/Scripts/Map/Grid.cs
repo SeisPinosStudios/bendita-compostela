@@ -36,13 +36,16 @@ public class Grid{
 
         GenerateBossNode();
         DeletePathlessNodes();        
-        AsignNodesValues();
+        AsignNodesValues();        
         AsignRandomEncounter();
         ShowAllNodes();
     }
+
+    
     #endregion
 
     #region Grid Private Methods 
+
     private void GenerateBossNode()
     {
         bossNode = new Node(width/2,height);        
@@ -72,25 +75,43 @@ public class Grid{
                 nodeDictionary[key].NodeEncounter = NodeEncounter.CombatEncounter;                
             }            
         }
+
         //Asign all nodes value based on the probability fields above
+        Node lastNode = new Node(-1,-1);
         foreach (Node node in nodeDictionary.Values)
-        {
+        {            
             if(node.NodeEncounter == NodeEncounter.None)
             {
-                //TODO remake more efficiently
-                //TODO dont let two consecutive shop be asigned
-                int i = Random.Range(0,100);
-                for (int j = 0; j < eventOdds.Length; j++)
+                node.NodeEncounter = AsignValue();
+                
+                // Event restriction
+                if(node.NodeEncounter == NodeEncounter.EventEncounter) numEvents++;        
+                if(numEvents >= eventPrefabsStack.Count) node.NodeEncounter = NodeEncounter.CombatEncounter;
+                
+                // Shop restriction
+                if(node.NodeEncounter == NodeEncounter.ShopEncounter) 
                 {
-                    if(i >= eventOdds[j].minProbabilityRange && i<= eventOdds[j].maxProbabilityRange)
+                    if(NodesAreNear(lastNode, node) && lastNode.NodeEncounter == NodeEncounter.ShopEncounter)
                     {
-                        if(eventOdds[j].nodeEncounter == NodeEncounter.EventEncounter) numEvents++;
-                        if(numEvents >= eventPrefabsStack.Count) node.NodeEncounter = NodeEncounter.CombatEncounter;
-                        else node.NodeEncounter = eventOdds[j].nodeEncounter;                        
-                    }
+                        node.NodeEncounter = NodeEncounter.CombatEncounter;                                                
+                    }   
+                    lastNode = node;                                     
                 }
             }
         }
+    }
+    private NodeEncounter AsignValue()
+    {
+        NodeEncounter aux = NodeEncounter.None;
+        int i = Random.Range(0,100);   
+        for (int j = 0; j < eventOdds.Length; j++)
+            {
+                if(i >= eventOdds[j].minProbabilityRange && i<= eventOdds[j].maxProbabilityRange)
+                {                    
+                    aux = eventOdds[j].nodeEncounter;
+                }
+            } 
+        return aux;
     }
 
     private void AsignRandomEncounter()

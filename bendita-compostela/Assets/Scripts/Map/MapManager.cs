@@ -8,14 +8,15 @@ using Random = UnityEngine.Random;
 
 public class MapManager : MonoBehaviour
 {
+    #region Variables
     public static MapManager Instance;
-
     private Grid mapGrid;
 
     [Header("Map SetUp")]
     [SerializeField] private GameObject nodePrefab;
     [SerializeField] private GameObject mapSpace; 
     [SerializeField] private GameObject lineRendererPrefab;
+    [SerializeField] private Sound mapMusic;
     
     [Header("Map Configuration")]
     [SerializeField] private int NUM_NODES;
@@ -35,14 +36,18 @@ public class MapManager : MonoBehaviour
     public Stack<GameObject> eventPrefabsStack;    
     private Dictionary<NodeEncounter, GameObject> encounterPrefabsDictionary = new Dictionary<NodeEncounter, GameObject>();
 
-    public Vector2 MAP_DISPLAY_OFFSET = new Vector2(1,4);
-    private Color[] colors = {Color.yellow, Color.blue, Color.green, Color.white, Color.black};
+    public Vector2 MAP_DISPLAY_OFFSET = new Vector2(1,4);    
 
     [Header("Player Selections")]
     public List<Node> nodesVisited = new List<Node>();
-
+    
+    // Dictionary with the current nodes GO given their position
     private Dictionary<Vector2,GameObject> nodeGameObjects = new Dictionary<Vector2, GameObject>();
 
+    public Node currentNode;
+    #endregion
+    
+    #region Initialization and setup of the Singleton
     private void Awake() 
     {
         if (Instance == null)
@@ -53,22 +58,35 @@ public class MapManager : MonoBehaviour
         {
             Destroy(gameObject);
         }       
+        SoundManager.Instance.PlayMusic(mapMusic.AudioClip,mapMusic.Volume);
     }
-
+    
     private void Start() 
     { 
         encounterPrefabsDictionary.Add(NodeEncounter.CombatEncounter, combatPrefab);
         encounterPrefabsDictionary.Add(NodeEncounter.EventEncounter, eventPrefab);
-        encounterPrefabsDictionary.Add(NodeEncounter.ShopEncounter, shopPrefab);        
-        ConfigureMap();
-    }
+        encounterPrefabsDictionary.Add(NodeEncounter.ShopEncounter, shopPrefab);
 
+        if (GameManager.Instance.map != null) LoadMap(GameManager.Instance.map, GameManager.Instance.visitedNodes); 
+        else 
+        {
+            ConfigureMap();
+            GameManager.Instance.SaveGrid(GetCurrentGrid());
+        }
+    }
+    #endregion    
+        
+    #region Public Methods
+
+    /// <summary>
+    /// Creates and displays a new map each time is called, erasing the old map information and display
+    /// </summary>
     public void ConfigureMap()
     {
         RandomizeEvents();
         mapGrid = new Grid(NUM_NODES, MAP_DEPTH, NUM_PATHS_GENERATED);
         mapGrid.Boss.NodeEncounter = NodeEncounter.CombatEncounter;
-        mapGrid.Boss.CombatData = bossPool.combatsData[0];
+        SetBoss(0);
         //line.positionCount = mapGrid.Nodes.Count;        
         foreach (Transform son in mapSpace.transform)
         {
@@ -79,6 +97,60 @@ public class MapManager : MonoBehaviour
         EneableFirstNodes();
     }
 
+    public List<CombatPool> GetCombatPools()
+    {
+        return combatPools;
+    }
+    
+    public Grid GetCurrentGrid()
+    {
+        return mapGrid;
+    }
+    /// <summary>
+    /// Sets the boss from a boss pool given an index, but only in the grid information, not in the map displayed
+    /// </summary>
+    /// <param name="bossIdx">index of the boss</param>
+    public void SetBoss(int bossIdx)
+    {
+        mapGrid.Boss.CombatData = bossPool.combatsData[bossIdx];
+    }
+    /// <summary>
+    /// Asigns the boss information to the boss node displayed in the map
+    /// </summary>
+    public void AsignBossEncounter()
+    {
+        nodeGameObjects[mapGrid.Boss.NodePos].GetComponent<NodeEvent>().nodeInfo = mapGrid.Boss;
+    }
+    /// <summary>
+    /// Loads and displays a map given the grid information and the progress of the map
+    /// </summary>
+    /// <param name="map"> Map to load</param>
+    /// <param name="currentProgression"> Player progression node list </param>
+    public void LoadMap(Grid map, List<Node> currentProgression)
+    {
+        mapGrid = map;
+        DisplayMap();
+        foreach (Node node in currentProgression)
+        {
+            nodeGameObjects[node.NodePos].GetComponent<NodeEvent>().NodeIsCompleted();
+        }
+        EneableNextAvailableNodes(currentProgression[currentProgression.Count-1]);
+    }
+    /// <summary>
+    /// Map display change when a given node is selected
+    /// </summary>
+    /// <param name="nodeSelected"></param>
+    public void NodeSelected(Node nodeSelected)
+    {
+        nodesVisited.Add(nodeSelected);
+        currentNode = nodeSelected;
+        GameManager.Instance.AddVisitedNode(nodeSelected);
+        DisableNotSelectedNodes(nodeSelected);
+        //EneableNextAvailableNodes(nodeSelected);
+    }
+    #endregion
+
+    #region Private Methods
     private void DisplayMap()
     {        
         //TODO make more efficient
@@ -107,69 +179,60 @@ public class MapManager : MonoBehaviour
         nodeGameObjects.Add(mapGrid.Boss.NodePos, bossNode);
 
         // Instantiate Paths
-        //int colorIdx = 0;
         foreach (List<Node> path in mapGrid.Paths)
         {            
             var line = Instantiate(lineRendererPrefab, new Vector2(0,0), Quaternion.identity,mapSpace.transform);
             LineRenderer lineRenderer = line.GetComponent<LineRenderer>();
             lineRenderer.positionCount = mapGrid.Height+1;      
-            lineRenderer.sortingOrder = 1;
-            /*lineRenderer.material = new Material(Shader.Find("Sprites/Default"))
-            {                
-                color = colors[colorIdx]
-            };*/
-            lineRenderer.widthMultiplier = 0.1f;            
+            lineRenderer.sortingOrder = 0;
+            lineRenderer.widthMultiplier = 0.5f;            
             for (int i = 0; i < path.Count; i++)
             {
                     lineRenderer.SetPosition(i,new Vector2(path[i].NodePos.x - MAP_DISPLAY_OFFSET.x, path[i].NodePos.y - MAP_DISPLAY_OFFSET.y));                
             }
-            lineRenderer.SetPosition(path.Count, bossNode.transform.position);
-            //colorIdx++;
+            lineRenderer.SetPosition(path.Count, bossNode.transform.position);            
         } 
     }
     private void EneableFirstNodes()
     {
         foreach (Vector2 key in nodeGameObjects.Keys)
         {
-            if(key.y == 0)nodeGameObjects[key].GetComponent<Collider2D>().enabled = true;            
+            if(key.y == 0)
+            {
+                nodeGameObjects[key].GetComponent<NodeEvent>().NodeIsSelectable();
+            }
         }
     }
-    public void NodeSelected(Node nodeSelected)
-    {
-        nodesVisited.Add(nodeSelected);
-        DisableNotSelectedNodes(nodeSelected);        
-        EneableNextAvailableNodes(nodeSelected);
-    }
-
-    private void EneableNextAvailableNodes(Node nodeSelected)
+    
+    public void EneableNextAvailableNodes(Node nodeSelected)
     {
         foreach (Node node in nodeSelected.futureNodes)
         {
-            nodeGameObjects[node.NodePos].GetComponent<Collider2D>().enabled = true;
+            nodeGameObjects[node.NodePos].GetComponent<NodeEvent>().NodeIsSelectable();
         }
+        nodeGameObjects[nodeSelected.NodePos].GetComponent<NodeEvent>().NodeIsCompleted();
     }
     private void DisableNotSelectedNodes(Node nodeSelected)
     {
         foreach (Vector2 key in nodeGameObjects.Keys)
         {
-            if(key.y == nodeSelected.NodePos.y)nodeGameObjects[key].GetComponent<Collider2D>().enabled = false;
+            if(key.y == nodeSelected.NodePos.y)
+            {
+                nodeGameObjects[key].GetComponent<NodeEvent>().DisableUncompletedNode();
+            }            
+            nodeGameObjects[nodeSelected.NodePos].GetComponent<NodeEvent>().NodeIsCompleted();
         }
+        
     }
-    public List<CombatPool> GetCombatPools()
-    {
-        return combatPools;
-    }
-    public void RandomizeEvents()
+    private void RandomizeEvents()
     {           
         encounterPrefabs = encounterPrefabs.OrderBy( x => Random.Range(0,10)).ToList();
        
-        eventPrefabsStack = new Stack<GameObject>(encounterPrefabs);
-        
+        eventPrefabsStack = new Stack<GameObject>(encounterPrefabs);        
     }
-
+    #endregion
 
     #region Debug
-
     public void TotalNodesIF(string a)
     {
         NUM_NODES = int.Parse(a);
@@ -182,7 +245,6 @@ public class MapManager : MonoBehaviour
     {
         NUM_PATHS_GENERATED = int.Parse(c);
     } 
-
     #endregion
 }
 

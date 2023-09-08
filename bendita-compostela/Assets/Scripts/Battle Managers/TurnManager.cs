@@ -7,36 +7,49 @@ public class TurnManager : MonoBehaviour
 {
     [field:SerializeField] public static TurnManager Instance { get; private set; }
     [SerializeField] Transform enemiesContainer;
-    [field: SerializeField] public Queue<EntityBehaviour> turnQueue { get; private set; } = new Queue<EntityBehaviour>();
+    [field: SerializeField] public LinkedList<EntityBehaviour> turnQueue { get; private set; } = new LinkedList<EntityBehaviour>();
     [field: SerializeField] public EntityBehaviour entityTurn { get; private set; }
     [field: SerializeField] public List<EnemyBehaviour> enemiesBehaviour { get; private set; }
     [field: SerializeField] public PlayerBehaviour playerBehaviour { get; private set; }
-    public event Action onTurn;
+    public event Action OnTurn = delegate { };
 
     private void Awake()
     {
-        if (!Instance) Instance = this;
+        Instance = this;
         foreach (Transform enemy in enemiesContainer) enemiesBehaviour.Add(enemy.GetComponent<EnemyBehaviour>());
 
-        turnQueue.Enqueue(playerBehaviour);
-        foreach (EnemyBehaviour enemy in enemiesBehaviour) turnQueue.Enqueue(enemy);
+        turnQueue.AddLast(playerBehaviour);
+        foreach (EnemyBehaviour enemy in enemiesBehaviour) turnQueue.AddLast(enemy);
     }
-
-    private void Start()
+    private IEnumerator Start()
     {
+        print($"{turnQueue.First.Value}");
+        yield return new WaitForSeconds(1.0f);
         Turn();
     }
 
     public void Turn()
     {
-        if (entityTurn) turnQueue.Enqueue(entityTurn);
+        if (entityTurn) turnQueue.AddLast(entityTurn);
         StartCoroutine(TurnCoroutine());
     }
     private IEnumerator TurnCoroutine()
     {
         yield return new WaitUntil(() => entityTurn == null || entityTurn.isTurn == false);
-        entityTurn = turnQueue.Dequeue();
+
+        while (!turnQueue.First.Value) turnQueue.RemoveFirst();
+
+        foreach (EntityBehaviour behaviour in turnQueue) if(behaviour) Debug.Log($"TurnManager - turn: {behaviour.name}");
+
+        entityTurn = turnQueue.First.Value;
+        turnQueue.RemoveFirst();
+
         entityTurn.OnTurnBegin();
-        if(onTurn != null) onTurn();
+        OnTurn();
+        yield break;
+    }
+    public void RemoveBehaviour(EntityBehaviour behaviour)
+    {
+        turnQueue.Remove(behaviour);
     }
 }

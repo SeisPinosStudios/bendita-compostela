@@ -6,12 +6,13 @@ using System;
 public class Enemy : Entity
 {
     [SerializeField, Header("Enemy Section")] EnemyData enemyData;
-    public event Action OnDeath;
+    public event Action OnDeath = delegate { };
 
     private void Awake()
     {
         entityData = entityDataContainer.entityData;
         enemyData = (EnemyData)entityData;
+        entityDisplay.entityAnimator.runtimeAnimatorController = enemyData.enemyAnimator;
         SetupEntity();
     }
     private void SetupEntity()
@@ -23,10 +24,17 @@ public class Enemy : Entity
 
         entityDisplay.UpdateHealth(entityData.HP, currentHP);
     }
-    protected new IEnumerator Death()
+    protected override IEnumerator Death()
     {
-        OnDeath();
+        TurnManager.Instance.RemoveBehaviour(entityBehaviour);
+        BattleManager.Instance.enemies.Remove(this);
+        ((EnemyBehaviour)entityBehaviour).Death();
+        yield return new WaitForSeconds(1.0f);
         Destroy(gameObject);
         yield return null;
+    }
+    private void OnDestroy()
+    {
+        OnDeath();
     }
 }

@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class Honesty : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static void OnObtain()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GameManager.Instance.playerData.ChangeMaxHP(7);
     }
 }

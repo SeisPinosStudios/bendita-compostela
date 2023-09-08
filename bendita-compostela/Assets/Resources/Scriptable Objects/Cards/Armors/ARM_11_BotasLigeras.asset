@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3346df7aaf02184392ce9fcb83d5133, type: 3}
+  m_Name: ARM_11_BotasLigeras
+  m_EditorClassIdentifier: 
+  cardName: Botas Ligeras
+  <cardId>k__BackingField: 0
+  description: 
+  cost: 5
+  price: 0
+  art: {fileID: 1737983201, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
+  miniArt: {fileID: -1444394096936765025, guid: b0492a3b5e9bcac42a9d2131ed5fc5f2, type: 3}
+  <attack>k__BackingField: 0
+  cardEffects: 
+  cardEffectsValues: []
+  printArrow: 0
+  <defenseBonus>k__BackingField: 1
+  <armorId>k__BackingField: 11
+  <weaponSynergy>k__BackingField: 5
+  <weaponSynergyClass>k__BackingField: 5
+  <synergyLevel>k__BackingField: 0
+  <armorLevel>k__BackingField: 0
+  <equipmentScreenIcon>k__BackingField: {fileID: -2815994589866895867, guid: 7fdda56d25d1f034897e45af910f2185, type: 3}
+  <equipmentScreenDescription>k__BackingField: 
+  <armorType>k__BackingField: 1

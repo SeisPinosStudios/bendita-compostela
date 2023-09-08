@@ -28,6 +28,6 @@ public class TAlteredEffects : MonoBehaviour
     [field: SerializeField] public static List<AlteredEffects> negativeEffects = new List<AlteredEffects>()
     {
         {AlteredEffects.Bleed}, {AlteredEffects.Poison}, {AlteredEffects.Vulnerable}, {AlteredEffects.Burn}, {AlteredEffects.Exhaust}, {AlteredEffects.Disarmed},
-        {AlteredEffects.Marked}, {AlteredEffects.Stun}
+        {AlteredEffects.Marked}, {AlteredEffects.Stun}, {AlteredEffects.Lead}
     };
 }

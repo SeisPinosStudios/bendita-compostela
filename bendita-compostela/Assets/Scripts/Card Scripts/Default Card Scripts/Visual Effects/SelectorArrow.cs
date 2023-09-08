@@ -13,8 +13,8 @@ public class SelectorArrow : MonoBehaviour
     private void Awake()
     {
         from = transform.position;
-        DragCardScript.onUsing += () => showArrow = true;
-        DragCardScript.onReturning += () => showArrow = false;
+        DragCardScript.OnUsing += () => showArrow = true;
+        DragCardScript.OnReturning += () => showArrow = false;
     }
 
     private void Update()
@@ -28,8 +28,8 @@ public class SelectorArrow : MonoBehaviour
             //transform.position = from;
             transform.up = to - transform.position;
 
-            var size = (from - to).magnitude;
-            sprite.size = new Vector2(0.8f, size);
+            var size = ((from - to).magnitude)/2;
+            sprite.size = new Vector2(0.4f, size);
         }
         else
         {

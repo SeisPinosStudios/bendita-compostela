@@ -16,4 +16,16 @@ public class FerociousRage : BasicPassive
     {
         enemy.AttackBonus(1);
     }
+
+    private void OnDestroy()
+    {
+        enemy.OnDamage -= PassiveEffect;
+    }
+
+    #region Description
+    public static string GetDescription()
+    {
+        return $"Rabia Feroz: cada ataque contra esta criatura aumenta su daño con ataques en 1";
+    }
+    #endregion
 }

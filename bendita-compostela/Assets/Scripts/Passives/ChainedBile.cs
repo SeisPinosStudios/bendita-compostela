@@ -7,7 +7,7 @@ public class ChainedBile : BasicPassive
     [field: SerializeField] public bool passiveActive;
     private void Awake()
     {
-        TurnManager.Instance.onTurn += PassiveEffect;
+        TurnManager.Instance.OnTurn += PassiveEffect;
     }
 
     private void PassiveEffect()
@@ -24,5 +24,13 @@ public class ChainedBile : BasicPassive
     private void OnDestroy()
     {
         if (passiveActive) BattleManager.Instance.player.DefenseBonus(1);
+        TurnManager.Instance.OnTurn -= PassiveEffect;
     }
+
+    #region Description
+    public static string GetDescription()
+    {
+        return $"Bílis en Cadena: si Matías sufre Veneno <sprite=1>, todos los ataques le hacen 1 punto mas de daño.";
+    }
+    #endregion
 }

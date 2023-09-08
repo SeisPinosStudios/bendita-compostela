@@ -8,12 +8,27 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 0
-    path: Assets/Scenes/TestScenes/Event Test/Event Scene.unity
-    guid: 11bb6b1a42ff69149a54660df669f234
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/Cinematic.unity
+    guid: b9bb31b01f7421b49882b3ea50530cfd
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/MainMenu.unity
+    guid: 351f81a82b43e3344874794108a16281
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/Map.unity
+    guid: c31d5247fec1ef84c8c7daf01ae88cb3
   - enabled: 1
     path: Assets/Scenes/Final Scenes/Shop.unity
     guid: 1898a95d461dbd645a817d194074797b
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/Battle.unity
+    guid: 86ad56315d266534f8f747ff24fdd426
+  - enabled: 0
+    path: Assets/Scenes/TestScenes/Event Test/Event Scene.unity
+    guid: 11bb6b1a42ff69149a54660df669f234
+  - enabled: 0
+    path: Assets/Scenes/TestScenes/MapTestScene.unity
+    guid: 3d41494aeaebd3344ae6c6874cde62e1
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 706a98700d414934287b06f4cb93fae7, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 14b69f3ea4e760d48b331400f38bc2a8, type: 2}

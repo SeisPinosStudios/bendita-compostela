@@ -6,7 +6,12 @@ public class Samael : CondecorationEffect
 {
     private void Awake()
     {
-        BattleManager.Instance.player.DamageMultiplier(0.5f);
-        BattleManager.Instance.player.DefenseMultiplier(0.5f);
+        BattleManager.Instance.player.AttackMultiplier(0.5f);
+        BattleManager.Instance.player.DefenseMultiplier(-0.5f);
+    }
+
+    public static void OnObtain()
+    {
+
     }
 }

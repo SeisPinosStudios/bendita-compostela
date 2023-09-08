@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerBehaviour : EntityBehaviour
 {
     [SerializeField] Player player;
+    public event Action OnPlayerTurn = delegate { };
     public override void OnTurnBegin()
     {
         print($"{this.name} OnBeginTurn");
@@ -12,7 +14,20 @@ public class PlayerBehaviour : EntityBehaviour
     }
     private IEnumerator OnTurnBeginCorroutine()
     {
+        OnPlayerTurn();
+
+        entityEffManager.Poison();
+
+        if (entityEffManager.Suffering(TAlteredEffects.AlteredEffects.Stun))
+        {
+            //player.entityDisplay.Stun();
+            OnTurnEnd();
+            yield break;
+        }
+
         yield return StartCoroutine(DeckManager.Instance.DrawCardCoroutine(5));
+        Debug.Log($"Player succeded to draw {5}");
+        BattleManager.Instance.SetInteraction(true);
         player.RestoreEnergy(player.maxEnergy);
         isTurn = !isTurn;
     }
@@ -24,11 +39,14 @@ public class PlayerBehaviour : EntityBehaviour
     public override void OnTurnEnd()
     {
         StartCoroutine(OnTurnEndCoroutine());
-        TurnManager.Instance.Turn();
     }
     private IEnumerator OnTurnEndCoroutine()
     {
+        entityEffManager.Burn();
+
+        BattleManager.Instance.SetInteraction(false);
         yield return StartCoroutine(DeckManager.Instance.ReturnCardsCoroutine());
+        TurnManager.Instance.Turn();
         isTurn = !isTurn;
     }
 }

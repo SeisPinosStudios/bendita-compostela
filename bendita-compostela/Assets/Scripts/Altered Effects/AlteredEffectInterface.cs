@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AlteredEffectInterface : MonoBehaviour
+public class BasicAlteredEffect : MonoBehaviour
 {
-    public interface IAlteredEffect 
+    public interface IAlteredEffect
     {
-        public void Effect(EntityEffectsManager entityEffectsManager, Entity entity, GameObject entityGameObject, Object data);
+        public string GetDescription(EntityEffectsManager entityEffManager, Entity entity);
+
+        public string GetBasicDescription();
     }
 }

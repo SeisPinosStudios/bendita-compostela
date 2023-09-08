@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class BasicPassive : MonoBehaviour
 {
-    public enum Passive { AnticipatedAssault, ChainedBile, FerociousRage, HardSkin, MassiveBlessing, PackBehaviour, SerpentineGrace, Snake}
+    public enum Passive { AnticipatedAssault, ChainedBile, FerociousRage, HardSkin, MassiveBlessing, PackBehaviour, SerpentineGrace, Snake,
+                            ExpressDefense, CrossFaith, Boogey, ChampionsGuard, FireResistance, VulnerableResistance}
 }

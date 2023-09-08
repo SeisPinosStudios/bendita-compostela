@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EnemyBehaviour : EntityBehaviour
 {
@@ -11,6 +12,7 @@ public class EnemyBehaviour : EntityBehaviour
     [field: SerializeField] public Queue<EnemyAttack> attackQueue { get; private set; } = new Queue<EnemyAttack>();
     [field: SerializeField] public EnemyAttackSequence currentSequence { get; private set; }
     [field: SerializeField] public EnemyAttackSequence.SequenceType sequenceType { get; private set; }
+    public event Action OnEnemyTurn = delegate { };
 
     private void Awake()
     {
@@ -20,26 +22,38 @@ public class EnemyBehaviour : EntityBehaviour
     public override void OnTurnBegin()
     {
         print($"{this.name} OnBeginTurn");
+
+        entityEffManager.Poison();
+
+        if (entityEffManager.Suffering(TAlteredEffects.AlteredEffects.Stun))
+        {
+            entityEffManager.RemoveEffect(TAlteredEffects.AlteredEffects.Stun, 1);
+            OnTurnEnd();
+            return;
+        }
+
         if (attackQueue.Count <= 0) GetNewSequence();
         isTurn = !isTurn;
         OnTurn();
     }
     public override void OnTurn()
     {
+        OnEnemyTurn();
         StartCoroutine(OnTurnCoroutine());
     }
     private IEnumerator OnTurnCoroutine()
     {
         yield return StartCoroutine(Attack());
+        yield return new WaitForSeconds(1.0f);
         OnTurnEnd();
     }
     public override void OnTurnEnd()
     {
+        entityEffManager.Burn();
+
         isTurn = !isTurn;
         TurnManager.Instance.Turn();
     }
-
-
     private IEnumerator Attack()
     {
         var attack = attackQueue.Dequeue();
@@ -47,9 +61,10 @@ public class EnemyBehaviour : EntityBehaviour
         attackPrefab.cardData = attack;
 
         var attackInstance = Instantiate(attackPrefab, mainCanvas);
-        attackInstance.GetComponent<Card>().UseCard(target);
+        attackInstance.GetComponent<Card>().UseEnemyCard(target);
+        attackInstance.GetComponent<CardDisplay>().target = target.GetComponent<Entity>();
         yield return new WaitForSeconds(waitTime);
-        Destroy(attackInstance.gameObject);
+        //Destroy(attackInstance.gameObject);
     }
     private void GetNewSequence()
     {
@@ -84,5 +99,10 @@ public class EnemyBehaviour : EntityBehaviour
         if (attack.attackType == EnemyAttack.AttackType.Attack) return BattleManager.Instance.player.gameObject;
 
         return null;
+    }
+    public void Death()
+    {
+        StopAllCoroutines();
+        if(TurnManager.Instance.entityTurn == this) TurnManager.Instance.Turn();
     }
 }

@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class Friend : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [field: SerializeField] public bool active { get; set; } = true;
+    public static void OnObtain()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

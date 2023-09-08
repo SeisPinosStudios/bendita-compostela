@@ -9,6 +9,7 @@ using System.Threading;
 
 public class EventMischievousCheese : MonoBehaviour
 {
+    #region Variables
     [SerializeField] private EventText eventText;
     [SerializeField] private EventText cheesesList;
     [SerializeField] private Dictionary<string,Sprite> cheesesImageDictionary = new Dictionary<string, Sprite>();
@@ -20,13 +21,53 @@ public class EventMischievousCheese : MonoBehaviour
     [SerializeField] private string selectedCheese;    
     [SerializeField] private Image selectedCheeseDisplay;
     [SerializeField] private Image shepardImage;
+    private List<GameObject> cheesesGO = new List<GameObject>();
+
+    public Sound cheeseEventMusic;
 
     public GameObject eventPanel;
+
+    public GameObject nextButton;
+    public GameObject rewardWindow;
+
+    public GameObject SelecButton;
+    public GameObject ExitButton;
     
     private int textIdx = 0;
     private string cheesePicked;
 
+    #endregion
+   
+    #region Event Reward DIEGO AQUI
+    public void ConfirmCheese()
+    {
+        SelecButton.SetActive(false);
+        ExitButton.SetActive(true);
+        textIdx = eventText.text.Count;
+        if(cheesePicked == selectedCheese) 
+        {   
+            //SI HA SELECCIONADO EL QUESO CORRECTO
+            textBox.text = "¡Enhorabuena joven peregrino!, sabía que podías estar a la altura de mis quesos ";
+            shepardImage.sprite = shepardReactionImageList[0];
+            /*nextButton.SetActive(true);
+            nextButton.GetComponent<Button>().onClick.AddListener(()=>rewardWindow.SetActive(true));
+            nextButton.GetComponent<Button>().onClick.AddListener(()=>rewardWindow.GetComponent<EventRewardDisplay>().SetTextReward("Obtuviste carta Queso \nRecuperas un 20% de la vida"));*/
+            GameManager.Instance.playerData.ChangeCurrentHP(Mathf.RoundToInt(GameManager.Instance.playerData.HP * 0.2f));
+        }                
+        else
+        {
+            //SI NO LO HA SELECCIONADO
+          textBox.text = "No mereces mis quesos joven peregrino, ¡largo de aquí! Has echado a perder mi tiempo";          
+          shepardImage.sprite = shepardReactionImageList[1];          
+        } 
+
+    }
+    #endregion
+
+    #region Event Logic
     private void Start() {                        
+        SoundManager.Instance.PlayMusic(cheeseEventMusic.AudioClip, cheeseEventMusic.Volume);
+
         //Create and instantiate cheeses
         for (int i = 0; i < cheesesImageList.Count; i++)
         {
@@ -40,9 +81,12 @@ public class EventMischievousCheese : MonoBehaviour
             cheese.GetComponent<Cheese>().name = cheeseName;
             cheese.GetComponent<Cheese>().cheeseName = cheeseName;
             cheese.GetComponent<Cheese>().eventController = this;
-            cheese.GetComponent<Image>().sprite = cheesesImageDictionary[cheeseName];
+            cheese.GetComponent<Image>().sprite = cheesesImageDictionary[cheeseName];            
+            cheesesGO.Add(cheese);
+            cheese.SetActive(false);
             k++;
         }
+        
         StartEvent();
     }
     public void StartEvent()
@@ -61,26 +105,25 @@ public class EventMischievousCheese : MonoBehaviour
         selectedCheeseDisplay.color = new Color(1,1,1,1);
         cheesePicked = cheese;
     }
-    public void ConfirmCheese()
-    {
-        textIdx = eventText.text.Count;
-        if(cheesePicked == selectedCheese) 
-        {   
-            textBox.text = "¡Enhorabuena joven peregrino!, sabía que podías estar a la altura de mis quesos ";
-            shepardImage.sprite = shepardReactionImageList[0];
-        }                
-        else
-        {
-          textBox.text = "No mereces mis quesos joven peregrino, ¡largo de aquí! Has echado a perder mi tiempo";          
-          shepardImage.sprite = shepardReactionImageList[1];
-        } 
-
-    }
+    
     public void TextBoxClicked()
     {                    
         ChangeShepardSprite();
         if(textIdx >= eventText.text.Count) return;
-        if(textIdx == 4)textBox.text = eventText.text[textIdx] + selectedCheese;   
+        if(textIdx == 4)
+        {
+            foreach (GameObject cheese in cheesesGO)
+            {
+                cheese.SetActive(true);
+            }
+            SelecButton.SetActive(true);
+            textBox.text = eventText.text[textIdx] + selectedCheese;   
+        }
+        else if(textIdx == 5) 
+        {
+            //nextButton.SetActive(false);
+            textBox.text = eventText.text[textIdx];
+        }
         else textBox.text = eventText.text[textIdx];        
         textIdx++;
     }
@@ -97,6 +140,8 @@ public class EventMischievousCheese : MonoBehaviour
 
     public void EndEvent()
     {
+        MapManager.Instance.EneableNextAvailableNodes(MapManager.Instance.currentNode);
         Destroy(eventPanel);
     }
+    #endregion
  }

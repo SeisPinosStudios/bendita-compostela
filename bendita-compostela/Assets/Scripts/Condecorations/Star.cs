@@ -4,14 +4,26 @@ using UnityEngine;
 
 public class Star : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        TurnManager.Instance.playerBehaviour.OnPlayerTurn += EnableCond;
+        Damage.OnAttack2 += DisableCond;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void DisableCond(GameObject target, GameObject user, CardData card)
+    {
+        if (user.GetComponent<Entity>() is not Player) return;
+        BattleManager.Instance.player.AttackMultiplier(-1.0f);
+    }
+    private void EnableCond()
+    {
+        BattleManager.Instance.player.AttackMultiplier(1.0f);
+    }
+    private void OnDestroy()
+    {
+        TurnManager.Instance.playerBehaviour.OnPlayerTurn -= EnableCond;
+        Damage.OnAttack2 -= DisableCond;
+    }
+    public static void OnObtain()
     {
         
     }

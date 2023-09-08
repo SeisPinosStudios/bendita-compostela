@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb4dcaa0c94c604f96fb6943d6979c8, type: 3}
+  m_Name: Enemy_103_SantaMarta
+  m_EditorClassIdentifier: 
+  entityName: Santa Marta
+  HP: 30
+  <damageMitigation>k__BackingField: 0
+  <enemySprite>k__BackingField: {fileID: 21300000, guid: f95dc24a4c554814fa0372220541f286, type: 3}
+  <enemyAnimator>k__BackingField: {fileID: 22100000, guid: 49515ec61c5acbd4c9ed50933dcaa823, type: 2}
+  <reward>k__BackingField: 5
+  <passives>k__BackingField: 04000000
+  <resistances>k__BackingField: 
+  <defaultSequence>k__BackingField: {fileID: 11400000, guid: ebd4135b4f874544e98d08dd5fc9611f, type: 2}
+  <attackSequence>k__BackingField: {fileID: 0}
+  <healSequence>k__BackingField: {fileID: 11400000, guid: 8748b1cdf8a33564fa887ae71b879433, type: 2}
+  <dyingSequence>k__BackingField: {fileID: 0}
+  <isBoss>k__BackingField: 0

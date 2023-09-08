@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnticipatedAssault : MonoBehaviour
+public class AnticipatedAssault : BasicPassive
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        StartCoroutine(PassiveEffect());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator PassiveEffect()
     {
-        
+        yield return new WaitUntil(() => TurnManager.Instance);
+        var enemyBehaviour = GetComponent<EnemyBehaviour>();
+        TurnManager.Instance.turnQueue.Remove(enemyBehaviour);
+        TurnManager.Instance.turnQueue.AddFirst(enemyBehaviour);
     }
+
+    #region Description
+    public static string GetDescription()
+    {
+        return $"Asalto anticipado: siempre ataca primero al empezar el combate.";
+    }
+    #endregion
 }

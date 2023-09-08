@@ -22,5 +22,8 @@ public class CardCollection : MonoBehaviour
     {
         GameManager.Instance.playerData.deck.Add(cardDataContainer.cardData.Copy());
     }
-    
+    public void LeaveCombat()
+    {
+        WinScreenManager.Instance.sceneLoad.allowSceneActivation = true;
+    }
 }
