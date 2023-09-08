@@ -37,7 +37,7 @@ public class DeckManager : MonoBehaviour
     public IEnumerator DrawCardCoroutine(int amount)
     {
         var delay = 1.0f / cardsToDraw;
-        yield return new WaitUntil(() => deckQueue != null && deckQueue.Count > 0);
+        yield return new WaitUntil(() => deckQueue != null);
         for (int i = 0; i < amount; i++)
         {
 

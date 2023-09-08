@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: Sandalias de Buen Samaritano
   <cardId>k__BackingField: 0
   description: 
-  cost: 0
+  cost: 5
   price: 0
   art: {fileID: 942625454, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
   miniArt: {fileID: -8998793451906749479, guid: b0492a3b5e9bcac42a9d2131ed5fc5f2, type: 3}

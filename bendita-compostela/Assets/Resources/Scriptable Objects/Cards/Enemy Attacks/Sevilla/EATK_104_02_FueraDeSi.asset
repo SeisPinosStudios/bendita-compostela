@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: EATK_104_02_FueraDeSi
   m_EditorClassIdentifier: 
   cardName: Fuera de si
+  <cardId>k__BackingField: 0
   description: 
   cost: 0
   price: 0
   art: {fileID: 430914307, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
   miniArt: {fileID: 0}
+  <attack>k__BackingField: 0
   cardEffects: 0700000000000000
   cardEffectsValues:
   - Frenzy|1
