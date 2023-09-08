@@ -436,7 +436,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 16
+  m_SortingOrder: 14
   m_TargetDisplay: 0
 --- !u!224 &360399141
 RectTransform:
@@ -2581,6 +2581,10 @@ PrefabInstance:
     - target: {fileID: 2029607818323186925, guid: 951f94460e9000e45be263871906e18f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2494372879515661093, guid: 951f94460e9000e45be263871906e18f, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3253366832197171319, guid: 951f94460e9000e45be263871906e18f, type: 3}
       propertyPath: m_Name

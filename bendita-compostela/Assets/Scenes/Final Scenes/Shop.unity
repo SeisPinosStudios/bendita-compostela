@@ -5645,7 +5645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c710b4c3ccc93844f81fa3780244689f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDataPreset: {fileID: 11400000, guid: da62d6f5470ff384badd9e6fe8c4fee4, type: 2}
+  playerDataPreset: {fileID: 11400000, guid: b42919c634245b340866b1d772e44b7f, type: 2}
   <playerData>k__BackingField: {fileID: 0}
   <combatData>k__BackingField: {fileID: 0}
   <visitedNodes>k__BackingField: []
@@ -5953,6 +5953,7 @@ MonoBehaviour:
   <highlight>k__BackingField: {fileID: 0}
   <progress>k__BackingField: 0
   <progressBar>k__BackingField: {fileID: 0}
+  <loadingCircleSpeed>k__BackingField: 1
   <styleLevel>k__BackingField: 1
 --- !u!1 &1014311187
 GameObject:
@@ -7769,6 +7770,7 @@ MonoBehaviour:
   <highlight>k__BackingField: {fileID: 0}
   <progress>k__BackingField: 0
   <progressBar>k__BackingField: {fileID: 0}
+  <loadingCircleSpeed>k__BackingField: 1
   <styleLevel>k__BackingField: 2
 --- !u!1001 &1425195171
 PrefabInstance:
@@ -8115,6 +8117,7 @@ MonoBehaviour:
   <highlight>k__BackingField: {fileID: 0}
   <progress>k__BackingField: 0
   <progressBar>k__BackingField: {fileID: 0}
+  <loadingCircleSpeed>k__BackingField: 1
   <styleLevel>k__BackingField: 0
 --- !u!1 &1526268070
 GameObject:
@@ -8376,6 +8379,7 @@ MonoBehaviour:
   <highlight>k__BackingField: {fileID: 0}
   <progress>k__BackingField: 0
   <progressBar>k__BackingField: {fileID: 0}
+  <loadingCircleSpeed>k__BackingField: 1
   <synergyLevel>k__BackingField: 1
 --- !u!224 &1563312236 stripped
 RectTransform:
@@ -9907,6 +9911,7 @@ MonoBehaviour:
   hammerAnimator: {fileID: 90010049}
   <anvilScreen>k__BackingField: {fileID: 342863136}
   anvilsound:
+    <soundName>k__BackingField: 
     audioClip: {fileID: 8300000, guid: 6ecee3b9afabbc2499c24ad2f2a071ad, type: 3}
     volume: 0.704
 --- !u!60 &1798840267
@@ -10259,6 +10264,7 @@ MonoBehaviour:
   <highlight>k__BackingField: {fileID: 0}
   <progress>k__BackingField: 0
   <progressBar>k__BackingField: {fileID: 0}
+  <loadingCircleSpeed>k__BackingField: 1
   <synergyLevel>k__BackingField: 0
 --- !u!1 &1958520942
 GameObject:
@@ -10895,6 +10901,7 @@ MonoBehaviour:
   <highlight>k__BackingField: {fileID: 0}
   <progress>k__BackingField: 0
   <progressBar>k__BackingField: {fileID: 0}
+  <loadingCircleSpeed>k__BackingField: 1
   <synergyLevel>k__BackingField: 2
 --- !u!1001 &3338244417820345770
 PrefabInstance:
