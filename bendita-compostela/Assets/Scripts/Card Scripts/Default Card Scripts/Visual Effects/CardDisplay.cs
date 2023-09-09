@@ -27,6 +27,7 @@ public class CardDisplay : MonoBehaviour
         art.sprite = cardData.art;
 
         BattleManager.Instance.player.OnEnergyValueChanged += AnimationDisplay;
+        AnimationDisplay(BattleManager.Instance.player.energy);
 
         if (cardData is WeaponData or ArmorData) costField.transform.parent.gameObject.SetActive(false);
     }
@@ -62,8 +63,6 @@ public class CardDisplay : MonoBehaviour
         if (cardAnimator == null) return;
         if (newValue>= cardData.cost) cardAnimator.SetBool("isUsable", true);
         else cardAnimator.SetBool("isUsable", false);
-
-
     }
     
     private void Update()
