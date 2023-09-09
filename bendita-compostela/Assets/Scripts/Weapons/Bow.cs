@@ -37,6 +37,7 @@ public class Bow : BaseWeapon
             return;
         }
 
+        styleAttacks = 0;
         player.RestoreEnergy(styleRecover);
     }
 
@@ -65,31 +66,31 @@ public class Bow : BaseWeapon
     #region Description
     public static string GetChestDescription()
     {
-        if (GameManager.Instance.playerData.chestArmor.synergyLevel == 2) return "Sinergia con arco: tus robos del mazo de ataques no cuestan energía.";
+        if (GameManager.Instance.playerData.chestArmor.synergyLevel == 2) return "Sinergia con arco: tus robos del mazo de ataques no cuestan energï¿½a.";
         return $"Sinergia con arco: cada {2 - GameManager.Instance.playerData.chestArmor.synergyLevel} robos del mazo de ataques, tu siguiente robo es gratis.";
     }
     public static string GetLegDescription()
     {
-        return $"Sinergia con arco: aumenta tu energía máxima {2 * (GameManager.Instance.playerData.legArmor.synergyLevel + 1)} puntos.";
+        return $"Sinergia con arco: aumenta tu energï¿½a mï¿½xima {2 * (GameManager.Instance.playerData.legArmor.synergyLevel + 1)} puntos.";
     }
     public static string GetStyleDescription(WeaponData weapon)
     {
-        return $"Estilo: tu maestría con el arco permite recuperar {(weapon.styleLevel > 0 ? 4 : 3)} cada " +
+        return $"Estilo: tu maestrï¿½a con el arco permite recuperar {(weapon.styleLevel > 0 ? 4 : 3)} cada " +
             $"{(weapon.styleLevel < 2 ? 5 : 4)} ataques.";
     }
     public static string GetStyleDescriptionByLevel(int styleLevel)
     {
-        return $"Estilo: tu maestría con el arco permite recuperar {(styleLevel > 0 ? 4 : 3)} cada " +
+        return $"Estilo: tu maestrï¿½a con el arco permite recuperar {(styleLevel > 0 ? 4 : 3)} cada " +
             $"{(styleLevel < 2 ? 5 : 4)} ataques.";
     }
     public static string GetSynergyDescriptionByLevel(int synergyLevel, int armorType)
     {
         if (armorType == 0)
-            if (synergyLevel == 2) return "Sinergia con arco: tus robos del mazo de ataques no cuestan energía.";
+            if (synergyLevel == 2) return "Sinergia con arco: tus robos del mazo de ataques no cuestan energï¿½a.";
             else return $"Sinergia con arco: cada {2 - synergyLevel} robos del mazo de ataques, tu siguiente robo es gratis.";
 
         else
-            return $"Sinergia con arco: aumenta tu energía máxima {2 * (synergyLevel + 1)} puntos.";
+            return $"Sinergia con arco: aumenta tu energï¿½a mï¿½xima {2 * (synergyLevel + 1)} puntos.";
     }
     #endregion
 }
