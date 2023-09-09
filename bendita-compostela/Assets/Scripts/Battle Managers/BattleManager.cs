@@ -61,16 +61,14 @@ public class BattleManager : MonoBehaviour
     private void SetGameMusic() 
     {
         //soundList.musicList.Add(combatData.combatMusic);
-        if (combatData.combatMusic == null)
+        if (combatData.combatMusic.soundName == "")
         {
             soundList.PlayMusic("Combat");
             return;
         }
         else
         {
-            Debug.Log(combatData.combatMusic.soundName);
             SoundManager.Instance.PlayMusic(combatData.combatMusic);
-            
         }
  
     }
