@@ -15,6 +15,7 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     [field: SerializeField] public CardDisplay cardDisplay { get; private set; }
     [field: SerializeField] public CardInspection cardInspection { get; private set; }
     public static event Action OnUsing, OnReturning;
+    GameObject lastHittedEnemy = null;
 
     private void Awake()
     {
@@ -33,8 +34,21 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         if (eventData.position.y > 300 && cardData.printArrow)
         {
             GetComponent<RectTransform>().position = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, 120.0f, 1.0f));
-
+            var hit = RaycastUtils.Raycast2D("Enemy");
+            
+            if (hit)
+            {
+                hit.GetComponent<EntityDisplay>().HighlightOn();
+                lastHittedEnemy = hit;
+            }
+            else 
+            {
+                Debug.Log("OUT ENEMY");
+                lastHittedEnemy?.GetComponent<EntityDisplay>().HighlightOff();
+            }
+            
             OnUsing();
+            
         }
         else
         {
@@ -42,7 +56,9 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.root as RectTransform, 
                                                                     eventData.position, transform.root.GetComponent<Canvas>().worldCamera, out pos);
             transform.position = transform.root.gameObject.transform.TransformPoint(pos);
+
             OnReturning();
+
         }
     }
     public void OnEndDrag(PointerEventData eventData)
@@ -53,6 +69,7 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         var hit = RaycastUtils.Raycast2D("Enemy");
         if (eventData.position.y < 400 || !hit) { ReturnCardToHand(eventData); return; }
         UseCardOnTarget(eventData, hit);
+
     }
     private void ReturnCardToHand(PointerEventData eventData)
     {

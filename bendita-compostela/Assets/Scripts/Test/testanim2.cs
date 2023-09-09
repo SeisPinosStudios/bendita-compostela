@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class testanim2 : MonoBehaviour
-{    
-    private void Start() 
+{
+    [SerializeField] private Animator anim;
+    public void HighlightOff() 
     {
-        GetComponent<IntentionPosChange>().SetUpPosition();
+        anim.SetLayerWeight(5,0);
+    }
+    public void HighlightOn()
+    {
+        anim.SetLayerWeight(5, 1);
     }
 }

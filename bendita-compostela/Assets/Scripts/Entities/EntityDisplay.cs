@@ -128,6 +128,14 @@ public class EntityDisplay : MonoBehaviour
         Log("Stun Animation");
         entityAnimator.SetTrigger("Stun");
     }
+    public void HighlightOff()
+    {
+        entityAnimator.SetLayerWeight(5, 0);
+    }
+    public void HighlightOn()
+    {
+        entityAnimator.SetLayerWeight(5, 1);
+    }
     //OnlyPlayer
     public void SetWeaponDisplay(int weaponId)
     {

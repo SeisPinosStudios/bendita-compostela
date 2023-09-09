@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 08c6bceeb62ce9c4d933285c7b48badb
+guid: a3c7cf6b09bbed84f9e730058ac21a7d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MiniTarasca-Sheet_0
+      name: MiniTarascaTarget-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17d150f6896c7be4a935874ddf9a24aa
-      internalID: 1394173250
+      spriteID: 44a5f36f43934b648b10e3c69fc31f3f
+      internalID: 1548398689
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniTarasca-Sheet_1
+      name: MiniTarascaTarget-Sheet_1
       rect:
         serializedVersion: 2
         x: 96
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f14738833206d448ad2c6f217fa52af
-      internalID: 250423119
+      spriteID: 86e169a90d4cb1449a927910dcaca4aa
+      internalID: 992113552
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniTarasca-Sheet_2
+      name: MiniTarascaTarget-Sheet_2
       rect:
         serializedVersion: 2
         x: 192
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a0001545d5ecb74eb3e7294191d1ca2
-      internalID: -1741401089
+      spriteID: 8288a20c2961b4c49a958093db21e187
+      internalID: -1204909310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniTarasca-Sheet_3
+      name: MiniTarascaTarget-Sheet_3
       rect:
         serializedVersion: 2
         x: 288
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8ae6459bdae4ca4b90d542a43a3265f
-      internalID: -908989774
+      spriteID: bb8be15019802ef468c46af3f98a4ad0
+      internalID: -1983058097
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniTarasca-Sheet_4
+      name: MiniTarascaTarget-Sheet_4
       rect:
         serializedVersion: 2
         x: 384
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb59dd9724b3ca841a0a9e9797939030
-      internalID: 350794312
+      spriteID: 49f0fb89189f38a4d8ef9f41850f0d57
+      internalID: -1531742332
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniTarasca-Sheet_5
+      name: MiniTarascaTarget-Sheet_5
       rect:
         serializedVersion: 2
         x: 480
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd13d921aeef8384e8469250d5632220
-      internalID: 924259890
+      spriteID: a658d0c01bd73b24aa68f21ee16ac753
+      internalID: 2034450023
       vertices: []
       indices: 
       edges: []
@@ -246,12 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MiniTarasca-Sheet_0: 1394173250
-      MiniTarasca-Sheet_1: 250423119
-      MiniTarasca-Sheet_2: -1741401089
-      MiniTarasca-Sheet_3: -908989774
-      MiniTarasca-Sheet_4: 350794312
-      MiniTarasca-Sheet_5: 924259890
+      MiniTarascaTarget-Sheet_0: 1548398689
+      MiniTarascaTarget-Sheet_1: 992113552
+      MiniTarascaTarget-Sheet_2: -1204909310
+      MiniTarascaTarget-Sheet_3: -1983058097
+      MiniTarascaTarget-Sheet_4: -1531742332
+      MiniTarascaTarget-Sheet_5: 2034450023
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

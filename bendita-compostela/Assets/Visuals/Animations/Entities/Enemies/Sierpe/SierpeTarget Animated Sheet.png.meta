@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d7e18787d0a2d6347963650def843cdd
+guid: afd1a7878ce01734cb79b73fa1218c88
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 150
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +110,265 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BardoTarget-Sheet_0
+      name: SierpeTarget Animated Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 352
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84355cd154b03044c9bb005866c2d324
+      internalID: -1263375369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SierpeTarget Animated Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 960
+        width: 352
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48916c93ad21ce046a1b163acb2efc77
+      internalID: 1499318476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SierpeTarget Animated Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 960
+        width: 352
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7eb990e540892f4ea060d4d8004121c
+      internalID: 669975122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SierpeTarget Animated Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 960
+        width: 352
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 054bb74aa7d042141ab8ac5eb993f1d8
+      internalID: -2137758212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SierpeTarget Animated Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 352
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5574c7e7f5867884c85b4121f984fbf6
+      internalID: -173700115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SierpeTarget Animated Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 640
+        width: 352
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad44b0375289fb24b8dfd71476650ea9
+      internalID: -956399193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SierpeTarget Animated Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 640
+        width: 352
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50445627461c52d4bba52bfe88bcbb02
+      internalID: 1631252762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SierpeTarget Animated Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 640
+        width: 352
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfd048f045f854e418c5e0acc8093e68
+      internalID: -1416977916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SierpeTarget Animated Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 352
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c067872b952f1a74a92d352d2e5409a7
+      internalID: 2025425725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SierpeTarget Animated Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 320
+        width: 352
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57066f459fca1ba45ae65e0a4b355b4b
+      internalID: 708653021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SierpeTarget Animated Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 320
+        width: 352
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9ed3e734c09b9e47bc4e4d099d20e6d
+      internalID: -106272459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SierpeTarget Animated Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 320
+        width: 352
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0ac86ad875edc649bb567f761f61773
+      internalID: -917392871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SierpeTarget Animated Sheet_12
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 160
-        height: 160
+        width: 352
+        height: 320
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,155 +376,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a17e7feade16ed46b22de0fa1e52696
-      internalID: 1707650416
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BardoTarget-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 160
-        height: 160
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb4e0a93a244abd47840953a3c19e0e3
-      internalID: -424706404
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BardoTarget-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 160
-        height: 160
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 62e30cf4945ee9a48b85b23c438bd746
-      internalID: 1519255251
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BardoTarget-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 0
-        width: 160
-        height: 160
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f55fb2aa3c870445bce8965d5d86c11
-      internalID: 1539008843
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BardoTarget-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 160
-        height: 160
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9dfeccf24aa5b3942b6fc58b77481582
-      internalID: 884218084
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BardoTarget-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 800
-        y: 0
-        width: 160
-        height: 160
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e856365404109a45a52faac947ec689
-      internalID: 168124718
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BardoTarget-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 0
-        width: 160
-        height: 160
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b78e2be2528afe54bbb648830a2270e0
-      internalID: -1504860299
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BardoTarget-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 1120
-        y: 0
-        width: 160
-        height: 160
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a67c5542cb98bd1448b9e73d8253d837
-      internalID: -1069915918
+      spriteID: 6b3438e9f2778144f817c9ddd13696c3
+      internalID: 1445099959
       vertices: []
       indices: 
       edges: []
@@ -288,14 +393,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BardoTarget-Sheet_0: 1707650416
-      BardoTarget-Sheet_1: -424706404
-      BardoTarget-Sheet_2: 1519255251
-      BardoTarget-Sheet_3: 1539008843
-      BardoTarget-Sheet_4: 884218084
-      BardoTarget-Sheet_5: 168124718
-      BardoTarget-Sheet_6: -1504860299
-      BardoTarget-Sheet_7: -1069915918
+      SierpeTarget Animated Sheet_0: -1263375369
+      SierpeTarget Animated Sheet_1: 1499318476
+      SierpeTarget Animated Sheet_10: -106272459
+      SierpeTarget Animated Sheet_11: -917392871
+      SierpeTarget Animated Sheet_12: 1445099959
+      SierpeTarget Animated Sheet_2: 669975122
+      SierpeTarget Animated Sheet_3: -2137758212
+      SierpeTarget Animated Sheet_4: -173700115
+      SierpeTarget Animated Sheet_5: -956399193
+      SierpeTarget Animated Sheet_6: 1631252762
+      SierpeTarget Animated Sheet_7: -1416977916
+      SierpeTarget Animated Sheet_8: 2025425725
+      SierpeTarget Animated Sheet_9: 708653021
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
