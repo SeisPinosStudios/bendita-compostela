@@ -28,10 +28,11 @@ public class Damage : BasicCardEffect
 
     private static void Marked(string damage, CardData card, GameObject target)
     {
+        if (BattleManager.Instance.enemies.Count <= 1) return;
         if (target.GetComponent<Entity>().entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Marked))
         {
-            var enemies = BattleManager.Instance.enemies.Where(enemy => enemy.gameObject != enemy).ToList();
-            enemies[UnityEngine.Random.Range(0, enemies.Count)].SufferDamage(Mathf.RoundToInt(card.GetDamage() * 0.5f), 0, 0, true);
+            var enemies = BattleManager.Instance.enemies.Where(enemy => enemy.gameObject != target).ToList();
+            enemies[UnityEngine.Random.Range(0, enemies.Count)].SufferDamage(Mathf.CeilToInt(card.GetDamage() * 0.5f), 0, 0, true);
             target.GetComponent<Entity>().entityEffectsManager.RemoveEffect(TAlteredEffects.AlteredEffects.Marked, 1);
         }
     }

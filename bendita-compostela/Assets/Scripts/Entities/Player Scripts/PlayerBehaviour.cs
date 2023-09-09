@@ -21,6 +21,7 @@ public class PlayerBehaviour : EntityBehaviour
         if (entityEffManager.Suffering(TAlteredEffects.AlteredEffects.Stun))
         {
             //player.entityDisplay.Stun();
+            player.entityEffectsManager.RemoveEffect(TAlteredEffects.AlteredEffects.Stun, 1);
             OnTurnEnd();
             yield break;
         }

@@ -69,7 +69,7 @@ public class WinScreenManager : MonoBehaviour
             GameManager.Instance.playerData.AddCondecoration(condecoration);
         }
 
-        if (obtainedCond) text.Append($"{condecoration.name}:{condecoration.description}");
+        if (obtainedCond) text.Append($"{condecoration.condecorationName}:{condecoration.description}");
 
         otherRewards.text = text.ToString();
     }

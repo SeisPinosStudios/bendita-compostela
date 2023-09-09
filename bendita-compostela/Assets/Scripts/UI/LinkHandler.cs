@@ -48,7 +48,7 @@ public class LinkHandler : MonoBehaviour, IPointerMoveHandler
         var progress = 0f;
         while(progress < 1)
         {
-            progress += Time.deltaTime * 1.5f;
+            progress += Time.deltaTime * 2f;
             if(progressBar) progressBar.fillAmount = progress;
             yield return null;
         }

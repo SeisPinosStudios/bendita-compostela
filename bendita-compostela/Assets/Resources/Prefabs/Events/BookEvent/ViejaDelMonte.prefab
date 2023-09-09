@@ -170,6 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 7314755979525756254}
   hoverSound:
+    <soundName>k__BackingField: 
     audioClip: {fileID: 0}
     volume: 0
 --- !u!114 &3534067890907469973
@@ -334,6 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 7216488389183821186}
   hoverSound:
+    <soundName>k__BackingField: 
     audioClip: {fileID: 0}
     volume: 0
 --- !u!114 &4682146095221982246
@@ -1227,6 +1229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 5232180437521604609}
   hoverSound:
+    <soundName>k__BackingField: 
     audioClip: {fileID: 0}
     volume: 0
 --- !u!1 &8094754866150957392
@@ -1535,7 +1538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6486634909639710502
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1610,6 +1613,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 4036763835244859640}
   hoverSound:
+    <soundName>k__BackingField: 
     audioClip: {fileID: 0}
     volume: 0
 --- !u!114 &3006575426227839370
