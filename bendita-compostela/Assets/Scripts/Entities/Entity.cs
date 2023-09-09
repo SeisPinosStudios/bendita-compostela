@@ -43,7 +43,9 @@ public class Entity : MonoBehaviour
 
         if (!effect)
         {
-            finalDamage = Mathf.RoundToInt((damage + damageBonus - defenseBonus) * damageMultiplier / ComputeDefenseMultiplier());
+            finalDamage = Mathf.RoundToInt((damage + damageBonus - defenseBonus) * damageMultiplier);
+            finalDamage += Mathf.RoundToInt((1 - ComputeDefenseMultiplier()) * finalDamage);
+            finalDamage = Mathf.RoundToInt(Mathf.Clamp(finalDamage, 0, float.PositiveInfinity));
             OnDamaged(finalDamage);
         }
 

@@ -25,7 +25,8 @@ public class AnvilDisplay : MonoBehaviour
     }
     void ChangeAnvilWindow()
     {
-        anvilScreen.SetActive(true);
+        anvilScreen.GetComponent<Canvas>().worldCamera = Camera.main;
+        Instantiate(anvilScreen);
         ShopSelectionManager.Instance.DisableInteraction();
     }
 }

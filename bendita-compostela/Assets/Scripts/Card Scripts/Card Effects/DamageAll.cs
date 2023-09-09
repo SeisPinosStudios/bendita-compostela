@@ -18,7 +18,7 @@ public class DamageAll : BasicCardEffect
         Debug.Log("Damage card " + damage);
         user.GetComponent<EntityDisplay>().AttackAnimation();
         foreach(Enemy enemy in BattleManager.Instance.enemies)
-            enemy.GetComponent<Entity>().SufferDamage(int.Parse(damage), entity.attackBonus + frenzyStacks, AttackMultiplier(entity, entityEffectsManager), false);
+            enemy.GetComponent<Entity>().SufferDamage(int.Parse(damage), entity.attackBonus + frenzyStacks, entity.ComputeAttackMultiplier(), false);
     }
 
     private static float AttackMultiplier(Entity entity, EntityEffectsManager entityEffectsManager)
@@ -31,6 +31,15 @@ public class DamageAll : BasicCardEffect
         }
 
         return multiplier;
+    }
+
+    public static void Frenzy(CardData card, Entity user)
+    {
+        if (!user.entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Frenzy)) return;
+        if (user.entityEffectsManager.frenzyAttacks.ContainsKey(card)) user.entityEffectsManager.frenzyAttacks[card] += 1;
+        else user.entityEffectsManager.frenzyAttacks.Add(card, 1);
+
+        user.entityEffectsManager.RemoveEffect(TAlteredEffects.AlteredEffects.Frenzy, 1);
     }
 
     public static string GetDescription(CardData card, Entity user, Entity target)
@@ -46,6 +55,6 @@ public class DamageAll : BasicCardEffect
         finalDamage += frenzyStacks;
         finalDamage = Mathf.RoundToInt(Mathf.Clamp((finalDamage + userDamageBonus - targetDefenseBonus)
                        * userDamageMultiplier / targetDefenseMultiplier, 0, 99));
-        return $"Realiza {finalDamage} puntos de daño.";
+        return $"Realiza {finalDamage} puntos de daï¿½o.";
     }
 }

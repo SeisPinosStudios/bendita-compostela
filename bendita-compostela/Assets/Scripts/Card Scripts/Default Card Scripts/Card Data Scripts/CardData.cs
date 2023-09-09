@@ -30,6 +30,11 @@ public class CardData : ScriptableObject
         if (!cardEffects.Contains(Effect.Damage)) return 0;
         return int.Parse(cardEffectsValues[cardEffects.IndexOf(Effect.Damage)]);
     }
+    public int GetDamageAll()
+    {
+        if (!cardEffects.Contains(Effect.DamageAll)) return 0;
+        return int.Parse(cardEffectsValues[cardEffects.IndexOf(Effect.Damage)]);
+    }
     public string GetHeal()
     {
         if (!cardEffects.Contains(Effect.Heal)) return null;

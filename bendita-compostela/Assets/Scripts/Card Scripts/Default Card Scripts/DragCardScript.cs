@@ -43,7 +43,6 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             }
             else 
             {
-                Debug.Log("OUT ENEMY");
                 lastHittedEnemy?.GetComponent<EntityDisplay>().HighlightOff();
             }
             
@@ -58,7 +57,6 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             transform.position = transform.root.gameObject.transform.TransformPoint(pos);
 
             OnReturning();
-
         }
     }
     public void OnEndDrag(PointerEventData eventData)

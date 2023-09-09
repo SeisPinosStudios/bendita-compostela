@@ -56,8 +56,9 @@ public class Damage : BasicCardEffect
         var targetDefenseMultiplier = target ? target.GetAttackMultiplier() : 1;
 
         finalDamage += frenzyStacks;
-        finalDamage = Mathf.RoundToInt(Mathf.Clamp((finalDamage + userDamageBonus - targetDefenseBonus) 
-                       * userDamageMultiplier / targetDefenseMultiplier, 0, 99));
-        return $"Realiza {finalDamage} puntos de daño.";
+        finalDamage = Mathf.RoundToInt((finalDamage + userDamageBonus - targetDefenseBonus) * userDamageMultiplier);
+        finalDamage += Mathf.RoundToInt((1 - targetDefenseMultiplier) * finalDamage);
+        finalDamage = Mathf.RoundToInt(Mathf.Clamp(finalDamage, 0, float.PositiveInfinity));
+        return $"Realiza {finalDamage} puntos de daï¿½o.";
     }
 }

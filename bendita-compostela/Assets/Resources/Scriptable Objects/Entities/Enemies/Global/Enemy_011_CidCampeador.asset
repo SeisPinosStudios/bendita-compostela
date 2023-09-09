@@ -24,4 +24,4 @@ MonoBehaviour:
   <attackSequence>k__BackingField: {fileID: 0}
   <healSequence>k__BackingField: {fileID: 11400000, guid: 8f88037dee0a6d348a5c4f0c249c8eb8, type: 2}
   <dyingSequence>k__BackingField: {fileID: 11400000, guid: 64c12193d6e3dbc48b67fa93c3798c01, type: 2}
-  <isBoss>k__BackingField: 1
+  <isBoss>k__BackingField: 0

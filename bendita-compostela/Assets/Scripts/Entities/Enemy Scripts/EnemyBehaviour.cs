@@ -59,6 +59,7 @@ public class EnemyBehaviour : EntityBehaviour
         var attack = attackQueue.Dequeue();
         var target = GetTarget(attack);
         attackPrefab.cardData = attack;
+        attackPrefab.GetComponent<CardDisplay>().target = target.GetComponent<Entity>();
 
         var attackInstance = Instantiate(attackPrefab, mainCanvas);
         attackInstance.GetComponent<Card>().UseEnemyCard(target);
