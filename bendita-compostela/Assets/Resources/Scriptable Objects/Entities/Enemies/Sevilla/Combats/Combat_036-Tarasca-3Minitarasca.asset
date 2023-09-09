@@ -17,3 +17,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0bb2f8a93948d624381d6faee1ddee2d, type: 2}
   - {fileID: 11400000, guid: 0bb2f8a93948d624381d6faee1ddee2d, type: 2}
   - {fileID: 11400000, guid: 0bb2f8a93948d624381d6faee1ddee2d, type: 2}
+  combatMusic:
+    <soundName>k__BackingField: TarascaMusic
+    audioClip: {fileID: 8300000, guid: 34d2b712f28af1746a1b222de0bfd0b7, type: 3}
+    volume: 1
