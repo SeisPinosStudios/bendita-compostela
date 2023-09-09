@@ -28,7 +28,7 @@ public class Damage : BasicCardEffect
 
     private static void Marked(string damage, CardData card, GameObject target)
     {
-        if (BattleManager.Instance.enemies.Count <= 0) return;
+        if (BattleManager.Instance.enemies.Count <= 1) return;
         if (target.GetComponent<Entity>().entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Marked))
         {
             var enemies = BattleManager.Instance.enemies.Where(enemy => enemy.gameObject != target).ToList();
