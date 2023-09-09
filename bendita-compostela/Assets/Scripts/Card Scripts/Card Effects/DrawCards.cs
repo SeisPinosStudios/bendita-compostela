@@ -12,6 +12,6 @@ public class DrawCards : MonoBehaviour
     public static string GetDescription(CardData card, Entity user, Entity target)
     {
         var data = card.GetEffect(CardData.Effect.DrawCards);
-        return $"Roba {data[0]} cartas.";
+        return $"Roba {data[0]} cartas del mazo estándar.";
     }
 }

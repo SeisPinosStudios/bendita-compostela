@@ -10,6 +10,6 @@ public class DrawAttack : BasicCardEffect
     }
     public static string GetDescription(CardData card, Entity user, Entity target)
     {
-        return $"Roba {card.GetEffect(CardData.Effect.DrawAttack)} ataques. ";
+        return $"Roba dos cartas del mazo de ataques.";
     }
 }
