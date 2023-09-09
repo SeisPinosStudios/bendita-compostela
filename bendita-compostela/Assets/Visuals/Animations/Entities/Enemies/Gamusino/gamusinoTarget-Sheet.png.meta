@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9d9451a1e936db9408aae720b74797a1
+guid: cb67c01d7117c174fb75e8a431841e6a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Podenco-Sheet_0
+      name: gamusinoTarget-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02057cf63e8740b40a647df88c9e9dfc
-      internalID: -891840045
+      spriteID: e6be212ad3da3e044bbabb9820a2e569
+      internalID: 41260125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_1
+      name: gamusinoTarget-Sheet_1
       rect:
         serializedVersion: 2
         x: 112
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff3c6e42114fd704fbfb86d342648901
-      internalID: -1782531291
+      spriteID: d1a46bc007bccee4b9442340c19eb026
+      internalID: 1635731210
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_2
+      name: gamusinoTarget-Sheet_2
       rect:
         serializedVersion: 2
         x: 224
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c81c9a994d538fb47a21a0287ce30098
-      internalID: -1373753852
+      spriteID: 384d607d9687d274d86bc538aeb37fdb
+      internalID: -1452485547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_3
+      name: gamusinoTarget-Sheet_3
       rect:
         serializedVersion: 2
         x: 336
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9156418b16a3d8468c80b41b9a13f36
-      internalID: 1369956817
+      spriteID: 3f0979ae7ab236c478a2b0c5ba9e2b57
+      internalID: -1592872224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_4
+      name: gamusinoTarget-Sheet_4
       rect:
         serializedVersion: 2
         x: 448
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 196f4d15926e2754c9c27222ddc2c1e8
-      internalID: -1933817275
+      spriteID: bcbdf1cfeab90a94ebbc8c794f385ca6
+      internalID: -992721469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_5
+      name: gamusinoTarget-Sheet_5
       rect:
         serializedVersion: 2
         x: 560
@@ -229,50 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f81298245c60d134bae51a465ad3d938
-      internalID: -601055356
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Podenco-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 672
-        y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e8054e7778db7d54091b9bb41e7a87ad
-      internalID: -1405660568
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Podenco-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 784
-        y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8f5670fc9e7786144b985b81dd6d62b3
-      internalID: -66232664
+      spriteID: 53b60a2e20b4f32448b9ebe1dd6b2828
+      internalID: 1358369578
       vertices: []
       indices: 
       edges: []
@@ -288,14 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Podenco-Sheet_0: -891840045
-      Podenco-Sheet_1: -1782531291
-      Podenco-Sheet_2: -1373753852
-      Podenco-Sheet_3: 1369956817
-      Podenco-Sheet_4: -1933817275
-      Podenco-Sheet_5: -601055356
-      Podenco-Sheet_6: -1405660568
-      Podenco-Sheet_7: -66232664
+      gamusinoTarget-Sheet_0: 41260125
+      gamusinoTarget-Sheet_1: 1635731210
+      gamusinoTarget-Sheet_2: -1452485547
+      gamusinoTarget-Sheet_3: -1592872224
+      gamusinoTarget-Sheet_4: -992721469
+      gamusinoTarget-Sheet_5: 1358369578
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

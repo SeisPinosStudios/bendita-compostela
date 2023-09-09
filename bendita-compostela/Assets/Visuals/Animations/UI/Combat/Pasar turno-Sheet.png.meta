@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9d9451a1e936db9408aae720b74797a1
+guid: 5a6c30e6d9171214da685477077edbd8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Podenco-Sheet_0
+      name: Pasar turno-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 112
-        height: 112
+        width: 63
+        height: 110
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02057cf63e8740b40a647df88c9e9dfc
-      internalID: -891840045
+      spriteID: e488fc30a9427734db5bd908af337adc
+      internalID: 565588663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_1
+      name: Pasar turno-Sheet_1
       rect:
         serializedVersion: 2
-        x: 112
+        x: 63
         y: 0
-        width: 112
-        height: 112
+        width: 63
+        height: 110
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff3c6e42114fd704fbfb86d342648901
-      internalID: -1782531291
+      spriteID: 618a30dd3aaf6eb448009bad33390b2d
+      internalID: 1326888778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_2
+      name: Pasar turno-Sheet_2
       rect:
         serializedVersion: 2
-        x: 224
+        x: 126
         y: 0
-        width: 112
-        height: 112
+        width: 63
+        height: 110
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c81c9a994d538fb47a21a0287ce30098
-      internalID: -1373753852
+      spriteID: a5515e8365e550f4481658f971a35188
+      internalID: 2102808487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_3
+      name: Pasar turno-Sheet_3
       rect:
         serializedVersion: 2
-        x: 336
+        x: 189
         y: 0
-        width: 112
-        height: 112
+        width: 63
+        height: 110
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9156418b16a3d8468c80b41b9a13f36
-      internalID: 1369956817
+      spriteID: 5174fdfc9394883419bc404e77b62b07
+      internalID: 1521716402
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_4
+      name: Pasar turno-Sheet_4
       rect:
         serializedVersion: 2
-        x: 448
+        x: 252
         y: 0
-        width: 112
-        height: 112
+        width: 63
+        height: 110
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 196f4d15926e2754c9c27222ddc2c1e8
-      internalID: -1933817275
+      spriteID: 8cd1b0826d08a2a4f9345c041264024c
+      internalID: -413771644
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_5
+      name: Pasar turno-Sheet_5
       rect:
         serializedVersion: 2
-        x: 560
+        x: 315
         y: 0
-        width: 112
-        height: 112
+        width: 63
+        height: 110
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f81298245c60d134bae51a465ad3d938
-      internalID: -601055356
+      spriteID: 0439743154616f34d9ddac19bfbd1cc9
+      internalID: 490827607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_6
+      name: Pasar turno-Sheet_6
       rect:
         serializedVersion: 2
-        x: 672
+        x: 378
         y: 0
-        width: 112
-        height: 112
+        width: 63
+        height: 110
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,29 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8054e7778db7d54091b9bb41e7a87ad
-      internalID: -1405660568
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Podenco-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 784
-        y: 0
-        width: 112
-        height: 112
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8f5670fc9e7786144b985b81dd6d62b3
-      internalID: -66232664
+      spriteID: 367467743e075d640b3a2925ee575e0f
+      internalID: -1085976646
       vertices: []
       indices: 
       edges: []
@@ -288,14 +267,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Podenco-Sheet_0: -891840045
-      Podenco-Sheet_1: -1782531291
-      Podenco-Sheet_2: -1373753852
-      Podenco-Sheet_3: 1369956817
-      Podenco-Sheet_4: -1933817275
-      Podenco-Sheet_5: -601055356
-      Podenco-Sheet_6: -1405660568
-      Podenco-Sheet_7: -66232664
+      Pasar turno-Sheet_0: 565588663
+      Pasar turno-Sheet_1: 1326888778
+      Pasar turno-Sheet_2: 2102808487
+      Pasar turno-Sheet_3: 1521716402
+      Pasar turno-Sheet_4: -413771644
+      Pasar turno-Sheet_5: 490827607
+      Pasar turno-Sheet_6: -1085976646
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -59,8 +59,6 @@ AnimationClip:
       value: {fileID: -1105581926, guid: 10af2d6b671f9964dab87f656284f228, type: 3}
     - time: 0.7
       value: {fileID: -344961449, guid: 10af2d6b671f9964dab87f656284f228, type: 3}
-    - time: 1.1
-      value: {fileID: 0}
     attribute: m_Sprite
     path: FrontWeaponDisplay
     classID: 212
@@ -108,13 +106,12 @@ AnimationClip:
     - {fileID: 26334790, guid: 10af2d6b671f9964dab87f656284f228, type: 3}
     - {fileID: -1105581926, guid: 10af2d6b671f9964dab87f656284f228, type: 3}
     - {fileID: -344961449, guid: 10af2d6b671f9964dab87f656284f228, type: 3}
-    - {fileID: 0}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.2
+    m_StopTime: 0.8
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

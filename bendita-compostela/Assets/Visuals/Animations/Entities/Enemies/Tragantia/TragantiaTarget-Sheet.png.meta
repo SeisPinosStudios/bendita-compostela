@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9d9451a1e936db9408aae720b74797a1
+guid: 254717260afc9a640bcc2862f2036cc2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Podenco-Sheet_0
+      name: TragantiaTarget-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 112
-        height: 112
+        width: 128
+        height: 128
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02057cf63e8740b40a647df88c9e9dfc
-      internalID: -891840045
+      spriteID: b6cc6b79211c8854491786f724fbfd68
+      internalID: -328983125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_1
+      name: TragantiaTarget-Sheet_1
       rect:
         serializedVersion: 2
-        x: 112
+        x: 128
         y: 0
-        width: 112
-        height: 112
+        width: 128
+        height: 128
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff3c6e42114fd704fbfb86d342648901
-      internalID: -1782531291
+      spriteID: 80f41c955d21e594180e5bc26df64691
+      internalID: 360988270
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_2
+      name: TragantiaTarget-Sheet_2
       rect:
         serializedVersion: 2
-        x: 224
+        x: 256
         y: 0
-        width: 112
-        height: 112
+        width: 128
+        height: 128
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c81c9a994d538fb47a21a0287ce30098
-      internalID: -1373753852
+      spriteID: ae1c02fa84efc0f4c825c24d9cbb5c03
+      internalID: -940218721
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_3
+      name: TragantiaTarget-Sheet_3
       rect:
         serializedVersion: 2
-        x: 336
+        x: 384
         y: 0
-        width: 112
-        height: 112
+        width: 128
+        height: 128
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9156418b16a3d8468c80b41b9a13f36
-      internalID: 1369956817
+      spriteID: f26ed32efecf24547b7521871469e229
+      internalID: 1796227054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_4
+      name: TragantiaTarget-Sheet_4
       rect:
         serializedVersion: 2
-        x: 448
+        x: 512
         y: 0
-        width: 112
-        height: 112
+        width: 128
+        height: 128
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 196f4d15926e2754c9c27222ddc2c1e8
-      internalID: -1933817275
+      spriteID: 872b203c34d06be48a9ac116bb88ae4d
+      internalID: 2139292272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_5
+      name: TragantiaTarget-Sheet_5
       rect:
         serializedVersion: 2
-        x: 560
+        x: 640
         y: 0
-        width: 112
-        height: 112
+        width: 128
+        height: 128
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f81298245c60d134bae51a465ad3d938
-      internalID: -601055356
+      spriteID: 46c808d412cdcb146a84c60de0436564
+      internalID: -9704667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_6
+      name: TragantiaTarget-Sheet_6
       rect:
         serializedVersion: 2
-        x: 672
+        x: 768
         y: 0
-        width: 112
-        height: 112
+        width: 128
+        height: 128
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8054e7778db7d54091b9bb41e7a87ad
-      internalID: -1405660568
+      spriteID: 459cd32d58715ed4dbbb37e5fe18825d
+      internalID: 129541599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_7
+      name: TragantiaTarget-Sheet_7
       rect:
         serializedVersion: 2
-        x: 784
+        x: 896
         y: 0
-        width: 112
-        height: 112
+        width: 128
+        height: 128
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,8 +271,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f5670fc9e7786144b985b81dd6d62b3
-      internalID: -66232664
+      spriteID: c907e1c256852d349a9059344e3642ae
+      internalID: 544401096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TragantiaTarget-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10bf95ce2890c56418c74ca48bcaea54
+      internalID: 1265905762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TragantiaTarget-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7779d1598a132fb49a65f2e5f7226b4d
+      internalID: 1366461801
       vertices: []
       indices: 
       edges: []
@@ -288,14 +330,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Podenco-Sheet_0: -891840045
-      Podenco-Sheet_1: -1782531291
-      Podenco-Sheet_2: -1373753852
-      Podenco-Sheet_3: 1369956817
-      Podenco-Sheet_4: -1933817275
-      Podenco-Sheet_5: -601055356
-      Podenco-Sheet_6: -1405660568
-      Podenco-Sheet_7: -66232664
+      TragantiaTarget-Sheet_0: -328983125
+      TragantiaTarget-Sheet_1: 360988270
+      TragantiaTarget-Sheet_2: -940218721
+      TragantiaTarget-Sheet_3: 1796227054
+      TragantiaTarget-Sheet_4: 2139292272
+      TragantiaTarget-Sheet_5: -9704667
+      TragantiaTarget-Sheet_6: 129541599
+      TragantiaTarget-Sheet_7: 544401096
+      TragantiaTarget-Sheet_8: 1265905762
+      TragantiaTarget-Sheet_9: 1366461801
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

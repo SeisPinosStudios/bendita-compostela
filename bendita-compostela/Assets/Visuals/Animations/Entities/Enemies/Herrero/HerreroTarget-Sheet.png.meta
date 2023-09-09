@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9d9451a1e936db9408aae720b74797a1
+guid: 51c152f251dc36f45bfea8d94a5b5caf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Podenco-Sheet_0
+      name: HerreroTarget-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 112
-        height: 112
+        width: 144
+        height: 144
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02057cf63e8740b40a647df88c9e9dfc
-      internalID: -891840045
+      spriteID: 0e39ca2ab1ee65d4294f9cdf27f6de26
+      internalID: -1808169797
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_1
+      name: HerreroTarget-Sheet_1
       rect:
         serializedVersion: 2
-        x: 112
+        x: 144
         y: 0
-        width: 112
-        height: 112
+        width: 144
+        height: 144
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff3c6e42114fd704fbfb86d342648901
-      internalID: -1782531291
+      spriteID: 30e759f988bc78248b9958d980b35bd3
+      internalID: 2070688279
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_2
+      name: HerreroTarget-Sheet_2
       rect:
         serializedVersion: 2
-        x: 224
+        x: 288
         y: 0
-        width: 112
-        height: 112
+        width: 144
+        height: 144
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c81c9a994d538fb47a21a0287ce30098
-      internalID: -1373753852
+      spriteID: 2d375719cd4d1c745a9bd369f40f6fb0
+      internalID: -2100021168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_3
+      name: HerreroTarget-Sheet_3
       rect:
         serializedVersion: 2
-        x: 336
+        x: 432
         y: 0
-        width: 112
-        height: 112
+        width: 144
+        height: 144
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9156418b16a3d8468c80b41b9a13f36
-      internalID: 1369956817
+      spriteID: c17f023e009f2a24199fd97bbb77f31b
+      internalID: 455233842
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_4
+      name: HerreroTarget-Sheet_4
       rect:
         serializedVersion: 2
-        x: 448
+        x: 576
         y: 0
-        width: 112
-        height: 112
+        width: 144
+        height: 144
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 196f4d15926e2754c9c27222ddc2c1e8
-      internalID: -1933817275
+      spriteID: c5d3abd08f4bddc41bdaf0bbdf6d9440
+      internalID: 105179404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_5
+      name: HerreroTarget-Sheet_5
       rect:
         serializedVersion: 2
-        x: 560
+        x: 720
         y: 0
-        width: 112
-        height: 112
+        width: 144
+        height: 144
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f81298245c60d134bae51a465ad3d938
-      internalID: -601055356
+      spriteID: b3fffb735fa0fa74386faae3ad757bb9
+      internalID: 1131381719
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_6
+      name: HerreroTarget-Sheet_6
       rect:
         serializedVersion: 2
-        x: 672
+        x: 864
         y: 0
-        width: 112
-        height: 112
+        width: 144
+        height: 144
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8054e7778db7d54091b9bb41e7a87ad
-      internalID: -1405660568
+      spriteID: 7901a7c0965c4e94080f67e9c069ece8
+      internalID: 1979969822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Podenco-Sheet_7
+      name: HerreroTarget-Sheet_7
       rect:
         serializedVersion: 2
-        x: 784
+        x: 1008
         y: 0
-        width: 112
-        height: 112
+        width: 144
+        height: 144
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f5670fc9e7786144b985b81dd6d62b3
-      internalID: -66232664
+      spriteID: 047639820b02ea44384bcb5d8bfac91f
+      internalID: 535217199
       vertices: []
       indices: 
       edges: []
@@ -288,14 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Podenco-Sheet_0: -891840045
-      Podenco-Sheet_1: -1782531291
-      Podenco-Sheet_2: -1373753852
-      Podenco-Sheet_3: 1369956817
-      Podenco-Sheet_4: -1933817275
-      Podenco-Sheet_5: -601055356
-      Podenco-Sheet_6: -1405660568
-      Podenco-Sheet_7: -66232664
+      HerreroTarget-Sheet_0: -1808169797
+      HerreroTarget-Sheet_1: 2070688279
+      HerreroTarget-Sheet_2: -2100021168
+      HerreroTarget-Sheet_3: 455233842
+      HerreroTarget-Sheet_4: 105179404
+      HerreroTarget-Sheet_5: 1131381719
+      HerreroTarget-Sheet_6: 1979969822
+      HerreroTarget-Sheet_7: 535217199
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
