@@ -701,7 +701,7 @@ MonoBehaviour:
   showLogs: 1
   <enemySprite>k__BackingField: {fileID: 5073834889583353343}
   <enemyData>k__BackingField: {fileID: 0}
-  <nameText>k__BackingField: {fileID: 0}
+  <nameText>k__BackingField: {fileID: 4690302624734254416}
   <sequenceSprites>k__BackingField:
   - {fileID: -1500203567, guid: dfe36f96d7f0fe14eabd71c9947acb5f, type: 3}
   - {fileID: -2096570061, guid: dfe36f96d7f0fe14eabd71c9947acb5f, type: 3}

@@ -11,7 +11,7 @@ public class Player : Entity
     [field:SerializeField] public WeaponData weapon { get; private set; }
     /*====ACTIONS====*/
     public event Action OnDeath = delegate { };
-    public delegate void EnergyValueChanged(int newValue);
+    public delegate void EnergyValueChanged(int currentEnergy);
     public event EnergyValueChanged OnEnergyValueChanged;
     
     private void Awake()
