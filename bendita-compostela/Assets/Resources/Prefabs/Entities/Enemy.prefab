@@ -713,7 +713,7 @@ MonoBehaviour:
   <passiveDisplay>k__BackingField: {fileID: 6973793862655089172, guid: 0b22ea7e90691cd4abbecbbab6cbdc3d, type: 3}
   <passiveindex>k__BackingField: 0
   <bossBarBackground>k__BackingField: {fileID: 21300000, guid: 81f84cd5383d71b43a78ad72829ff1db, type: 3}
-  <bossBarFill>k__BackingField: {fileID: 21300000, guid: 96ddaf3bf23226d48932ee3d2775e354, type: 3}
+  <bossBarFill>k__BackingField: {fileID: 21300000, guid: 8a5a27a82e5cb6e4facf4e32fed2bc98, type: 3}
   <healthbarBackground>k__BackingField: {fileID: 5206361793574782794}
   <healthbarFill>k__BackingField: {fileID: 1322594789834722973}
 --- !u!114 &3779116131978059888

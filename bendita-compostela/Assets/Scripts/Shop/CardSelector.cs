@@ -40,13 +40,17 @@ public class CardSelector : MonoBehaviour
 
         if (cardData is WeaponData)
         {
+            SoundManager.Instance.PlaySound(buySound);
             GameManager.Instance.playerData.inventory.Add(((WeaponData)cardData).Copy());
+            cardSelectorDisplay.BuyAnimation();
             return;
         }
 
         if(cardData is ArmorData)
         {
+            SoundManager.Instance.PlaySound(buySound);
             GameManager.Instance.playerData.inventory.Add(((ArmorData)cardData).Copy());
+            cardSelectorDisplay.BuyAnimation();
             return;
         }
         SoundManager.Instance.PlaySound(buySound);

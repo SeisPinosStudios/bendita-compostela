@@ -26,8 +26,11 @@ public class CardDisplay : MonoBehaviour
         costField.text = cardData.cost.ToString();
         art.sprite = cardData.art;
 
-        BattleManager.Instance.player.OnEnergyValueChanged += AnimationDisplay;
-        AnimationDisplay(BattleManager.Instance.player.energy);
+        if(SceneManager.GetActiveScene().name == "Battle")
+        {
+            BattleManager.Instance.player.OnEnergyValueChanged += AnimationDisplay;
+            AnimationDisplay(BattleManager.Instance.player.energy);
+        }
 
         if (cardData is WeaponData or ArmorData) costField.transform.parent.gameObject.SetActive(false);
     }
