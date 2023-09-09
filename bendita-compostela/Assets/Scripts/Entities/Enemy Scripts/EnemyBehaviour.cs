@@ -24,6 +24,7 @@ public class EnemyBehaviour : EntityBehaviour
         print($"{this.name} OnBeginTurn");
 
         entityEffManager.Poison();
+        if(GetComponent<Entity>().IsDead()) return;
 
         if (entityEffManager.Suffering(TAlteredEffects.AlteredEffects.Stun))
         {
@@ -50,6 +51,7 @@ public class EnemyBehaviour : EntityBehaviour
     public override void OnTurnEnd()
     {
         entityEffManager.Burn();
+        if (GetComponent<Entity>().IsDead()) return;
 
         isTurn = !isTurn;
         TurnManager.Instance.Turn();
@@ -102,6 +104,7 @@ public class EnemyBehaviour : EntityBehaviour
     }
     public void Death()
     {
+        isTurn = false;
         StopAllCoroutines();
         if(TurnManager.Instance.entityTurn == this) TurnManager.Instance.Turn();
     }
