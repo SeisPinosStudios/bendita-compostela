@@ -67,6 +67,7 @@ public class DragCardScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         if(!cardData.printArrow && eventData.position.y > 400) { UseCard(eventData); return; }
 
         var hit = RaycastUtils.Raycast2D("Enemy");
+        hit?.GetComponent<EntityDisplay>().HighlightOff();
         if (eventData.position.y < 400 || !hit) { ReturnCardToHand(eventData); return; }
         UseCardOnTarget(eventData, hit);
 
