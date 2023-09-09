@@ -6,8 +6,9 @@ public class Special : BasicCardEffect
 {
     public static void Effect(string index, CardData card, GameObject user, GameObject target)
     {
-        if(index != "") GameManager.Instance.playerData.deck.Add(SODataBase.special[int.Parse(index)]);
-        GameManager.Instance.playerData.deck.Remove(card);
+        GameManager.Instance.playerData.deck.Find(special => special.cardName == card.cardName);
+        if (index != "") GameManager.Instance.playerData.deck.Add(SODataBase.special[int.Parse(index)]);
+        
     }
 
     public static string GetDescription(CardData card, Entity user, Entity target)

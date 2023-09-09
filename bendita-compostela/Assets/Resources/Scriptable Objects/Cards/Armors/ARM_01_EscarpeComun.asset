@@ -15,8 +15,8 @@ MonoBehaviour:
   cardName: "Escarpe Com\xFAn"
   <cardId>k__BackingField: 0
   description: 
-  cost: 5
-  price: 0
+  cost: 0
+  price: 5
   art: {fileID: 596410203, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
   miniArt: {fileID: 7926115138711153763, guid: b0492a3b5e9bcac42a9d2131ed5fc5f2, type: 3}
   <attack>k__BackingField: 0
