@@ -27,7 +27,7 @@ public class Spear : BaseWeapon
         if (index == BattleManager.Instance.enemies.Count - 1) return;
         
         BattleManager.Instance.enemies[index+1]
-            .SufferDamage(card.GetDamage(), 0, GetStyleMultiplier(), false);
+            .SufferDamage(Mathf.RoundToInt(card.GetDamage() * GetStyleMultiplier()), 0, 0, true);
     }
 
     private float GetStyleMultiplier()
@@ -64,6 +64,7 @@ public class Spear : BaseWeapon
     private void OnDestroy()
     {
         Damage.OnAttack2 -= ChestSynergy;
+        Damage.OnAttack -= Style;
     }
 
     #region Description
