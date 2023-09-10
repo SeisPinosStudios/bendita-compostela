@@ -25,7 +25,7 @@ public class InfoText : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandler
 
     public virtual IEnumerator OnPointerEnterCoroutine(PointerEventData eventData)
     {
-        textBoxObject = Instantiate(textBoxPrefab, CanvasUtils.GetMainCanvas().transform);
+        textBoxObject = Instantiate(textBoxPrefab, transform.root);
         progressBar = textBoxObject.GetComponent<Image>();
 
         while (progress < 1)

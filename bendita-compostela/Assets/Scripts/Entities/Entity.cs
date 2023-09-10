@@ -41,17 +41,17 @@ public class Entity : MonoBehaviour
 
         var finalDamage = damage;
 
-        Debug.Log($"damageBonus {damageBonus} | damageMultiplier {damageMultiplier} | defenseBonus {defenseBonus} | defenseMultiplier {GetDefenseMultiplier()}");
-
         if (!effect)
         {
             finalDamage = Mathf.RoundToInt((damage + damageBonus - defenseBonus) * damageMultiplier);
             finalDamage += Mathf.RoundToInt((1 - ComputeDefenseMultiplier()) * finalDamage);
+            finalDamage = Mathf.RoundToInt(Mathf.Clamp(finalDamage, 0, float.PositiveInfinity));
             OnDamaged(finalDamage);
         }
 
         currentHP = Mathf.Clamp(currentHP - finalDamage, 0, entityData.HP);
 
+        Debug.Log($"damageBonus {damageBonus} | damageMultiplier {damageMultiplier} | defenseBonus {defenseBonus} | defenseMultiplier {defenseMultiplier}");
         Debug.Log($"Damaged {name} for {finalDamage} damage");
         entityDisplay.UpdateHealth(entityData.HP, currentHP);
         entityDisplay.HitAnimation();

@@ -24,7 +24,7 @@ MonoBehaviour:
   cardEffectsValues: []
   printArrow: 0
   <defenseBonus>k__BackingField: 1
-  <armorId>k__BackingField: 20
+  <armorId>k__BackingField: 10
   <weaponSynergy>k__BackingField: 5
   <weaponSynergyClass>k__BackingField: 5
   <synergyLevel>k__BackingField: 0

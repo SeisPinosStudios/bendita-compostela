@@ -72,6 +72,8 @@ public class CardDisplay : MonoBehaviour
     {
         BuildDescription();
 
+        if(TurnManager.Instance.entityTurn is not PlayerBehaviour) return;
+
         if (dragging && RaycastUtils.Raycast2D() && RaycastUtils.Raycast2D().GetComponent<Enemy>()) 
             target = RaycastUtils.Raycast2D().GetComponent<Enemy>();
         else target = null;
