@@ -55,3 +55,6 @@ TagManager:
   - name: Map
     uniqueID: 3005827539
     locked: 0
+  - name: Canvas
+    uniqueID: 3059996309
+    locked: 0

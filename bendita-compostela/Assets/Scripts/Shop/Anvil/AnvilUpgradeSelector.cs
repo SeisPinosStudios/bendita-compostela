@@ -40,12 +40,12 @@ public class AnvilUpgradeSelector : MonoBehaviour, IPointerEnterHandler, IPointe
     public void Disable()
     {
         interactionEnabled = false;
-        upgradeIcon.color = new Color(0.5f, 0.5f, 0.5f);
+        upgradeIcon.color = Color.white;
     }
     public void Enable()
     {
-        interactionEnabled = true;
-        upgradeIcon.color = Color.white;
+        interactionEnabled = false;
+        upgradeIcon.color = Color.black;
     }
 
     public void OnPointerDown(PointerEventData eventData)

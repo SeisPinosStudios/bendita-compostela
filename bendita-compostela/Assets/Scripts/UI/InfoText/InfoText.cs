@@ -64,7 +64,7 @@ public class InfoText : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandler
                                                                 eventData.position, CanvasUtils.GetMainCanvas().worldCamera, out pos);
         textBoxObject.transform.position = CanvasUtils.GetMainCanvas().transform.TransformPoint(pos);
 
-        if (eventData.position.x < Screen.width * 0.9) return;
+        if (eventData.position.x < Screen.width * 0.8) return;
 
         var pointerPosition = new Vector3(eventData.position.x - 200, eventData.position.y, 0);
 
@@ -76,6 +76,11 @@ public class InfoText : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandler
     protected void ShowTextBox()
     {
         textBoxObject.transform.GetChild(0).gameObject.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        if(textBoxObject != null) Destroy(textBoxObject);
     }
 }
     

@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <upgradeType>k__BackingField: 0
+  <upgradeLevel>k__BackingField: 0
   <upgradeIcon>k__BackingField: {fileID: 6328802127182671607}
   <icons>k__BackingField: []
   <highlight>k__BackingField: {fileID: 450260050733958227}
@@ -162,3 +163,4 @@ MonoBehaviour:
   <highlight>k__BackingField: {fileID: 0}
   <progress>k__BackingField: 0
   <progressBar>k__BackingField: {fileID: 0}
+  <loadingCircleSpeed>k__BackingField: 10000
