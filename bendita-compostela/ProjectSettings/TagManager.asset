@@ -43,6 +43,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Map
+    uniqueID: 3005827539
+    locked: 0
   - name: Background
     uniqueID: 1400681483
     locked: 0
@@ -52,6 +55,9 @@ TagManager:
   - name: EnitityAlteredEffects
     uniqueID: 4019084585
     locked: 0
-  - name: Map
-    uniqueID: 3005827539
+  - name: Canvas
+    uniqueID: 3059996309
+    locked: 0
+  - name: OverlayLayers
+    uniqueID: 982192353
     locked: 0

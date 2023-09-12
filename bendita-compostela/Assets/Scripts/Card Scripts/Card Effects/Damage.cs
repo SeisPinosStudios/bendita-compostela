@@ -60,6 +60,6 @@ public class Damage : BasicCardEffect
         finalDamage = Mathf.RoundToInt((finalDamage + userDamageBonus - targetDefenseBonus) * userDamageMultiplier);
         finalDamage += Mathf.RoundToInt((1 - targetDefenseMultiplier) * finalDamage);
         finalDamage = Mathf.RoundToInt(Mathf.Clamp(finalDamage, 0, float.PositiveInfinity));
-        return $"Realiza {finalDamage} puntos de da�o.";
+        return $"Realiza {finalDamage} puntos de daño.";
     }
 }

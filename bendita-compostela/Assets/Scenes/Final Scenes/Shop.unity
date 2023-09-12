@@ -3940,7 +3940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 506457095}
   hammerAnimator: {fileID: 90010049}
-  <anvilScreen>k__BackingField: {fileID: 2623774314446609483, guid: ee7c9d37649d5c54e94be424f35998cd, type: 3}
+  <anvilScreenPrefab>k__BackingField: {fileID: 2623774314446609483, guid: ee7c9d37649d5c54e94be424f35998cd, type: 3}
   anvilsound:
     <soundName>k__BackingField: 
     audioClip: {fileID: 8300000, guid: 6ecee3b9afabbc2499c24ad2f2a071ad, type: 3}
