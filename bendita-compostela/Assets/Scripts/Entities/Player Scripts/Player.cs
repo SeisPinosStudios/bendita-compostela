@@ -11,11 +11,20 @@ public class Player : Entity
     [field:SerializeField] public WeaponData weapon { get; private set; }
     /*====ACTIONS====*/
     public event Action OnDeath = delegate { };
+    public delegate void EnergyValueChanged(int currentEnergy);
+    public event EnergyValueChanged OnEnergyValueChanged;
     
     private void Awake()
     {
-        entityData = entityDataContainer.entityData;
-        playerData = (PlayerData)entityDataContainer.entityData;        
+        
+    }
+
+    public IEnumerator Start()
+    {
+        yield return new WaitUntil(() => GameManager.Instance.playerData);
+        entityDataContainer.entityData = GameManager.Instance.playerData;
+        entityData = GameManager.Instance.playerData;
+        playerData = GameManager.Instance.playerData;
         entityDisplay.entityAnimator.runtimeAnimatorController = playerData.playerAnimator;
         EntitySetup();
     }
@@ -23,8 +32,8 @@ public class Player : Entity
     #region Setup Methods
     private void EntitySetup()
     {
-        this.currentHP = playerData.HP;
-        this.defenseBonus = playerData.chestArmor.defenseBonus + playerData.legArmor.defenseBonus;
+        currentHP = playerData.currentHP;
+        defenseBonus = playerData.GetDefense();
 
         entityDisplay.UpdateHealth(entityData.HP, currentHP);
         GenerateCondecorations();
@@ -39,6 +48,7 @@ public class Player : Entity
     public void RestoreEnergy(int amount)
     {
         this.energy = Mathf.Clamp(this.energy + amount, 0, maxEnergy);
+        if(OnEnergyValueChanged != null) OnEnergyValueChanged(this.energy);
         return;
     }
     public void AddMaxEnergy(int amount)
@@ -50,6 +60,7 @@ public class Player : Entity
     {
         if (energy < amount) { Debug.Log($"Not enough energy"); return false; }
         energy -= amount;
+        if (OnEnergyValueChanged != null) OnEnergyValueChanged(energy);
         Debug.Log($"Enough energy to use card");
         return true;
     }
@@ -62,11 +73,10 @@ public class Player : Entity
         if(GetComponent<Friend>() != null && GetComponent<Friend>().active)
         {
             RestoreHealth(1, 0, 1);
+            GetComponent<Friend>().active = false;
             yield break;
         }
-
         OnDeath();
-
         yield return null;
     }
     #endregion

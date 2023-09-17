@@ -16,7 +16,12 @@ public class Burn : BasicAlteredEffect
     {
         var burnStacks = entityEffManager.alteredEffects[TAlteredEffects.AlteredEffects.Burn];
         var finalDamage = burnStacks > entityEffManager.burnThreshold ? burnStacks * 2 : burnStacks;
-        return $"<sprite=5> Quemado: Al final del turno, sufre tanto daño como cargas de quemado tengas. A partir de {entityEffManager.burnThreshold}" +
-            $"cargas el daño se duplica. Daño actual: {finalDamage}";
+        return $"<sprite=5> Quemado: Al final del turno, sufre tanto daï¿½o como cargas de quemado tengas. A partir de {entityEffManager.burnThreshold}" +
+            $" cargas el daï¿½o se duplica. Daï¿½o actual: {finalDamage}";
+    }
+
+    public static string GetBasicDescription()
+    {
+        return $"<sprite=5> Quemado: provoca  1 punto de daï¿½o por carga al final del turno. A partir de 6 cargas hace el doble de daï¿½o";
     }
 }

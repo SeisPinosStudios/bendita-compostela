@@ -40,4 +40,8 @@ public class AnvilScreenController : MonoBehaviour
         armorUpgradeScreen.SetActive(false);
         weaponUpgradeScreen.SetActive(true);
     }
+    public void SetInteraction()
+    {
+        ShopSelectionManager.Instance.EnableInteraction();
+    }
 }

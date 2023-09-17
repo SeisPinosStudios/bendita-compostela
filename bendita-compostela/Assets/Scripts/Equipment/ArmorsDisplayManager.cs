@@ -44,7 +44,7 @@ public class ArmorsDisplayManager : MonoBehaviour
             else child.GetComponent<EquipmentArmorSelector>().Enable();
         }
 
-        equipedChestDisplay.sprite = playerData.chestArmor.equipmentScreenIcon;
-        equipedLegDisplay.sprite = playerData.legArmor.equipmentScreenIcon;
+        if(playerData.chestArmor) equipedChestDisplay.sprite = playerData.chestArmor.equipmentScreenIcon;
+        if(playerData.legArmor) equipedLegDisplay.sprite = playerData.legArmor.equipmentScreenIcon;
     }
 }

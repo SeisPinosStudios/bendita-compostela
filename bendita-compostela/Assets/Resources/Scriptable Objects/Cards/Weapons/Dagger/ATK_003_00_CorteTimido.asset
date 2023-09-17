@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f95b9b15292dc49a305a65f742c51b, type: 3}
   m_Name: ATK_003_00_CorteTimido
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: "Corte T\xEDmido"
   <cardId>k__BackingField: 0
   description: 
   cost: 0

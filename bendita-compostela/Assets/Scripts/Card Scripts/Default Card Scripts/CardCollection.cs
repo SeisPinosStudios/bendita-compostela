@@ -24,6 +24,6 @@ public class CardCollection : MonoBehaviour
     }
     public void LeaveCombat()
     {
-        BattleManager.Instance.LoadScene("Map");
+        WinScreenManager.Instance.sceneLoad.allowSceneActivation = true;
     }
 }

@@ -11,9 +11,10 @@ public class CardDisplay : MonoBehaviour
     [field:SerializeField] public CardData cardData { get; private set; }
     [SerializeField] TextMeshProUGUI nameField, descriptionField, costField;
     [SerializeField] Image art;
+    [SerializeField] Animator cardAnimator;
     public bool dragging;
 
-    Entity target;
+    [field: SerializeField] public Entity target;
     int finalDamage;
     StringBuilder descriptionBuilder;
 
@@ -24,6 +25,12 @@ public class CardDisplay : MonoBehaviour
         descriptionField.text = cardData.description;
         costField.text = cardData.cost.ToString();
         art.sprite = cardData.art;
+
+        if(SceneManager.GetActiveScene().name == "Battle")
+        {
+            BattleManager.Instance.player.OnEnergyValueChanged += AnimationDisplay;
+            AnimationDisplay(BattleManager.Instance.player.energy);
+        }
 
         if (cardData is WeaponData or ArmorData) costField.transform.parent.gameObject.SetActive(false);
     }
@@ -39,6 +46,11 @@ public class CardDisplay : MonoBehaviour
         }
 
         descriptionField.text = description.ToString();
+
+        if(SceneManager.GetActiveScene().name == "Battle")
+            costField.text = TurnManager.Instance.entityTurn.entity.entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Exhaust) 
+                                ? (cardData.cost + 1).ToString() : cardData.cost.ToString();
+        else costField.text = cardData.cost.ToString();
     }
     private string GetDescription(CardData.Effect effect)
     {
@@ -49,13 +61,21 @@ public class CardDisplay : MonoBehaviour
 
         return description;
     }
+    private void AnimationDisplay(int newValue) 
+    {
+        if (cardAnimator == null) return;
+        if (newValue>= cardData.cost) cardAnimator.SetBool("isUsable", true);
+        else cardAnimator.SetBool("isUsable", false);
+    }
     
     private void Update()
     {
+        BuildDescription();
+
+        if(SceneManager.GetActiveScene().name != "Battle" || TurnManager.Instance.entityTurn is not PlayerBehaviour) return;
+
         if (dragging && RaycastUtils.Raycast2D() && RaycastUtils.Raycast2D().GetComponent<Enemy>()) 
             target = RaycastUtils.Raycast2D().GetComponent<Enemy>();
         else target = null;
-
-        BuildDescription();
     }
 }

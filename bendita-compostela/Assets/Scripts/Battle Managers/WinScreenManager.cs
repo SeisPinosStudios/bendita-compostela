@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System;
 using System.Text;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class WinScreenManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class WinScreenManager : MonoBehaviour
     [field: SerializeField] public Toggle deckToggle { get; private set; }
     [field: SerializeField] public static float condecorationChance { get; private set; } = 5.0f;
     [field: SerializeField] public TextMeshProUGUI otherRewards { get; private set; }
+    public AsyncOperation sceneLoad;
     public void Awake()
     {
         Instance = this;
@@ -26,8 +28,17 @@ public class WinScreenManager : MonoBehaviour
         }
 
         GenerateExtraRewards();
+        GameManager.Instance.playerData.SetCurrentHP(BattleManager.Instance.player.currentHP);
+        StartCoroutine(LoadMapCoroutine());
 
-        GameManager.Instance.playerData.currentHP = BattleManager.Instance.player.currentHP;
+        
+        BattleManager.Instance.soundList.PlaySound("WinSound");
+    }
+
+    public IEnumerator Start()
+    {
+        yield return new WaitForSeconds(BattleManager.Instance.soundList.vfxSoundsList.Find(audio => audio.soundName == "WinSound").AudioClip.length);
+        BattleManager.Instance.soundList.PlayMusic("WinMusic");
     }
 
     private List<CardData> GenerateRewards()
@@ -55,14 +66,22 @@ public class WinScreenManager : MonoBehaviour
         var condecoration = SODataBase.obtainableCondecorations[UnityEngine.Random.Range(0, SODataBase.obtainableCondecorations.Count)];
         if (obtainedCond)
         {
-            GameManager.Instance.playerData.condecorations.Add(condecoration);
-            Type.GetType(condecoration.type.ToString()).GetMethod("OnObtain").Invoke(null, null);
+            GameManager.Instance.playerData.AddCondecoration(condecoration);
         }
 
-        if (obtainedCond) text.Append($"{condecoration.name}:{condecoration.description}");
+        if (obtainedCond) text.Append($"{condecoration.condecorationName}:{condecoration.description}");
+
+        otherRewards.text = text.ToString();
     }
     private void CardChosen()
     {
         gameObject.SetActive(false);
+    }
+
+    private IEnumerator LoadMapCoroutine()
+    {
+        sceneLoad = SceneManager.LoadSceneAsync("Map");
+        sceneLoad.allowSceneActivation = false;
+        yield return null;
     }
 }

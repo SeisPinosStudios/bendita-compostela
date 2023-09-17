@@ -9,6 +9,6 @@ public class HealthDisplayer : MonoBehaviour
 
     private void Update()
     {
-        text.text = GameManager.Instance.playerData.currentHP.ToString();
+        text.text = $"{GameManager.Instance.playerData.currentHP}/{GameManager.Instance.playerData.HP}";
     }
 }

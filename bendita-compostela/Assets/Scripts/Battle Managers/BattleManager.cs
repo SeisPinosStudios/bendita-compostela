@@ -17,7 +17,7 @@ public class BattleManager : MonoBehaviour
     [field: SerializeField] public Transform enemyAreaEnd { get; private set; }
     [field: SerializeField] public List<GameObject> endScreens { get; private set; }
 
-    [SerializeField] private AudioClip battleMusic;
+    [field: SerializeField] public SoundList soundList { get; private set; }
 
     [field: SerializeField] public GameObject blockingImage { get; private set; }
     /*====EVENTS====*/
@@ -26,16 +26,18 @@ public class BattleManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        Instance = this;  
 
         combatData = GameManager.Instance.combatData;
+        SetGameMusic();
 
         GenerateEnemies();
 
         foreach (Transform child in enemiesContainer) enemies.Add(child.GetComponent<Enemy>());
         foreach (Enemy enemy in enemies) enemy.OnDeath += CheckGameEnd;
         player.OnDeath += CheckGameEnd;
-        SoundManager.Instance.PlayMusic(battleMusic);
+
+        
     }
     private void GenerateEnemies()
     {
@@ -43,7 +45,9 @@ public class BattleManager : MonoBehaviour
 
         var center = Mathf.Lerp(enemyAreaBegin.position.x, enemyAreaEnd.position.x, 0.5f);
 
-        var startingPoint = center - space * ((combatData.enemiesData.Count - 1) / 2);
+        var startingPoint = center - space * ((combatData.enemiesData.Count - 1) / 2f);
+
+        Debug.Log($"Enemy generation | center point: {center} | start point: {startingPoint} | Info: {space}  {(combatData.enemiesData.Count - 1)/2}");
 
 
         for(int i = 0; i < combatData.enemiesData.Count; i++)
@@ -52,6 +56,21 @@ public class BattleManager : MonoBehaviour
             entityDataContainer.entityData = combatData.enemiesData[i];
             Instantiate(entityDataContainer, position, new Quaternion(), enemiesContainer);
         }
+    }
+
+    private void SetGameMusic() 
+    {
+        //soundList.musicList.Add(combatData.combatMusic);
+        if (combatData.combatMusic.soundName == "")
+        {
+            soundList.PlayMusic("Combat");
+            return;
+        }
+        else
+        {
+            SoundManager.Instance.PlayMusic(combatData.combatMusic);
+        }
+ 
     }
 
     #region Check methods

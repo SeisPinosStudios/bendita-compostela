@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   depthRange: {x: 5, y: 6}
   combatsData:
-  - {fileID: 11400000, guid: a3e5a06898593ba4887a6dc0e422398a, type: 2}
-  - {fileID: 11400000, guid: 50d7f7253938af543b70aaf165e383ba, type: 2}
   - {fileID: 11400000, guid: ecadf74c4152db846b4cfa64e6e6de85, type: 2}
   - {fileID: 11400000, guid: e47fc44a23c1e74448c581c853774803, type: 2}
-  - {fileID: 11400000, guid: f2f678b3167a2fb43bc3af584bc3e4e9, type: 2}
   - {fileID: 11400000, guid: ab57fd5f9d4589747b96d4a717b0e9be, type: 2}
+  - {fileID: 11400000, guid: 301c7eb1fd15ce344acf637bba0fc9db, type: 2}
+  - {fileID: 11400000, guid: a3e5a06898593ba4887a6dc0e422398a, type: 2}
+  - {fileID: 11400000, guid: 50d7f7253938af543b70aaf165e383ba, type: 2}
   - {fileID: 11400000, guid: 301c7eb1fd15ce344acf637bba0fc9db, type: 2}

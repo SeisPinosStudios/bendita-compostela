@@ -10,4 +10,8 @@ public class Lead: BasicAlteredEffect
     {
         return "<sprite=9> Plumbosis: El siguiente ataque que haga sólo realizará el 50% de daño.";
     }
+    public static string GetBasicDescription()
+    {
+        return GetDescription(null, null);
+    }
 }

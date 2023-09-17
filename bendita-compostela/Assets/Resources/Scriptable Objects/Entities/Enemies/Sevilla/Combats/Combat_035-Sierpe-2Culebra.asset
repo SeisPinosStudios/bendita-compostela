@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Combat_035-Sierpe-2Culebra
   m_EditorClassIdentifier: 
   enemiesData:
+  - {fileID: 11400000, guid: d8937eba7546dbc41b1b8005502c4afa, type: 2}
+  - {fileID: 11400000, guid: d8937eba7546dbc41b1b8005502c4afa, type: 2}
   - {fileID: 11400000, guid: cd832c23a49a39f4585d4c3982077b66, type: 2}
-  - {fileID: 11400000, guid: d8937eba7546dbc41b1b8005502c4afa, type: 2}
-  - {fileID: 11400000, guid: d8937eba7546dbc41b1b8005502c4afa, type: 2}
+  combatMusic:
+    <soundName>k__BackingField: SierpeMusic
+    audioClip: {fileID: 8300000, guid: 6b342683f01361245af61e142094aa32, type: 3}
+    volume: 1

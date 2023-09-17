@@ -16,7 +16,8 @@ public class MapManager : MonoBehaviour
     [SerializeField] private GameObject nodePrefab;
     [SerializeField] private GameObject mapSpace; 
     [SerializeField] private GameObject lineRendererPrefab;
-    [SerializeField] private AudioClip mapMusic;
+    [SerializeField] private Sound mapMusic;
+
     
     [Header("Map Configuration")]
     [SerializeField] private int NUM_NODES;
@@ -36,13 +37,18 @@ public class MapManager : MonoBehaviour
     public Stack<GameObject> eventPrefabsStack;    
     private Dictionary<NodeEncounter, GameObject> encounterPrefabsDictionary = new Dictionary<NodeEncounter, GameObject>();
 
-    public Vector2 MAP_DISPLAY_OFFSET = new Vector2(1,4);    
+    public Vector2 MAP_DISPLAY_OFFSET = new Vector2(1,4);
+    public Vector2 MAP_DISPLAY_NODE_SEPARATION = new Vector2(0,0);
 
     [Header("Player Selections")]
     public List<Node> nodesVisited = new List<Node>();
     
     // Dictionary with the current nodes GO given their position
     private Dictionary<Vector2,GameObject> nodeGameObjects = new Dictionary<Vector2, GameObject>();
+
+    public Node currentNode;
+
+
     #endregion
     
     #region Initialization and setup of the Singleton
@@ -56,7 +62,7 @@ public class MapManager : MonoBehaviour
         {
             Destroy(gameObject);
         }       
-        SoundManager.Instance.PlayMusic(mapMusic);
+        SoundManager.Instance.PlayMusic(mapMusic.AudioClip,mapMusic.Volume);
     }
     
     private void Start() 
@@ -130,7 +136,7 @@ public class MapManager : MonoBehaviour
         DisplayMap();
         foreach (Node node in currentProgression)
         {
-            nodeGameObjects[node.NodePos].GetComponent<NodeEvent>().isCompleted = true;
+            nodeGameObjects[node.NodePos].GetComponent<NodeEvent>().NodeIsCompleted();
         }
         EneableNextAvailableNodes(currentProgression[currentProgression.Count-1]);
     }
@@ -141,9 +147,10 @@ public class MapManager : MonoBehaviour
     public void NodeSelected(Node nodeSelected)
     {
         nodesVisited.Add(nodeSelected);
+        currentNode = nodeSelected;
         GameManager.Instance.AddVisitedNode(nodeSelected);
         DisableNotSelectedNodes(nodeSelected);
-        EneableNextAvailableNodes(nodeSelected);
+        //EneableNextAvailableNodes(nodeSelected);
     }
     #endregion
 
@@ -156,14 +163,14 @@ public class MapManager : MonoBehaviour
         foreach (Node node in mapGrid.Nodes.Values)
         {
             if(node.futureNodes.Count != 0)
-                    {     
-                        //Canvas version         
-                        //var nodePosition = new Vector2((x*85)+900, (y*85)+200);
-                        
-                        //Normal version
-                        var nodePosition = new Vector2(node.NodePos.x - MAP_DISPLAY_OFFSET.x, node.NodePos.y - MAP_DISPLAY_OFFSET.y);
+                    {                           
+                        var nodePosition = new Vector2((node.NodePos.x - MAP_DISPLAY_OFFSET.x) * MAP_DISPLAY_NODE_SEPARATION.x,
+                                                       (node.NodePos.y - MAP_DISPLAY_OFFSET.y) * MAP_DISPLAY_NODE_SEPARATION.y);
 
-                        var spawnedNode = Instantiate(encounterPrefabsDictionary[node.NodeEncounter], nodePosition, Quaternion.identity, mapSpace.transform);                        
+                        var spawnedNode = Instantiate(encounterPrefabsDictionary[node.NodeEncounter],
+                                                      nodePosition, 
+                                                      Quaternion.identity, 
+                                                      mapSpace.transform);                        
                         
                         spawnedNode.GetComponent<NodeEvent>().nodeInfo = node;
 
@@ -171,8 +178,13 @@ public class MapManager : MonoBehaviour
                         
                     }
         }
-        var bossNode = Instantiate(bossPrefab, new Vector2(mapGrid.Boss.NodePos.x - MAP_DISPLAY_OFFSET.x, mapGrid.Boss.NodePos.y - MAP_DISPLAY_OFFSET.y), Quaternion.identity, mapSpace.transform);
+        var bossNode = Instantiate(bossPrefab, 
+                                   new Vector2((mapGrid.Boss.NodePos.x - MAP_DISPLAY_OFFSET.x) * MAP_DISPLAY_NODE_SEPARATION.x, 
+                                               (mapGrid.Boss.NodePos.y - MAP_DISPLAY_OFFSET.y) * MAP_DISPLAY_NODE_SEPARATION.y), 
+                                   Quaternion.identity, mapSpace.transform);
+
         bossNode.GetComponent<NodeEvent>().nodeInfo = mapGrid.Boss;
+
         nodeGameObjects.Add(mapGrid.Boss.NodePos, bossNode);
 
         // Instantiate Paths
@@ -182,10 +194,12 @@ public class MapManager : MonoBehaviour
             LineRenderer lineRenderer = line.GetComponent<LineRenderer>();
             lineRenderer.positionCount = mapGrid.Height+1;      
             lineRenderer.sortingOrder = 0;
-            lineRenderer.widthMultiplier = 0.5f;            
+            lineRenderer.widthMultiplier = 0.5f;
+            lineRenderer.useWorldSpace = false;
             for (int i = 0; i < path.Count; i++)
             {
-                    lineRenderer.SetPosition(i,new Vector2(path[i].NodePos.x - MAP_DISPLAY_OFFSET.x, path[i].NodePos.y - MAP_DISPLAY_OFFSET.y));                
+                    lineRenderer.SetPosition(i,new Vector2((path[i].NodePos.x - MAP_DISPLAY_OFFSET.x) * MAP_DISPLAY_NODE_SEPARATION.x,
+                                                           (path[i].NodePos.y - MAP_DISPLAY_OFFSET.y) * MAP_DISPLAY_NODE_SEPARATION.y));                
             }
             lineRenderer.SetPosition(path.Count, bossNode.transform.position);            
         } 
@@ -194,16 +208,20 @@ public class MapManager : MonoBehaviour
     {
         foreach (Vector2 key in nodeGameObjects.Keys)
         {
-            if(key.y == 0)nodeGameObjects[key].GetComponent<Collider2D>().enabled = true;            
+            if(key.y == 0)
+            {
+                nodeGameObjects[key].GetComponent<NodeEvent>().NodeIsSelectable();
+            }
         }
     }
     
-    private void EneableNextAvailableNodes(Node nodeSelected)
+    public void EneableNextAvailableNodes(Node nodeSelected)
     {
         foreach (Node node in nodeSelected.futureNodes)
         {
-            nodeGameObjects[node.NodePos].GetComponent<Collider2D>().enabled = true;
+            nodeGameObjects[node.NodePos].GetComponent<NodeEvent>().NodeIsSelectable();
         }
+        nodeGameObjects[nodeSelected.NodePos].GetComponent<NodeEvent>().NodeIsCompleted();
     }
     private void DisableNotSelectedNodes(Node nodeSelected)
     {
@@ -211,9 +229,9 @@ public class MapManager : MonoBehaviour
         {
             if(key.y == nodeSelected.NodePos.y)
             {
-                nodeGameObjects[key].GetComponent<Collider2D>().enabled = false;                
+                nodeGameObjects[key].GetComponent<NodeEvent>().DisableUncompletedNode();
             }            
-            nodeGameObjects[nodeSelected.NodePos].GetComponent<NodeEvent>().isCompleted = true;
+            nodeGameObjects[nodeSelected.NodePos].GetComponent<NodeEvent>().NodeIsCompleted();
         }
         
     }

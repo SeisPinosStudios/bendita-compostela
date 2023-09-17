@@ -11,6 +11,13 @@ public class MainMenuManager : MonoBehaviour
     private void Awake() {
         SoundManager.Instance.PlayMusic(mainMenuMusic.AudioClip, mainMenuMusic.Volume);
     }
+
+    private IEnumerator Start()
+    {
+        yield return new WaitUntil(() => SoundManager.Instance);
+        SoundManager.Instance.PlayMusic(mainMenuMusic.AudioClip, mainMenuMusic.Volume);
+    }
+
     public void Play()
     {
         SceneManager.LoadScene("Map");

@@ -11,7 +11,6 @@ public class Damage : BasicCardEffect
     public static void Effect(string damage, CardData card, GameObject user, GameObject target)
     {
         OnAttack(target, card);
-        OnAttack2(target, user, card);
 
         var cardUser = user.GetComponent<Entity>();
 
@@ -23,15 +22,17 @@ public class Damage : BasicCardEffect
         user.GetComponent<EntityDisplay>().AttackAnimation();
         target.GetComponent<Entity>().SufferDamage(int.Parse(damage), cardUser.attackBonus + frenzyStacks, cardUser.ComputeAttackMultiplier(), false);
 
+        OnAttack2(target, user, card);
         Frenzy(card, cardUser);
     }
 
     private static void Marked(string damage, CardData card, GameObject target)
     {
+        if (BattleManager.Instance.enemies.Count <= 1) return;
         if (target.GetComponent<Entity>().entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Marked))
         {
-            var enemies = BattleManager.Instance.enemies.Where(enemy => enemy.gameObject != enemy).ToList();
-            enemies[UnityEngine.Random.Range(0, enemies.Count)].SufferDamage(Mathf.RoundToInt(card.GetDamage() * 0.5f), 0, 0, true);
+            var enemies = BattleManager.Instance.enemies.Where(enemy => enemy.gameObject != target).ToList();
+            enemies[UnityEngine.Random.Range(0, enemies.Count)].SufferDamage(Mathf.CeilToInt(card.GetDamage() * 0.5f), 0, 0, true);
             target.GetComponent<Entity>().entityEffectsManager.RemoveEffect(TAlteredEffects.AlteredEffects.Marked, 1);
         }
     }
@@ -56,8 +57,9 @@ public class Damage : BasicCardEffect
         var targetDefenseMultiplier = target ? target.GetAttackMultiplier() : 1;
 
         finalDamage += frenzyStacks;
-        finalDamage = Mathf.RoundToInt(Mathf.Clamp((finalDamage + userDamageBonus - targetDefenseBonus) 
-                       * userDamageMultiplier / targetDefenseMultiplier, 0, 99));
-        return $"Realiza {finalDamage} puntos de daño.";
+        finalDamage = Mathf.RoundToInt((finalDamage + userDamageBonus - targetDefenseBonus) * userDamageMultiplier);
+        finalDamage += Mathf.RoundToInt((1 - targetDefenseMultiplier) * finalDamage);
+        finalDamage = Mathf.RoundToInt(Mathf.Clamp(finalDamage, 0, float.PositiveInfinity));
+        return $"Realiza {finalDamage} puntos de daÃ±o.";
     }
 }

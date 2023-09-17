@@ -22,6 +22,10 @@ public class DeckManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         var deck = ListUtils.Shuffle(BattleManager.Instance.player.playerData.deck);
+        while (!WeaponOnTop(deck))
+        {
+            deck = ListUtils.Shuffle(BattleManager.Instance.player.playerData.deck);
+        }
         foreach(CardData card in deck) deckQueue.Enqueue(card);
     }
 
@@ -32,17 +36,18 @@ public class DeckManager : MonoBehaviour
     }
     public IEnumerator DrawCardCoroutine(int amount)
     {
-        yield return new WaitUntil(() => deckQueue != null && deckQueue.Count > 0);
+        var delay = 1.0f / cardsToDraw;
+        yield return new WaitUntil(() => deckQueue != null);
         for (int i = 0; i < amount; i++)
         {
-
+            if (deckQueue.Count <= 0) break;
             card.cardData = deckQueue.Dequeue();
             Instantiate(card, hand);
-            yield return new WaitForSeconds(delaySeconds);
-            if (deckQueue.Count <= 0) break;
-
             SoundManager.Instance.PlaySound(drawCardSoundEffect);
+            yield return new WaitForSeconds(delay);
         }
+        Debug.Log($"Draw Coroutine Finished");
+        yield return null;
     }
     public void ReturnCards()
     {
@@ -59,10 +64,16 @@ public class DeckManager : MonoBehaviour
             SoundManager.Instance.PlaySound(drawCardSoundEffect);
             yield return new WaitForSeconds(delay);
         }
+        yield return null;
     }
     public void AddCardToDeck(CardData card)
     {
         deckQueue.Enqueue(card);
+    }
+    public bool WeaponOnTop(List<CardData> deck)
+    {
+        for (int i = 0; i < 5; i++) if (deck[i] is WeaponData) return true;
+        return false;
     }
     #endregion
 

@@ -21,11 +21,13 @@ public class PlayerBehaviour : EntityBehaviour
         if (entityEffManager.Suffering(TAlteredEffects.AlteredEffects.Stun))
         {
             //player.entityDisplay.Stun();
+            player.entityEffectsManager.RemoveEffect(TAlteredEffects.AlteredEffects.Stun, 1);
             OnTurnEnd();
             yield break;
         }
 
         yield return StartCoroutine(DeckManager.Instance.DrawCardCoroutine(5));
+        Debug.Log($"Player succeded to draw {5}");
         BattleManager.Instance.SetInteraction(true);
         player.RestoreEnergy(player.maxEnergy);
         isTurn = !isTurn;

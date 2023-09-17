@@ -35,7 +35,7 @@ RectTransform:
   - {fileID: 7492029422791557785}
   - {fileID: 3840459101185960246}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -69,6 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardDataContainer: {fileID: 5463638292455816910}
   cardData: {fileID: 0}
+  <cardSelectorDisplay>k__BackingField: {fileID: 7803053706445925766}
   <interact>k__BackingField: 1
   <cardCollider>k__BackingField: {fileID: 2966026559876350211}
   buySound: {fileID: 8300000, guid: 44f6902944618724298e9256de571f7a, type: 3}

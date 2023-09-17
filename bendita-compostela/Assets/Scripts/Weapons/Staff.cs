@@ -47,10 +47,23 @@ public class Staff : BaseWeapon
     {
         return $"Sinergia con cetro: Tus curaciones aumentan su efecto en {1+GameManager.Instance.playerData.legArmor.synergyLevel} puntos de vida.";
     }
-    public static string GetStyleDescription()
+    public static string GetStyleDescription(WeaponData weapon)
     {
-        return $"Estilo: el límite para que los enemigos sufran el doble de daño por Quemado se reduce a {6-(1+BattleManager.Instance.player.weapon.styleLevel)} " +
+        return $"Estilo: el límite para que los enemigos sufran el doble de daño por Quemado se reduce a {6-(1+weapon.styleLevel)} " +
             $"cargas de Quemado.";
+    }
+    public static string GetStyleDescriptionByLevel(int styleLevel)
+    {
+        return $"Estilo: el límite para que los enemigos sufran el doble de daño por Quemado se reduce a {6 - (1 + styleLevel)} " +
+            $"cargas de Quemado.";
+    }
+    public static string GetSynergyDescriptionByLevel(int synergyLevel, int armorType)
+    {
+        if (armorType == 0)
+            return $"Sinergia con cetro: reduce el coste de los ataques del cetro en {synergyLevel + 1} puntos de energía.";
+
+        else
+            return $"Sinergia con cetro: Tus curaciones aumentan su efecto en {1 + synergyLevel} puntos de vida.";
     }
     #endregion
 }

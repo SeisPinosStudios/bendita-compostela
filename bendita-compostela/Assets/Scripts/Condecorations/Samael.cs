@@ -9,4 +9,9 @@ public class Samael : CondecorationEffect
         BattleManager.Instance.player.AttackMultiplier(0.5f);
         BattleManager.Instance.player.DefenseMultiplier(-0.5f);
     }
+
+    public static void OnObtain()
+    {
+
+    }
 }

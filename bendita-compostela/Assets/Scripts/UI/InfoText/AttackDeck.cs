@@ -18,5 +18,8 @@ public class AttackDeck : InfoText
         deckImage.sprite = deckSprites[BattleManager.Instance.player.weapon.weaponId];
     }
 
-
+    private void OnDestroy()
+    {
+        EquipWeapon.OnEquipWeapon -= UpdateImage;
+    }
 }

@@ -7,6 +7,7 @@ public class Sword : BaseWeapon
     [field:SerializeField] public int styleAttacks { get; private set; }
     [field:SerializeField] public int chestLevel { get; private set; }
     [field:SerializeField] public float styleMultiplier { get; private set; }
+    [field: SerializeField] public bool activeStyle { get; private set; } = true;
 
     private void Awake()
     {
@@ -32,12 +33,15 @@ public class Sword : BaseWeapon
 
         if (styleAttacks > 0) { styleAttacks--; return; }
 
-        player.AttackMultiplier(-styleMultiplier);
+        if(activeStyle) player.AttackMultiplier(-styleMultiplier);
+
+        activeStyle = false;
     }
     private void Turn()
     {
         if (styleAttacks <= 0) player.AttackMultiplier(styleMultiplier);
         styleAttacks = 1 + (chestSynergy ? (1 * chestLevel) + 1 : 0);
+        activeStyle = true;
     }
     #endregion
 
@@ -68,6 +72,8 @@ public class Sword : BaseWeapon
     {
         Damage.OnAttack -= Style;
 
+        if(styleAttacks > 0) player.AttackMultiplier(-styleMultiplier);
+
         if(legSynergy)
             foreach (Enemy enemy in BattleManager.Instance.enemies)
                 enemy.entityEffectsManager.UpdateEffectLimit(TAlteredEffects.AlteredEffects.Bleed, -GetBleedUpgrade());
@@ -82,9 +88,21 @@ public class Sword : BaseWeapon
     {
         return $"Sinergia con espada: aumenta el límite de cargas de sangrado de los enemigos a {5+(1+2*GameManager.Instance.playerData.legArmor.synergyLevel)} cargas.";
     }
-    public static string GetStyleDescription()
+    public static string GetStyleDescription(WeaponData weapon)
     {
-        return $"Estilo: el primer ataque de cada turno hace un {(BattleManager.Instance.player.weapon.styleLevel == 0 ? 0.5f : BattleManager.Instance.player.weapon.styleLevel)*100}% más de daño.";
+        return $"Estilo: el primer ataque de cada turno hace un {(weapon.styleLevel == 0 ? 0.5f : weapon.styleLevel)*100}% más de daño.";
+    }
+    public static string GetStyleDescriptionByLevel(int styleLevel)
+    {
+        return $"Estilo: el primer ataque de cada turno hace un {(styleLevel == 0 ? 0.5f : styleLevel) * 100}% más de daño.";
+    }
+    public static string GetSynergyDescriptionByLevel(int synergyLevel, int armorType)
+    {
+        if (armorType == 0)
+            return $"Sinergia con espada: el bonificador de daño por estilo pasa a hacerse en los primeros {synergyLevel + 2} ataques.";
+
+        else
+            return $"Sinergia con espada: aumenta el límite de cargas de sangrado de los enemigos a {5 + (1 + 2 * synergyLevel)} cargas.";
     }
     #endregion
 }

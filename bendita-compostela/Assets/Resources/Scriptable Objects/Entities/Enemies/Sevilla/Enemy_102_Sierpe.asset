@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb4dcaa0c94c604f96fb6943d6979c8, type: 3}
   m_Name: Enemy_102_Sierpe
   m_EditorClassIdentifier: 
-  entityName: Sierpe
+  entityName: La Sierpe
   HP: 60
   <damageMitigation>k__BackingField: 0
   <enemySprite>k__BackingField: {fileID: 21300000, guid: 16ac681ce6b510547b8bf19e5db2973d, type: 3}
+  <enemyAnimator>k__BackingField: {fileID: 22100000, guid: 42f0c6cbfb722d54e9e67ff4a5d76d5e, type: 2}
   <reward>k__BackingField: 5
-  <passives>k__BackingField: 
+  <passives>k__BackingField: 0300000007000000
   <resistances>k__BackingField: 
   <defaultSequence>k__BackingField: {fileID: 11400000, guid: 4541e57d6efd8ef4da9029dde51b3e2a, type: 2}
   <attackSequence>k__BackingField: {fileID: 11400000, guid: f9315f9cf736c7143bf9190c19e9a7c5, type: 2}

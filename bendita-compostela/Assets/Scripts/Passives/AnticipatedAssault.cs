@@ -16,4 +16,11 @@ public class AnticipatedAssault : BasicPassive
         TurnManager.Instance.turnQueue.Remove(enemyBehaviour);
         TurnManager.Instance.turnQueue.AddFirst(enemyBehaviour);
     }
+
+    #region Description
+    public static string GetDescription()
+    {
+        return $"Asalto anticipado: siempre ataca primero al empezar el combate.";
+    }
+    #endregion
 }

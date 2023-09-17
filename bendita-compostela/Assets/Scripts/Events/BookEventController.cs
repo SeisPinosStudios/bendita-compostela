@@ -12,7 +12,9 @@ public class BookEventController : MonoBehaviour
 
     public void EndEvent()
     {
+        MapManager.Instance.EneableNextAvailableNodes(MapManager.Instance.currentNode);
         Destroy(eventPanel);
+
     }
     public void TurnPage()
     {

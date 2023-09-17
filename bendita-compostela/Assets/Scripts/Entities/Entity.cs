@@ -43,7 +43,9 @@ public class Entity : MonoBehaviour
 
         if (!effect)
         {
-            finalDamage = Mathf.RoundToInt((damage + damageBonus - defenseBonus) * damageMultiplier / ComputeDefenseMultiplier());
+            finalDamage = Mathf.RoundToInt((damage + damageBonus - defenseBonus) * damageMultiplier);
+            finalDamage += Mathf.RoundToInt((1 - ComputeDefenseMultiplier()) * finalDamage);
+            finalDamage = Mathf.RoundToInt(Mathf.Clamp(finalDamage, 0, float.PositiveInfinity));
             OnDamaged(finalDamage);
         }
 
@@ -53,6 +55,7 @@ public class Entity : MonoBehaviour
         Debug.Log($"Damaged {name} for {finalDamage} damage");
         entityDisplay.UpdateHealth(entityData.HP, currentHP);
         entityDisplay.HitAnimation();
+        BattleManager.Instance.soundList.PlaySound("Slash");
         CheckDeath();
         return;
     }
@@ -71,6 +74,7 @@ public class Entity : MonoBehaviour
             finalDefenseMultiplier -= entityEffectsManager.vulnerableMultiplier;
             entityEffectsManager.RemoveEffect(TAlteredEffects.AlteredEffects.Vulnerable, 1);
             entityDisplay.Vulnerable();
+            BattleManager.Instance.soundList.PlaySound("Vulnerable");
         }
 
         return finalDefenseMultiplier;
@@ -114,6 +118,7 @@ public class Entity : MonoBehaviour
         currentHP = Mathf.Clamp(currentHP + finalHeal, 0, entityData.HP);
 
         entityDisplay.UpdateHealth(entityData.HP, currentHP);
+        BattleManager.Instance.soundList.PlaySound("Heal");
 
         return;
     }

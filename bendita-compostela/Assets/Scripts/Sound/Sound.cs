@@ -5,6 +5,7 @@ using UnityEngine;
 [Serializable]
 public class Sound 
 {
+    [field: SerializeField] public string soundName { get; private set; }
     [Header("Sound Config")]
     [SerializeField] private AudioClip audioClip;
 
@@ -18,5 +19,13 @@ public class Sound
     public float Volume
     {
         get{return volume;}
+    }
+    public void PlaySound() 
+    {
+        SoundManager.Instance.PlaySound(audioClip,volume);
+    }
+    public void PlayMusic() 
+    {
+        SoundManager.Instance.PlayMusic(audioClip, volume);
     }
 }

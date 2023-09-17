@@ -18,13 +18,13 @@ public class EnemyBehaviour : EntityBehaviour
     {
         enemyData = (EnemyData)entityDataContainer.entityData;
         mainCanvas = GameObject.FindGameObjectWithTag("MainCanvas").transform;
-        ((Enemy)entity).OnDeath += Death;
     }
     public override void OnTurnBegin()
     {
         print($"{this.name} OnBeginTurn");
 
         entityEffManager.Poison();
+        if(GetComponent<Entity>().IsDead()) return;
 
         if (entityEffManager.Suffering(TAlteredEffects.AlteredEffects.Stun))
         {
@@ -51,6 +51,7 @@ public class EnemyBehaviour : EntityBehaviour
     public override void OnTurnEnd()
     {
         entityEffManager.Burn();
+        if (GetComponent<Entity>().IsDead()) return;
 
         isTurn = !isTurn;
         TurnManager.Instance.Turn();
@@ -60,9 +61,11 @@ public class EnemyBehaviour : EntityBehaviour
         var attack = attackQueue.Dequeue();
         var target = GetTarget(attack);
         attackPrefab.cardData = attack;
+        attackPrefab.GetComponent<CardDisplay>().target = target.GetComponent<Entity>();
 
         var attackInstance = Instantiate(attackPrefab, mainCanvas);
         attackInstance.GetComponent<Card>().UseEnemyCard(target);
+        attackInstance.GetComponent<CardDisplay>().target = target.GetComponent<Entity>();
         yield return new WaitForSeconds(waitTime);
         //Destroy(attackInstance.gameObject);
     }
@@ -100,9 +103,10 @@ public class EnemyBehaviour : EntityBehaviour
 
         return null;
     }
-    private void Death()
+    public void Death()
     {
+        isTurn = false;
         StopAllCoroutines();
-        TurnManager.Instance.Turn();
+        if(TurnManager.Instance.entityTurn == this) TurnManager.Instance.Turn();
     }
 }

@@ -17,8 +17,9 @@ public class CardSelectorDisplay : MonoBehaviour
         
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
+        yield return new WaitUntil(() => cardDataContainer.cardData);
         cardData = cardDataContainer.cardData;
         sprite.sprite = cardData.miniArt;
     }
@@ -36,13 +37,11 @@ public class CardSelectorDisplay : MonoBehaviour
         sprite.gameObject.transform.position -= new Vector3(0f, 0.1f, 0f);
         highlight.enabled = false;
     }
-
-    private void OnMouseUp()
+    public void BuyAnimation()
     {
-        if (!cardSelector.interact) return;
         ShopSelectionManager.Instance.ClearCardShown();
         display.SetActive(false);
-        animator.Play("BuyCardAnimation");        
+        animator.Play("BuyCardAnimation");
         Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length - 0.5f);
     }
 }

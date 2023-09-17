@@ -12,9 +12,9 @@ public class EntityDisplay : MonoBehaviour
     [field: SerializeField] public EntityDataContainer entityDataContainer { get; protected set; }
     [field:SerializeField] public EntityData entityData { get; private set; }
     [SerializeField] Image healthBar;
-    [SerializeField] TextMeshProUGUI healthText;
-    [SerializeField] Transform alteredEffectsZone;
-    [SerializeField] AlteredEffectDisplay alteredEffectDisplay;
+    [field: SerializeField] public TextMeshProUGUI healthText { get; protected set; }
+    [field: SerializeField] public Transform alteredEffectsZone { get; protected set; }
+    [field: SerializeField] public AlteredEffectDisplay alteredEffectDisplay { get; protected set; }
     [SerializeField] public Animator entityAnimator;
     public bool showLogs = true;
 
@@ -29,10 +29,10 @@ public class EntityDisplay : MonoBehaviour
     }
     public void UpdateHealth(int max, int current)
     {
-        healthBar.fillAmount = current / max;
+        healthBar.fillAmount = (float)current / max;
         healthText.text = $"{current}/{max}";
     }
-    public void UpdateAlteredEffectsDisplay(EntityEffectsManager manager)
+    public virtual void UpdateAlteredEffectsDisplay(EntityEffectsManager manager)
     {
         foreach(Transform child in alteredEffectsZone) Destroy(child.gameObject);
 
@@ -45,6 +45,7 @@ public class EntityDisplay : MonoBehaviour
         }
     }
 
+    #region Animation
     public void DisplayEffectAnimation(TAlteredEffects.AlteredEffects effect)
     {
         switch (effect)
@@ -127,16 +128,24 @@ public class EntityDisplay : MonoBehaviour
         Log("Stun Animation");
         entityAnimator.SetTrigger("Stun");
     }
+    public void HighlightOff()
+    {
+        entityAnimator.SetLayerWeight(5, 0);
+    }
+    public void HighlightOn()
+    {
+        entityAnimator.SetLayerWeight(5, 1);
+    }
     //OnlyPlayer
     public void SetWeaponDisplay(int weaponId)
     {
         Log($"Weapon {weaponId} Animation");
         entityAnimator.SetInteger("WeaponType", weaponId+1);
     }
+    #endregion
 
     void Log(object message)
     {
         if(showLogs) Debug.Log(message);
-        
     }
 }

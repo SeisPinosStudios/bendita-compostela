@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 public class Grid{    
 
@@ -99,6 +100,20 @@ public class Grid{
                 }
             }
         }
+        var midMap = new Vector2(0, height / 2);
+        if (nodeDictionary.FirstOrDefault(pair => pair.Value.NodeEncounter == NodeEncounter.ShopEncounter).Value == null) 
+        {
+            foreach (Node node in nodeDictionary.Values) 
+            { 
+                if(node.NodePos.y == height / 2) 
+                {
+                    node.NodeEncounter = NodeEncounter.ShopEncounter;
+                    return;
+                }
+            }
+            
+        }
+            
     }
     private NodeEncounter AsignValue()
     {

@@ -19,7 +19,8 @@ public class StyleInfo : InfoText
     {
         image.enabled = true;
         image.sprite = sprites[BattleManager.Instance.player.weapon.weaponId];
-        textToWrite = (string)Type.GetType(BattleManager.Instance.player.weapon.weaponClassName.ToString()).GetMethod("GetStyleDescription").Invoke(null, null);
+        textToWrite = (string)Type.GetType(BattleManager.Instance.player.weapon.weaponClassName.ToString())
+            .GetMethod("GetStyleDescription").Invoke(null, new object[] {BattleManager.Instance.player.weapon});
     }
 
     public override IEnumerator OnPointerEnterCoroutine(PointerEventData eventData)
