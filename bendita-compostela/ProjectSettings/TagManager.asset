@@ -16,7 +16,7 @@ TagManager:
   - Background
   - Map
   - Fade
-  - 
+  - Background blur
   - 
   - 
   - 
@@ -43,6 +43,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: End
+    uniqueID: 1693505027
+    locked: 0
+  - name: Back
+    uniqueID: 4019480241
+    locked: 0
+  - name: Mid
+    uniqueID: 3357427351
+    locked: 0
+  - name: Front
+    uniqueID: 2809693117
+    locked: 0
   - name: Background
     uniqueID: 1400681483
     locked: 0
@@ -54,4 +66,7 @@ TagManager:
     locked: 0
   - name: Map
     uniqueID: 3005827539
+    locked: 0
+  - name: FrontEffects
+    uniqueID: 4221683143
     locked: 0
