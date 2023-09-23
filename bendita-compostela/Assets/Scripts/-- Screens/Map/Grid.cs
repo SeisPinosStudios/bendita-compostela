@@ -246,7 +246,7 @@ public class Grid{
     {
         foreach (var node in nodeDictionary)
         {
-            Debug.Log($"{node.Key} --- {node.Value.IsPathless} ---- {node.Value.NodeEncounter}");
+            DebugManager.Instance.DebugLog("Map", $"{node.Key} --- {node.Value.IsPathless} ---- {node.Value.NodeEncounter}");
         }
     }
     #endregion

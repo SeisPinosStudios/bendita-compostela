@@ -82,16 +82,14 @@ public class EntityEffectsManager : MonoBehaviour
         Type.GetType(effect.ToString()).GetMethod("Effect").Invoke(null, new object[] { this, entity, this.gameObject, data });
         UpdateEffects();
     }
-    public void Poison()
+    public IEnumerator Poison()
     {
         if (Suffering(TAlteredEffects.AlteredEffects.Poison))
         {
             Effect(TAlteredEffects.AlteredEffects.Poison);
             BattleManager.Instance.soundList.PlaySound("Poison");
-            entityDisplay.Poison();
+            yield return StartCoroutine(entityDisplay.SetTriggerAnimation("Poison", 2));
         }
-            
-
     }
     public void Bleed()
     {
@@ -103,15 +101,15 @@ public class EntityEffectsManager : MonoBehaviour
             
 
     }
-    public void Burn()
+    public IEnumerator Burn()
     {
         if (Suffering(TAlteredEffects.AlteredEffects.Burn))
         {
             Effect(TAlteredEffects.AlteredEffects.Burn);
             BattleManager.Instance.soundList.PlaySound("Burn");
-            entityDisplay.Burn();
+            yield return StartCoroutine(entityDisplay.SetTriggerAnimation("Burn", 2));
         }
-            
+        yield return null;
     }
     #endregion
 

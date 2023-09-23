@@ -20,6 +20,12 @@ public class WinScreenManager : MonoBehaviour
     {
         Instance = this;
 
+        if (GameManager.Instance.CheckGameEnd())
+        {
+            SceneManagementUtils.StaticLoadScene("EndScene");
+            return;
+        }
+
         foreach(CardData cardData in GenerateRewards())
         {
             cardDataContainer.cardData = cardData;
@@ -77,7 +83,6 @@ public class WinScreenManager : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-
     private IEnumerator LoadMapCoroutine()
     {
         sceneLoad = SceneManager.LoadSceneAsync("Map");

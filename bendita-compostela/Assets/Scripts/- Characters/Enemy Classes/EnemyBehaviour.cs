@@ -19,43 +19,36 @@ public class EnemyBehaviour : EntityBehaviour
         enemyData = (EnemyData)entityDataContainer.entityData;
         mainCanvas = GameObject.FindGameObjectWithTag("MainCanvas").transform;
     }
-    public override void OnTurnBegin()
+    public override IEnumerator OnTurnBegin()
     {
-        print($"{this.name} OnBeginTurn");
-
-        entityEffManager.Poison();
-        if(GetComponent<Entity>().IsDead()) return;
-
-        if (entityEffManager.Suffering(TAlteredEffects.AlteredEffects.Stun))
-        {
-            entityEffManager.RemoveEffect(TAlteredEffects.AlteredEffects.Stun, 1);
-            OnTurnEnd();
-            return;
-        }
+        yield return base.StartCoroutine(base.OnTurnBegin());
 
         if (attackQueue.Count <= 0) GetNewSequence();
+
         isTurn = !isTurn;
-        OnTurn();
+
+        ChangeBehaviourState(BehaviourState.OnTurn);
     }
-    public override void OnTurn()
+    public override IEnumerator OnTurn()
     {
         OnEnemyTurn();
-        StartCoroutine(OnTurnCoroutine());
-    }
-    private IEnumerator OnTurnCoroutine()
-    {
+
+        yield return base.StartCoroutine(base.OnTurn());
+
         yield return StartCoroutine(Attack());
-        yield return new WaitForSeconds(1.0f);
-        OnTurnEnd();
+
+        yield return new WaitForSeconds(0.25f);
+
+        ChangeBehaviourState(BehaviourState.OnTurnEnd);
     }
-    public override void OnTurnEnd()
+    public override IEnumerator OnTurnEnd()
     {
-        entityEffManager.Burn();
-        if (GetComponent<Entity>().IsDead()) return;
+        yield return base.StartCoroutine(base.OnTurnEnd());
 
         isTurn = !isTurn;
         TurnManager.Instance.Turn();
     }
+
     private IEnumerator Attack()
     {
         var attack = attackQueue.Dequeue();
@@ -63,7 +56,7 @@ public class EnemyBehaviour : EntityBehaviour
         attackPrefab.cardData = attack;
         attackPrefab.GetComponent<CardDisplay>().target = target.GetComponent<Entity>();
 
-        var attackInstance = Instantiate(attackPrefab, mainCanvas);
+        var attackInstance = Instantiate(attackPrefab, CanvasUtils.GetMainCanvas().transform);
         attackInstance.GetComponent<Card>().UseEnemyCard(target);
         attackInstance.GetComponent<CardDisplay>().target = target.GetComponent<Entity>();
         yield return new WaitForSeconds(waitTime);

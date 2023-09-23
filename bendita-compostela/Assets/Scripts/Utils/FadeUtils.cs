@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using TMPro;
+using UnityEngine.Events;
 
 public class FadeUtils : MonoBehaviour
 {    
@@ -14,9 +16,17 @@ public class FadeUtils : MonoBehaviour
     [SerializeField] private bool loopFade = false;
     [SerializeField] private float loopFadeSpeed = 0.5f;
 
+    [SerializeField] private UnityEvent awake;
+    [SerializeField] private List<TextMeshProUGUI> fadingText = new List<TextMeshProUGUI>();
+
     public event Action OnFadeComplete;
 
     Coroutine fadeLoopCoroutine;
+
+    private void Awake()
+    {
+        if(awake != null)  awake.Invoke();
+    }
 
     #region Image Fade with Finish Event
     public void FadeIn(float fadeDuration)
@@ -74,6 +84,18 @@ public class FadeUtils : MonoBehaviour
     #endregion
 
     #region Image Fade 
+    public void SimpleFadeOut(float fadeTime)
+    {
+        StartCoroutine(FadeOutCoroutine(fadeTime));
+    }
+    public void SimpleFadeIn(float fadeTime)
+    {
+        StartCoroutine(FadeInCoroutine(fadeTime));
+    }
+    public void FadeInText(float fadeTime)
+    {
+        StartCoroutine(FadeInTextCoroutine(fadeTime));
+    }
     public IEnumerator FadeOutCoroutine(float fadeTime)
     {
         if (!imageComponent.gameObject.activeSelf) imageComponent.gameObject.SetActive(true);
@@ -96,6 +118,19 @@ public class FadeUtils : MonoBehaviour
         }
 
         yield return null;
+    }
+
+    public IEnumerator FadeInTextCoroutine(float fadeTime)
+    {
+        foreach(TextMeshProUGUI textObject in fadingText)
+        {
+            for(float i = 0; i < fadeTime; i += Time.deltaTime)
+            {
+                textObject.color = new Color(1f, 1f, 1f, i / fadeTime);
+                yield return null;
+            }
+            yield return new WaitForSeconds(fadeTime/2);
+        }
     }
     #endregion    
     
@@ -139,7 +174,4 @@ public class FadeUtils : MonoBehaviour
         rendererComponent.color = targetColor;
     }
     #endregion
-    
-
-    
 }

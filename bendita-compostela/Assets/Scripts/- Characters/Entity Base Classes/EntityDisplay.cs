@@ -10,7 +10,7 @@ using Random = UnityEngine.Random;
 public class EntityDisplay : MonoBehaviour
 {
     [field: SerializeField] public EntityDataContainer entityDataContainer { get; protected set; }
-    [field:SerializeField] public EntityData entityData { get; private set; }
+    [field:SerializeField] public EntityData entityData { get; protected set; }
     [SerializeField] Image healthBar;
     [field: SerializeField] public TextMeshProUGUI healthText { get; protected set; }
     [field: SerializeField] public Transform alteredEffectsZone { get; protected set; }
@@ -20,8 +20,11 @@ public class EntityDisplay : MonoBehaviour
 
     private void Awake()
     {
-        //entityData = entityDataContainer.entityData;
+        entityData = entityDataContainer.entityData;
         alteredEffectsZone.GetComponentInParent<Canvas>().worldCamera = Camera.main;
+    }
+    public IEnumerator Start() {
+        yield return new WaitUntil(() => entityDataContainer.entityData);
     }
     private void Update()
     {
@@ -141,6 +144,18 @@ public class EntityDisplay : MonoBehaviour
     {
         Log($"Weapon {weaponId} Animation");
         entityAnimator.SetInteger("WeaponType", weaponId+1);
+    }
+
+    public IEnumerator SetTriggerAnimation(string trigger, int layer) {
+        DebugManager.StaticDebug("Entity", $"{trigger} animation on {entityData.entityName}");
+        entityAnimator.SetTrigger(trigger);
+        yield return new WaitForSeconds(AnimatorUtils.ClipLength(entityAnimator, layer));
+    }
+
+    public IEnumerator SetIntegerAnimation(string integer, int value, int layer) {
+        DebugManager.StaticDebug("Entity", $"{integer} set as {value} on {entityData.entityName}");
+        entityAnimator.SetInteger(integer, value);
+        yield return new WaitForSeconds(AnimatorUtils.ClipLength(entityAnimator, layer));
     }
     #endregion
 

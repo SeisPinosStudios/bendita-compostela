@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class LoseScreenManager : MonoBehaviour
+public class LoseScreenManager : MonoBehaviour, IPointerClickHandler
 {
     [field: SerializeField] public Image backgroundImage { get; private set; }
     [field: SerializeField] public float fadeTime { get; private set; }
@@ -30,5 +31,14 @@ public class LoseScreenManager : MonoBehaviour
     private void OnEnable()
     {
         StartCoroutine(DeathSequence());
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (!text.activeSelf) return;
+        DebugManager.Instance.DebugLog("Battle", "LoseScreen click");
+        GameManager.Instance.RandomizePlayer();
+        GameManager.Instance.ClearProgress();
+        SceneManagementUtils.StaticLoadScene("MainMenu");
     }
 }

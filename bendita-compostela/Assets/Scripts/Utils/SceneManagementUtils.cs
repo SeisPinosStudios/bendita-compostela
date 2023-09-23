@@ -9,4 +9,9 @@ public class SceneManagementUtils : MonoBehaviour
     {
         SceneManager.LoadScene(scene);
     }
+
+    public static void StaticLoadScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
 }

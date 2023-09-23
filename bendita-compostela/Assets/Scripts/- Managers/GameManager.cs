@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [field:SerializeField] public CombatData combatData { get; private set; }
     [field: SerializeField, Header("Map State and Progression")] public Grid map { get; private set; }
     [field: SerializeField] public List<Node> visitedNodes { get; private set; }
+    [field: SerializeField] public Node currentNode { get; private set; }
     [field: SerializeField, Header("Debug")] public bool debug { get; private set; }
 
 
@@ -43,8 +44,9 @@ public class GameManager : MonoBehaviour
     }
 
     #region Combat
-    public void SetCombat(CombatData combatData)
+    public void SetCombat(Node node, CombatData combatData)
     {
+        this.currentNode = node;
         this.combatData = combatData;
     }
     #endregion
@@ -57,6 +59,11 @@ public class GameManager : MonoBehaviour
     public void SaveGrid(Grid grid)
     {
         map = grid;
+    }
+    public bool CheckGameEnd()
+    {
+        DebugManager.Instance.DebugLog("Battle", $"{currentNode == map.Boss}");
+        return currentNode == map.Boss;
     }
     #endregion
 

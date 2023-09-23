@@ -22,7 +22,7 @@ public class EnemyDisplay : EntityDisplay
 
     private void Awake()
     {
-        
+        entityData = entityDataContainer.entityData;
         enemyData = (EnemyData)entityDataContainer.entityData;
 
         enemySprite.sprite = enemyData.enemySprite;

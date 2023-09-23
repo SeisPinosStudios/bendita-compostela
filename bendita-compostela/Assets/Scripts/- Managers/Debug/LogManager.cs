@@ -2,11 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.IO;
 
 public class LogManager : MonoBehaviour
 {
     string logName = "";
-    string path = $"{Application.dataPath}/../";
+    string path;
+    [SerializeField] bool log = true;
+
+    private void Awake()
+    {
+        path = $"{Directory.GetParent(Application.dataPath)}\\";
+    }
 
     private void OnEnable()
     {
@@ -19,10 +26,13 @@ public class LogManager : MonoBehaviour
 
     public void Log(string logString, string stackTrace, LogType type)
     {
-        if(logName.Equals(string.Empty))
+        if (!log) return;
+
+        if(logName.Equals(""))
         {
-            System.IO.Directory.CreateDirectory(path + "logs");
-            logName = $"{path}logs/{Environment.UserName}_{System.DateTime.Now}";
+            System.IO.Directory.CreateDirectory(path + "Logs");
+            logName = $"{path}Logs\\{Environment.UserName}_{System.DateTime.Now.ToString("dd-MM-yyyy")}.txt";
+            Debug.Log(logName);
         }
 
         try
@@ -31,7 +41,7 @@ public class LogManager : MonoBehaviour
         }
         catch
         {
-            DebugManager.Instance.DebugLog("System", $"Logging into file failed");
+            Debug.Log($"Logging into file failed");
         }
     }
 }

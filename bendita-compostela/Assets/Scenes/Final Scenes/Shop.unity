@@ -2577,6 +2577,10 @@ MonoBehaviour:
   <playerData>k__BackingField: {fileID: 0}
   <combatData>k__BackingField: {fileID: 0}
   <visitedNodes>k__BackingField: []
+  <currentNode>k__BackingField:
+    nodeEncounter: 0
+    combatData: {fileID: 0}
+    eventPrefab: {fileID: 0}
   <debug>k__BackingField: 1
 --- !u!4 &963807137
 Transform:

@@ -44,7 +44,7 @@ public class TurnManager : MonoBehaviour
         entityTurn = turnQueue.First.Value;
         turnQueue.RemoveFirst();
 
-        entityTurn.OnTurnBegin();
+        entityTurn.StartCoroutine(entityTurn.OnTurnBegin());
         OnTurn();
         yield break;
     }
