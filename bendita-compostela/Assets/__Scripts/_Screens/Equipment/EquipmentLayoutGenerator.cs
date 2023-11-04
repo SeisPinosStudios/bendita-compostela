@@ -10,13 +10,13 @@ public class EquipmentLayoutGenerator : MonoBehaviour
     public void GenerateEquipmentLayout()
     {
         equipmentLayout.GetComponent<Canvas>().worldCamera = Camera.main;
-        equipmentLayout.GetComponent<Canvas>().sortingLayerName = "OverlayLayers";
+        equipmentLayout.GetComponent<Canvas>().sortingLayerName = "UI";
         Instantiate(equipmentLayout);
     }
     public void GenerateInventoryLayout()
     {
         inventoryLayout.GetComponent<Canvas>().worldCamera = Camera.main;
-        inventoryLayout.GetComponent<Canvas>().sortingLayerName = "OverlayLayers";
+        inventoryLayout.GetComponent<Canvas>().sortingLayerName = "UI";
         Instantiate(inventoryLayout);
     }
 }
