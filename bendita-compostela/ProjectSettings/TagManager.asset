@@ -52,21 +52,18 @@ TagManager:
   - name: Mid
     uniqueID: 3357427351
     locked: 0
+  - name: Entity
+    uniqueID: 1627754113
+    locked: 0
   - name: Front
     uniqueID: 2809693117
     locked: 0
-  - name: Background
-    uniqueID: 1400681483
+  - name: Character UI
+    uniqueID: 2890214987
     locked: 0
-  - name: EnitityDisplay
-    uniqueID: 1627754113
+  - name: UI
+    uniqueID: 286930255
     locked: 0
-  - name: EnitityAlteredEffects
-    uniqueID: 4019084585
-    locked: 0
-  - name: Map
-    uniqueID: 3005827539
-    locked: 0
-  - name: FrontEffects
+  - name: VFX
     uniqueID: 4221683143
     locked: 0
