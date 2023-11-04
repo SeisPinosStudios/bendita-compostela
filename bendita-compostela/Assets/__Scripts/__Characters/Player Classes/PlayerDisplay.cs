@@ -14,4 +14,6 @@ public class PlayerDisplay : EntityDisplay
         energyText.text = $"{player.energy}/{player.maxEnergy}";
     }
 
+    
+
 }

@@ -8,7 +8,7 @@ public class ArmorData : CardData
     [field:SerializeField, Header("Armor Section")] public int defenseBonus { get; private set; }
     [field: SerializeField] public int armorId { get; private set; }
     [field:SerializeField, Header("Weapon Synergy")] public int weaponSynergy { get; private set; }
-    [field: SerializeField] public BaseWeapon.Weapons weaponSynergyClass { get; private set; }
+    [field: SerializeField] public WeaponTypes weaponSynergyClass { get; private set; }
     [field:SerializeField, Header("Upgrades")] public int synergyLevel { get; private set; }
     [field:SerializeField] public int armorLevel { get; private set; }
     [field:SerializeField, Header("Equipment Screen")] public Sprite equipmentScreenIcon { get; private set; }

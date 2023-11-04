@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1f95b9b15292dc49a305a65f742c51b, type: 3}
-  m_Name: ATK_002_13_Cataclismo
+  m_Name: ATK_002_21_GolpeRemo
   m_EditorClassIdentifier: 
-  cardName: Cataclismo Peregrino
+  cardName: Golpe de Remo
   <cardId>k__BackingField: 0
   description: 
-  cost: 5
+  cost: 4
   price: 0
-  art: {fileID: 1529777001, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
+  art: {fileID: 748671172, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
   miniArt: {fileID: 0}
   <attack>k__BackingField: 1
-  cardEffects: 0a00000008000000
+  cardEffects: 0000000008000000
   cardEffectsValues:
-  - 18
+  - 9
   - 
   printArrow: 1
-  <improvedAttack>k__BackingField: {fileID: 11400000}
+  <improvedAttack>k__BackingField: {fileID: 0}

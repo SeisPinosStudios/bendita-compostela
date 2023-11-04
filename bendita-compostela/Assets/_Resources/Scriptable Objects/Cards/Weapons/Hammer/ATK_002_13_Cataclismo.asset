@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1f95b9b15292dc49a305a65f742c51b, type: 3}
-  m_Name: ATK_002_03_Cataclismo
+  m_Name: ATK_002_13_Cataclismo
   m_EditorClassIdentifier: 
   cardName: Cataclismo Peregrino
   <cardId>k__BackingField: 0
@@ -20,9 +20,8 @@ MonoBehaviour:
   art: {fileID: 1529777001, guid: c78b664b2af4d6e49b0ae519e374cf23, type: 3}
   miniArt: {fileID: 0}
   <attack>k__BackingField: 1
-  cardEffects: 0000000008000000
+  cardEffects: 0a000000
   cardEffectsValues:
-  - 10
-  - 
+  - 18
   printArrow: 1
-  <improvedAttack>k__BackingField: {fileID: 11400000, guid: 40c621403508de24bba47319c710b6f5, type: 2}
+  <improvedAttack>k__BackingField: {fileID: 11400000}

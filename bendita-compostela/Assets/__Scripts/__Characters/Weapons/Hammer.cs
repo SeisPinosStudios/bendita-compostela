@@ -7,75 +7,56 @@ public class Hammer : BaseWeapon
     [field:SerializeField] public int styleAttacks { get; private set; }
     [field:SerializeField] public int styleAttackThreshold { get; private set; }
     [field: SerializeField] public float styleAttackMultiplier { get; private set; }
-    [field:SerializeField] public int chestLevel { get; private set; }
-    [field:SerializeField] public int legLevel { get; private set; }
 
-    private void Awake()
+    private new void Awake()
     {
+        base.Awake();
+
         weaponId = 1;
-        player = BattleManager.Instance.player;
 
-        styleAttackThreshold = player.weapon.styleLevel == 2 ? 4 : 5;
-        styleAttackMultiplier = player.weapon.styleLevel == 0 ? 0.5f : 1.0f;
+        AddListeners();
 
-        chestSynergy = player.playerData.chestArmor.weaponSynergy == weaponId;
-        legSynergy = player.playerData.legArmor.weaponSynergy == weaponId;
-        chestLevel = player.playerData.chestArmor.synergyLevel;
-        legLevel = player.playerData.legArmor.synergyLevel;
-
-        HammerCard.OnHammerCard += Style;
-
-        if (chestSynergy) ChestSynergy();
-        if (legSynergy) LegSynergy();
+        if (chestSynergy) EnableChestSynergy();
+        if (legSynergy) EnableLegSynergy();
     }
-    private void ResetStyle()
+    private void OnDestroy()
     {
-        styleAttacks = 0;
+        RemoveListeners();
+
+        if (chestSynergy) DisableChestSynergy();
+        if (legSynergy) DisableLegSynergy();
     }
 
-    private void Style(CardData card, GameObject target)
-    {
-        if(styleAttacks < styleAttackThreshold) { styleAttacks++; return; }
 
-        if (card.GetDamage() <= 0) return;
 
+    #region Style
+    private void Style(CardData card, GameObject target) {
         var enemies = BattleManager.Instance.enemies;
-        foreach (Enemy enemy in enemies) 
-            if (enemy != target.GetComponent<Enemy>()) 
-                enemy.SufferDamage(Mathf.RoundToInt(card.GetDamage()*styleAttackMultiplier), player.attackBonus, player.attackMultiplier, false);
+        enemies.Remove(target.GetComponent<Enemy>());
 
-        ResetStyle();
+
     }
+    #endregion
 
-    private void ChestSynergy()
-    {
+    #region Synergies
+    private void EnableChestSynergy() {
         player.GetComponent<EntityEffectsManager>().VulnerableMultiplier(GetPlayerMultiplier());
         foreach (Enemy enemy in BattleManager.Instance.enemies) enemy.GetComponent<EntityEffectsManager>().VulnerableMultiplier(GetEnemyMultiplier());
     }
+    private void DisableChestSynergy() {
+        player.GetComponent<EntityEffectsManager>().VulnerableMultiplier(-GetPlayerMultiplier());
+        foreach (Enemy enemy in BattleManager.Instance.enemies) enemy.GetComponent<EntityEffectsManager>().VulnerableMultiplier(-GetEnemyMultiplier());
+    }
 
-    private void LegSynergy()
-    {
+    private void EnableLegSynergy() {
         player.AttackBonus(GetDamageBonus());
     }
-
-    private void OnDestroy()
-    {
-        if (chestSynergy)
-        {
-            player.GetComponent<EntityEffectsManager>().VulnerableMultiplier(-GetPlayerMultiplier());
-            foreach (Enemy enemy in BattleManager.Instance.enemies) enemy.GetComponent<EntityEffectsManager>().VulnerableMultiplier(-GetEnemyMultiplier());
-        }
-
-        if (legSynergy)
-        {
-            player.AttackBonus(-GetDamageBonus());
-        }
+    private void DisableLegSynergy() {
+        player.AttackBonus(-GetDamageBonus());
     }
 
-    private float GetEnemyMultiplier()
-    {
-        switch (chestLevel)
-        {
+    private float GetEnemyMultiplier() {
+        switch (chestLevel) {
             case 0:
                 return 0.25f;
             case 1:
@@ -86,10 +67,8 @@ public class Hammer : BaseWeapon
 
         return 0.0f;
     }
-    private float GetPlayerMultiplier()
-    {
-        switch (chestLevel)
-        {
+    private float GetPlayerMultiplier() {
+        switch (chestLevel) {
             case 0:
                 return 0.25f;
             case 1:
@@ -100,13 +79,19 @@ public class Hammer : BaseWeapon
 
         return 0.0f;
     }
-
-
-
-    private int GetDamageBonus()
-    {
+    private int GetDamageBonus() {
         return legLevel == 0 ? 1 : legLevel * 2;
     }
+    #endregion
+
+    #region Listeners
+    public void AddListeners() {
+        HammerCard.OnHammerCard += Style;
+    }
+    public void RemoveListeners() {
+        HammerCard.OnHammerCard -= Style;
+    }
+    #endregion
 
     #region Description
     public static string GetChestDescription()
