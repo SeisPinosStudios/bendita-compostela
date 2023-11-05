@@ -10,6 +10,10 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Sound mainMenuMusic;
     private void Awake() {
         SoundManager.Instance.PlayMusic(mainMenuMusic.AudioClip, mainMenuMusic.Volume);
+        
+        ////////////////////////////////////////////// MUSICA /////////////////////////////////////
+        MusicManager.Instance.Parar();
+        MusicManager.Instance.PlayMusic("event:/menu");
     }
 
     private IEnumerator Start()

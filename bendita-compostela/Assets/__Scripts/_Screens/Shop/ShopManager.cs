@@ -34,6 +34,13 @@ public class ShopManager : MonoBehaviour
 
     private IEnumerator Start()
     {
+
+        
+        ////////////////////////////////////////////// MUSICA /////////////////////////////////////
+        MusicManager.Instance.Parar();
+        MusicManager.Instance.PlayMusic("event:/tienda");
+
+
         yield return new WaitUntil(() => SoundManager.Instance);
         SoundManager.Instance.PlayMusic(shopMusic);
     }

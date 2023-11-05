@@ -35,6 +35,12 @@ public class BattleManager : MonoBehaviour
     private void SetGameMusic() 
     {
         //soundList.musicList.Add(combatData.combatMusic);
+        
+        ////////////////////////////////////////////// MUSICA /////////////////////////////////////
+        MusicManager.Instance.Parar();
+        MusicManager.Instance.PlayMusic("event:/batalla");
+
+
         if (combatData.combatMusic.soundName == "")
         {
             soundList.PlayMusic("Combat");

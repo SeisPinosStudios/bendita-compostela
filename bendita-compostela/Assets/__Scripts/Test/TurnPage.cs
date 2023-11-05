@@ -43,6 +43,8 @@ public class TurnPage: MonoBehaviour
         currentImage.sprite = pages[nextPage].sprite;
         nextPage++;
 
+        ////////////////////////////////////////////// MUSICA /////////////////////////////////////
+        MusicManager.Instance.CambiarParametro("cinematica",nextPage);
     }
 
     private IEnumerator FinalTransition()

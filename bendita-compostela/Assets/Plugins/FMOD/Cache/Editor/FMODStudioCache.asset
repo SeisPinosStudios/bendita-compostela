@@ -1,0 +1,714 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9128304408466015253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sierpe
+  m_EditorClassIdentifier: 
+  Path: event:/sierpe
+  Guid:
+    Data1: 97534286
+    Data2: 1097821247
+    Data3: 1634400163
+    Data4: 477926595
+  Banks:
+  - {fileID: 2284653206431235830}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 69429
+--- !u!114 &-9042817425084370734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/bendita Compostela/turno
+  m_EditorClassIdentifier: 
+  Name: turno
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2017045984
+    data2: 353644489
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-7756240070117712611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/tarasca
+  m_EditorClassIdentifier: 
+  Path: event:/tarasca
+  Guid:
+    Data1: -1573256252
+    Data2: 1324024422
+    Data3: 852728728
+    Data4: -1720252895
+  Banks:
+  - {fileID: -820402290979224707}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 133386
+--- !u!114 &-6892527363071452014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/mapa
+  m_EditorClassIdentifier: 
+  Path: event:/mapa
+  Guid:
+    Data1: -636714384
+    Data2: 1303926717
+    Data3: -1372061050
+    Data4: -184375651
+  Banks:
+  - {fileID: 4353620459320868233}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 95040
+--- !u!114 &-5551006840767296162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/win
+  m_EditorClassIdentifier: 
+  Path: event:/win
+  Guid:
+    Data1: -329386700
+    Data2: 1341240574
+    Data3: 1077340849
+    Data4: -1798809738
+  Banks:
+  - {fileID: -2164617030072350628}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 47448
+--- !u!114 &-5187398479556300375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Tienda.bank
+  m_EditorClassIdentifier: 
+  Path: Desktop/Tienda.bank
+  Name: Tienda
+  StudioPath: bank:/Tienda
+  lastModified: 638348066971276809
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-5138128195765195487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/bendita Compostela/cinematica
+  m_EditorClassIdentifier: 
+  Name: cinematica
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 0
+  ID:
+    data1: 1895901584
+    data2: 1480414948
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-4816402407223757938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/cinematica
+  m_EditorClassIdentifier: 
+  Path: event:/cinematica
+  Guid:
+    Data1: -589346831
+    Data2: 1253740074
+    Data3: -2055329359
+    Data4: 222568059
+  Banks:
+  - {fileID: 3022851072528132661}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7635927864688850042}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 48000
+--- !u!114 &-3565404541988120283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/tienda
+  m_EditorClassIdentifier: 
+  Path: event:/tienda
+  Guid:
+    Data1: 1709688221
+    Data2: 1323945095
+    Data3: 2135155850
+    Data4: 1332014139
+  Banks:
+  - {fileID: -5187398479556300375}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 92522
+--- !u!114 &-2164617030072350628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Batalla.bank
+  m_EditorClassIdentifier: 
+  Path: Desktop/Batalla.bank
+  Name: Batalla
+  StudioPath: bank:/Batalla
+  lastModified: 638348066966739376
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-2150235987355388995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/batalla/turno
+  m_EditorClassIdentifier: 
+  Name: turno
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2017045984
+    data2: 353644489
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-820402290979224707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Tarasca.bank
+  m_EditorClassIdentifier: 
+  Path: Desktop/Tarasca.bank
+  Name: Tarasca
+  StudioPath: bank:/Tarasca
+  lastModified: 638348066970954915
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-62502391571833123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/menu/skip
+  m_EditorClassIdentifier: 
+  Name: skip
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1246626429
+    data2: 688426088
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 1464513102264553670}
+  - {fileID: -2164617030072350628}
+  - {fileID: 4577937434553041472}
+  - {fileID: 3022851072528132661}
+  - {fileID: 4353620459320868233}
+  - {fileID: 6283842636935895826}
+  - {fileID: 1698393134090683741}
+  - {fileID: 2368916486269843415}
+  - {fileID: 2284653206431235830}
+  - {fileID: -820402290979224707}
+  - {fileID: -5187398479556300375}
+  EditorEvents:
+  - {fileID: -5551006840767296162}
+  - {fileID: 3015457947662650679}
+  - {fileID: 3972140155574220495}
+  - {fileID: -4816402407223757938}
+  - {fileID: -6892527363071452014}
+  - {fileID: 5655395654501721162}
+  - {fileID: 8197782139238000573}
+  - {fileID: -9128304408466015253}
+  - {fileID: -7756240070117712611}
+  - {fileID: -3565404541988120283}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 6283842636935895826}
+  StringsBanks:
+  - {fileID: 1464513102264553670}
+  cacheTime: 638348066971276809
+  cacheVersion: 131608
+--- !u!114 &1464513102264553670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638348066969545473
+  FileSizes:
+  - Name: 
+    Value: 1762
+  Exists: 1
+--- !u!114 &1698393134090683741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Menu.bank
+  m_EditorClassIdentifier: 
+  Path: Desktop/Menu.bank
+  Name: Menu
+  StudioPath: bank:/Menu
+  lastModified: 638348066969924962
+  FileSizes: []
+  Exists: 1
+--- !u!114 &2284653206431235830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Sierpe.bank
+  m_EditorClassIdentifier: 
+  Path: Desktop/Sierpe.bank
+  Name: Sierpe
+  StudioPath: bank:/Sierpe
+  lastModified: 638348066970625732
+  FileSizes: []
+  Exists: 1
+--- !u!114 &2368916486269843415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Minijuego.bank
+  m_EditorClassIdentifier: 
+  Path: Desktop/Minijuego.bank
+  Name: Minijuego
+  StudioPath: bank:/Minijuego
+  lastModified: 638348066970291537
+  FileSizes: []
+  Exists: 1
+--- !u!114 &2750720839481991968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/minijuego/minijuego
+  m_EditorClassIdentifier: 
+  Name: minijuego
+  StudioPath: 
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 141650430
+    data2: 3576785530
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &3015457947662650679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/batalla
+  m_EditorClassIdentifier: 
+  Path: event:/batalla
+  Guid:
+    Data1: 744396893
+    Data2: 1321420226
+    Data3: -281739868
+    Data4: -2070383474
+  Banks:
+  - {fileID: -2164617030072350628}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -2150235987355388995}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 222048
+--- !u!114 &3022851072528132661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: "bank:/Cinem\xE1tica.bank"
+  m_EditorClassIdentifier: 
+  Path: "Desktop/Cinem\xE1tica.bank"
+  Name: "Cinem\xE1tica"
+  StudioPath: "bank:/Cinem\xE1tica"
+  lastModified: 638348066969148739
+  FileSizes: []
+  Exists: 1
+--- !u!114 &3972140155574220495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/bendita Compostela
+  m_EditorClassIdentifier: 
+  Path: event:/bendita Compostela
+  Guid:
+    Data1: 476387431
+    Data2: 1110243354
+    Data3: 1400694414
+    Data4: 2124044069
+  Banks:
+  - {fileID: 4577937434553041472}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -5138128195765195487}
+  - {fileID: -9042817425084370734}
+  - {fileID: 8223880723841501187}
+  - {fileID: 7166665094735273087}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 857448
+--- !u!114 &4353620459320868233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Mapa.bank
+  m_EditorClassIdentifier: 
+  Path: Desktop/Mapa.bank
+  Name: Mapa
+  StudioPath: bank:/Mapa
+  lastModified: 638348066969499691
+  FileSizes: []
+  Exists: 1
+--- !u!114 &4577937434553041472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Bendita Compostela.bank
+  m_EditorClassIdentifier: 
+  Path: Desktop/Bendita Compostela.bank
+  Name: Bendita Compostela
+  StudioPath: bank:/Bendita Compostela
+  lastModified: 638348066968750895
+  FileSizes: []
+  Exists: 1
+--- !u!114 &5655395654501721162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/menu
+  m_EditorClassIdentifier: 
+  Path: event:/menu
+  Guid:
+    Data1: -607076821
+    Data2: 1290554376
+    Data3: -495154046
+    Data4: -862994833
+  Banks:
+  - {fileID: 1698393134090683741}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -62502391571833123}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 88332
+--- !u!114 &6283842636935895826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638348066969530423
+  FileSizes: []
+  Exists: 1
+--- !u!114 &7166665094735273087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/bendita Compostela/Zona
+  m_EditorClassIdentifier: 
+  Name: Zona
+  StudioPath: 
+  Min: 0
+  Max: 20
+  Default: 0
+  ID:
+    data1: 4286807943
+    data2: 3030395599
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7635927864688850042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/cinematica/cinematica
+  m_EditorClassIdentifier: 
+  Name: cinematica
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 0
+  ID:
+    data1: 1895901584
+    data2: 1480414948
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &8197782139238000573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/minijuego
+  m_EditorClassIdentifier: 
+  Path: event:/minijuego
+  Guid:
+    Data1: -1465832856
+    Data2: 1091610049
+    Data3: 1439550649
+    Data4: 25454712
+  Banks:
+  - {fileID: 2368916486269843415}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 2750720839481991968}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 61105
+--- !u!114 &8223880723841501187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/bendita Compostela/minijuego
+  m_EditorClassIdentifier: 
+  Name: minijuego
+  StudioPath: 
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 141650430
+    data2: 3576785530
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1

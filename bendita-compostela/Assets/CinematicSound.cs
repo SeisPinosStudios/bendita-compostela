@@ -21,6 +21,10 @@ public class CinematicSound : MonoBehaviour
         firstPlay = false;
         songs[0].Play();
         StartCoroutine(FirstSong());
+
+        
+        ////////////////////////////////////////////// MUSICA /////////////////////////////////////
+        MusicManager.Instance.PlayMusic("event:/cinematica");
     }
 
     void Update()

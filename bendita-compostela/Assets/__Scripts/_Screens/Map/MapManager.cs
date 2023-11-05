@@ -67,6 +67,12 @@ public class MapManager : MonoBehaviour
     
     private void Start() 
     { 
+        
+        ////////////////////////////////////////////// MUSICA /////////////////////////////////////
+        MusicManager.Instance.Parar();
+        MusicManager.Instance.PlayMusic("event:/mapa");
+
+
         encounterPrefabsDictionary.Add(NodeEncounter.CombatEncounter, combatPrefab);
         encounterPrefabsDictionary.Add(NodeEncounter.EventEncounter, eventPrefab);
         encounterPrefabsDictionary.Add(NodeEncounter.ShopEncounter, shopPrefab);
