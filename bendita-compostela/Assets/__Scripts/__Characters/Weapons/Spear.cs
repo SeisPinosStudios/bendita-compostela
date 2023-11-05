@@ -4,68 +4,70 @@ using UnityEngine;
 
 public class Spear : BaseWeapon
 {
-    
-    private void Awake()
-    {
+    private new void Awake() {
+        base.Awake();
+
         weaponId = 3;
-        Damage.OnAttack += Style;
-        Damage.OnAttack2 += ChestSynergy;
+        
+        AddListeners();
 
-        player = BattleManager.Instance.player;
-
-        chestSynergy = GetChestSynergy();
-        legSynergy = GetLegSynergy();
-
-        if (legSynergy) LegSynergy();
+        if(chestSynergy) EnableChestSynergy();
+        if (legSynergy) EnableLegSynergy();
     }
 
-    private void Style(GameObject target, CardData card)
-    {
+    private void OnDestroy() {
+        RemoveListeners();
+
+        if(chestSynergy) DisableChestSynergy();
+        if (legSynergy) DisableLegSynergy();
+    }
+
+    private void Style(GameObject target, CardData card) {
         if (target.GetComponent<Entity>().GetType() == typeof(Player)) return;
-        
-        var index = BattleManager.Instance.enemies.IndexOf(target.GetComponent<Enemy>());
-        if (index == BattleManager.Instance.enemies.Count - 1) return;
-        
-        BattleManager.Instance.enemies[index+1]
-            .SufferDamage(Mathf.RoundToInt(card.GetDamage() * GetStyleMultiplier()), 0, 0, true);
+
+        var enemy = target.GetComponent<Enemy>();
+        var enemyIndex = BattleManager.Instance.enemies.IndexOf(enemy);
+
+        if (enemyIndex == BattleManager.Instance.enemies.Count -1) return;
+
+        var cardDamage = card.GetDamage() + (-3 + 2 * styleLevel);
+
+        BattleManager.Instance.enemies[enemyIndex - 1].SufferDamage(cardDamage, player.attackBonus, player.GetAttackMultiplier(), false);
     }
 
-    private float GetStyleMultiplier()
-    {
-        switch (GetStyleLevel())
-        {
-            case 0:
-                return 0.5f;
-            case 1:
-                return 1.0f;
-            case 2:
-                return 2.0f;
-        }
-
-        return 0.0f;
+    #region Synergies
+    private void EnableChestSynergy() {
+        Damage.OnAttack2 += ChestSynergy;
+    }
+    private void EnableLegSynergy() {
+        foreach (Enemy enemy in BattleManager.Instance.enemies) enemy.entityEffectsManager.GuardedMultiplier(GetLegLevel() < 2 ? -0.25f : -0.5f);
+        if (GetLegLevel() != 0) player.entityEffectsManager.GuardedMultiplier(0.25f);
     }
 
-    private void ChestSynergy(GameObject target, GameObject user, CardData card)
-    {
-        if(!chestSynergy) return;
-        if(user.GetComponent<Entity>().GetType() == typeof(Player)) return;
+    private void DisableChestSynergy() {
+        Damage.OnAttack2 -= ChestSynergy;
+    }
+    private void DisableLegSynergy() {
+        foreach (Enemy enemy in BattleManager.Instance.enemies) enemy.entityEffectsManager.GuardedMultiplier(GetLegLevel() < 2 ? 0.25f : 0.5f);
+        if (GetLegLevel() != 0) player.entityEffectsManager.GuardedMultiplier(-0.25f);
+    }
+
+    private void ChestSynergy(GameObject target, GameObject user, CardData card) {
+        if (user.GetComponent<Entity>().GetType() == typeof(Player)) return;
         if (!target.GetComponent<EntityEffectsManager>().Suffering(TAlteredEffects.AlteredEffects.Invulnerable)) return;
 
         user.GetComponent<Entity>().SufferDamage(Mathf.RoundToInt(card.GetDamage() * (0.5f + (0.25f * GetChestLevel()))), 0, 0.0f, true);
     }
+    #endregion
 
-    private void LegSynergy()
-    {
-        foreach (Enemy enemy in BattleManager.Instance.enemies) enemy.entityEffectsManager.GuardedMultiplier(GetLegLevel() < 2 ? -0.25f : -0.5f);
-
-        if (GetLegLevel() != 0) player.entityEffectsManager.GuardedMultiplier(0.25f);
+    #region Listeners
+    private void AddListeners() {
+        Damage.OnAttack += Style;
     }
-
-    private void OnDestroy()
-    {
-        Damage.OnAttack2 -= ChestSynergy;
+    private void RemoveListeners() {
         Damage.OnAttack -= Style;
     }
+    #endregion
 
     #region Description
     public static string GetChestDescription()

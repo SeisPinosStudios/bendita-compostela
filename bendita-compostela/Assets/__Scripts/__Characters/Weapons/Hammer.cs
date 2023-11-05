@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Hammer : BaseWeapon
 {
-    [field:SerializeField] public int styleAttacks { get; private set; }
-    [field:SerializeField] public int styleAttackThreshold { get; private set; }
-    [field: SerializeField] public float styleAttackMultiplier { get; private set; }
-
     private new void Awake()
     {
         base.Awake();
@@ -34,7 +30,9 @@ public class Hammer : BaseWeapon
         var enemies = BattleManager.Instance.enemies;
         enemies.Remove(target.GetComponent<Enemy>());
 
+        var cardDamage = card.GetDamage() + (-3 + 2 * styleLevel);
 
+        foreach (Enemy enemy in enemies) enemy.SufferDamage(cardDamage, player.attackBonus, player.GetAttackMultiplier(), false);
     }
     #endregion
 
