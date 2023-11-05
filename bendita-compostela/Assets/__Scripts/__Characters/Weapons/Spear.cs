@@ -22,8 +22,9 @@ public class Spear : BaseWeapon
         if (legSynergy) DisableLegSynergy();
     }
 
-    private void Style(GameObject target, CardData card) {
-        if (target.GetComponent<Entity>().GetType() == typeof(Player)) return;
+    #region Style
+    private void Style(GameObject target, GameObject user, CardData card) {
+        if (user.GetComponent<Entity>().GetType() != typeof(Player)) return;
 
         var enemy = target.GetComponent<Enemy>();
         var enemyIndex = BattleManager.Instance.enemies.IndexOf(enemy);
@@ -34,10 +35,11 @@ public class Spear : BaseWeapon
 
         BattleManager.Instance.enemies[enemyIndex - 1].SufferDamage(cardDamage, player.attackBonus, player.GetAttackMultiplier(), false);
     }
+    #endregion
 
     #region Synergies
     private void EnableChestSynergy() {
-        Damage.OnAttack2 += ChestSynergy;
+        Damage.OnAttack += ChestSynergy;
     }
     private void EnableLegSynergy() {
         foreach (Enemy enemy in BattleManager.Instance.enemies) enemy.entityEffectsManager.GuardedMultiplier(GetLegLevel() < 2 ? -0.25f : -0.5f);
@@ -45,7 +47,7 @@ public class Spear : BaseWeapon
     }
 
     private void DisableChestSynergy() {
-        Damage.OnAttack2 -= ChestSynergy;
+        Damage.OnAttack -= ChestSynergy;
     }
     private void DisableLegSynergy() {
         foreach (Enemy enemy in BattleManager.Instance.enemies) enemy.entityEffectsManager.GuardedMultiplier(GetLegLevel() < 2 ? 0.25f : 0.5f);

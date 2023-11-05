@@ -6,11 +6,10 @@ using System.Linq;
 
 public class Damage : BasicCardEffect
 {
-    public static event Action<GameObject, CardData> OnAttack = delegate { };
-    public static event Action<GameObject, GameObject, CardData> OnAttack2 = delegate { };
+    public static event Action<GameObject, GameObject, CardData> OnAttack = delegate { };
     public static void Effect(string damage, CardData card, GameObject user, GameObject target)
     {
-        OnAttack(target, card);
+        OnAttack(target, user, card);
 
         var cardUser = user.GetComponent<Entity>();
 
@@ -22,7 +21,7 @@ public class Damage : BasicCardEffect
         user.GetComponent<EntityDisplay>().AttackAnimation();
         target.GetComponent<Entity>().SufferDamage(int.Parse(damage), cardUser.attackBonus + frenzyStacks, cardUser.ComputeAttackMultiplier(), false);
 
-        OnAttack2(target, user, card);
+        OnAttack(target, user, card);
         Frenzy(card, cardUser);
     }
 

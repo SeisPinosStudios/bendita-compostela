@@ -6,7 +6,7 @@ public class CrossFaith : BasicPassive
 {
     private void Awake()
     {
-        Damage.OnAttack2 += PassiveEffect;
+        Damage.OnAttack += PassiveEffect;
     }
     private void PassiveEffect(GameObject target, GameObject user, CardData card)
     {
@@ -17,7 +17,7 @@ public class CrossFaith : BasicPassive
 
     private void OnDestroy()
     {
-        Damage.OnAttack2 -= PassiveEffect;
+        Damage.OnAttack -= PassiveEffect;
     }
 
     #region Description

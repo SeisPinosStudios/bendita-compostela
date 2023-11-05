@@ -22,7 +22,7 @@ MonoBehaviour:
   <attack>k__BackingField: 1
   cardEffects: 0000000006000000
   cardEffectsValues:
-  - 7
-  - Burn|3
+  - 4
+  - Burn|4
   printArrow: 1
   <improvedAttack>k__BackingField: {fileID: 0}

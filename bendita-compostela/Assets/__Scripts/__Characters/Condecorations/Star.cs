@@ -7,7 +7,7 @@ public class Star : MonoBehaviour
     private void Awake()
     {
         TurnManager.Instance.playerBehaviour.OnPlayerTurn += EnableCond;
-        Damage.OnAttack2 += DisableCond;
+        Damage.OnAttack += DisableCond;
     }
     private void DisableCond(GameObject target, GameObject user, CardData card)
     {
@@ -21,7 +21,7 @@ public class Star : MonoBehaviour
     private void OnDestroy()
     {
         TurnManager.Instance.playerBehaviour.OnPlayerTurn -= EnableCond;
-        Damage.OnAttack2 -= DisableCond;
+        Damage.OnAttack -= DisableCond;
     }
     public static void OnObtain()
     {

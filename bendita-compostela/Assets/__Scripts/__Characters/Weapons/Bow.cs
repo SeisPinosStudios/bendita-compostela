@@ -4,64 +4,75 @@ using UnityEngine;
 
 public class Bow : BaseWeapon
 {
-    [field: SerializeField] public int styleAttacks { get; private set; }
-    [field: SerializeField] public int styleAttacksThreshold { get; private set; }
-    [field: SerializeField] public int styleRecover { get; private set; }
     [field: SerializeField] public int synergyDraws { get; private set; }
     [field: SerializeField] public bool activeStyle { get; private set; } = false;
-    private void Awake()
+    private new void Awake()
     {
+        base.Awake();
+
         weaponId = 5;
-        Damage.OnAttack += Style;
+
+        AddListeners();
+
+        if (chestSynergy) EnableChestSynergy();
+        if (legSynergy) EnableLegSynergy();
+    }
+
+    private void OnDestroy() {
+        RemoveListeners();
+
+        if (chestSynergy) DisableChestSynergy();
+        if (legSynergy) DisableLegSynergy();
+    }
+
+    #region Style
+    private void Style(GameObject target, GameObject user, CardData card) {
+        if (user.GetComponent<Entity>().GetType() != typeof(Player)) return;
+
+        var enemy = target.GetComponent<Enemy>();
+        var enemyIndex = BattleManager.Instance.enemies.IndexOf(enemy) + (3 - (BattleManager.Instance.enemies.Count - 1));
+        var damageBonus = 3 - enemyIndex;
+
+        enemy.SufferDamage(damageBonus, 0, 0, true);
+    }
+    #endregion
+
+    #region Synergies
+    /* Enablers */
+    private void EnableChestSynergy() {
+        if(chestLevel == 2) AttackDeckManager.Instance.AddFreeDraw(1);
         AttackDeckManager.Instance.OnCardDraw += ChestSynergy;
-
-        player = BattleManager.Instance.player;
-
-        styleAttacksThreshold = GetStyleLevel() < 2 ? 5 : 4;
-        styleRecover = GetStyleLevel() > 0 ? 4 : 3;
-
-        chestSynergy = GetChestSynergy();
-        legSynergy = GetLegSynergy();
-
-        if (chestSynergy && GetChestLevel() == 2) AttackDeckManager.Instance.AddFreeDraw(1);
-        if (legSynergy) LegSynergy();
+    }
+    private void EnableLegSynergy() {
+        player.AddMaxEnergy(2 * (GetLegLevel() + 1));
     }
 
-    private void Style(GameObject target, CardData card)
-    {
-        if (target.GetComponent<Entity>().GetType() == typeof(Player)) return;
-
-        if(styleAttacks < styleAttacksThreshold)
-        {
-            styleAttacks++;
-            return;
-        }
-
-        styleAttacks = 0;
-        player.RestoreEnergy(styleRecover);
+    /* Disablers */
+    private void DisableChestSynergy() {
+        AttackDeckManager.Instance.OnCardDraw -= ChestSynergy;
+    }
+    private void DisableLegSynergy() {
+        player.AddMaxEnergy(-2 * (GetLegLevel() + 1));
     }
 
-    private void ChestSynergy()
-    {
-        if (!chestSynergy) return;
+    /* Synergy Methods */
+    private void ChestSynergy() {
         if (activeStyle && GetChestLevel() != 2) { activeStyle = false; return; }
         if (synergyDraws < 1 - GetChestLevel()) { synergyDraws++; return; }
         AttackDeckManager.Instance.AddFreeDraw(1);
         synergyDraws = 0;
         activeStyle = true;
     }
+    #endregion
 
-    private void LegSynergy()
-    {
-        player.AddMaxEnergy(2 * (GetLegLevel() + 1));
+    #region Listeners
+    private void AddListeners() {
+        Damage.OnAttack += Style;
     }
-
-    private void OnDestroy()
-    {
-        if (legSynergy) player.AddMaxEnergy(-2 * (GetLegLevel() + 1));
+    private void RemoveListeners() {
         Damage.OnAttack -= Style;
-        AttackDeckManager.Instance.OnCardDraw -= ChestSynergy;
     }
+    #endregion
 
     #region Description
     public static string GetChestDescription()

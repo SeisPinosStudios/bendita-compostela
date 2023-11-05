@@ -6,37 +6,62 @@ public class Staff : BaseWeapon
 {
     private void Awake()
     {
+        base.Awake();
+
         weaponId = 4;
-        player = BattleManager.Instance.player;
 
-        chestSynergy = GetChestSynergy();
-        legSynergy = GetLegSynergy();
+        EnableStyle();
 
-        Style();
+        AddListeners();
 
-        if (chestSynergy) ChestSynergy();
-        if (legSynergy) LegSynergy();
-    }
-
-    private void Style()
-    {
-        foreach (Enemy enemy in BattleManager.Instance.enemies) enemy.entityEffectsManager.SetBurnThreshold(6 - (1 + GetStyleLevel()));
-    }
-    private void ChestSynergy()
-    {
-        AttackDeckManager.Instance.ReduceAttackCost(GetChestLevel()+1);
-    }
-    private void LegSynergy()
-    {
-        BattleManager.Instance.player.HealingBonus(GetLegLevel() + 1);
+        if (chestSynergy) EnableChestSynergy();
+        if (legSynergy) EnableLegSynergy();
     }
 
     private void OnDestroy()
     {
-        foreach (Enemy enemy in BattleManager.Instance.enemies) enemy.entityEffectsManager.SetBurnThreshold(6);
+        RemoveListeners();
 
-        if (legSynergy) player.HealingBonus(-(1 + GetLegLevel()));
+        if (chestSynergy) DisableChestSynergy();
+        if (legSynergy) DisableLegSynergy();
     }
+
+    #region Style
+    private void EnableStyle() {
+        var healingBonus = BattleManager.Instance.enemies.Count - 1 + styleLevel;
+        player.HealingBonus(healingBonus);
+    }
+    private void DisableStyle() {
+        var healingBonus = BattleManager.Instance.enemies.Count - 1 + styleLevel;
+        player.HealingBonus(-healingBonus);
+    }
+
+    #endregion
+
+    #region Synergies
+    private void EnableChestSynergy() {
+        AttackDeckManager.Instance.ReduceAttackCost(GetChestLevel() + 1);
+    }
+    private void EnableLegSynergy() {
+        player.HealingBonus(GetLegLevel() + 1);
+    }
+
+    private void DisableChestSynergy() {
+        AttackDeckManager.Instance.ReduceAttackCost(-(GetChestLevel() + 1));
+    }
+    private void DisableLegSynergy() {
+        player.HealingBonus(-(GetLegLevel() + 1));
+    }
+    #endregion
+
+    #region Listeners
+    private void AddListeners() {
+
+    }
+    private void RemoveListeners() {
+
+    }
+    #endregion
 
     #region Description
     public static string GetChestDescription()
