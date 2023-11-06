@@ -27,7 +27,7 @@ public class Sword : BaseWeapon
     }
 
     #region Style
-    private void Style(GameObject target, CardData card)
+    private void Style(GameObject target,  GameObject user, CardData card)
     {
         if (TurnManager.Instance.entityTurn.GetType() != typeof(PlayerBehaviour)) return;
 

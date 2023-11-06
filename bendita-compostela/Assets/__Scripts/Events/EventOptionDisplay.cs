@@ -8,8 +8,10 @@ public class EventOptionDisplay : MonoBehaviour, IPointerEnterHandler, IPointerE
 {
     [SerializeField] Image highlight;
     [SerializeField] Sound hoverSound;
+    [SerializeField] bool active = true;
     public void OnPointerEnter(PointerEventData eventData)
-    {        
+    {
+        if (!active) return;
         if(hoverSound.AudioClip != null) SoundManager.Instance.PlaySound(hoverSound.AudioClip,hoverSound.Volume);
         highlight.enabled = true;
     }

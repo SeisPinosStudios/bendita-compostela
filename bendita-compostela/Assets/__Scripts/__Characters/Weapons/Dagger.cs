@@ -27,7 +27,7 @@ public class Dagger : BaseWeapon
         styleBonus = 1 + (1 * GetStyleLevel());
     }
 
-    private void Style(GameObject target, CardData card)
+    private void Style(GameObject target, GameObject user, CardData card)
     {
         if (target.GetComponent<Entity>() is Player) return;
         if (BattleManager.Instance.enemies.Count > 1) return;

@@ -9,7 +9,7 @@ public class ChampionsGuard : MonoBehaviour
         Damage.OnAttack += Effect;
     }
     
-    private void Effect(GameObject target, CardData card)
+    private void Effect(GameObject target, GameObject user, CardData card)
     {
         if (target.GetComponent<Entity>() != GetComponent<Entity>()) return;
         if (!GetComponent<Enemy>().entityEffectsManager.Suffering(TAlteredEffects.AlteredEffects.Guarded)) return;
