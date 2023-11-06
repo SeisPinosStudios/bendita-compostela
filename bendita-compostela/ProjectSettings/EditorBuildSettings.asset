@@ -19,7 +19,7 @@ EditorBuildSettings:
     guid: c31d5247fec1ef84c8c7daf01ae88cb3
   - enabled: 1
     path: Assets/Scenes/Final Scenes/Shop.unity
-    guid: 1898a95d461dbd645a817d194074797b
+    guid: 48685c995f0c0e54fb5946b9ae56b6df
   - enabled: 1
     path: Assets/Scenes/Final Scenes/Battle.unity
     guid: 86ad56315d266534f8f747ff24fdd426

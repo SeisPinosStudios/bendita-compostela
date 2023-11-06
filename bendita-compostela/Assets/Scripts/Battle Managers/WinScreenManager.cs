@@ -30,9 +30,10 @@ public class WinScreenManager : MonoBehaviour
         GenerateExtraRewards();
         GameManager.Instance.playerData.SetCurrentHP(BattleManager.Instance.player.currentHP);
         StartCoroutine(LoadMapCoroutine());
-
+        StartCoroutine(HideParticles());
         
         BattleManager.Instance.soundList.PlaySound("WinSound");
+
     }
 
     public IEnumerator Start()
@@ -40,7 +41,12 @@ public class WinScreenManager : MonoBehaviour
         yield return new WaitForSeconds(BattleManager.Instance.soundList.vfxSoundsList.Find(audio => audio.soundName == "WinSound").AudioClip.length);
         BattleManager.Instance.soundList.PlayMusic("WinMusic");
     }
-
+    public IEnumerator HideParticles()
+    {
+        GameObject particles = GameObject.Find("Particles");
+        particles.SetActive(false);
+        yield return null;
+    }
     private List<CardData> GenerateRewards()
     {
         var objects = SODataBase.objects;
