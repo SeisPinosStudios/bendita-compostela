@@ -16,7 +16,7 @@ TagManager:
   - Background
   - Map
   - Fade
-  - 
+  - Background blur
   - 
   - 
   - 
@@ -43,21 +43,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Map
-    uniqueID: 3005827539
+  - name: End
+    uniqueID: 1693505027
     locked: 0
-  - name: Background
-    uniqueID: 1400681483
+  - name: Back
+    uniqueID: 4019480241
     locked: 0
-  - name: EnitityDisplay
+  - name: Mid
+    uniqueID: 3357427351
+    locked: 0
+  - name: Entity
     uniqueID: 1627754113
     locked: 0
-  - name: EnitityAlteredEffects
-    uniqueID: 4019084585
+  - name: Front
+    uniqueID: 2809693117
     locked: 0
-  - name: Canvas
-    uniqueID: 3059996309
+  - name: Character UI
+    uniqueID: 2890214987
     locked: 0
-  - name: OverlayLayers
-    uniqueID: 982192353
+  - name: UI
+    uniqueID: 286930255
+    locked: 0
+  - name: VFX
+    uniqueID: 4221683143
     locked: 0

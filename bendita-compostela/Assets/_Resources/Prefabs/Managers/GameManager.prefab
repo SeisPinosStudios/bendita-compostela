@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6495541453759746550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8872373092120285483}
+  - component: {fileID: 6425960371716306065}
+  - component: {fileID: 8564122946734550927}
+  - component: {fileID: 3469704005990995944}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8872373092120285483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6495541453759746550}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.7009811, y: 1.2941272, z: -10.017917}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6425960371716306065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6495541453759746550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c710b4c3ccc93844f81fa3780244689f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDataPreset: {fileID: 11400000, guid: b42919c634245b340866b1d772e44b7f, type: 2}
+  <playerData>k__BackingField: {fileID: 0}
+  <combatData>k__BackingField: {fileID: 0}
+  <visitedNodes>k__BackingField: []
+  <currentNode>k__BackingField:
+    nodeEncounter: 0
+    combatData: {fileID: 0}
+    eventPrefab: {fileID: 0}
+  <debug>k__BackingField: 0
+--- !u!114 &8564122946734550927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6495541453759746550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f5eec953d86f4428f30fb3e554a2ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <checks>k__BackingField:
+    _serializedList:
+    - Key: Battle
+      Value: 1
+    - Key: Card
+      Value: 1
+    - Key: Map
+      Value: 1
+    - Key: Entity
+      Value: 1
+    - Key: System
+      Value: 1
+--- !u!114 &3469704005990995944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6495541453759746550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b98fd85d79ce9af4e9e36c28ff53b513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  log: 1
