@@ -10,9 +10,12 @@ public class CombatNodeEvent : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("NODE POS:" + nodeEvent.nodeInfo.NodePos);
-        if(nodeEvent.nodeInfo.CombatData != null) Debug.Log("NODE COMBAT: " + nodeEvent.nodeInfo.CombatData.name);
-        if(nodeEvent.nodeInfo.futureNodes.Count != 0)MapManager.Instance.NodeSelected(nodeEvent.nodeInfo);
+        DebugManager.StaticDebug("Map", "NODE POS:" + nodeEvent.nodeInfo.NodePos);
+
+        if (GameManager.Instance.playerData.deck.Count < 6 || !GameManager.Instance.playerData.deck.Find(x => x.GetType() == typeof(WeaponData))) return;
+
+        if (nodeEvent.nodeInfo.CombatData != null) DebugManager.StaticDebug("Map", "NODE COMBAT: " + nodeEvent.nodeInfo.CombatData.name);
+        if (nodeEvent.nodeInfo.futureNodes.Count != 0) MapManager.Instance.NodeSelected(nodeEvent.nodeInfo);
 
         GameManager.Instance.SetCombat(nodeEvent.nodeInfo, nodeEvent.nodeInfo.CombatData);
         StartCoroutine(ToCombatCoroutine());
