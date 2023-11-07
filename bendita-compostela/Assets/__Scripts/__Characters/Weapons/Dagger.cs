@@ -62,6 +62,35 @@ public class Dagger : BaseWeapon
         BattleManager.Instance.OnBattleEnd -= ResetSynergyEffect;
     }
 
+    #region Style
+
+    #endregion
+
+    #region Synergies
+    private void EnableChestSynergy() {
+
+    }
+    private void EnableLegSynergy() {
+
+    }
+
+    private void DisableChestSynergy() {
+
+    }
+    private void DisableLegSynergy() {
+
+    }
+    #endregion
+
+    #region Listeners
+    private void AddListeners() {
+
+    }
+    private void RemoveListeners() {
+
+    }
+    #endregion
+
     #region Description
     public static string GetChestDescription()
     {

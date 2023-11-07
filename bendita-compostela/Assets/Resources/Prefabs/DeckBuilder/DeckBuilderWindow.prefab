@@ -701,6 +701,7 @@ MonoBehaviour:
     <soundName>k__BackingField: 
     audioClip: {fileID: 0}
     volume: 0
+  active: 1
 --- !u!114 &5310862980866680591
 MonoBehaviour:
   m_ObjectHideFlags: 0

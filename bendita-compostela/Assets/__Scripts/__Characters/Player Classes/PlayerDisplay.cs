@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class PlayerDisplay : EntityDisplay
 {
-    [field: SerializeField, Header("Player Display")] public Player player;
-    [field: SerializeField, Header("Energy")] public TextMeshProUGUI energyText;
-    
+    [Header("Player Display")] [SerializeField] Player player;
+    [Header("Energy")] [SerializeField] TextMeshProUGUI energyText;
+    [SerializeField] Image energyBackground;
+    [SerializeField] Image energyFill;
+    float height = 0.22f;
 
-    private void Update()
-    {
+    private void Update() {
         energyText.text = $"{player.energy}/{player.maxEnergy}";
+        energyBackground.rectTransform.sizeDelta = new Vector2(0.18f * player.maxEnergy, height);
+        energyFill.rectTransform.sizeDelta = new Vector2(0.18f * player.energy, height);
     }
-
-    
-
 }

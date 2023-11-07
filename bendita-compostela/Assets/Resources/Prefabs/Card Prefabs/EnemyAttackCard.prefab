@@ -650,7 +650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde4dfd84f1fd8c4fac5545e64a320a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardData: {fileID: 0}
+  cardData: {fileID: 11400000, guid: 487c50410ab8f31409b913ca9fa378bb, type: 2}
 --- !u!114 &4188301813789642578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,7 +664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardDataContainer: {fileID: 752961581588794506}
-  cardData: {fileID: 11400000, guid: 70f9bc1f0ea27e041885959439a3bb93, type: 2}
+  cardData: {fileID: 0}
 --- !u!114 &3175823880051612337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -683,4 +683,6 @@ MonoBehaviour:
   descriptionField: {fileID: 990818162490360802}
   costField: {fileID: 8058855825905352563}
   art: {fileID: 7689330455088447037}
+  cardAnimator: {fileID: 0}
   dragging: 0
+  target: {fileID: 0}
