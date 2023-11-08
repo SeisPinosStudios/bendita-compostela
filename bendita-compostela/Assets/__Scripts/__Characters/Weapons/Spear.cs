@@ -87,27 +87,11 @@ public class Spear : BaseWeapon
     }
     public static string GetStyleDescription(WeaponData weapon)
     {
-        return $"Estilo: cuando atacas a un enemigo, el enemigo posicionado detrás sufrirá un {GetStyleMultiplier(weapon.styleLevel)*100}% " +
-            $"del daño.";
+        return $"Estilo: cuando atacas a un enemigo, el enemigo posicionado detrás sufrirá el daño del ataque {-3 + 2 * weapon.styleLevel} puntos de daño.";
     }
     public static string GetStyleDescriptionByLevel(int styleLevel)
     {
-        return $"Estilo: cuando atacas a un enemigo, el enemigo posicionado detrás sufrirá un {GetStyleMultiplier(styleLevel) * 100}% " +
-            $"del daño.";
-    }
-    private static float GetStyleMultiplier(int styleLevel)
-    {
-        switch (styleLevel)
-        {
-            case 0:
-                return 0.5f;
-            case 1:
-                return 1.0f;
-            case 2:
-                return 2.0f;
-        }
-
-        return 0.0f;
+        return $"Estilo: cuando atacas a un enemigo, el enemigo posicionado detrás sufrirá el daño del ataque {-3 + 2 * styleLevel} puntos de daño.";
     }
     public static string GetSynergyDescriptionByLevel(int synergyLevel, int armorType)
     {
