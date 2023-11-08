@@ -81,13 +81,13 @@ public class Staff : BaseWeapon
     }
     public static string GetStyleDescription(WeaponData weapon)
     {
-        return $"Estilo: el límite para que los enemigos sufran el doble de daño por Quemado se reduce a {6-(1+weapon.styleLevel)} " +
-            $"cargas de Quemado.";
+        return $"Estilo: Mejora tus curaciones cuantos más enemigos haya en el combate. " +
+            $"Curación extra actual: {BattleManager.Instance.enemies.Count - 1 + weapon.styleLevel}";
     }
     public static string GetStyleDescriptionByLevel(int styleLevel)
     {
-        return $"Estilo: el límite para que los enemigos sufran el doble de daño por Quemado se reduce a {6 - (1 + styleLevel)} " +
-            $"cargas de Quemado.";
+        return $"Estilo: Mejora tus curaciones cuantos más enemigos haya en el combate. " +
+            $"Curación extra actual: {BattleManager.Instance.enemies.Count - 1 + styleLevel}";
     }
     public static string GetSynergyDescriptionByLevel(int synergyLevel, int armorType)
     {
