@@ -133,7 +133,7 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  bundleVersion: alpha v0.0.1b #4
+  bundleVersion: alpha v0.0.1c #3
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -154,7 +154,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.Seis-Pinos-Studios.bendita-compostela
+    Standalone: com.Seis-Pinos-Studios.Bendita-Compostela
   buildNumber:
     Bratwurst: 0
     Standalone: 0
