@@ -33,7 +33,7 @@ public class Spear : BaseWeapon
 
         var cardDamage = card.GetDamage() + (-3 + 2 * styleLevel);
 
-        BattleManager.Instance.enemies[enemyIndex - 1].SufferDamage(cardDamage, player.attackBonus, player.GetAttackMultiplier(), false);
+        BattleManager.Instance.enemies[enemyIndex + 1].SufferDamage(cardDamage, player.attackBonus, player.GetAttackMultiplier(), false);
     }
     #endregion
 
