@@ -86,13 +86,11 @@ public class Bow : BaseWeapon
     }
     public static string GetStyleDescription(WeaponData weapon)
     {
-        return $"Estilo: tu maestr�a con el arco permite recuperar {(weapon.styleLevel > 0 ? 4 : 3)} cada " +
-            $"{(weapon.styleLevel < 2 ? 5 : 4)} ataques.";
+        return $"Estilo: Tus ataques hacen daño adicional cuanto más cerca esté el enemigo de ti. Sólo se aplica con varios enemigos.";
     }
     public static string GetStyleDescriptionByLevel(int styleLevel)
     {
-        return $"Estilo: tu maestr�a con el arco permite recuperar {(styleLevel > 0 ? 4 : 3)} cada " +
-            $"{(styleLevel < 2 ? 5 : 4)} ataques.";
+        return $"Estilo: Tus ataques hacen daño adicional cuanto más cerca esté el enemigo de ti. Sólo se aplica con varios enemigos.";
     }
     public static string GetSynergyDescriptionByLevel(int synergyLevel, int armorType)
     {
