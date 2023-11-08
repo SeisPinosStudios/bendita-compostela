@@ -103,13 +103,11 @@ public class Hammer : BaseWeapon
     }
     public static string GetStyleDescription(WeaponData weapon)
     {
-        return $"Estilo: al lanzar {(weapon.styleLevel == 2 ? 4 : 5)} tu siguiente ataque hará un " +
-            $"{(weapon.styleLevel == 0 ? 0.5f : 1.0f)*100} de su daño al resto de enemigos.";
+        return $"Estilo: Los ataques del martillo hacen {-3 + 2 * weapon.styleLevel} de daño en área al resto de enemigos.";
     }
     public static string GetStyleDescriptionByLevel(int styleLevel)
     {
-        return $"Estilo: al lanzar {(styleLevel == 2 ? 4 : 5)} tu siguiente ataque hará un " +
-            $"{(styleLevel == 0 ? 0.5f : 1.0f) * 100} de su daño al resto de enemigos.";
+        return $"Estilo: Los ataques del martillo hacen {-3 + 2 * styleLevel} de daño en área al resto de enemigos.";
     }
     public static string GetSynergyDescriptionByLevel(int synergyLevel, int armorType)
     {
