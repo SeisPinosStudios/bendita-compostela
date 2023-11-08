@@ -10,7 +10,7 @@ public class PlayerDisplay : EntityDisplay
     [Header("Energy")] [SerializeField] TextMeshProUGUI energyText;
     [SerializeField] Image energyBackground;
     [SerializeField] Image energyFill;
-    float height = 0.22f;
+    float height = 0.26f;
 
     private void Update() {
         energyText.text = $"{player.energy}/{player.maxEnergy}";
