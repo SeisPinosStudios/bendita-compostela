@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Staff : BaseWeapon
 {
-    private void Awake()
+    int healingBonus;
+    private new void Awake()
     {
         base.Awake();
 
@@ -22,20 +23,26 @@ public class Staff : BaseWeapon
     {
         RemoveListeners();
 
+        DisableStyle();
+
         if (chestSynergy) DisableChestSynergy();
         if (legSynergy) DisableLegSynergy();
     }
 
     #region Style
     private void EnableStyle() {
-        var healingBonus = BattleManager.Instance.enemies.Count - 1 + styleLevel;
+        healingBonus = BattleManager.Instance.enemies.Count - 1 + styleLevel;
         player.HealingBonus(healingBonus);
     }
     private void DisableStyle() {
-        var healingBonus = BattleManager.Instance.enemies.Count - 1 + styleLevel;
+        healingBonus = BattleManager.Instance.enemies.Count - 1 + styleLevel;
         player.HealingBonus(-healingBonus);
     }
-
+    private void UpdateStyle() {
+        player.HealingBonus(-healingBonus);
+        healingBonus = BattleManager.Instance.enemies.Count - 1 + styleLevel;
+        player.HealingBonus(healingBonus);
+    }
     #endregion
 
     #region Synergies
@@ -56,10 +63,10 @@ public class Staff : BaseWeapon
 
     #region Listeners
     private void AddListeners() {
-
+        foreach (Enemy enemy in BattleManager.Instance.enemies) enemy.OnDeath += UpdateStyle;
     }
     private void RemoveListeners() {
-
+        foreach (Enemy enemy in BattleManager.Instance.enemies) enemy.OnDeath -= UpdateStyle;
     }
     #endregion
 
