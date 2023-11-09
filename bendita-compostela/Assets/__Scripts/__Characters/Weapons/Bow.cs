@@ -77,12 +77,12 @@ public class Bow : BaseWeapon
     #region Description
     public static string GetChestDescription()
     {
-        if (GameManager.Instance.playerData.chestArmor.synergyLevel == 2) return "Sinergia con arco: tus robos del mazo de ataques no cuestan energ�a.";
+        if (GameManager.Instance.playerData.chestArmor.synergyLevel == 2) return "Sinergia con arco: tus robos del mazo de ataques no cuestan energía.";
         return $"Sinergia con arco: cada {2 - GameManager.Instance.playerData.chestArmor.synergyLevel} robos del mazo de ataques, tu siguiente robo es gratis.";
     }
     public static string GetLegDescription()
     {
-        return $"Sinergia con arco: aumenta tu energ�a m�xima {2 * (GameManager.Instance.playerData.legArmor.synergyLevel + 1)} puntos.";
+        return $"Sinergia con arco: aumenta tu energ�a máxima {2 * (GameManager.Instance.playerData.legArmor.synergyLevel + 1)} puntos.";
     }
     public static string GetStyleDescription(WeaponData weapon)
     {
@@ -95,11 +95,11 @@ public class Bow : BaseWeapon
     public static string GetSynergyDescriptionByLevel(int synergyLevel, int armorType)
     {
         if (armorType == 0)
-            if (synergyLevel == 2) return "Sinergia con arco: tus robos del mazo de ataques no cuestan energ�a.";
+            if (synergyLevel == 2) return "Sinergia con arco: tus robos del mazo de ataques no cuestan energía.";
             else return $"Sinergia con arco: cada {2 - synergyLevel} robos del mazo de ataques, tu siguiente robo es gratis.";
 
         else
-            return $"Sinergia con arco: aumenta tu energ�a m�xima {2 * (synergyLevel + 1)} puntos.";
+            return $"Sinergia con arco: aumenta tu energía máxima {2 * (synergyLevel + 1)} puntos.";
     }
     #endregion
 }
