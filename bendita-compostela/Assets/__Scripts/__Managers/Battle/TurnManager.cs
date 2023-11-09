@@ -15,14 +15,16 @@ public class TurnManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        Instance = this; 
+    }
+    private IEnumerator Start()
+    {
+        yield return new WaitUntil(() => BattleManager.Instance.enemiesContainer.transform.childCount > 0);
         foreach (Transform enemy in enemiesContainer) enemiesBehaviour.Add(enemy.GetComponent<EnemyBehaviour>());
 
         turnQueue.AddLast(playerBehaviour);
         foreach (EnemyBehaviour enemy in enemiesBehaviour) turnQueue.AddLast(enemy);
-    }
-    private IEnumerator Start()
-    {
+
         print($"{turnQueue.First.Value}");
         yield return new WaitForSeconds(1.0f);
         Turn();
@@ -30,7 +32,7 @@ public class TurnManager : MonoBehaviour
 
     public void Turn()
     {
-        if (entityTurn) turnQueue.AddLast(entityTurn);
+        if (entityTurn && !turnQueue.Contains(entityTurn)) turnQueue.AddLast(entityTurn);
         StartCoroutine(TurnCoroutine());
     }
     private IEnumerator TurnCoroutine()
