@@ -6196,7 +6196,7 @@ MonoBehaviour:
   <highlight>k__BackingField: {fileID: 0}
   <progress>k__BackingField: 0
   <progressBar>k__BackingField: {fileID: 0}
-  <loadingCircleSpeed>k__BackingField: 1
+  <loadingCircleSpeed>k__BackingField: 10000
   <synergyLevel>k__BackingField: 1
 --- !u!224 &1066368813720440186 stripped
 RectTransform:
@@ -6392,7 +6392,7 @@ MonoBehaviour:
   <highlight>k__BackingField: {fileID: 0}
   <progress>k__BackingField: 0
   <progressBar>k__BackingField: {fileID: 0}
-  <loadingCircleSpeed>k__BackingField: 1
+  <loadingCircleSpeed>k__BackingField: 10000
   <synergyLevel>k__BackingField: 0
 --- !u!224 &4068302592282706418 stripped
 RectTransform:
@@ -7748,7 +7748,7 @@ MonoBehaviour:
   <highlight>k__BackingField: {fileID: 0}
   <progress>k__BackingField: 0
   <progressBar>k__BackingField: {fileID: 0}
-  <loadingCircleSpeed>k__BackingField: 1
+  <loadingCircleSpeed>k__BackingField: 10000
   <synergyLevel>k__BackingField: 2
 --- !u!1001 &6859998038971785452
 PrefabInstance:
