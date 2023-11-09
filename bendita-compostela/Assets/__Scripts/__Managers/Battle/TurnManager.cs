@@ -19,7 +19,7 @@ public class TurnManager : MonoBehaviour
     }
     private IEnumerator Start()
     {
-        yield return new WaitUntil(() => BattleManager.Instance.enemiesContainer.transform.childCount > 0);
+        yield return new WaitUntil(() => BattleManager.Instance.enemiesContainer.transform.childCount == GameManager.Instance.combatData.enemiesData.Count);
         foreach (Transform enemy in enemiesContainer) enemiesBehaviour.Add(enemy.GetComponent<EnemyBehaviour>());
 
         turnQueue.AddLast(playerBehaviour);
