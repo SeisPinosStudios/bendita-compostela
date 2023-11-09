@@ -342,7 +342,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 286930255
   m_SortingLayer: 7
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -1626740502, guid: cb9ddc30c4bb0fb44b5f5c086aee25aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -940,7 +940,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345793805}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.62, y: 0.19, z: 0}
+  m_LocalPosition: {x: -8.64, y: -0.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -981,8 +981,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.03454998, y: 0.4247, z: 0}
-    m_Extent: {x: 0.72465, y: 1.0996, z: 0}
+    m_Center: {x: -0.03310001, y: 0.42529997, z: 0}
+    m_Extent: {x: 0.7248, y: 1.1024, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1220,10 +1220,6 @@ PrefabInstance:
     - target: {fileID: 2494372879515661093, guid: 951f94460e9000e45be263871906e18f, type: 3}
       propertyPath: m_RenderMode
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2494372879515661093, guid: 951f94460e9000e45be263871906e18f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2494372879515661093, guid: 951f94460e9000e45be263871906e18f, type: 3}
       propertyPath: m_SortingLayerID
@@ -1961,8 +1957,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.59605, y: -1.09725, z: 0}
-    m_Extent: {x: 0.16695, y: 1.5418501, z: 0}
+    m_Center: {x: 0.5974, y: -1.09325, z: 0}
+    m_Extent: {x: 0.16469999, y: 1.53755, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2045,8 +2041,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.63115, y: 0.09765001, z: 0}
-    m_Extent: {x: 0.52305, y: 0.56335, z: 0}
+    m_Center: {x: 1.64065, y: 0.09740001, z: 0}
+    m_Extent: {x: 0.52195, y: 0.5679, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2293,7 +2289,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.78464085, b: 0.1745283, a: 1}
-  m_Intensity: 0.1
+  m_Intensity: 0.2
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 0000000097461ec8818e0561b16694ef03d6f0644f351a11
@@ -2310,8 +2306,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 3.7917001, y: 0.758, z: 0}
-    m_Extent: {x: 5.7071, y: 1.6883, z: 0}
+    m_Center: {x: 3.795, y: 0.7508, z: 0}
+    m_Extent: {x: 5.7017, y: 1.6834, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2974,8 +2970,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 3.4711502, y: -0.36639997, z: 0}
-    m_Extent: {x: 2.81475, y: 1.2928, z: 0}
+    m_Center: {x: 3.42805, y: -0.35990003, z: 0}
+    m_Extent: {x: 2.8589501, y: 1.2869, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2986,8 +2982,7 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 0.06
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: 0.7263284, y: -0.4516306, z: 0}
-  - {x: 0.948843, y: -0.78828144, z: 0}
+  - {x: 0.62154627, y: -0.5913403, z: 0}
   - {x: 1.7040305, y: -1.3127644, z: 0}
   - {x: 3.7435775, y: -1.5940812, z: 0}
   - {x: 5.1804595, y: -1.349921, z: 0}
@@ -3029,10 +3024,6 @@ MonoBehaviour:
   <playerData>k__BackingField: {fileID: 0}
   <combatData>k__BackingField: {fileID: 0}
   <visitedNodes>k__BackingField: []
-  <currentNode>k__BackingField:
-    nodeEncounter: 0
-    combatData: {fileID: 0}
-    eventPrefab: {fileID: 0}
   <debug>k__BackingField: 1
 --- !u!4 &963807137
 Transform:
@@ -3807,8 +3798,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 3.47855, y: 0.042400002, z: 0}
-    m_Extent: {x: 3.58565, y: 1.4148, z: 0}
+    m_Center: {x: 3.4881, y: 0.040250003, z: 0}
+    m_Extent: {x: 3.5816998, y: 1.4121499, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

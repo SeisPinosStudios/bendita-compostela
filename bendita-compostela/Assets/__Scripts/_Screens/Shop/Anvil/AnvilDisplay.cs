@@ -29,6 +29,7 @@ public class AnvilDisplay : MonoBehaviour
     void ChangeAnvilWindow()
     {
         anvilScreenPrefab.GetComponent<Canvas>().worldCamera = Camera.main;
+        anvilScreenPrefab.GetComponent<Canvas>().sortingLayerName = "UI";
         anvilScreen = Instantiate(anvilScreenPrefab);
         ShopSelectionManager.Instance.DisableInteraction();
     }

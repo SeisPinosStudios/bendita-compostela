@@ -12,6 +12,7 @@ public class LoseScreenManager : MonoBehaviour, IPointerClickHandler
 
     public IEnumerator FadeOut()
     {
+
         for(float i = 0; i <= fadeTime; i += Time.deltaTime)
         {
             backgroundImage.color = new Color(0, 0, 0, i);
@@ -21,8 +22,15 @@ public class LoseScreenManager : MonoBehaviour, IPointerClickHandler
         yield return null;
     }
 
+    public IEnumerator HideParticles()
+    {
+        GameObject particles = GameObject.Find("Particles");
+        particles.SetActive(false);
+        yield return null;
+    }
     public IEnumerator DeathSequence()
     {
+        yield return StartCoroutine(HideParticles());
         yield return StartCoroutine(FadeOut());
         yield return new WaitForSeconds(1.0f);
         text.SetActive(true);
@@ -30,7 +38,9 @@ public class LoseScreenManager : MonoBehaviour, IPointerClickHandler
 
     private void OnEnable()
     {
+
         StartCoroutine(DeathSequence());
+
     }
 
     public void OnPointerClick(PointerEventData eventData)
