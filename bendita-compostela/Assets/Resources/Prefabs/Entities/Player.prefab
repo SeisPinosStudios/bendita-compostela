@@ -196,7 +196,7 @@ MonoBehaviour:
   <highlight>k__BackingField: {fileID: 0}
   <progress>k__BackingField: 0
   <progressBar>k__BackingField: {fileID: 0}
-  <loadingCircleSpeed>k__BackingField: 1
+  <loadingCircleSpeed>k__BackingField: 3
   <image>k__BackingField: {fileID: 1724485499651832050}
   <leg>k__BackingField: 1
   <armor>k__BackingField: {fileID: 0}
@@ -380,7 +380,7 @@ MonoBehaviour:
   <highlight>k__BackingField: {fileID: 0}
   <progress>k__BackingField: 0
   <progressBar>k__BackingField: {fileID: 0}
-  <loadingCircleSpeed>k__BackingField: 1
+  <loadingCircleSpeed>k__BackingField: 3
   <image>k__BackingField: {fileID: 8176481606745722218}
   <leg>k__BackingField: 0
   <armor>k__BackingField: {fileID: 0}
@@ -1026,7 +1026,7 @@ MonoBehaviour:
   <highlight>k__BackingField: {fileID: 0}
   <progress>k__BackingField: 0
   <progressBar>k__BackingField: {fileID: 0}
-  <loadingCircleSpeed>k__BackingField: 1
+  <loadingCircleSpeed>k__BackingField: 3
   <image>k__BackingField: {fileID: 4638504053316947912}
   <sprites>k__BackingField:
   - {fileID: 1822301131, guid: 66dcaa2a3f9ebea4f888fc1b77e62752, type: 3}
@@ -1147,7 +1147,7 @@ Transform:
   - {fileID: 4412142821384605629}
   - {fileID: 7419855290221236727}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1154136145657413943
 MonoBehaviour:
