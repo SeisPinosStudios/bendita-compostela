@@ -25,8 +25,10 @@ public class ShopManager : MonoBehaviour
         foreach (Transform selector in objectSelectors)
             selector.GetComponent<CardDataContainer>().cardData = SODataBase.objects[Random.Range(0, SODataBase.objects.Count)];
 
-        foreach (Transform selector in specialSelectors)
-            selector.GetComponent<CardDataContainer>().cardData = SODataBase.special[Mathf.CeilToInt(Random.Range(0, SODataBase.special.Count) / 3)];
+        foreach (Transform selector in specialSelectors) {
+            var randomIndex = Random.Range(0, SODataBase.special.Count);
+            selector.GetComponent<CardDataContainer>().cardData = SODataBase.special[randomIndex - (randomIndex%3)];
+        }
 
         foreach (Transform selector in poemSelectors)
             selector.GetComponent<PoemDataContainer>().poemData = SODataBase.poems[Random.Range(0, SODataBase.poems.Count)];
