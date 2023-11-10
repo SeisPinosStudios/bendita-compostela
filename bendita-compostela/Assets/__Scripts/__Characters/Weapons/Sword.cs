@@ -5,7 +5,6 @@ using UnityEngine;
 public class Sword : BaseWeapon
 {
     [field:SerializeField] public int styleAttacks { get; private set; }
-    [field:SerializeField] public int chestLevel { get; private set; }
     [field:SerializeField] public float styleMultiplier { get; private set; }
     [field: SerializeField] public bool activeStyle { get; private set; } = true;
 
