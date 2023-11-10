@@ -16,6 +16,7 @@ public class EntityEffectsManager : MonoBehaviour
     [field: SerializeField] public int burnThreshold { get; private set; } = 6;
     [field: SerializeField] public float vulnerableMultiplier { get; private set; } = 0.5f;
     [field: SerializeField] public float guardedMultiplier { get; private set; } = 0.5f;
+    public int maxPoisonDamage;
     /*====EVENTS====*/
     public event Action<TAlteredEffects.AlteredEffects, int> OnEffectApplied = delegate { };
 

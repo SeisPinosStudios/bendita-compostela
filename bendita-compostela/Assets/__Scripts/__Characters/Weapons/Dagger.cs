@@ -4,90 +4,89 @@ using UnityEngine;
 
 public class Dagger : BaseWeapon
 {
-    [field: SerializeField] public int styleBonus { get; private set; }
-    [field: SerializeField] public int styleBonusAccum { get; private set; }
-    [field: SerializeField] public static bool synergyEffect { get; private set; }
-    [field: SerializeField] public EntityEffectsManager playerEffectsManager { get; private set; }
-    [field: SerializeField] public int chestLevel { get; private set; }
-    private void Awake()
+    [SerializeField] int styleBonus;
+    [SerializeField] int styleBonusAccum;
+    [SerializeField] bool synergyEffect;
+    [SerializeField] public EntityEffectsManager playerEffectsManager;
+    private new void Awake()
     {
+        base.Awake();
+
         weaponId = 2;
-        Damage.OnAttack += Style;
-        BattleManager.Instance.OnBattleEnd += ResetSynergyEffect;
 
-        player = BattleManager.Instance.player;
+        AddListeners();
+
+        if (chestSynergy) EnableChestSynergy();
+        if (legSynergy) EnableLegSynergy();
+
         playerEffectsManager = player.entityEffectsManager;
-        playerEffectsManager.OnEffectApplied += SynergyEffect;
-        TurnManager.Instance.playerBehaviour.OnPlayerTurn += ResetStyle;
 
-        chestSynergy = GetChestSynergy();
-        legSynergy = GetLegSynergy();
-        chestLevel = GetChestLevel();
-
-        styleBonus = 1 + (1 * GetStyleLevel());
+        styleBonus = 1 + (1 * styleLevel);
     }
 
-    private void Style(GameObject target, GameObject user, CardData card)
-    {
-        if (target.GetComponent<Entity>() is Player) return;
-        if (BattleManager.Instance.enemies.Count > 1) return;
-        styleBonusAccum += styleBonus;
-        BattleManager.Instance.player.AttackBonus(styleBonus);
-    }
-    private void SynergyEffect(TAlteredEffects.AlteredEffects effect, int value)
-    {
-        if (effect != TAlteredEffects.AlteredEffects.Poison || !synergyEffect) return;
-        
-        playerEffectsManager.RemoveEffect(TAlteredEffects.AlteredEffects.Poison, value);
-        
-        foreach (Enemy enemy in BattleManager.Instance.enemies)
-            enemy.GetComponent<EntityEffectsManager>().ApplyEffect(TAlteredEffects.AlteredEffects.Poison, 1 + (1 * chestLevel));
-        
-        synergyEffect = false;
-    }
-    private void ResetSynergyEffect()
-    {
-        synergyEffect = true;
-    }
-    private void ResetStyle()
-    {
-        player.AttackBonus(-styleBonusAccum);
-    }
     private void OnDestroy()
     {
-        BattleManager.Instance.player.AttackBonus(-styleBonusAccum);
-        playerEffectsManager.OnEffectApplied -= SynergyEffect;
-        TurnManager.Instance.playerBehaviour.OnPlayerTurn -= ResetStyle;
-        Damage.OnAttack -= Style;
-        BattleManager.Instance.OnBattleEnd -= ResetSynergyEffect;
+        RemoveListeners();
+        ResetStyle();
+
+        if(chestSynergy) DisableChestSynergy();
+        if(legSynergy) DisableLegSynergy();
     }
 
     #region Style
+    private void Style(GameObject target, GameObject user, CardData card) {
+        if (user.GetComponent<Entity>() is not Player || BattleManager.Instance.enemies.Count > 1) return;
 
+        styleBonusAccum += styleBonus;
+        BattleManager.Instance.player.AttackBonus(styleBonus);
+    }
+    private void ResetStyle() {
+        player.AttackBonus(-styleBonusAccum);
+    }
     #endregion
 
     #region Synergies
     private void EnableChestSynergy() {
-
+        playerEffectsManager.OnEffectApplied += SynergyEffect;
+        BattleManager.Instance.OnBattleEnd += ResetSynergyEffect;
     }
     private void EnableLegSynergy() {
-
+        foreach (Enemy enemy in BattleManager.Instance.enemies) enemy.entityEffectsManager.maxPoisonDamage = 8 + legLevel * 2;
     }
 
     private void DisableChestSynergy() {
-
+        playerEffectsManager.OnEffectApplied -= SynergyEffect;
+        BattleManager.Instance.OnBattleEnd -= ResetSynergyEffect;
     }
     private void DisableLegSynergy() {
+        foreach (Enemy enemy in BattleManager.Instance.enemies) enemy.entityEffectsManager.maxPoisonDamage = 5;
+    }
 
+    private void SynergyEffect(TAlteredEffects.AlteredEffects effect, int value) {
+        if (effect != TAlteredEffects.AlteredEffects.Poison || !synergyEffect) return;
+
+        playerEffectsManager.RemoveEffect(TAlteredEffects.AlteredEffects.Poison, value);
+
+        foreach (Enemy enemy in BattleManager.Instance.enemies)
+            enemy.GetComponent<EntityEffectsManager>().ApplyEffect(TAlteredEffects.AlteredEffects.Poison, 1 + (1 * chestLevel));
+
+        synergyEffect = false;
+    }
+    private void ResetSynergyEffect() {
+        synergyEffect = true;
     }
     #endregion
 
     #region Listeners
     private void AddListeners() {
-
+        Damage.OnAttack += Style;
+        
+        
+        TurnManager.Instance.playerBehaviour.OnPlayerTurn += ResetStyle;
     }
     private void RemoveListeners() {
-
+        Damage.OnAttack -= Style;
+        TurnManager.Instance.playerBehaviour.OnPlayerTurn -= ResetStyle;
     }
     #endregion
 
