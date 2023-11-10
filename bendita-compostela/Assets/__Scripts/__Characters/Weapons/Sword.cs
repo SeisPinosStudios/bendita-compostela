@@ -9,21 +9,29 @@ public class Sword : BaseWeapon
     [field:SerializeField] public float styleMultiplier { get; private set; }
     [field: SerializeField] public bool activeStyle { get; private set; } = true;
 
-    private void Awake()
+    private new void Awake()
     {
-        weaponId = 0;
-        player = GetComponent<Player>();
-        chestSynergy = player.playerData.chestArmor.weaponSynergy == weaponId;
-        legSynergy = player.playerData.legArmor.weaponSynergy == weaponId;
-        chestLevel = player.playerData.chestArmor.synergyLevel;
-        
+        base.Awake();
 
+        weaponId = 0;
+        
         styleMultiplier = player.weapon.styleLevel == 0 ? 0.5f : player.weapon.styleLevel;
 
         Damage.OnAttack += Style;
         TurnManager.Instance.playerBehaviour.OnPlayerTurn += Turn;
         Turn();
         if (legSynergy) LegSynergy();
+    }
+
+    private void OnDestroy()
+    {
+        Damage.OnAttack -= Style;
+
+        if (styleAttacks > 0) player.AttackMultiplier(-styleMultiplier);
+
+        if (legSynergy)
+            foreach (Enemy enemy in BattleManager.Instance.enemies)
+                enemy.entityEffectsManager.UpdateEffectLimit(TAlteredEffects.AlteredEffects.Bleed, -GetBleedUpgrade());
     }
 
     #region Style
@@ -68,16 +76,9 @@ public class Sword : BaseWeapon
     }
     #endregion
 
-    private void OnDestroy()
-    {
-        Damage.OnAttack -= Style;
+    #region Listeners
 
-        if(styleAttacks > 0) player.AttackMultiplier(-styleMultiplier);
-
-        if(legSynergy)
-            foreach (Enemy enemy in BattleManager.Instance.enemies)
-                enemy.entityEffectsManager.UpdateEffectLimit(TAlteredEffects.AlteredEffects.Bleed, -GetBleedUpgrade());
-    }
+    #endregion
 
     #region Description
     public static string GetChestDescription()

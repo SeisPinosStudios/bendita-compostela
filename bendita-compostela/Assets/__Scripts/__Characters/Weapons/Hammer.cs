@@ -23,8 +23,6 @@ public class Hammer : BaseWeapon
         if (legSynergy) DisableLegSynergy();
     }
 
-
-
     #region Style
     private void Style(CardData card, GameObject target) {
         var enemies = BattleManager.Instance.enemies;
