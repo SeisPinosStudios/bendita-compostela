@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: EATK_011_00_Caballeria
   m_EditorClassIdentifier: 
   cardName: "Caballer\xEDa Invencible"
+  <cardId>k__BackingField: 0
   description: 
   cost: 0
   price: 0
@@ -23,4 +24,4 @@ MonoBehaviour:
   cardEffectsValues:
   - Invulnerable|1
   printArrow: 0
-  <attackType>k__BackingField: 1
+  <attackType>k__BackingField: 0

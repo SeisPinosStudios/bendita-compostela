@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: EATK_011_02_Reposicionamiento
   m_EditorClassIdentifier: 
   cardName: Reposicionamiento
+  <cardId>k__BackingField: 0
   description: 
   cost: 0
   price: 0
@@ -23,4 +24,4 @@ MonoBehaviour:
   cardEffectsValues:
   - Guarded|1
   printArrow: 0
-  <attackType>k__BackingField: 1
+  <attackType>k__BackingField: 0
