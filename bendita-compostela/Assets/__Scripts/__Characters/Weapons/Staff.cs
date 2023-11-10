@@ -86,8 +86,7 @@ public class Staff : BaseWeapon
     }
     public static string GetStyleDescriptionByLevel(int styleLevel)
     {
-        return $"Estilo: Mejora tus curaciones cuantos más enemigos haya en el combate. " +
-            $"Curación extra actual: {BattleManager.Instance.enemies.Count - 1 + styleLevel}";
+        return $"Estilo: Mejora tus curaciones cuantos más enemigos haya en el combate.";
     }
     public static string GetSynergyDescriptionByLevel(int synergyLevel, int armorType)
     {
