@@ -4,59 +4,74 @@ using UnityEngine;
 
 public class Sword : BaseWeapon
 {
-    [field:SerializeField] public int styleAttacks { get; private set; }
-    [field:SerializeField] public float styleMultiplier { get; private set; }
-    [field: SerializeField] public bool activeStyle { get; private set; } = true;
+    int totalStyleAttacks = 1;
+    int currentStyleAttacks;
+    float styleMultiplier;
+    bool activeStyle = true;
 
     private new void Awake()
     {
         base.Awake();
 
         weaponId = 0;
+
+        AddListeners();
+
+        if (chestSynergy) EnableChestSynergy();
+        if (legSynergy) EnableLegSynergy();
         
         styleMultiplier = player.weapon.styleLevel == 0 ? 0.5f : player.weapon.styleLevel;
-
-        Damage.OnAttack += Style;
-        TurnManager.Instance.playerBehaviour.OnPlayerTurn += Turn;
-        Turn();
-        if (legSynergy) LegSynergy();
+        EnableStyle();
     }
 
     private void OnDestroy()
     {
-        Damage.OnAttack -= Style;
+        RemoveListeners();
 
-        if (styleAttacks > 0) player.AttackMultiplier(-styleMultiplier);
-
-        if (legSynergy)
-            foreach (Enemy enemy in BattleManager.Instance.enemies)
-                enemy.entityEffectsManager.UpdateEffectLimit(TAlteredEffects.AlteredEffects.Bleed, -GetBleedUpgrade());
+        if (chestSynergy) DisableChestSynergy();
+        if (legSynergy) DisableLegSynergy();
     }
 
     #region Style
     private void Style(GameObject target,  GameObject user, CardData card)
     {
-        if (TurnManager.Instance.entityTurn.GetType() != typeof(PlayerBehaviour)) return;
+        if (user.GetComponent<Entity>() is not Player) return;
 
-        if (styleAttacks > 0) { styleAttacks--; return; }
+        if (!activeStyle) return;
 
-        if(activeStyle) player.AttackMultiplier(-styleMultiplier);
+        currentStyleAttacks--;
 
-        activeStyle = false;
+        if (currentStyleAttacks == 0) {
+            activeStyle = false;
+            player.AttackMultiplier(-styleMultiplier);
+        }
+    }
+    private void EnableStyle() {
+        player.AttackMultiplier(styleMultiplier);
     }
     private void Turn()
     {
-        if (styleAttacks <= 0) player.AttackMultiplier(styleMultiplier);
-        styleAttacks = 1 + (chestSynergy ? (1 * chestLevel) + 1 : 0);
+        if (!activeStyle) player.AttackMultiplier(styleMultiplier);
+        currentStyleAttacks = totalStyleAttacks;
         activeStyle = true;
     }
     #endregion
 
     #region Synergies
-    private void LegSynergy()
-    {
-        foreach (Enemy enemy in BattleManager.Instance.enemies) 
+    private void EnableChestSynergy() {
+        totalStyleAttacks = 1 + (chestSynergy ? (1 * chestLevel) + 1 : 0);
+    }
+    private void EnableLegSynergy() {
+        foreach (Enemy enemy in BattleManager.Instance.enemies)
             enemy.entityEffectsManager.UpdateEffectLimit(TAlteredEffects.AlteredEffects.Bleed, GetBleedUpgrade());
+    }
+
+    private void DisableChestSynergy() {
+
+    }
+    private void DisableLegSynergy() {
+        foreach (Enemy enemy in BattleManager.Instance.enemies)
+            enemy.entityEffectsManager.UpdateEffectLimit(TAlteredEffects.AlteredEffects.Bleed, -GetBleedUpgrade());
     }
 
     private int GetBleedUpgrade()
@@ -76,7 +91,14 @@ public class Sword : BaseWeapon
     #endregion
 
     #region Listeners
-
+    private void AddListeners() {
+        Damage.OnAttack += Style;
+        TurnManager.Instance.playerBehaviour.OnPlayerTurn += Turn;
+    }
+    private void RemoveListeners() {
+        Damage.OnAttack -= Style;
+        TurnManager.Instance.playerBehaviour.OnPlayerTurn -= Turn;
+    }
     #endregion
 
     #region Description
