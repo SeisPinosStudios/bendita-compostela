@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class EquipWeapon : BasicCardEffect
+public class EquipWeapon : IBasicCardEffect
 {
     public static event Action OnEquipWeapon = delegate { };
     public static void Effect(string data, CardData card, GameObject user, GameObject target)

@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using System.Text;
 
-public class ApplyEffect : BasicCardEffect
+public class ApplyEffect : IBasicCardEffect
 {
 
     public static void Effect(string data, CardData card, GameObject user, GameObject target)

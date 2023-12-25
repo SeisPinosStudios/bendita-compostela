@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class DamageAll : BasicCardEffect
+public class DamageAll : IBasicCardEffect
 {
     public static event Action<GameObject, CardData> OnAttack = delegate { };
     public static event Action<GameObject, GameObject, CardData> OnAttack2 = delegate { };

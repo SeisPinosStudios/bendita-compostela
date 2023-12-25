@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using System.Linq;
 
-public class Damage : BasicCardEffect
+public class Damage : IBasicCardEffect
 {
     public static event Action<GameObject, GameObject, CardData> OnAttack = delegate { };
     public static void Effect(string damage, CardData card, GameObject user, GameObject target)

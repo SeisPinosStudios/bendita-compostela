@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cleanse : BasicCardEffect
+public class Cleanse : IBasicCardEffect
 {
     public static void Effect(string damage, CardData card, GameObject user, GameObject target)
     {

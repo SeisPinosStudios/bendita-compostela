@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class HealOthers : BasicCardEffect
+public class HealOthers : IBasicCardEffect
 {
     public static event Action<CardData, GameObject> OnHealing;
     public static void Effect(string data, CardData card, GameObject user, GameObject target)

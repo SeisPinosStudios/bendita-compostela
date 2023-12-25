@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Special : BasicCardEffect
+public class Special : IBasicCardEffect
 {
     public static void Effect(string index, CardData card, GameObject user, GameObject target)
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class HammerCard : BasicCardEffect
+public class HammerCard : IBasicCardEffect
 {
     public static event Action<CardData, GameObject> OnHammerCard = delegate { };
 

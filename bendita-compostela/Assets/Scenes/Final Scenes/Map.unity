@@ -455,8 +455,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 2.45795, y: -3.3481498, z: 0}
-    m_Extent: {x: 3.67455, y: 4.65365, z: 0}
+    m_Center: {x: 2.46735, y: -3.3539999, z: 0}
+    m_Extent: {x: 3.6767502, y: 4.6459, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3260,6 +3260,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: NaN
       objectReference: {fileID: 0}
+    - target: {fileID: 2494372879515661093, guid: 951f94460e9000e45be263871906e18f, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 108005303}
     - target: {fileID: 2494372879515661093, guid: 951f94460e9000e45be263871906e18f, type: 3}
       propertyPath: m_RenderMode
       value: 1
